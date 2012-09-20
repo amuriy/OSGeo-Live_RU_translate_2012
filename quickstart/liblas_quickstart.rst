@@ -1,55 +1,51 @@
-:Author: Howard Butler
-:Contact: hobu.inc at gmail dot com
-:Version: osgeo-live5.0
-:License: Creative Commons Attribution-ShareAlike 3.0 Unported  (CC BY-SA 3.0)
+:Автор: Howard Butler
+:Контакты: hobu.inc at gmail dot com
+:Версия: osgeo-live5.0
+:Лицензия: Creative Commons Attribution-ShareAlike 3.0 Unported  (CC BY-SA 3.0)
 
 .. image:: ../../images/project_logos/logo-libLAS.png
   :scale: 100 %
-  :alt: project logo
+  :alt: Логотип проекта
   :align: right
   :target: http://liblas.org/
 
 ********************************************************************************
-Getting Started with libLAS
+Начало работы с libLAS
 ********************************************************************************
 
 .. contents::
     :depth: 3
     :backlinks: none
 
-Processing
+Обработка
 --------------------------------------------------------------------------------
 
-The libLAS 'command-line utilities' provide the bulk of 
-user-facing operational software for libLAS, although the underlying libLAS 
-library is what powers them.  Below is a listing of common operations that 
-you might want to do on LAS data, and the utilities and approaches to 
-take to complete those tasks.
+Утилиты командной строки libLAS предоставляют много пользовательских функций, 
+при том, что всё это поддерживается одной библиотекой — libLAS. Ниже приведён 
+список стандартных операций, которые могут быть проведены с данными лазерного сканирования 
+местности (LAS), а также средства и методы для решения конкретных задач.
 
-Reprojecting an LAS file
+Перепроецирование данных LAS
 ..............................................................................
 
-All LAS data are in some sort of coordinate system, even if that coordinate 
-system is not described in the LAS file.  For terrestrial LAS data, these 
-coordinate system descriptions often map to coordinate systems described 
-by the `EPSG`_ database.  Another source of information about coordinate 
-systems in http://spatialreference.org.  
-
+Все данные в формате LAS представлены в определенной системе координат, даже если она
+не описана в LAS-файле. Для наземных LAS-данных описания систем координат могут быть 
+найдены в базе данных `EPSG`_. Ещё один источник информации о системах координат —
+сайт http://spatialreference.org.
 
 ::
-    
+
     lasinfo --no-check srs.las
 
 .. note::
 
-    The --no-check option tells lasinfo to only print the header information 
-    for the file and to not scan through all of the points.  For a 10 point file, 
-    this of course isn't much of a concern, but with a 50 or 500 million point 
-    file, it isn't worth waiting for a full scan of the data if all you 
-    want is header information.
+    Опция *--no-check* указывает утилите **lasinfo**, что нужно выводить только информацию
+из заголовков, без обработки всех точек в файле. Для файла с 10 точками это, конечно, не 
+так критично, но когда точек 50 или 500 миллионов, не стоит ждать полной обработки ради 
+информации из одних заголовков.
 
-Our 'lasinfo' invocation tells us that the ``srs.las`` file 
-is in a UTM North Zone 17 coordinate system:
+Вывод **lasinfo** сообщает, что наш файл — ``srs.las`` — содержит данные в системе координат 
+UTM в 17-й зоне.
 
 ::
 
@@ -72,16 +68,16 @@ is in a UTM North Zone 17 coordinate system:
             AUTHORITY["EPSG","9001"]],
         AUTHORITY["EPSG","32617"]]
 
-Now that we know our input coordinate system, we can make a decision about 
-what to reproject the data to.  In our first example, we're going to use 
-the venerable plate carrée non-coordinate system, `EPSG:4326`_.
+Теперь, когда мы знаем исходную систему координат, мы можем сделать вывод о необходимости
+перепроецирования данных. В нашем первом примере мы будем использовать систему
+координат WGS84 Lat/Long `EPSG:4326`_.
 
 ::
 
     las2las srs.las --t_srs EPSG:4326
 
-Our process succeeds, but after a quick inspection of the data with 
-``lasinfo output.las`` we see a problem:
+Процесс завершён, однако, после быстрой проверки данных командой ``lasinfo output.las``, 
+мы обнаруживаем проблему:
 
 ::
 
@@ -89,34 +85,31 @@ Our process succeeds, but after a quick inspection of the data with
     Scale Factor X Y Z:          0.01 0.01 0.01
     Offset X Y Z:                -0.00 -0.00 -0.00
     ...
-    Min X, Y, Z: 		-83.43, 39.01, 170.58, 
-    Max X, Y, Z: 		-83.43, 39.01, 170.76,
+    Min X, Y, Z:		-83.43, 39.01, 170.58,
+    Max X, Y, Z:		-83.43, 39.01, 170.76,
 
-The ``srs.las`` file had a scale of 0.01, or two decimal places of precision
-for its X, Y, and Z coordinates. For UTM data, this is ok, because it implies
-an implicit precision of 1 cm. For decimal degree data of the unprojected
-Plate Carrée coordinate system, it causes us to lose a bunch of precision. We
-need to set our scale values to something that can hold more precision in our
-case:
+Файл ``srs.las`` имеет масштаб 0.01 или точность два знака после запятой для координат X, Y, и Z. 
+Для данных в UTM это нормально, поскольку они подразумевают точность 1 см. В десятичных 
+градусах системы координат WGS84 Lat/Long это означает большую потерю точности. Нам нужно установить 
+значение масштаба, сохраняющее нужную точность:
 
 ::
 
     las2las --t_srs EPSG:4326 srs.las --scale 0.000001 0.000001 0.01
 
-Another quick inspection with 'lasinfo' gives us something 
-we're more comfortable with:
+Повторная проверка даёт более подходящий результат:
 
 ::
 
     ...
-    Scale Factor X Y Z:          0.000001 0.000001 0.01
-    Offset X Y Z:                -0.000000 -0.000000 -0.00
+    Scale Factor X Y Z:		 0.000001 0.000001 0.01
+    Offset X Y Z:		 -0.000000 -0.000000 -0.00
     ...
-    Min X, Y, Z: 		-83.427598, 39.012599, 170.58
-    Max X, Y, Z: 		-83.427548, 39.012618, 170.76    
+    Min X, Y, Z:		-83.427598, 39.012599, 170.58
+    Max X, Y, Z:		-83.427548, 39.012618, 170.76
 
 
-Output LAS file to text
+Перевод LAS-файла в текстовый формат
 ..............................................................................
 
 
