@@ -14,51 +14,53 @@
 GMT
 ================================================================================
 
-The Generic Mapping Tools
+Generic Mapping Tools
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-GMT is a collection of tools that allow users to manipulate (x,y) and
-(x,y,z) data sets (including filtering, trend fitting, gridding,
-projecting, etc.) and produce Encapsulated PostScript File (EPS)
-illustrations ranging from simple x-y plots through contour maps to
-artificially illuminated surfaces and 3-D perspective views in black and
-white, gray tone, hachure patterns, and 24-bit color.
+GMT — набор специализированных утилит, позволяющих манипулировать
+двумерными (x,y) и трёхмерными (x,y,z) данными. Доступны следующие 
+функции: интерполяция, фильтрация, перепроецирование, расчёты трендов 
+и многое другое. На выходе утилиты GMT выдают высококачественную
+графику в форматах PostScript (PS) и Encapsulated PostScript File (EPS) — от
+простых x-y графиков и контурных карт до искусственно освещённых
+поверхностей и 3D-визуализаций, и всё это либо в чёрно-белом цвете,
+в градациях серого, со штриховыми заливками или в 24-битном цвете.
 
-GMT supports many common map projections plus linear, log, and power
-scaling, and comes with support data such as coastlines, rivers, and
-political boundaries.
-
+GMT поддерживает многие общераспространённые картографические
+проекции, а также линейное, логарифмическое и степенное масштабирование.
+В состав GMT входят, помимо самих утилит, наборы разномасштабных 
+геоданных — политические границы, береговые линии, реки.
 
 .. image:: ../../images/screenshots/800x600/gmt-example28.png
   :scale: 50 %
   :alt: screenshot
   :align: right
 
-Core Features
+Базовые функции
 --------------------------------------------------------------------------------
 
-* Journal quality cartography.
-* Gridding and contouring functions.
+* Картография полиграфического качества
+* Интерполяция данных, создание изолиний и другие манипуляции с растрами
 
-Details
+Дополнительная информация
 --------------------------------------------------------------------------------
 
-**Website:** http://gmt.soest.hawaii.edu
+**Веб-сайт:** http://gmt.soest.hawaii.edu
 
-**Licence:** GNU General Public License (GPL) version 2
+**Лицензия:** `GPL версия 2 <http://www.gnu.org/licenses/gpl-2.0.html>`_
 
-**Software Version:** 4.5.6
+**Версия ПО:** 4.5.6
 
-**Supported Platforms:** GNU/Linux, Mac OSX, MS Windows
+**Поддерживаемые платформы :** GNU/Linux, Mac OSX, MS Windows
 
-**API Interfaces:** Command line
+**Интерфейсы API :** С
 
-**Support:** http://gmt.soest.hawaii.edu/gmt/gmt_maillist.html
+**Поддержка:** http://gmt.soest.hawaii.edu/gmt/gmt_maillist.html
 
 
-Quickstart
+Начало работы
 --------------------------------------------------------------------------------
 
-* :doc:`Quickstart documentation <../quickstart/gmt_quickstart>`
+* :doc:`Введение <../quickstart/gmt_quickstart>`
 
 
