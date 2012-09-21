@@ -16,68 +16,74 @@
   :target: http://www.osgeo.org
 
 
-GRASS GIS
+GRASS
 ================================================================================
 
-Fully featured GIS
+Полнофункциональная ГИС
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Geographic Resources Analysis Support System, commonly referred to as
-GRASS, is a Geographic Information System (GIS) providing powerful raster,
-vector, and geospatial processing engines in a single integrated software
-suite. GRASS includes tools for spatial modeling, visualization of raster
-and vector data, management and analysis of geospatial data, and the
-processing of satellite and aerial imagery. It also provides the capability
-to produce sophisticated presentation graphics and hardcopy maps. GRASS has
-now been translated into twenty languages and supports a huge array of data
-formats.
+GRASS (Geographic Resources Analysis Support System) — полнофункциональная
+геоинформационная система, предоставляющая большие возможности для
+обработки растровых и векторных геоданных. 
+
+GRASS включает средства для пространственного моделирования, визуализации
+растровых и векторных данных, управления геоданными и их анализа, для 
+обработки данных дистанционного зондирования Земли и аэрофотоснимков. 
+Помимо этого, в GRASS есть инструменты для создания высококачественной 
+экранной графики и макетов карт.
+
+В настоящее время GRASS переведена на 20 языков и поддерживает множество
+форматов данных.
 
 .. image:: ../../images/screenshots/1024x768/grass-vectattrib.png
    :scale: 50 %
    :alt: screenshot
    :align: right
 
-GRASS is used around the world in academic and commercial settings
-as well as by many governmental agencies and environmental consulting
-companies. It runs on a variety of popular hardware platforms and is Free
-open-source software released under the terms of the GNU General Public License.
+GRASS используется по всему миру в академических институтах и коммерческих
+организациях, а также в государственных агенствах и консалтинговых компаниях.
+Эта ГИС работает на большинстве современных компьютерных платформ, является
+свободным программным обеспечением с открытым исходным кодом 
+(распространяется под лицензией GPL).
 
-The GRASS software includes more than 400 built-in analysis modules.
-Additionally, over 100 community supplied modules and toolboxes are
-available for free from the community wiki site. After nearly 30 years of
-continuous development GRASS is both the oldest and largest Open Source GIS
-available. It is easily scriptable and versatile enough to be used both for
-batch data processing on massively-parallel supercomputers as well as a handy
-desktop GIS for handheld PDAs or netbooks.
+GRASS имеет модульную структуру, включает более 400 модулей для разных целей.
+Кроме этого сообществом пользователей создано более 100 дополнительных модулей
+и наборов инструментов, они доступны для свободной загрузки на 
+`вики-сайте <http://grass.osgeo.org/wiki/GRASS_AddOns>`_ сообщества.
 
+В настоящее время, после почти 30 лет непрерывной разработки, GRASS является
+одновременно старейшей и крупнейшей открытой ГИС. Она легко дополняется
+пользовательскими скриптами и достаточно универсальна, чтобы быть используемой
+как в параллельной обработке огромных массивов данных на суперкомпьютерах, так 
+и в качестве настольной ГИС, в том числе для КПК или "нетбуков".
 
 .. _GRASS: http://grass.osgeo.org
 
-Core Features
+Базовые функции
 --------------------------------------------------------------------------------
 
-* You name it, there's a tool for it.
-* Explore the `screenshot collection <http://grass.osgeo.org/screenshots/>`_.
+* Назовите это — и вы найдёте инструмент для этого.
+* Посмотрите `коллекцию скриншотов <http://grass.osgeo.org/screenshots/>`_.
 
-Details
+Дополнительная информация
 --------------------------------------------------------------------------------
 
-**Website:** http://grass.osgeo.org
+**Веб-сайт:** http://grass.osgeo.org
 
-**Licence:** GNU General Public License (GPL) version 2
+**Лицензия:** `GPL версия 2 <http://www.gnu.org/licenses/gpl-2.0.html>`_
 
-**Software Version:** 6.4.2
+**Версия ПО:** 6.4.2
 
-**Supported Platforms:** GNU/Linux, Mac OSX, MS Windows
+**Поддерживаемые платформы :** GNU/Linux, Mac OS X, MS Windows
 
-**API Interfaces:** C, Python, Bourne Shell
+**Интерфейсы API:** C, Python, Bourne Shell
 
-**Support:** http://grass.osgeo.org/community/support.php
+**Поддержка:** http://grass.osgeo.org/community/support.php
 
 
-Quickstart
+Начало работы
 --------------------------------------------------------------------------------
 
-* :doc:`Quickstart documentation <../quickstart/grass_quickstart>`
+* :doc:`Введение <../quickstart/grass_quickstart>`
 
 
