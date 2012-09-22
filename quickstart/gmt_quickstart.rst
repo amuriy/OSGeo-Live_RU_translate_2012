@@ -10,48 +10,51 @@
   :target: http://gmt.soest.hawaii.edu
 
 ********************************************************************************
-GMT Quickstart
+Начало работы с GMT
 ********************************************************************************
 
-Running
+Запуск
 ================================================================================
 
-Included on this LiveDVD are the GMT documentation (HTML and PDF),
-example scripts (including a low resolution worldwide coastline),
-tutorial (HTML and PDF), and data sets for the tutorial.
+OSGeo-Live включает документацию GMT (в форматах HTML и PDF),
+скрипты-образцы, пособие по созданию карт в GMT (в форматах 
+HTML и PDF), а также наборы данных (мировые береговые линии
+и т.д.).
 
-HTML and PDF documentation and tutorial can be found in
+Документация в HTML / PDF и пособие могут быть найдены здесь:
   `/usr/share/doc/gmt/html/ <../../gmt/html/index.html>`_,
-examples can be found in
+примеры могут быть найдены здесь:
   `/usr/share/doc/gmt-examples/examples/ <../../gmt-examples/examples/>`_,
-and tutorial data can be found in
+данные для пособия могут быть найдены здесь:
   `/usr/share/doc/gmt-tutorial/tutorial/ <../../gmt-tutorial/tutorial/>`_.
 
-The low resolution coastline can be found in :file:`/usr/share/gmt/coast/`.
+Набор данных по береговым линиям (в низком разрешении) может
+быть найден здесь: :file:`/usr/share/gmt/coast/`.
 
-.. packages:
+.. пакеты:
   gmt-doc (and -pdf)
   gmt-coast-low
   gmt-examples 
   gmt-tutorial (and -pdf)
 
 
-Examples
+Примеры
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There are 29 example jobs built in, and a script to run them all:
+В составе GMT есть 29 скриптов-образцов для выполнения разных задач,
+а также скрипт для их запуска. 
 
-Open a terminal, then
+Запустите Терминал (командную строку), затем
 
 ::
 
   cp -r /usr/share/doc/gmt-examples/examples/ gmt-examples
   cd gmt-examples/
-  ./do_examples.csh
+  ./do_examples.sh
 
 `[whiz .. bang .. whirl]`
 
-View results: (within :command:`gv` [#gv]_, type :kbd:`q` to quit)
+Посмотрим результаты (с помощью команды :command:`gv` [#gv]_, нажмите :kbd:`q` для выхода).
 
 ::
 
