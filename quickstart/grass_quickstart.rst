@@ -48,22 +48,22 @@
   :alt: screenshot
   :align: left
 
-После запуска сессии GRASS добавим растры "`elevation.10m`" или "`elevation`"
-из набора PERMANENT (в зависимости от выбранной области). Для этого    
+После запуска сессии GRASS выведем на экран растры "`elevation.10m`" 
+или "`elevation`" из набора PERMANENT (в зависимости от выбранной 
+области). Для этого перейдите в окно *GIS Layer Manager* и щёлкните на
+по кнопке с шахматным рисунком со знаком "+". Затем выберите имя 
+растровой карты из выпадающего списка ("*map to be displayed*"), 
+нажмите [Ok].
 
+Таким же образом добавим векторную карту "`roads`" (или "`roadsmajor`")
+из набора PERMANENT, для этого нажмите на по кнопке со знаком "+" и 
+изогнутой линией в виде буквы "V".
 
-To do this go into the GIS Layer Manager window and click on the checkerboard
-toolbar button with a "+" on it. Then select the map name you want from
-the "*map to be displayed*" pull-down list, and click [Ok].
+Если нужно, щёлкните с списке слоёв на имени растра и выберите
+"Zoom to selected map(s)".
 
-In a similar fashion add the "`roads`" (or "`roadsmajor`") vector layer
-from the PERMANENT mapset by clicking on the toolbar button with a "+" and
-a bent poly-line which looks a bit like a "V".
+Теперь вы должны видеть растр и векторную карту на экране.
 
-If you need to, right click on the raster map layer and choose "Zoom to
-selected map(s)".
-
-You should now see the maps displayed.
 
 Plot an elevation profile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
