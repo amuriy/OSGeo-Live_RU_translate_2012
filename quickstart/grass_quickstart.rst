@@ -14,32 +14,33 @@
 Начало работы с GRASS
 ********************************************************************************
 
-Running
+Запуск
 ================================================================================
 
-To run GRASS on the Live DVD, click on the GRASS link on the desktop.
-From the "Welcome to GRASS" window select either the Spearfish or simplified North
-Carolina (nc_basic_spm) dataset for the location, and "user1" for the mapset,
-then click on [Start Grass]. The values given in this tutorial were written
-for the Spearfish dataset, some slight adjustments may be needed for the NC
-dataset.
+Чтобы запустить GRASS с Live DVD, щёлкните по иконке на рабочем слое.
+В появившемся окне "Welcome to GRASS" выберите в качестве *области* 
+или **Spearfish**, или **nc_basic_spm**, затем выберите *набор* "user1" 
+и нажмите [Start Grass]. Примеры, приведённые в этом пособии, были
+созданы с использованием набора данных Spearfish, и с некоторыми 
+незначительными корректировками могут быть применены к набору
+данных NC.        
 
 .. image:: ../../images/screenshots/800x600/grass-startup.png
   :scale: 40 %
   :alt: screenshot
   :align: right
 
-This will launch GRASS with our `brand new GUI written in wxPython <../../grass/wxGUI.html>`_.
+Итак, должен запуститься интерфейс `wxGUI, написанный на wxPython <../../grass/wxGUI.html>`_. 
 
-.. tip::  If you are on a netbook with a very small display (800x600 resolution)
- the startup screen might get a little scrunched and the [Start GRASS]
- button hidden behind the location and mapset lists. If this happens to
- you the solution is to drag the corner of the window to make it a little
- bigger. You might have to move the window up past the top of the screen
- a bit to get the room (hold down the Alt key and left-click drag the
- window to move it).
+.. tip::  Если у вас нетбук с небольшим экраном (с разрешением 800x600),
+окно запуска может оказаться немного сжатым и кнопка [Start GRASS]
+будет скрыта под списками областей и наборов. Если это произойдёт, то
+нужно перетащить край окна, чтобы сделать его немного шире. Возможно,
+придётся переместить окно в верхнюю часть экрана, чтобы освободить 
+место (нажмите клавишу Alt и, удерживая левую кнопку мыши, перетащите
+окно). 
 
-Displaying maps
+Отображение данных
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../../images/screenshots/800x600/grass-layerman.png
@@ -47,8 +48,10 @@ Displaying maps
   :alt: screenshot
   :align: left
 
-Once inside add a raster map layer such as "`elevation.10m`" or "`elevation`"
-from the PERMANENT mapset, depending on which dataset `Location` you chose.
+После запуска сессии GRASS добавим растры "`elevation.10m`" или "`elevation`"
+из набора PERMANENT (в зависимости от выбранной области). Для этого    
+
+
 To do this go into the GIS Layer Manager window and click on the checkerboard
 toolbar button with a "+" on it. Then select the map name you want from
 the "*map to be displayed*" pull-down list, and click [Ok].
