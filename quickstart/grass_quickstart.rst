@@ -218,45 +218,41 @@ from selected map(s)". В меню `Raster` выберите
 карта отобразится на экране, вы можете изменить уровень прозрачности слоя (правой
 кнопкой мыши по имени слоя). Если щёлкнуть правой кнопкой мыши по слою 
 ``basins_areas`` в списке слоёв, то можно выключить отображение центроидов в
-полигонах через снятие галочки в `Properties` на вкладке `Selection`.
+полигонах через снятие галочки в `Properties` на вкладке `Selection`. 
+
+Далее назначим некоторые атрибуты получившимся полигонам, например, посчитаем
+среднюю высоту поверхности в каждой долине. В меню *Vector* выберите 
+:menuselection:`Update attributes --> Update area attributes from raster` и запустите
+модуль ``v.rast.stats``. Используйте векторную карту ``basin_areas`` в качестве входных
+полигональных данных и растр `elevation` для вычисления по нему статистики. Задайте
+префикс колонки ``ele``, нажмите [Run], закройте окно модуля, когда тот закончит свою
+работу. Вы можете посмотреть значения в окне `Map Display`, используя пятую кнопку с
+левого края: после того, как убедитесь, что наш полигональный слой выделен в списке
+слоёв, щёлкните несколько раз по разным полигонам в окне карты.       
+
+Вы можете "раскрасить" полигоны по значениям средних высот бассейнов, используя 
+модуль ``v.colors``. В меню *Vector* выберите :menuselection:`Manage colors --> Color tables`.
+Укажите ``basin_areas`` как входную векторную карту, атрибутивное поле ``ele_mean`` как
+поле, содержащее числовой диапазон и на вкладке `Colors` укажите копировать цвета
+с растровой карты `elevation`. После запуска модуля нажмите правой кнопкой мыши 
+на слое ``basin_areas`` в списке слоёв и выберите `Properties`. На вкладке `Colors` 
+установите галочку напротив опции "получать цвета из таблицы атрибутов". После того, 
+как вы нажмёте [Apply], вы сможете увидеть смену цветов в окне карты.
+
+Теперь подробнее рассмотрим таблицу атрибутов и "построитель запросов" (SQL builder).
+В окне `Layer Manager` щёлкните по кнопке с таблицей (вторая слева в нижнем ряду).
+Откроется отдельное окно с таблицей атрибутов. Теперь сделаем простой запрос для того,
+чтобы найти бассейны без больших вариаций в них. Там, где написано 
+``SELECT * FROM basin_areas WHERE``, укажите ``ele_stddev`` из выпадающего списка, затем
+в текстовом поле справа введите ``< 50`` и нажмите [Apply]. Вы заметите, что число 
+выбранных записей в строке информации в нижней части окна сократилось, и что все
+строки с большими значениями *std. dev.* теперь исчезли из отображаемой таблицы.      
+Щёлкните правой кпопкой мыши по таблице с укажите ``Select all``. Заново щёлкните
+правой кпопкой мыши по таблице и выберите ``Highlight selected features``. Вы можете
+увидеть на экране, например, зоны затопления в бассейнах и плоские вершины гор.  
 
 
-
-
-Next we'll add some attributes to those new areas, containing the average
-elevation in each basin. In the Vector menu select :menuselection:`Update attributes --> Update area attributes from raster`
-to launch the ``v.rast.stats`` module. Use ``basin_areas`` as the vector
-polygon map, the `elevation` raster to calculate the statistics from,
-make the column prefix ``ele``, and click [Run] then close the dialog when
-it is finished. You can query the values in the `Map Display` window using
-the fifth icon from the left and after verifying that the vector-areas map
-is selected in the `Layer List`, clicking on a vector area in the map canvas.
-
-You can colorize the areas based on the average elevation values using the
-``v.colors`` module. In the Vector menu select :menuselection:`Manage colors --> Color tables`.
-Select ``basin_areas`` for the input vector map, the ``ele_mean`` attribute
-column for the column containing the numeric range, and in the `Colors` tab
-have it copy the colors from the `elevation` raster map. After running that
-right-click on the ``basin_areas`` map in the Layer List and select `Properties`.
-In the `Colors` tab tick the box for getting colors from the map table column.
-Once you click [Apply] you should see the colors change in the `Map Display`
-window.
-
-Now let's look at the attribute table and SQL builder in more detail. In the
-`Layer Manager` click the table icon, it's second from the left on the bottom
-row. This will open a view of the attached database table. For now we'll just
-do a simple database query to find watershed basins without a lot of variation
-in them. Where it says ``SELECT * FROM basin_areas WHERE`` pick ``ele_stddev``
-from the pull down list for the standard deviation statistic, then in the
-text box to its right enter ``< 50`` and click [Apply]. You'll notice the
-number of loaded records in the information bar along the bottom of the window
-has shrunk, and that all of the rows with large values for std. dev. are now
-gone from the displayed table. Right-click on the table data and choose
-``Select all``. Again right-click on the table data and this time choose
-``Highlight selected features``. You should see e.g. alluvial flood basins
-and mesas show up in the ``Map Display``.
-
-3D visualization
+3D-визуализация
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../../images/screenshots/1024x768/grass-nviz.png
@@ -264,64 +260,62 @@ and mesas show up in the ``Map Display``.
   :alt: screenshot
   :align: right
 
-Start the 3D visualization suite from the :menuselection:`File --> NVIZ`
-menu item. Select an `elevation` map as the raster elevation.
-Once the 3D display interface loads, maximize the window.
-Next select :menuselection:`Visualize --> Raster Surfaces` from the top menu,
-and set the fine resolution to "1", then move the positioning puck and height
-slider around to get different views.
+Запустите программу 3D-визуализации NVIZ из меню :menuselection:`File --> NVIZ`.
+Выберите растр `elevation` в качестве поверхности. Когда экран обновится, максимизируйте
+окно. Далее выберите :menuselection:`Visualize --> Raster Surfaces` из меню сверху и 
+задайте разрешение (*fine resolution*) "1", затем перемещайте "кружок" позиционирования
+и слайдер высоты для получения разных видов.
 
-To drape satellite or aerial imagery over the top of the DEM, in the
-**Raster Surfaces** controls click on the **Surface Attributes**
-drop down menu and select "color". Select "New Map" to pick the overlay
-image. In the Spearfish dataset "`spot.image`" in PERMANENT is a
-good choice; in the North Carolina dataset "`lsat7_2002_50`"
-in PERMANENT is a good choice. Finally, click "Accept" and then once
-back at the main window click on the "Draw" button in the top-left, just 
-under the File menu.
+Чтобы наложить космоснимок или аэрофото поверх цифровой модели рельефа, в
+разделе **Raster Surfaces** щёлкните по выпадающему меню **Surface Attributes** и
+укажите "color". Выберите "New Map", чтобы наложить растр на рельеф. В области
+Spearfish хорошим выбором будет растр "`spot.image`" в наборе PERMANENT; в области 
+*North Carolina* можно выбрать, например, "`lsat7_2002_50`" в наборе PERMANENT.
+В конце, щёлкните "Accept", затем вернитесь в главное окно NVIZ и нажмите кнопку "Draw" 
+(слева сверху, под меню *File*).
 
-Other things to try
+
+Что ещё можно попробовать?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-While not covered here, you may like to experiment with the new
-Cartographic Composer and object-oriented Graphical Modeling Tool;
-you'll find icons to launch them on the lower row of icons in the
-`Layer Manager` window. Further details can be found in
-the `wxGUI <../../grass/wxGUI.html>`_ help pages.
+Хотя это и описывается здесь, вам может быть интересно поэкспериментировать
+с новым графическим компоновщиком карт (*Cartographic Composer*) и объектно-
+ориентированным графическим моделлером (*Graphical Modeling Tool*). Вы найдёте
+кнопки для их запуска в нижнем ряду иконок в окне `Layer Manager`. Дальнейшие
+детали могут быть найдены на странице помощи `wxGUI <../../grass/wxGUI.html>`_.
 
-The new GUI is written in Python, and if you're a fan of Python programming
-there are a number of great tools available to you. In the bottom of the
-`Layer Manager` window click on the `Python shell` tab and
-type ``help(grass.core)`` to see a listing of the functions available in
-the core GIS python library. Besides the core GIS functions there is
-also `array` (NumPy), `db` (database), `raster`, and `vector` libraries
-available. For advanced use `Pythons CTypes` is supported allowing the
-Python programmer access to GRASS's extensive C libraries.
+Новый интерфейс написан на Python, и если вы поклонник этого языка
+программирования, то вам доступно много полезных инструментов. В нижней части
+окна `Layer Manager` нажмите на вкладку `Python shell` и наберите ``help(grass.core)``,
+чтобы посмотреть список функций, доступных в главной Python-библиотеке GRASS. Кроме
+базовых функций, доступны также библиотеки `array` (NumPy), `db` (базы данных), 
+`raster` и `vector`. Для продвинутого использования поддерживается также 
+`Pythons CTypes`, что позволяет программистам на Python получать доступ к обширным
+С-библиотекам. 
 
-Shutdown and the command line
+Выключение GRASS и командная строка
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When finished, exit the GRASS GUI with :menuselection:`File --> Exit GUI`.
-Before you close the GRASS terminal session as well, try a GRASS
-module by typing "``g.manual --help``" which will give you a list
-of module options. The GRASS command line is where the true power of
-the GIS comes into its own. GRASS is designed to allow all commands
-to be tied together in scripts for large bulk processing jobs. Popular
-scripting languages are Bourne Shell and Python, and many neat tricks
-to making scripting easier are included for both. With these tools
-you can make a new GRASS module with only about 5 minutes of coding,
-complete with powerful parser, GUI, and help page template.
+Когда вы закончили с примерами, выйдите из интерфейса GRASS через меню
+:menuselection:`File --> Exit GUI`. До того, как вы закроете сессию GRASS в терминале,
+попробуйте запуск модулей из командной строки, например, наберите "``g.manual --help``",
+на выходе вы увидите список опций этого модуля. Командная строка GRASS — это то, где
+проявляется настоящая мощь этой ГИС. GRASS спроектирована, чтобы все команды могли
+соединяться друг с другом для создания скриптов, особенно в задачах массовой обработки
+данных. Поддерживаются скриптовые языки (особенно популярны Bourne Shell и Python), 
+а также множество приёмов, чтобы сделать создание скриптов более лёгким и эффективным. 
+С помощью встроенных средств вы можете создать новый модуль GRASS всего лишь за 5 минут
+написания кода, и всё это вместе с мощным парсером, графическим интерфейсом и образцом
+для справочной страницы.             
 
-"``g.manual -i``" will launch a web browser
-with the module help pages. When done close the browser and type "exit"
-at the GRASS terminal prompt to leave the GIS environment.
+Команда "``g.manual -i``" запустит веб-браузер с главной страницей справки. Когда закончите,
+закройте браузер и наберите "exit" (или нажмите Ctrl+d) в приглашении командной строки, чтобы
+завершить сессию GRASS.   
 
-Further reading
+Подробности
 ================================================================================
-* Visit the GRASS website at `http://grass.osgeo.org <http://grass.osgeo.org>`_
-* Visit the GRASS Wiki help site at `http://grass.osgeo.org/wiki <http://grass.osgeo.org/wiki>`_
-* More tutorials and overviews can be found `here <http://grass.osgeo.org/wiki/GRASS_Help#Getting_Started>`_.
-* A `synopsis of the GRASS modules <http://grass.osgeo.org/gdp/grassmanuals/grass64_module_list.pdf>`_, including
-  GUI menu position. (`HTML version <http://grass.osgeo.org/gdp/grassmanuals/grass64_module_list.html>`_)
-* If the 400 GIS modules which come with GRASS aren't enough for you have a look at the many contributed
-  add-ons at `http://grass.osgeo.org/wiki/AddOns <http://grass.osgeo.org/wiki/AddOns>`_
+* Посетите официальный сайт GRASS `http://grass.osgeo.org <http://grass.osgeo.org>`_.
+* Посетите вики GRASS `http://grass.osgeo.org/wiki <http://grass.osgeo.org/wiki>`_.
+* Больше материалов и обзоров могут быть найдены `здесь <http://grass.osgeo.org/wiki/GRASS_Help#Getting_Started>`_.
+* `Обзор модулей GRASS <http://grass.osgeo.org/gdp/grassmanuals/grass64_module_list.pdf>`_, включая расположение модулей в меню (`HTML-версия <http://grass.osgeo.org/gdp/grassmanuals/grass64_module_list.html>`_).
+* Если более чем 400 встроенных модулей GRASS недостаточно для решения ваших задач, обратите внимание на модули, написанные и поддерживаемые членами сообщества `http://grass.osgeo.org/wiki/AddOns <http://grass.osgeo.org/wiki/AddOns>`_.
