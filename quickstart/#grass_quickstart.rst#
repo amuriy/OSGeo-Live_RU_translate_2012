@@ -1,0 +1,327 @@
+:Author: Hamish Bowman
+:Version: osgeo-live6.0
+:License: Creative Commons Attribution-ShareAlike 3.0 Unported  (CC BY-SA 3.0)
+:Copyright: 2011 by The OSGeo Foundation
+
+.. image:: ../../images/project_logos/logo-GRASS.png
+  :scale: 100 %
+  :alt: project logo
+  :align: right
+  :target: http://grass.osgeo.org
+
+
+********************************************************************************
+Начало работы с GRASS
+********************************************************************************
+
+Запуск
+================================================================================
+
+Чтобы запустить GRASS, щёлкните по иконке на рабочем слое.
+В появившемся окне "Welcome to GRASS" выберите в качестве *области* 
+или **Spearfish**, или **nc_basic_spm**, затем выберите *набор* "user1" 
+и нажмите [Start Grass]. Примеры, приведённые в этом пособии, были
+созданы с использованием набора данных Spearfish, и с некоторыми 
+незначительными корректировками могут быть применены к набору
+данных NC.        
+
+.. image:: ../../images/screenshots/800x600/grass-startup.png
+  :scale: 40 %
+  :alt: screenshot
+  :align: right
+
+Итак, должен запуститься интерфейс `wxGUI, написанный на wxPython <../../grass/wxGUI.html>`_. 
+
+.. tip::  Если у вас нетбук с небольшим экраном (с разрешением 800x600),
+окно запуска может оказаться немного сжатым и кнопка [Start GRASS]
+будет скрыта под списками областей и наборов. Если это произойдёт, то
+нужно перетащить край окна, чтобы сделать его немного шире. Возможно,
+придётся переместить окно в верхнюю часть экрана, чтобы освободить 
+место (нажмите клавишу Alt и, удерживая левую кнопку мыши, перетащите
+окно). 
+
+Отображение данных
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../../images/screenshots/800x600/grass-layerman.png
+  :scale: 50 %
+  :alt: screenshot
+  :align: left
+
+После запуска сессии GRASS выведем на экран растры "`elevation.10m`" 
+или "`elevation`" из набора PERMANENT (в зависимости от выбранной 
+области). Для этого перейдите в окно *GIS Layer Manager* и щёлкните на
+по кнопке с шахматным рисунком со знаком "+". Затем выберите имя 
+растровой карты из выпадающего списка ("*map to be displayed*"), 
+нажмите [Ok].
+
+Таким же образом добавим векторную карту "`roads`" (или "`roadsmajor`")
+из набора PERMANENT, для этого нажмите на по кнопке со знаком "+" и 
+изогнутой линией в виде буквы "V".
+
+Если нужно, щёлкните с списке слоёв на имени растра и выберите
+"Zoom to selected map(s)".
+
+Теперь вы должны видеть растр и векторную карту на экране.
+
+
+Построение профиля поверхности
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../../images/screenshots/800x600/grass-profile.png
+  :scale: 50 %
+  :alt: screenshot
+  :align: right
+
+Вернёмся в окну *GIS Layer Manager*. Выберите в списке слоёв 
+растр `elevation`. Затем в окне *Map Display* справа от кнопок
+изменения масштаба на панели нажмите кнопку с
+с шахматным рисунком и линией. Выберите **Profile surface map**.
+Если список не появится автоматически, выберите снова слой растра
+с рельефом и нажмите [Ok]. Вторая кнопка слева позволяет задать
+линию профиля, нажмите её и затем отметьте несколько точек в окне
+карты. Затем вернитесь к окну профиля и нажмите на кнопку с глазом,
+чтобы создать график профиля. Теперь нажмите кнопку *I/O* справа, 
+чтобы закрыть окно с профилем.             
+
+Создание произвольной поверхности
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Давайте создадим новую карту. Вначале зададим вычислительный регион с
+охватом по умолчанию с помощью :menuselection:`Settings --> Region --> Set region`,
+задайте "Set from default region" и нажмите [Run]. Затем выберите
+:menuselection:`Raster --> Generate surfaces --> Fractal surface` из меню
+(внизу списка); задайте имя нового растра; настройте какие-либо ещё 
+параметры по желанию на вкладке "Optional" (умолчальные значения вполне
+подойдут); нажмите [Run]. Теперь вы можете закрыть окно модуля *r.surf.fractal*.  
+
+.. image:: ../../images/screenshots/800x600/grass-fractal.png
+  :scale: 50 %
+  :alt: screenshot
+  :align: right
+
+Настройка цветов
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Теперь вы можете видеть новый растр в списке слоёв вместе с растром
+рельефа, с тем отличием, что создан он был в вашем рабочем наборе 
+"user1". Вы можете снять галочку со слоя рельефа, чтобы два растра
+не накладывались друг на друга. Нажмите на кнопку с глазом, чтобы
+увидеть вашу новую карту, если она на отрисовалась автоматически.
+
+Если цвета растра вас не устраивают, можно их изменить. Выберите
+в слоях растр фрактальной поверхности, в меню
+`Raster` выберите  :menuselection:`Manage colors --> Color tables`.
+На вкладке "Colors" кликните на выпадающий список для опции
+"Type of color table", выберите одну цветовую шкалу из этого списка.
+"srtm" будет хорошим выбором в нашем случае. Выбрав цвета, запустите
+модуль кнопкой [Run] и закройте окно модуля.
+
+Цвета растра должны обновиться автоматически. Если этого не произошло,
+значит, вы изменили метаданные карты в это время, и придётся полностью
+очистить экранный кэш. Для полной перерисовки экрана нажмите небольшую 
+кнопку обновления рядом с кнопкой в виде глаза. Теперь вы должны увидеть
+растр в новых цветах.   
+  
+Создание растра светотеневой отмывки рельефа.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../../images/screenshots/800x600/grass-shadedrelief.png
+  :scale: 50 %
+  :alt: screenshot
+  :align: right
+
+Следующим упражнением будет создание растра светотеневой отмывки 
+рельефа, созданного ранее. Начнём с проверки, что вычислительный регион
+задан по нужному растру (`elevation`) в наборе PERMANENT. Чтобы сделать
+это, убедитесь, что растр открыт в списке слоёв в главном окне, щёлкните
+правой кнопкой мыши по имени слоя и выберите "Set computation region
+from selected map(s)". В меню `Raster` выберите 
+:menuselection:`Terrain analysis --> Shaded relief` (этот пункт в меню
+примерно посередине списка), должно появиться окно модуля.
+Выберите в качестве входной карты наш растр и нажмите [Run].
+Теперь добавьте новый растр *elevation.shade@user1* в список слоёв
+и деактивируйте все другие растровые слои.
+
+
+Водотоки и бассейны
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Откройте растр `elevation` @PERMANENT и в меню `Raster` выберите
+:menuselection:`Hydrologic modeling --> Watershed analysis`. Запустится
+интерфейс модуля ``r.watershed``. Установите растр `elevation` как 
+входной, на вкладке 'Input options' задайте минимальную площадь
+водосборного бассейна *threshold* в 10000 ячеек, затем на вкладке 
+'Output options' введите "elev.basins" для растра бассейнов и "elev.streams"
+для растра водотоков. В конце нажмите [Run].
+
+Вернитесь к окну `Layer Manager`и убедитесь, что две новых растра
+есть в списке слоёв и что только они отображаются в окне карты. Щёлкните
+правой кнопкой мыши по слою "elev.basins" и выберите "Change opacity level".
+Выставьте уровень 50%, экран автоматически обновится. Перетащите слой
+вниз в списке слоёв (так, как раньше растр теневой отмывки), если вы хотите,
+чтобы он отображался позади других слоёв, и поставьте галочку, чтобы
+растр отображался в фоне.
+
+.. image:: ../../images/screenshots/800x600/grass-watersheds.png
+  :scale: 50 %
+  :alt: screenshot
+  :align: left
+
+В окне `GIS Layer Manager щёлкните по второй кнопке справа в верхнем ряду
+`Add a grid layer`. Задайте размер сетки в 0:03 (3 минуты) в формате D:M:S, 
+затем на вкладке "Optional" выберите "Draw geographic grid", нажмите [Ok] и 
+обновите экран. 
+
+Чтобы добавить масштабную шкалу на экран, перейдите в окно карты и 
+нажмите кнопку "Add map elements" справа от кнопки "Profile tool", выберите
+"Add scalebar and north arrow". Отметьте галочкой кнопку ``show``, прочитайте
+инструкции по размешению и затем кликните [Ok]. Масштабная шкала должна
+появиться в верхнем левом углу экрана. Перетащите её в нижнюю левую часть
+экрана. Из того же меню на панели инструментов выберите "Add legend" и в 
+окне инструкций щёлкните по кнопке *Set Options*, чтобы задать имя растра, для
+которого мы хотим создать легенду. После выбора один раз кликните [Ok], затем
+ещё раз [Ok]. Перетащите вашу новую легенду на правую сторону карты.    
+
+Теперь вы, наверное, можете подумать, что шрифты выглядят немного неэстетично.
+Это легко поправимо: в меню главного окна выберите 
+:menuselection:`Settings --> Preferences` и на вкладке *Map Display* нажмите
+кнопку [Set font], выберите один из имеющихся шрифтов (например, DroidSans),
+нажмите [Apply] в окне *Preferences*. Вы должны будете полностью обновить 
+экран, чтобы увидеть изменения, для этого нажмите кнопку перерисовки возле
+кнопки с глазом в окне `Map Display`. Теперь шрифты должны выглядеть намного
+привлекательней.
+
+Модули для работы с векторными данными
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Описанные выше задачи касались только нескольких растровых модулей. Из этого
+можно было бы решить, что GRASS чисто растровая ГИС. Но это не так: векторный
+"движок" и модули для работы с векторными данными являются не менее
+функциональными. GRASS поддерживает полностью топологическую векторную
+модуль данных, которая позволяет проводить все основные виды анализа.  
+
+.. image:: ../../images/screenshots/1024x768/grass-vectattrib.png
+  :scale: 30 %
+  :alt: screenshot
+  :align: right
+
+Продолжим работать с водосборными бассейнами, выделенными ранее. Теперь
+конвертируем их в векторные полигоны. В меню *Raster* выберите
+:menuselection:`Map type conversions --> Raster to vector`. В появившемся 
+диалоге модуля `r.to.vect` выберите ``basins@user1`` как входную карту,
+задайте имя выходной карты, например, ``basins_areas`` (имена векторных карт
+должны быть SQL-совместимыми); выставьте тип `area`. На вкладке *Attributes*
+поставьте галочку в графе, чтобы использовать значения растра как номера 
+категорий векторных данных, т.к. они будут соответствовать значениям сегментов
+растровых водотоков, созданных ранее. Затем нажмите [Run]. Когда новая векторная
+карта отобразится на экране, вы можете изменить уровень прозрачности слоя (правой
+кнопкой мыши по имени слоя). Если щёлкнуть правой кнопкой мыши по слою 
+``basins_areas`` в списке слоёв, то можно выключить отображение центроидов в
+полигонах через снятие галочки в `Properties` на вкладке `Selection`. 
+
+
+
+
+Next we'll add some attributes to those new areas, containing the average
+elevation in each basin. In the Vector menu select :menuselection:`Update attributes --> Update area attributes from raster`
+to launch the ``v.rast.stats`` module. Use ``basin_areas`` as the vector
+polygon map, the `elevation` raster to calculate the statistics from,
+make the column prefix ``ele``, and click [Run] then close the dialog when
+it is finished. You can query the values in the `Map Display` window using
+the fifth icon from the left and after verifying that the vector-areas map
+is selected in the `Layer List`, clicking on a vector area in the map canvas.
+
+You can colorize the areas based on the average elevation values using the
+``v.colors`` module. In the Vector menu select :menuselection:`Manage colors --> Color tables`.
+Select ``basin_areas`` for the input vector map, the ``ele_mean`` attribute
+column for the column containing the numeric range, and in the `Colors` tab
+have it copy the colors from the `elevation` raster map. After running that
+right-click on the ``basin_areas`` map in the Layer List and select `Properties`.
+In the `Colors` tab tick the box for getting colors from the map table column.
+Once you click [Apply] you should see the colors change in the `Map Display`
+window.
+
+Now let's look at the attribute table and SQL builder in more detail. In the
+`Layer Manager` click the table icon, it's second from the left on the bottom
+row. This will open a view of the attached database table. For now we'll just
+do a simple database query to find watershed basins without a lot of variation
+in them. Where it says ``SELECT * FROM basin_areas WHERE`` pick ``ele_stddev``
+from the pull down list for the standard deviation statistic, then in the
+text box to its right enter ``< 50`` and click [Apply]. You'll notice the
+number of loaded records in the information bar along the bottom of the window
+has shrunk, and that all of the rows with large values for std. dev. are now
+gone from the displayed table. Right-click on the table data and choose
+``Select all``. Again right-click on the table data and this time choose
+``Highlight selected features``. You should see e.g. alluvial flood basins
+and mesas show up in the ``Map Display``.
+
+3D visualization
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../../images/screenshots/1024x768/grass-nviz.png
+  :scale: 30 %
+  :alt: screenshot
+  :align: right
+
+Start the 3D visualization suite from the :menuselection:`File --> NVIZ`
+menu item. Select an `elevation` map as the raster elevation.
+Once the 3D display interface loads, maximize the window.
+Next select :menuselection:`Visualize --> Raster Surfaces` from the top menu,
+and set the fine resolution to "1", then move the positioning puck and height
+slider around to get different views.
+
+To drape satellite or aerial imagery over the top of the DEM, in the
+**Raster Surfaces** controls click on the **Surface Attributes**
+drop down menu and select "color". Select "New Map" to pick the overlay
+image. In the Spearfish dataset "`spot.image`" in PERMANENT is a
+good choice; in the North Carolina dataset "`lsat7_2002_50`"
+in PERMANENT is a good choice. Finally, click "Accept" and then once
+back at the main window click on the "Draw" button in the top-left, just 
+under the File menu.
+
+Other things to try
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+While not covered here, you may like to experiment with the new
+Cartographic Composer and object-oriented Graphical Modeling Tool;
+you'll find icons to launch them on the lower row of icons in the
+`Layer Manager` window. Further details can be found in
+the `wxGUI <../../grass/wxGUI.html>`_ help pages.
+
+The new GUI is written in Python, and if you're a fan of Python programming
+there are a number of great tools available to you. In the bottom of the
+`Layer Manager` window click on the `Python shell` tab and
+type ``help(grass.core)`` to see a listing of the functions available in
+the core GIS python library. Besides the core GIS functions there is
+also `array` (NumPy), `db` (database), `raster`, and `vector` libraries
+available. For advanced use `Pythons CTypes` is supported allowing the
+Python programmer access to GRASS's extensive C libraries.
+
+Shutdown and the command line
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When finished, exit the GRASS GUI with :menuselection:`File --> Exit GUI`.
+Before you close the GRASS terminal session as well, try a GRASS
+module by typing "``g.manual --help``" which will give you a list
+of module options. The GRASS command line is where the true power of
+the GIS comes into its own. GRASS is designed to allow all commands
+to be tied together in scripts for large bulk processing jobs. Popular
+scripting languages are Bourne Shell and Python, and many neat tricks
+to making scripting easier are included for both. With these tools
+you can make a new GRASS module with only about 5 minutes of coding,
+complete with powerful parser, GUI, and help page template.
+
+"``g.manual -i``" will launch a web browser
+with the module help pages. When done close the browser and type "exit"
+at the GRASS terminal prompt to leave the GIS environment.
+
+Further reading
+================================================================================
+* Visit the GRASS website at `http://grass.osgeo.org <http://grass.osgeo.org>`_
+* Visit the GRASS Wiki help site at `http://grass.osgeo.org/wiki <http://grass.osgeo.org/wiki>`_
+* More tutorials and overviews can be found `here <http://grass.osgeo.org/wiki/GRASS_Help#Getting_Started>`_.
+* A `synopsis of the GRASS modules <http://grass.osgeo.org/gdp/grassmanuals/grass64_module_list.pdf>`_, including
+  GUI menu position. (`HTML version <http://grass.osgeo.org/gdp/grassmanuals/grass64_module_list.html>`_)
+* If the 400 GIS modules which come with GRASS aren't enough for you have a look at the many contributed
+  add-ons at `http://grass.osgeo.org/wiki/AddOns <http://grass.osgeo.org/wiki/AddOns>`_
