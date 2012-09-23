@@ -34,9 +34,9 @@ http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB
 вариантам Ubuntu типа Xubuntu или того же OSGeo-Live.
 
 .. note::
-  Версия Ubuntu, которую вы запускаете, должна быть такой же или выше
-версии Xubuntu, которая будет установлена на ваш USB-диск. Если устанавливать
-OSGeo-Live 6.0 на USB, то вам потребуется запуск Ubuntu 12.04 или новее.  
+ Версия Ubuntu, которую вы запускаете, должна быть такой же или выше
+ версии Xubuntu, которая будет установлена на ваш USB-диск. Если 
+ устанавливать OSGeo-Live 6.0 на USB, то вам потребуется запуск Ubuntu 12.04 или новее.  
 
 `Загрузите <http://live.osgeo.org/en/download.html>`_ образы дисков *osgeo-live* или
 *osgeo-live-mini* на ваш жёсткий диск.
