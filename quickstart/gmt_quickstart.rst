@@ -52,8 +52,6 @@ HTML и PDF), а также наборы данных (мировые берег
   cd gmt-examples/
   ./do_examples.sh
 
-`[whiz .. bang .. whirl]`
-
 Посмотрим результаты (с помощью команды :command:`gv` [#gv]_, нажмите :kbd:`q` для выхода).
 
 ::
