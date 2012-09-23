@@ -17,7 +17,7 @@
 Запуск
 ================================================================================
 
-Чтобы запустить GRASS с Live DVD, щёлкните по иконке на рабочем слое.
+Чтобы запустить GRASS, щёлкните по иконке на рабочем слое.
 В появившемся окне "Welcome to GRASS" выберите в качестве *области* 
 или **Spearfish**, или **nc_basic_spm**, затем выберите *набор* "user1" 
 и нажмите [Start Grass]. Примеры, приведённые в этом пособии, были
@@ -65,7 +65,7 @@
 Теперь вы должны видеть растр и векторную карту на экране.
 
 
-Plot an elevation profile
+Построение профиля поверхности
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../../images/screenshots/800x600/grass-profile.png
@@ -73,55 +73,57 @@ Plot an elevation profile
   :alt: screenshot
   :align: right
 
-Back in the GIS Layer Manager window click on your `elevation` raster
-map name to select it. Then in the Map Display window, to the right of the
-zooming buttons on the Map Display toolbar is an icon with a line graph
-and checkerboard on it. Click on that and select **Profile surface map**.
-If it isn't automatically listed again pick an elevation map as the raster
-layer and press [Ok]. The second button in from the left allows you to
-set out the profile line, click it then mark out a few points on the Map
-Display canvas. When done go back to the Profile window and click on the
-eyeball button to create the plot. Click on the I/O button of the far
-right to close the profile window.
+Вернёмся в окну *GIS Layer Manager*. Выберите в списке слоёв 
+растр `elevation`. Затем в окне *Map Display* справа от кнопок
+изменения масштаба на панели нажмите кнопку с
+с шахматным рисунком и линией. Выберите **Profile surface map**.
+Если список не появится автоматически, выберите снова слой растра
+с рельефом и нажмите [Ok]. Вторая кнопка слева позволяет задать
+линию профиля, нажмите её и затем отметьте несколько точек в окне
+карты. Затем вернитесь к окну профиля и нажмите на кнопку с глазом,
+чтобы создать график профиля. Теперь нажмите кнопку *I/O* справа, 
+чтобы закрыть окно с профилем.             
 
-Create a random surface
+Создание произвольной поверхности
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now let's create a new map. First set the computational region to the default
-bounds with :menuselection:`Settings --> Region --> Set region`, ticking
-"Set from default region", and clicking [Run]. Next select :menuselection:`Raster --> Generate 
-surfaces --> Fractal surface` from the menu (it's near the bottom);
-give your new map a name; and adjust any options you like in the "Optional"
-tab (the defaults are fine); and click [Run]. You can then [Close] the
-*r.surf.fractal* module's dialog window.
+Давайте создадим новую карту. Вначале зададим вычислительный регион с
+охватом по умолчанию с помощью :menuselection:`Settings --> Region --> Set region`,
+задайте "Set from default region" и нажмите [Run]. Затем выберите
+:menuselection:`Raster --> Generate surfaces --> Fractal surface` из меню
+(внизу списка); задайте имя нового растра; настройте какие-либо ещё 
+параметры по желанию на вкладке "Optional" (умолчальные значения вполне
+подойдут); нажмите [Run]. Теперь вы можете закрыть окно модуля *r.surf.fractal*.  
 
 .. image:: ../../images/screenshots/800x600/grass-fractal.png
   :scale: 50 %
   :alt: screenshot
   :align: right
 
-Adjust colors
+Настройка цветов
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now you'll see your new raster added to the layer list along with
-the elevation raster map, except this time it will be in your "user1"
-working mapset. You might un-tick the elevation layer check-box
-now so that the two don't draw over the top of each other. Click on the
-eyeball to view your new map if it doesn't render automatically.
-The colors might not be as you'd like so let's change them. With the
-fractal DEM selected in the layer list, in the
-`Raster` menu select :menuselection:`Manage colors --> Color tables`.
-In the "Colors" tab click on the pull-down list for the "Type of color
-table" option, and pick one from the list. "srtm" is a nice choice. Once
-done click the [Run] button and close the *r.colors* dialog window.
+Теперь вы можете видеть новый растр в списке слоёв вместе с растром
+рельефа, с тем отличием, что создан он был в вашем рабочем наборе 
+"user1". Вы можете снять галочку со слоя рельефа, чтобы два растра
+не накладывались друг на друга. Нажмите на кнопку с глазом, чтобы
+увидеть вашу новую карту, если она на отрисовалась автоматически.
 
-The colors should then update automatically. If they don't, because you
-have altered the map's metadata this time to re-render it by force
-you will have to fully flush the display cache. So click on the little
-refresh button next to the eyeball button to re-render all layers and you
-should see your map with its new colors.
+Если цвета растра вас не устраивают, можно их изменить. Выберите
+в слоях растр фрактальной поверхности, в меню
+`Raster` выберите  :menuselection:`Manage colors --> Color tables`.
+На вкладке "Colors" кликните на выпадающий список для опции
+"Type of color table", выберите одну цветовую шкалу из этого списка.
+"srtm" будет хорошим выбором в нашем случае. Выбрав цвета, запустите
+модуль кнопкой [Run] и закройте окно модуля.
+
+Цвета растра должны обновиться автоматически. Если этого не произошло,
+значит, вы изменили метаданные карты в это время, и придётся полностью
+очистить экранный кэш. Для полной перерисовки экрана нажмите небольшую 
+кнопку обновления рядом с кнопкой в виде глаза. Теперь вы должны увидеть
+растр в новых цветах.   
   
-Create a shaded relief map
+Создание растра светотеневой отмывки рельефа.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../../images/screenshots/800x600/grass-shadedrelief.png
@@ -129,93 +131,97 @@ Create a shaded relief map
   :alt: screenshot
   :align: right
 
-Next we'll create a shaded relief map of the elevation layer we saw
-earlier. Start by verifying that the computational region is set match
-the raster map of interest, "`elevation`" in the PERMANENT mapset. To
-do this, make sure it is loaded into the layer list of the main Layer
-Manager window, right click on its name and select "Set computation region
-from selected map(s)". In the `Raster` menu select :menuselection:`Terrain
-analysis --> Shaded relief` (Terrain analysis is about half way
-down), and the module control dialog will appear. With the elevation
-map name selected as the input map click [Run]. Now add the new
-elevation.shade @user1 map into your layer list as you did for the elevation
-map earlier, and un-tick the other raster layers.
+Следующим упражнением будет создание растра светотеневой отмывки 
+рельефа, созданного ранее. Начнём с проверки, что вычислительный регион
+задан по нужному растру (`elevation`) в наборе PERMANENT. Чтобы сделать
+это, убедитесь, что растр открыт в списке слоёв в главном окне, щёлкните
+правой кнопкой мыши по имени слоя и выберите "Set computation region
+from selected map(s)". В меню `Raster` выберите 
+:menuselection:`Terrain analysis --> Shaded relief` (этот пункт в меню
+примерно посередине списка), должно появиться окно модуля.
+Выберите в качестве входной карты наш растр и нажмите [Run].
+Теперь добавьте новый растр *elevation.shade@user1* в список слоёв
+и деактивируйте все другие растровые слои.
 
-Watersheds and streams
+
+Водотоки и бассейны
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Once again select the `elevation` @PERMANENT map and in the `Raster` menu
-choose :menuselection:`Hydrologic modeling --> Watershed analysis`. This
-will open the ``r.watershed`` module. Set the `elevation` layer as your
-input map, in the 'Input options' tab set the minimum size of the exterior
-watershed basin *threshold* to
-10000 cells, then in the 'Output options' tab enter "elev.basins" for the
-watershed basin option and "elev.streams" for the stream segments option
-just below it. Then click [Run].
+Откройте растр `elevation` @PERMANENT и в меню `Raster` выберите
+:menuselection:`Hydrologic modeling --> Watershed analysis`. Запустится
+интерфейс модуля ``r.watershed``. Установите растр `elevation` как 
+входной, на вкладке 'Input options' задайте минимальную площадь
+водосборного бассейна *threshold* в 10000 ячеек, затем на вкладке 
+'Output options' введите "elev.basins" для растра бассейнов и "elev.streams"
+для растра водотоков. В конце нажмите [Run].
 
-Back in the `Layer Manager` window check that those two new raster maps are 
-in the layer list and make sure that they are the only two which are ticked
-for display in the box to the left of the layer name. Right click on
-the "elev.basins" raster map layer name and select "Change opacity level".
-Set it to about 50% which will re-render the Map Display. Drag a map layer (such
-as the earlier shaded relief map) to lower down in the layer list if you
-wish for it to be drawn behind the other map layers, and tick it's box to
-view it as a backdrop.
+Вернитесь к окну `Layer Manager`и убедитесь, что две новых растра
+есть в списке слоёв и что только они отображаются в окне карты. Щёлкните
+правой кнопкой мыши по слою "elev.basins" и выберите "Change opacity level".
+Выставьте уровень 50%, экран автоматически обновится. Перетащите слой
+вниз в списке слоёв (так, как раньше растр теневой отмывки), если вы хотите,
+чтобы он отображался позади других слоёв, и поставьте галочку, чтобы
+растр отображался в фоне.
 
 .. image:: ../../images/screenshots/800x600/grass-watersheds.png
   :scale: 50 %
   :alt: screenshot
   :align: left
 
-In the `GIS Layer Manager` window click on the second button in from the right
-on the top row and `Add a grid layer`. For size of grid put 0:03 for 0 degrees and
-3 minutes (format is D:M:S), then in the "Optional" tab tick Draw geographic
-grid and press [Ok] and re-render.
+В окне `GIS Layer Manager щёлкните по второй кнопке справа в верхнем ряду
+`Add a grid layer`. Задайте размер сетки в 0:03 (3 минуты) в формате D:M:S, 
+затем на вкладке "Optional" выберите "Draw geographic grid", нажмите [Ok] и 
+обновите экран. 
 
-To add a scalebar go to the Map Display window and press the "Add
-map elements" button to the right of where you selected the Profile tool
-earlier and select "Add scalebar and north arrow". Tick the ``show`` button,
-read the placement instructions then click [Ok]. A scalebar will appear in
-the top left of the map canvas. Drag it down to the bottom left. From the
-same toolbar menu select "Add legend" and
-in the instructions window click the Set Options button to set the
-raster map name to create the legend for. After picking one click [Ok]
-and [Ok] again. Drag your new legend over to the right side of the map
-canvas.
+Чтобы добавить масштабную шкалу на экран, перейдите в окно карты и 
+нажмите кнопку "Add map elements" справа от кнопки "Profile tool", выберите
+"Add scalebar and north arrow". Отметьте галочкой кнопку ``show``, прочитайте
+инструкции по размешению и затем кликните [Ok]. Масштабная шкала должна
+появиться в верхнем левом углу экрана. Перетащите её в нижнюю левую часть
+экрана. Из того же меню на панели инструментов выберите "Add legend" и в 
+окне инструкций щёлкните по кнопке *Set Options*, чтобы задать имя растра, для
+которого мы хотим создать легенду. После выбора один раз кликните [Ok], затем
+ещё раз [Ok]. Перетащите вашу новую легенду на правую сторону карты.    
 
-Now you may be thinking to yourself that these fonts are a bit bare.
-That's easily fixed in the GIS Layer Manager menus open :menuselection:`Settings --> 
-Preferences` and in the Map Display tab click the [Set font] button, choose
-one (for example DroidSans), and then [Apply] in the Preferences window. You will
-have to do a full re-render to see the change so click on the re-render button
-next to the eyeball in the `Map Display` window. The fonts will now be much prettier.
+Теперь вы, наверное, можете подумать, что шрифты выглядят немного неэстетично.
+Это легко поправимо: в меню главного окна выберите 
+:menuselection:`Settings --> Preferences` и на вкладке *Map Display* нажмите
+кнопку [Set font], выберите один из имеющихся шрифтов (например, DroidSans),
+нажмите [Apply] в окне *Preferences*. Вы должны будете полностью обновить 
+экран, чтобы увидеть изменения, для этого нажмите кнопку перерисовки возле
+кнопки с глазом в окне `Map Display`. Теперь шрифты должны выглядеть намного
+привлекательней.
 
-Vector modules
+Модули для работы с векторными данными
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- 
-The above tasks have only covered a few raster modules. Don't let this
-give you the idea that GRASS is just for raster maps -- the vector engine
-and modules are every bit as full-featured as the raster ones. GRASS
-maintains a fully topological vector system which allows all sorts of
-very powerful analyses.
+
+Описанные выше задачи касались только нескольких растровых модулей. Из этого
+можно было бы решить, что GRASS чисто растровая ГИС. Но это не так: векторный
+"движок" и модули для работы с векторными данными являются не менее
+функциональными. GRASS поддерживает полностью топологическую векторную
+модуль данных, которая позволяет проводить все основные виды анализа.  
 
 .. image:: ../../images/screenshots/1024x768/grass-vectattrib.png
   :scale: 30 %
   :alt: screenshot
   :align: right
 
-Continuing with the watershed basins created above, next we'll convert
-them into vector polygons. In the Raster menu select :menuselection:`Map type conversions --> Raster to vector`.
-In the `r.to.vect` dialog that opens make sure that ``basins @user1`` is
-selected for the input map, give a name for the output map like ``basins_areas``
-(vector map names must be SQL compliant), and change feature type to `area`.
-In the Attributes tab tick the box to use raster values as category numbers,
-since these will match the values in our stream segment raster map created
-earlier. Then click on [Run]. Once the new vector map is displayed, you
-might right click on it in the Layer Manager list and change its opacity
-level. Also if you right click on the ``basins_areas`` vector map in the
-`Layer List` you can turn off rendering of area centroids by going into
-`Properties` and un-ticking it in the `Selection` tab.
+Продолжим работать с водосборными бассейнами, выделенными ранее. Теперь
+конвертируем их в векторные полигоны. В меню *Raster* выберите
+:menuselection:`Map type conversions --> Raster to vector`. В появившемся 
+диалоге модуля `r.to.vect` выберите ``basins@user1`` как входную карту,
+задайте имя выходной карты, например, ``basins_areas`` (имена векторных карт
+должны быть SQL-совместимыми); выставьте тип `area`. На вкладке *Attributes*
+поставьте галочку в графе, чтобы использовать значения растра как номера 
+категорий векторных данных, т.к. они будут соответствовать значениям сегментов
+растровых водотоков, созданных ранее. Затем нажмите [Run]. Когда новая векторная
+карта отобразится на экране, вы можете изменить уровень прозрачности слоя (правой
+кнопкой мыши по имени слоя). Если щёлкнуть правой кнопкой мыши по слою 
+``basins_areas`` в списке слоёв, то можно выключить отображение центроидов в
+полигонах через снятие галочки в `Properties` на вкладке `Selection`.
+
+
+
 
 Next we'll add some attributes to those new areas, containing the average
 elevation in each basin. In the Vector menu select :menuselection:`Update attributes --> Update area attributes from raster`
