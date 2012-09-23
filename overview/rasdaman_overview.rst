@@ -1,14 +1,14 @@
-:Author: Peter Baumann
-:Author: Jinsongdi Yu
-:Author: Dimitar Misev
-:Author: Michael Owonibi
-:Reviewer: Cameron Shorter, LISAsoft
-:Version: osgeo-live6.0
-:License: Creative Commons Attribution 3.0 Unported (CC BY 3.0)
+:Автор: Peter Baumann
+:Автор: Jinsongdi Yu
+:Автор: Dimitar Misev
+:Автор: Michael Owonibi
+:Проверил: Cameron Shorter, LISAsoft
+:Версия: osgeo-live6.0
+:Лицензия: Creative Commons Attribution 3.0 Unported (CC BY 3.0)
 
 .. image:: ../../images/project_logos/logo-rasdaman.png
  :scale: 100 %
- :alt: project logo
+ :alt: Логотип проекта
   :align: right
   :target: http://rasdaman.org
 
@@ -21,54 +21,53 @@
 Rasdaman
 ================================================================================
 
-Multi-Dimensional Raster Database
+Многомерная растровая база данных
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Rasdaman extends standard relational databases to provide storage and retrieval of multi-dimensional raster data (i.e., arrays) of unlimited size using an SQL-style raster query language with highly effective server-side optimization. Data are stored in a PostgreSQL database, thereby achieving tight information integration. A rasdaman driver is a part of the GDAL (Geospatial Data Abstraction Library) library for geospatial data formats, a MapServer integration is available in beta.
-Access interfaces include OGC WCS, WCPS, and WPS, as well as C++ and Java APIs in addition to the rasdaman raster query language.
+Rasdaman расширяет стандартные реляционные базы данных возможностями хранения и поиска многомерных растровых данных (например, массивов) неограниченного объёма, с использованием SQL-подобного растрового языка запросов с высокоэффективной оптимизацией на стороне сервера. Данные хранятся в СУБД PostgreSQL, благодаря чему достигается плотная информационная интеграция. Драйвер rasdaman является частью библиотеки GDAL (Geospatial Data Abstraction Library), в бета-версии доступна интеграция с MapServer. Интерфейсы доступа включают OGC WCS, WCPS, WPS, а также C++ и Java API, в дополнение к растровому языку запросов rasdaman.
 
-The rasdaman technology is stable and mature, deployed in production since over 10 years; the French National Geographic Institute runs rasdaman on a dozen-Terabyte airborne image map. At the ACM Principles of Database Systems Conference in 2007, raster database expert Rona Machlin characterizes rasdaman as "the most comprehensive implementation of such a system".
+Технология **rasdaman** стабильна и отработана, её история разработки насчитывает более 10 лет; французский Национальный Институт географии использует **rasdaman** в создании карт воздушных масс, занимающих десятки терабайт. В 2007 году на конференции, посвящённой принципам систем баз данных, при поддержке Ассоциации вычислительной техники, эксперт по растровым базам данных Rona Machlin охарактеризовала rasdaman как "наиболее полную реализацию подобной системы".
 
 .. image:: ../../images/screenshots/1024x768/rasdaman-collage.png
   :scale: 50 %
   :align: right
 
-Core Features
+Базовые функции
 --------------------------------------------------------------------------------
 
-    * true multi-dimensionality - from 1-D over 2-D to 3-D, 4-D, and beyond
-    * powerful, flexible query language for tasks such as visualization, classification, convolution, aggregation, and many more geospatial functions
-    * spatial indexing anda adaptive tiling for fast data access
-    * tile streaming for scalability and high performance on moderate hardware
-    * multi-user support through server multiplexing
-    * full information integration of raster data with all other geographic data in the PostgreSQL database
+    * истинная многомерность — от 1D через 2D до 3D, 4D и т.д.;
+    * мощный и гибкий язык запросов для таких задач, как визуализация, классификация, свёртывание, аггрегация и многие другие геопространственные функции;
+    * пространственная индексация и адаптивный тайлинг для быстрого доступа к данным;
+    * стриминг тайлов для масштабируемости и высокой производительности на современном аппаратном обеспечении;
+    * многопользовательская поддержка посредством мультиплексирования сервера;
+    * полная информационная интеграция растровых данных с любыми другими геоданными в СУБД PostgreSQL.
 
-Implemented Standards
+Реализованные стандарты
 --------------------------------------------------------------------------------
 
     * OGC WCS 2.0, WCPS 1.0, WPS 1.0
 
-Details
+Дополнительная информация
 --------------------------------------------------------------------------------
 
-**Website:** www.rasdaman.org
+**Веб-сайт:** www.rasdaman.org
 
-**Licence:**
+**Лицензия:** 
 
-* clients and petascope: GNU Lesser General Public License (LGPL) version 3
-* server engine: GNU General Public License (GPL) version 3
+* клиенты и петаскоп: `LGPL <http://www.gnu.org/copyleft/lesser.html>`_
+* движок сервера: `GPL версия 3 <http://www.gnu.org/licenses/gpl.html>`_
 
-**Software Version:** 8.3.1
+**Версия ПО:** 8.3.1
 
-**Supported Platforms:** Linux, Mac, Solaris
+**Поддерживаемые платформы:** Linux, Mac, Solaris
 
-**API Interfaces:** rasql, C++, Java; OGC-based WCS, WCPS, WCS-T, and WPS interfaces
+**Интерфейсы API:** rasql, C++, Java; OGC-based WCS, WCPS, WCS-T, и WPS интерфейсы
 
-**Support:**  www.rasdaman.com
+**Поддержка:**  www.rasdaman.com
 
-Quickstart
+Начало работы
 --------------------------------------------------------------------------------
 
-* :doc:`Quickstart documentation <../quickstart/rasdaman_quickstart>`
+* :doc:`Введение <../quickstart/rasdaman_quickstart>`
 
 
