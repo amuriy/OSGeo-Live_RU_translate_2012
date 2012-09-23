@@ -6,33 +6,43 @@
 :License: Creative Commons Attribution-ShareAlike 3.0 Unported  (CC BY-SA 3.0)
 
 ********************************************************************************
-OSGeo-Live Internationalisation Quickstart
+Интернационализация OSGeo-Live
 ********************************************************************************
 
-Switching Language
+Переключение языков
 --------------------------------------------------------------------------------
 
-Many common languages are included on OSGeo-Live. To switch languages:
+Поддержка многих распространённых языки включена в OSGeo-Live. Чтобы
+сменить язык системы, сделайте следующее:
 
-   #. Log out
-   #. Select another language from the bottom panel menu.
-   #. Select user="user", password="user"
-   #. Repeat the process if wish to change languages again.
+   #. Завершите сеанс (выйдите из системы)
+   #. Выберите другой язык в меню на нижней панели
+   #. Наберите user="user", password="user"
+   #. Повторите процесс, если хотите снова сменить язык.
 
-The system menus and many of the applications will now appear in the language chosen. If a specific program continues to display in English, then the program doesn't have a translation available - please consider volunteering to write a translation. Contact the program of interest directly for more information.
+Системные меню и многие из приложений будут теперь отображаться на 
+выбранном языке. Если отдельная программа продолжает отображаться на 
+английском языке — пожалуйста, рассмотрите возможность самостоятельного
+перевода. Обращайтесь к конкретной программе и её разработчикам для 
+подробностей.     
 
-For additional languages see :menuselection:`Applications --> System --> Language Support` (Requires an internet connection).
+Для дополнительных языков смотрите меню :menuselection:`Applications --> System --> Language Support`
+(требует Интернет-соединения).
 
-Keyboard Support
+Раскладки клавиатуры
 --------------------------------------------------------------------------------
-International keyboard support is installed, but you will need to configure the system for your specific keyboard. 
-To change settings open :menuselection:`Applications --> Settings --> Settings Manager` in the menu and double-click on :guilabel:`Keyboard`
-in the following dialog. Your password will be requested to allow configuration update, type "user" for the current user "user".
 
-   #. Choose :guilabel:`Layout` tab in the Keyboard dialog
-   #. Disable the option :guilabel:`Use system defaults`
-   #. Click on button :guilabel:`Add` to add an additional layout
-   #. Choose the preferred layout and
-   #. Select it in the Keyboard dialog
-   #. Go back to the main settings page (:guilabel:`Overview`)
-   #. :guilabel:`Close` the Settings Dialog and log out to apply
+Поддержка различных языков в раскладках клавиатуры установлена, но
+вам может понадобиться настроить систему под вашу клавиатуру. 
+Чтобы изменить настройки, выберите :menuselection:`Applications --> Settings --> Settings Manager`
+в меню и дважды щёлкните на :guilabel:`Keyboard` в следующем диалоге. Для
+подтверждения изменений потребуется ваш пароль, наберите "user" для 
+текущего пользователя "user".  
+
+   #. Выберите вкладку :guilabel:`Layout` в диалоге *Keyboard* 
+   #. Деактивируйте опцию :guilabel:`Use system defaults`
+   #. Щёлкните по кнопке :guilabel:`Add`, чтобы добавить дополнительную раскладку
+   #. Выберите предпочитаемую раскладку
+   #. Выберите раскладку в диалоге *Keyboard* 
+   #. Вернитесь в главное окно настроек (:guilabel:`Overview`)
+   #. Закройте диалог :guilabel:`Close` и выйдите из системы для активации раскладок.

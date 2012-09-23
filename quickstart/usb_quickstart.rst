@@ -5,84 +5,98 @@
 :License: Creative Commons Attribution-ShareAlike 3.0 Unported  (CC BY-SA 3.0)
 
 ********************************************************************************
-Creating an OSGeo-Live Bootable USB flash drive
+Создание загрузочного USB флеш-диска с OSGeo-Live
 ********************************************************************************
 
-This quickstart describes the preferred method for creating a Bootable OSGeo-Live USB flash drive. Booting from a flash drive is faster than from a DVD, and the USB drive can be configured to store data between sessions.
+Здесь описан предпочтительный метод создания загрузочного USB флеш-диска 
+с OSGeo-Live. Загрузка с USB-диска происходит быстрее, чем с DVD, и
+USB-диск может быть настроен для хранения данных между сессиями.
 
-We have have found that there are a number of quirks and tricks involved in successfully building a USB drive. We have documented what we know, but there are likely more tricks and issues. Look for latest tips here: http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB
+Мы обнаружили, что существует целый ряд способов и ухищрений для успешного
+создания такого USB-диска. Мы задокументировали то, что знаем в настоящее
+время, но наверняка есть ещё какие-нибудь приёмы. Советы смотрите здесь:  
+http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB
 
-Requirements
+Требования
 --------------------------------------------------------------------------------
 
-* A USB flash drive (at least 4 Gig, 8 Gig is recommended).
-* An OSGeo-Live ISO image (downloaded from: http://live.osgeo.org/en/download.html) or converted from a DVD.
+* USB флеш-диск (минимальный объём 4 Гб, рекомендуется 8 Гб).
+* Образ диска OSGeo-Live (ISO) (загруженный отсюда: http://live.osgeo.org/en/download.html) или полученный с DVD.
 
- * For a 4 GB USB flash drive, use osgeo-live-mini ISO (without Windows and Mac installers)
- * For a 8 GB USB flash drive, use either osgeo-live-mini ISO, osgeo-live ISO (with Windows and Mac installers)
+ * Для USB-диска объёмом 4 Гб используйте образ диска (ISO) *osgeo-live-mini* ISO (без установщиков для Windows и Mac)
+ * Для USB-диска объёмом 8 Гб и более используйте или образ диска *osgeo-live-mini*, или osgeo-live ISO (с установщиками для Windows и Mac).
 
 
-Creating bootable USB drive from Ubuntu
+Создание загрузочного USB-диска из Ubuntu
 --------------------------------------------------------------------------------
 
-(This is the recommended process for creating a USB. It is applicable to Ubuntu and Ubuntu variants such as Xubuntu and OSGeo-Live.)
+Это рекомендованный процесс для создания USB. Он применим с Ubuntu и
+вариантам Ubuntu типа Xubuntu или того же OSGeo-Live.
 
 .. note::
-   The version of Ubuntu you are running, needs to be the same or newer than the version of Xubuntu being installed onto your USB.  If installing OSGeo-Live 6.0 onto a USB, then you will need to be running Ubuntu 12.04 or newer.
+  Версия Ubuntu, которую вы запускаете, должна быть такой же или выше
+версии Xubuntu, которая будет установлена на ваш USB-диск. Если устанавливать
+OSGeo-Live 6.0 на USB, то вам потребуется запуск Ubuntu 12.04 или новее.  
 
-`Download <http://live.osgeo.org/en/download.html>`_ osgeo-live or osgeo-live-mini to your computer's hard drive. 
+`Загрузите <http://live.osgeo.org/en/download.html>`_ образы дисков *osgeo-live* или
+*osgeo-live-mini* на ваш жёсткий диск.
 
-Boot your computer into a recent Ubuntu/Xbuntu distribution. You can do this by running from an OSGeo-Live DVD, as explained in :doc:`osgeolive_quickstart`.
+Загрузите компьютер с последней версией Ubuntu/Xbuntu. Вы можете сделать это
+с OSGeo-Live DVD, как описано в :doc:`osgeolive_quickstart`.
 
-Insert the USB flash drive into your computer.
+Вставьте USB-диск в компьютер.
 
   .. image:: ../../images/screenshots/800x600/usb_select.png
     :scale: 70 %
 
-Select :menuselection:`Applications --> System --> Startup Disk Creator`, or search for `Startup Disk Creator` from the Unity desktop.
+Выберите :menuselection:`Applications --> System --> Startup Disk Creator` или
+найдите `Startup Disk Creator` в интерфейсе Unity.
 
   .. image:: ../../images/screenshots/800x600/usb_set_params.png
     :scale: 70 %
 
-Select the osgeo-live or osgeo-live-mini ISO Image that you downloaded earlier.
+Выберите *osgeo-live* or *osgeo-live-mini* ISO-образы, загруженные ранее.  
 
-Select the USB flash drive. If you have extra room you might adjust the slider to create persistent storage space on the USB drive (recommended).
+Выберите USB-диск. Если вы имеете дополнительное место на диске, вы можете
+подтянуть слайдер, чтобы создать пространство для постоянного хранения данных
+на диске (рекомендовано).
 
-Select :guilabel:`Make Startup Disk`
+Выберите :guilabel:`Make Startup Disk`.
 
   .. image:: ../../images/screenshots/800x600/usb_installing.png
     :scale: 70 %
 
-Wait 20 minutes or so for the USB flash drive to be created.
+Подождите 20 минут или около того, пока USB-диск создаётся.
 
 
-Booting from the usb drive:
+Загрузка с USB-диска
 --------------------------------------------------------------------------------
 
-#. Start with the computer off.
-#. Insert the usb drive into an open usb port.
-#. Power on the Machine and select to boot from USB:
+#. Выключите компьютер
+#. Вставьте USB-диск в свободный USB-порт
+#. Включите компьютер и выберите загрузку с USB:
 
-   * Most computers are not set to boot from a USB drive by default.
-   * When booting, look for a message indicting a Boot Menu (most commonly you press F12)
-   * If your computer does not have a boot menu, then boot into your system BIOS. The button to enter BIOS varies by brand and model of computer. If you can't figure out yours try this website that lists many BIOS hotkeys. http://www.mydigitallife.info/comprehensive-list-of-how-key-to-press-to-access-bios-for-various-oem-and-computer-systems/
+   * Большинство компьютеров не настроены для загрузки с USB по умолчанию
+   * При загрузке смотрите на сообщения, появляющиеся в меню загрузки (в большинстве случаев нужно нажать клавишу F12)
+   * Если ваш компьютер не имеет загрузочного меню, то войдите в настройки BIOS. Клавиша для входа варьируется в зависимости от производителя и модели компьютера. Если вы не смогли войти в настройки сами, посмотрите на веб-сайте, где перечислены "горячие клавиши" для разных BIOS (http://www.mydigitallife.info/comprehensive-list-of-how-key-to-press-to-access-bios-for-various-oem-and-computer-systems/ ).
 
-#. Select to boot from the USB device.
+#. Выберите загрузку с USB-устройства
 
-   * Note, that for some computers you will need to have the USB drive inserted into the computer in order to select it.
-   * Note also, the USB drive is often listed under hard drives rather than removable devices. 
-   * `Video <http://www.youtube.com/watch?v=eQBdVO-n6Mg>`_ demonstrates booting from usb.
+   * Заметьте, что на некоторых компьютерах вы должны иметь USB-диск, вставленный в компьютер, чтобы выбрать его.
+   * Заметьте также, что USB-диск часто находится в списке ниже жёстких дисков, а не съёмных устройств. 
+   * `Видео <http://www.youtube.com/watch?v=eQBdVO-n6Mg>`_, демонстрирующее загрузку с USB.
 
-Run:
+
+Запуск
 --------------------------------------------------------------------------------
 
-Run as per: :doc:`osgeolive_quickstart`
+Запуск, как описано в :doc:`osgeolive_quickstart`
 
-See Also:
+Смотрите также:
 --------------------------------------------------------------------------------
 
  * :doc:`osgeolive_quickstart`
  * :doc:`virtualization_quickstart`
  * :doc:`osgeolive_install_quickstart`
- * Alternative USB creation methods and latest tips are collected here: `wiki <http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB>`_
- * Questions can be directed to our email list: http://lists.osgeo.org/mailman/listinfo/live-demo
+ * Альтернативные способы создания загрузочного USB-диска и актульные советы собраны здесь: `wiki <http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB>`_
+ * Вопросы могут быть заданы через наш мэйл-лист http://lists.osgeo.org/mailman/listinfo/live-demo 
