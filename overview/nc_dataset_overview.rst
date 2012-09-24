@@ -9,25 +9,28 @@
   :align: right
   :target: http://wiki.osgeo.org/wiki/Category:Education
 
-OSGeo North Carolina, USA Educational dataset
+Образовательный набор данных OSGeo по Северной Каролине (США)
 ================================================================================
 
-Map Data
+Данные
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. Comment: the following text is courtesy of Helena Mitasova & Markus Neteler
+.. Comment: следующий текст любезно предоставлен Helena Mitasova и Markus Neteler
 
-This data set is a comprehensive collection of raster, vector and imagery data covering parts of North Carolina (NC), USA, prepared from public data sources provided by the North Carolina state and local government agencies and Global Land Cover Facility (GLCF).
+Набор данных NC — полная коллекция растровых, векторных данных и космоаэроснимков
+на территорию отдельных участков штата Северная Каролина (США), подготовленных на 
+основе публичных источников данных этого штата, местных правительственных агенств
+и Global Land Cover Facility (GLCF).      
 
-The data set includes sections of the NC capital city Raleigh and its surroundings. 
+Набор данных включает участки столицы Северной Каролины г. Роли и его окрестности.    
 
-Data are provided at three hierarchical levels:
+Данные представлены в виде трёх иерархических уровней:
 
-* entire NC state with raster data at 500m resolution;
+* весь штат Северная Каролина с растровыми данными разрешением 500 м;
 
-* South-west Wake County with raster data at resolutions 30m-10m; and
+* юго-западная территория Wake County с растровыми данными разрешением 10-30 м; и
 
-* a small watershed in rural area with data resolutions of 1m-3m (see image).
+* небольшой участок в сельской местности с растровыми данными разрешением 1-3 м (см. изображение).
 
 .. image:: ../../images/screenshots/1024x768/north_carolina_dataset_nviz.jpg
   :scale: 60 %
@@ -35,39 +38,39 @@ Data are provided at three hierarchical levels:
   :align: right
 
 
-Core Features
+Особенности
 --------------------------------------------------------------------------------
 
-* County and state level raster, vector, and KML map layers with full meta-data, specifically selected to cover the wide needs of teaching introductory GIS courses and providing examples for software help pages and tutorials.
+* Растровые, векторные и KML-данные локального и регионального уровня имеют полный набор метаданных и специально подобраны, чтобы покрыть потребности преподавателей вводных ГИС-курсов и предоставить примеры справочных страниц и учебных пособий.
 
-* The Creative Commons license means the data can be used, distributed, and modified by anyone. Without the usual legal encumbrances of much publicly available geodata it is ideal for use in the classroom.
+* Лицензия Creative Commons обозначает, что данные могут быть используемы, распространяемы и модифицируемы кем угодно. Без обычных юридических обременений, характерных для многих общедоступных геоданных, этот набор идеально подходит для использования в учебном процессе.
 
 
-Data Sets
+Наборы данных:
 --------------------------------------------------------------------------------
 
-Cultural Vector Data Themes:
-  Includes political boundaries, roads, bus stops, firestations, census blocks, and much more.
+Векторные данные культурной тематики:
+  Включают политические границы, дороги, автобусные остановки, пожарные станции, участки переписи населения и многое другое.
 
-Physical Vector Data Themes:
-  Includes LiDAR aerial elevation measurements, contour lines, streams, precipitation, and much more.
+Векторные данные физической тематики:
+  Включают измерения поверхности LiDAR, изогипсы, водотоки, осадки и многое другое.
 
-Raster Data Themes:
-  Includes digital elevation maps, landuse and landcover, LANDSAT7 imagery, and much more.
+Растровые данные:
+  Включают цифровые модели рельефа, данные по землепользованию и растительному покрову, космоснимки LANDSAT 7 и многое другое.
 
 
-Details
+Дополнительная информация
 --------------------------------------------------------------------------------
 
-**Website:** http://www.grassbook.org/data_menu3rd.php
+**Веб-сайт:** http://www.grassbook.org/data_menu3rd.php
 
-**License:** `Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0) <http://creativecommons.org/licenses/by-sa/3.0/>`_
+**Лицензия:** `Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0) <http://creativecommons.org/licenses/by-sa/3.0/>`_
 
-**Data Version:** 2008
+**Версия данных:** 2008
 
-**Data format:** GeoTIFF, Shapefiles, KML
+**Форматы данных:** GeoTIFF, Shapefiles, KML
 
-**Spatial coordinate system:** NC State Plane (Lambert Conformal Conic), NAD83
+**Координатная система:** NC State Plane (Lambert Conformal Conic), NAD83
 
-**Support:** http://lists.osgeo.org/mailman/listinfo/geodata
+**Поддержка:** http://lists.osgeo.org/mailman/listinfo/geodata
 
