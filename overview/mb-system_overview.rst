@@ -13,22 +13,22 @@
 MB-System
 ================================================================================
 
-Sea floor mapping
+Картографирование морского дна
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-MB-System is an open source software package for the processing and 
-display of bathymetry and backscatter imagery data derived from
-multibeam, interferometry, and sidescan sonars. It makes extensive
-use of the :doc:`GMT <gmt_overview>` software.
+MB-System — свободное программное обеспечение для обработки и
+отображения батиметрических данных и изображений, полученных 
+при многолучевой съёмке, интерферометрии и с помощью гидролокаторов 
+бокового обзора. В пакете широко используются утилиты :doc:`GMT <gmt_overview>`.      
 
-MB-System has been under development since 1993, with active support
-from a number of research and science organisations.
+MB-System развивается с 1993 года с активной поддержкой ряда
+исследовательских и научных организаций.  
 
-.. comment .. note:: Due to space constraints on the DVD, MB-System is currently
-.. comment  not installed. To install it open up a terminal and
-.. comment  run ``cd gisvm/bin; sudo ./install_mb-system.sh``
+.. note:: Из-за дефицита места на DVD-диске MB-System в настоящее время
+ не установлена. Для установки откройте терминал и запустите: 
+ ``cd gisvm/bin; sudo ./install_mb-system.sh``
 
-Core Features
+Базовые функции
 --------------------------------------------------------------------------------
 
 .. image:: ../../images/screenshots/1024x768/mb-system_screenshot.png
@@ -36,40 +36,40 @@ Core Features
   :alt: screenshot
   :align: right
 
-* Read, list, and translate many swath data formats
-* Batch processing of large datasets
-* Calculate and compensate for sound velocity profile
-* Navigation and inertial systems data analysis and editor
-* Patch test analysis
-* Automatic or interactive bathymetry data cleaning
-* Interactive 3D visualization data cleaning tools
-* Gridding, statistical analysis, and extraction of cleaned bathymetric product
-* Map reprojection
-* Sidescan and amplitude data processing and mosaicking
-* Grid visualization
-* Survey planning
-* PostScript graphics
-* Exporting data products to GIS and visualization packages
-* Subbottom profiler data processing
-* Tide modeling and correction
+* Чтение, вывод и трансляция многих форматов swath-данных
+* Массовая обработка больших наборов данных
+* Расчёт и компенсация для профиля скорости звука
+* Навигация, а также анализ и редактирование данных инерциальных систем
+* Патч-тест анализ
+* Автоматическая и интерактивная очистка батиметрических данных
+* Интерактивная очистка данных 3D-визуализации
+* Гриддинг, статистический анализ и извлечение очищенных батиметрических данных
+* Перепроецирование данных
+* Обработка и мозаицирование амплитудных данных и данных бокового обзора
+* Визуализация растров
+* Планирование изысканий
+* Графика в PostScript 
+* Экспорт данных в ГИС и пакеты визуализации
+* Обработка данных поддонного профилирования
+* Временное моделирование и коррекция
 
-Details
+Дополнительная информация
 --------------------------------------------------------------------------------
 
-**Website:** http://www.ldeo.columbia.edu/res/pi/MB-System/
+**Веб-сайт :** http://www.ldeo.columbia.edu/res/pi/MB-System/
 
-**Licence:** GNU General Public License (GPL) version 3
+**Лицензия:** `GPL версия 3 <http://www.gnu.org/licenses/gpl.html>`_
 
-**Software Version:** 5.3.1982
+**Версия ПО:** 5.3.1982
 
-**Supported Platforms:** GNU/Linux, Mac OSX, MS Windows (with Cygwin)
+**Поддерживаемые платформы:** GNU/Linux, Mac OS X, MS Windows (через Cygwin)
 
-**API Interfaces:** Command line
+**Интерфейсы API:** Command line
 
 
-Quickstart
+Начало работы
 --------------------------------------------------------------------------------
 
-* :doc:`Quickstart documentation <../quickstart/mb-system_quickstart>`
+* :doc:`Введение <../quickstart/mb-system_quickstart>`
 
 
