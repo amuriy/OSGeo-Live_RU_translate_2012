@@ -8,18 +8,23 @@
   :alt: project logo
   :align: right
 
-Mapnik Quickstart
+Начало работы с Mapnik
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mapnik is an toolkit for developing mapping applications. Above all Mapnik is about making beautiful maps. It is easily extensible and suitable for both desktop and web development.
+Mapnik представляет собой библиотеку картографического рендеринга, главной
+задачей которой является создание красивых карт. Эта легко расширяемая
+и удобная в использовании библиотека может быть использована при
+разработке как настольных, так и Веб-приложений.
 
 
-Mapnik & Python
+Mapnik и Python
 --------------------------------------------------------------------------------
 
-Mapnik and its python bindings are installed and ready to be used for scripting on this machine.
+Mapnik и его питоновские биндинги установлены и готовы к использованию на
+данном диске.
 
-Creating maps in python is easy with Mapnik. Type `python` on the command line to enter a python interpreter and try this::
+Для создания тестовой карты с использованием Mapnik наберите в командной
+строке `python` и введите следующую последовательность команд::
 
     >>> import mapnik, os
     >>> m = mapnik.Map(600,400)
@@ -32,50 +37,56 @@ Creating maps in python is easy with Mapnik. Type `python` on the command line t
 
 .. note::
     
-      The above code depends on having an XML stylesheet that Mapnik can read, defining the layers
-      to read data from and the styles to apply to those layers. You can create one of these inside QGIS
-      with the Quantumnik plugin: http://bitbucket.org/springmeyer/quantumnik/
+      Вышеприведённый код задействует XML файл, содержащий описание
+      слоёв и используемых стилей карты. Вы можете создать такой файл в QGIS,
+      воспользовавшись плагином Quantumnik: http://bitbucket.org/springmeyer/quantumnik/.
 
 
-Mapnik & OpenLayers
+Mapnik и OpenLayers
 --------------------------------------------------------------------------------
 
-In addition a basic demo application is available, which highlights using Mapnik to serve tiles into an OpenLayers web map in the OSM/Google tile scheme.
+На данном диске также доступен пример, иллюстрирующий использование
+Mapnik для создания тайлов согласно схеме, применяемой в OSM/Google, в связке
+с приложением на базе OpenLayers.
 
-The demo uses a tileserver designed for Mapnik called "TileLite"
+Данный пример использует тайловый сервер "TileLite", разработанный специально для
+Mapnik.
 
-  * More information about TileLite: http://bitbucket.org/springmeyer/tilelite/
+  * Дополнительную информацию о TileLite можно найти по адресу: http://bitbucket.org/springmeyer/tilelite/
 
-To run the demo just follow these steps:
+Для запуска примера выполните следующие шаги:
 
-  #. Click :menuselection:`Desktop --> Spatial Tools --> Start Mapnik & TileLite`
+  #. Выберите :menuselection:`Desktop --> Spatial Tools --> Start Mapnik & TileLite`
 
-    * The server should start in a terminal window (which stays open and outputs basic debugging information).
+    * Сервер должен запуститься в терминальном окне (которое, оставаясь открытым,
+      выводит различную отладочную информацию).
         
-    * If the terminal window does not open, then try to re-installing TileLite and starting the server from the command line::
+    * Если терминальное окно не открывается, попробуйте переустановить
+      TileLite и запустить его из командной строки::
       
         $ sudo easy_install tilelite
         $ liteserv.py /usr/local/share/mapnik/demo/population.xml
 
 
-  #. Check to make sure the server is working by visiting the TileLite welcome page at http://localhost:8012
+  #. Чтобы убедиться в том, что сервер запущен, перейдите на страницу приветствия
+     TileLite, расположенную по адресу http://localhost:8012
 
-  #. Then visit the example TileLite OpenLayers "World Population" demo application page:
+  #. Затем перейдите на страницу примера TileLite OpenLayers “World Population”:
     
-    * This page is at `http://localhost/mapnik/local.html <../../mapnik/local.html>`_
+    * Эта страница расположена по адресу `http://localhost/mapnik/local.html <../../mapnik/local.html>`_
 
 
-What Next?
+Что дальше?
 --------------------------------------------------------------------------------
 
-* Mapnik Tutorials
+* Руководства Mapnik
 
-  Follow the tutorials_ to learn more about Mapnik.
+  Изучите руководства_, чтобы узнать подробнее о Mapnik.
 
-.. _tutorials: http://trac.mapnik.org/wiki/MapnikTutorials
+.. _руководства: http://trac.mapnik.org/wiki/MapnikTutorials
 
-* Explore files on the DVD
+* Изучите файлы на DVD
 
-  See also the included files_ on this DVD.
+  Файлы доступны здесь_.
 
-.. _files: file:///usr/local/share/mapnik/
+.. _здесь: file:///usr/local/share/mapnik/
