@@ -43,8 +43,8 @@
 MapGuide Maestro
 --------------------------------------------------------------------------------
 
-1. Для запуска Maestro перейдите в Desktop->Server и нажмите кнопку
-   MapGuide Maestro. Появится окно авторизации как показано на скриншоте ниже.
+1. Для запуска Maestro перейдите в *Desktop->Server* и нажмите кнопку
+   MapGuide Maestro. Появится окно авторизации, как показано на скриншоте ниже.
    Подключитесь к серверу http://localhost:8008/mapguide/mapagent/mapagent.fcgi,
    используя имя пользователя "Administrator" и пароль "admin".
 
@@ -53,7 +53,7 @@ MapGuide Maestro
   :alt: screenshot
   :align: center
  
-2. Нажмите Ok для перехода в главное окно Maestro:
+2. Нажмите *Ok* для перехода в главное окно Maestro:
 
 .. image:: ../../images/screenshots/1024x768/mapguide_maestroMain.png
    :scale: 50%
@@ -61,7 +61,7 @@ MapGuide Maestro
    :align: center
 
 3. Разверните список, расположенный в левой части окна, и перейдите в
-   Samples->Sheboygan->Layers, дважды нажмите на пункт Buildings, после
+   *Samples->Sheboygan->Layers*, дважды нажмите на пункт *Buildings*, после
    чего в правой части появится редактор выбранного слоя:
 
 .. image:: ../../images/screenshots/1024x768/mapguide_maestroLayerFeatures.png
@@ -69,8 +69,8 @@ MapGuide Maestro
    :alt: mapguide maestro layer features
    :align: center
 
-4. Прокрутите вниз окно редактора чтобы увидеть панель Layer style.
-   Для вызова редактора стиля нажмите на ячейке ... поля Featurestyle:
+4. Прокрутите вниз окно редактора, чтобы увидеть панель *Layer style*.
+   Для вызова редактора стиля нажмите на ячейке ... поля *Featurestyle*:
 
 .. image:: ../../images/screenshots/1024x768/mapguide_maestroLayerStyle.png
    :scale: 50%
@@ -82,7 +82,7 @@ MapGuide Maestro
    :alt: mapguide maestro color chooser
    :align: center
 
-5. В выпадающем списке Foreground Color выберите Green и нажмите Ok.
+5. В выпадающем списке *Foreground Color* выберите *Green* и нажмите *Ok*.
    После чего в главном окне Maestro нажмите указанную кнопку для сохранения
    изменений: 
 
@@ -93,10 +93,10 @@ MapGuide Maestro
 
 6. Для просмотра внесённых изменений в браузере перейдите по адресу
    http://localhost:8008/mapguide/phpviewersample/ajaxtiledviewersample.php
-   или нажмите кнопку Preview на панели инструментов главного окна Maestro,
+   или нажмите кнопку *Preview* на панели инструментов главного окна Maestro,
    после чего откроется браузер и автоматически перейдёт по указанному адресу.
-   В появившейся карте измените масштаб, чтобы был виден слой Buildings. Как
-   можно заметить здания отрисованы зелёным цветом в соответствии с настройками,
+   В появившейся карте измените масштаб, чтобы был виден слой *Buildings*. Как
+   можно заметить, здания отрисованы зелёным цветом в соответствии с настройками,
    выполненными в Maestro.
 
 .. image:: ../../images/screenshots/1024x768/mapguide_buildingColorBeforeChanging.png
