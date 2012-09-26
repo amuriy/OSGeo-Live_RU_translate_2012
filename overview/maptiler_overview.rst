@@ -1,11 +1,11 @@
-:Author: Klokan Petr Pridal
+﻿:Author: Klokan Petr Pridal
 :Reviewer: Cameron Shorter, LISAsoft
 :Version: osgeo-live5.5
 :License: Creative Commons Attribution 3.0 Unported (CC BY 3.0)
 
 .. image:: ../../images/project_logos/logo-maptiler.png
   :scale: 80 %
-  :alt: project logo
+  :alt: логотип проекта
   :align: right
   :target: http://www.maptiler.org/
 
@@ -13,44 +13,53 @@
 MapTiler
 ================================================================================
 
-Map Publishing
+Публикация карт
 --------------------------------------------------------------------------------
 
-MapTiler is a desktop application for the creation of map tiles for rapid raster map publishing. Geodata is transformed to tiles compatible with Google Maps and Earth - ready for publishing via direct upload to any webserver or a cloud storage (such as Amazon S3).
+MapTiler — настольное приложение, создающее тайлы для быстрой публикации
+растровых карт. Геоданные трансформируются в тайлы, совместимые с Google Maps и
+Google Earth и готовые к публикации путём прямой загрузки на любой веб-сервер
+или облачное хранилище (например, Amazon S3).
 
-No extensive configuration on the server side is necessary, any simple file hosting is fine. Dynamic interaction such as panning and zooming, overlay of markers and vector data is provided by powerful browser functionality.
+На стороне сервера не требуется никакой сложной конфигурации, подойдёт любой
+простой хостинг файлов. Динамическое взаимодействие, скажем, панорамирование и
+масштабирование, наложение маркеров и векторных данных обеспечивается мощной
+функциональностью на стороне браузера.
 
-The application directly generates a ready to use simple viewer based on OpenLayers and Google Maps API and can be easily customized.
+Приложение непосредственно генерирует готовое к использованию простое средство
+просмотра, базирующееся на OpenLayers и Google Maps API, которое может быть
+легко доработано.
 
-MapTiler is a multi-platform desktop application. Installers are available for Windows, Mac OS X and packages for linux (Debian/Ubuntu).
+MapTiler — многоплатформенное настольное приложение. Доступны инсталляторы для
+Windows и Mac OS X и пакеты для Linux (Debian/Ubuntu).
 
-Core Features
+Базовые функции
 --------------------------------------------------------------------------------
 
-* Well known Javascript APIs supported: OpenLayers, Google Maps API
-* No extra server software installation necessary
-* Hosting almost everywhere: cloud storage such as Amazon S3 or any cheap "unlimited" webhosting with FTP access
-* Easy mashup with commercial layers (Google, Bing, Yahoo) or OpenStreetMap
-* Tiles follow OSGEO TMS (Tile Map Service Specification)
-* Ability to process raster data in various formats: TIFF/GeoTIFF, MrSID, ECW, JPEG2000, Erdas HFA, NOAA BSB, JPEG and more...
-* Available commercial support and parallelized rendering on multi-core CPUs or on Amazon EC2 cluster
+* Поддерживаются известные API на JavaScript: OpenLayers и Google Maps API
+* Не требуется установка дополнительного серверного ПО
+* Карты можно размещать почти везде: в "облачном" хранилище, таком, как Amazon S3, или на любом дешёвом "безлимитном" веб-хостинге с доступом по FTP
+* Легко смешивать с коммерческими слоями (Google, Bing, Yahoo!) или OpenStreetMap
+* Тайлы следуют спецификации OSGEO TMS (Tile Map Service Specification)
+* Возможность обрабатывать растровые данные различных форматов: TIFF/GeoTIFF, MrSID, ECW, JPEG2000, Erdas HFA, NOAA BSB, JPEG и другие...
+* Доступны коммерческая поддержка и параллельный рендеринг на многоядерных ЦПУ или кластере Amazon EC2
 
-Details
+Дополнительная информация
 --------------------------------------------------------------------------------
 
-**Website:** http://www.maptiler.org/
+**Веб-сайт:** http://www.maptiler.org/
 
-**Licence:** New BSD License
+**Лицензия:** `BSD <http://ru.wikipedia.org/wiki/BSD_License>`_
 
-**Software Version:** 1.0beta2
+**Версия ПО:** 1.0beta2
 
-**Supported Platforms:** Windows, Linux, Mac
+**Поддерживаемые платформы:** Windows, Linux, Mac
 
-**Community:** http://groups.google.com/group/maptiler 
+**Сообщество:** http://groups.google.com/group/maptiler 
 
-**Commercial support and applications:** http://www.maptiler.com/
+**Коммерческая поддержка и приложения:** http://www.maptiler.com/
 
-Quickstart
+Начало работы
 --------------------------------------------------------------------------------
     
-* :doc:`Quickstart documentation <../quickstart/maptiler_quickstart>`
+* :doc:`Введение <../quickstart/maptiler_quickstart>`

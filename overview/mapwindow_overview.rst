@@ -1,4 +1,4 @@
-:Author: Paul Meems, TopX Geo-ICT The Netherlands (RST conversion)
+﻿:Author: Paul Meems, TopX Geo-ICT The Netherlands (RST conversion)
 :Reviewer: Cameron Shorter, LISAsoft
 :Product: MapWindow GIS 4.8.6
 :Version: osgeo-live5.5
@@ -14,89 +14,94 @@
 MapWindow GIS
 ================================================================================
 
-Desktop GIS
+Настольная ГИС
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-MapWindow GIS is a Windows based, Open Source GIS client where
-you can visualize, manage, edit, analyse data, and compose printable maps.
-It includes powerful analytical functions through integration with GEOS and GDAL/OGR.
-MapWindow is easy to incorporate into MS-Office based products such as MS-Excel and MS-Access, as well as programs written in VB6, C++, C#, VB.NET, and Delphi, as MapWindow is based upon ActiveX controls.
+MapWindow GIS — это ГИС-клиент с открытым исходным кодом под Windows, в котором
+можно визуализировать, организовывать, редактировать и анализировать данные, а
+также составлять карты, пригодные для печати. Он включает мощные аналитические функции
+через интеграцию с GEOS и GDAL/OGR. MapWindow легко встраивается как в продукты,
+основанные на Microsoft Office (в том числе MS Excel и MS Access), так и в программы, 
+написанные на VB6, C++, C#, VB.NET и Delphi, так как базируется на элементах управления ActiveX.
 
-.. note:: MapWindow requires installation on a Microsoft Windows system before it can be run. Installation files are included on the full ISO version of `OSGeo-Live <http://live.osgeo.org>`_ or may be downloaded from http://mapwindow4.codeplex.com/releases.
+.. note:: MapWindow может быть запущен после установки под Microsoft Windows.
+Установочные файлы включены в полную ISO-версию `OSGeo-Live <http://live.osgeo.org>`_
+или могут быть загружены с http://mapwindow4.codeplex.com/releases.
    
 .. image:: ../../images/screenshots/1024x768/mapwindow-screenshot.jpg
-  :alt: Mapwindow Screenshot
+  :alt: Скриншот MapWindow
   :scale: 50 %
   :align: right
 
-Core Features
+Базовые функции
 --------------------------------------------------------------------------------
 
-* Friendly graphical user interface:
+* Дружественный графический интерфейс пользователя:
 
-    * identify/select features,
-    * edit/view/search attributes,
-    * on the fly projection,
-    * print layout,
-    * feature labeling,
-    * change vector and raster symbology,
-    * and more ...
+    * идентификация/выбор пространственных объектов;
+    * редактирование/просмотр/поиск значений атрибутов;
+    * перепроецирование на лету;
+    * компоновка для печати;
+    * подписывание пространственных объектов;
+    * изменение символики отображения векторных данных и растров;
+    * и многое другое...
 
-* Easy Viewing of many Vector and Raster Formats:
+* Лёгкость просмотра данных многих векторных и растровых форматов:
 
-    * most vector formats: including ESRI shapefiles, MapInfo, SDTS and GML,
-    * raster formats such as digital elevation models, aerial photography or landsat imagery,
-    * Tiles services, like OpenStreetMap, ArcGIS Online.
+    * большинство векторных форматов, включая shape-файлы ESRI, форматы MapInfo, SDTS и GML;
+    * растровые форматы, такие, как цифровые модели рельефа, аэрофотоснимки и снимки Landsat;
+    * тайловые сервисы, например, OpenStreetMap или ArcGIS Online.
 
-* Create, edit and export spatial data using:
+* Создание, редактирование и экспорт пространственных данных, используя:
 
-    * digitizing tools for shapefile format,
-    * the georeferencer plugin,
-    * GPS tools to import and export GPX format, convert other GPS formats to GPX, or down/upload directly to a GPS unit.
+    * инструменты оцифровки для shape-файлов;
+    * плагин геопривязки;
+    * инструменты GPS для импорта и экспорта данных в формате GPX; средства конвертации GPS-данных других форматов в GPX, прямых операций загрузки/выгрузки в/из GPS.
 
-* Perform spatial analysis using plugins:
+* Пространственный анализ с использованием плагинов:
 
-    * map algebra,
-    * terrain analysis,
-    * hydrologic modeling (TauDEM),
-    * network analysis,
-    * and many others.
+    * картографическая алгебра;
+    * анализ рельефа;
+    * гидрологическое моделирование (TauDEM);
+    * сетевой анализ;
+    * и многое другое.
 
-* Extensible plugin architecture:
+* Расширяемая архитектура, основанная на плагинах:
 
-    * Plug-in architecture makes it easy to add additional functionality to MapWindow. Plug-ins can be written in any .NET language (C#, VB.NET) using Visual Studio Pro or the free SharpDevelop or Visual Studio Express.  
+    * Механизм плагинов позволяет легко расширять функциональность MapWindow. Плагины можно писать на любом языке .NET, используя профессиональную версию Visual Studio, свободный SharpDevelop или Visual Studio Express.
  
-* ActiveX control:
+* Элемент управления ActiveX:
 
-    * Uses an ActiveX control written in C++. This control can be used in custom applications written in languages like VB6, C++, C#, VB.NET, and Delphi, and can be used in MS-Office products like MS-Access and MS-Excel.
+    * Используется элемент управления ActiveX, написанный на C++. Этот элемент управления можно использовать в собственных приложениях, написанных на таких языках, как VB6, C++, C#, VB.NET и Delphi, и в продуктах из состава MS Office — MS Access и MS Excel.
 
-Implemented Standards
+Реализованные стандарты
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* OGC Standards: 
+
+* Стандарты OGC: 
     * WMS (v1.1, v1.3)
-    * WFS v1.1 (through a separate plug-in)
+    * WFS v1.1 (с помощью отдельного плагина)
     * Web Map Tile Service (WMTS)
     * GML    
 
-Details
+Дополнительная информация
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Website:** http://www.mapwindow.org
+**Веб-сайт:** http://www.mapwindow.org
 
-**Licence:** MPLv1.1
+**Licence:** `MPL версия 1.1 <http://www.mozilla.org/MPL/1.1/>`_
 
-**Software Version:** 4.8.6
+**Версия ПО:** 4.8.6
 
-**Supported Platforms:** Windows
+**Поддерживаемые платформы:** Windows
 
-**API Interfaces:** Visual Basic 6, VBA (MS-Access, MS-Excel), C++, .NET (C#, VB.NET)
+**Интерфейсы API:** Visual Basic 6, VBA (MS Access, MS Excel), C++, .NET (C#, VB.NET)
 
-**Community Support:** http://www.mapwindow.org/apps/wiki/doku.php?id=forums
+**Поддержка сообществом:** http://www.mapwindow.org/apps/wiki/doku.php?id=forums
 
-**Commercial Support:** http://www.mapwindow.nl, http://www.mapwindow.in/, http://www.mapwindow.org/pages/donate.php
+**Коммерческая поддержка:** http://www.mapwindow.nl, http://www.mapwindow.in/, http://www.mapwindow.org/pages/donate.php
 
 
-Quickstart
+Начало работы
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* :doc:`Quickstart documentation <../quickstart/mapwindow_quickstart>`
+* :doc:`Введение <../quickstart/mapwindow_quickstart>`
