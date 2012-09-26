@@ -19,67 +19,66 @@ R — мощная и широко распространённая прогр�
 статистических вычислений и графики, которая отлично подходит
 для анализа и обработки геопространственных данных.      
 Возможности геопространственного анализа с помощью R доступны
-через пакеты R ()
+через т.н. *пакеты* (модули, которые расширяют возможности R). 
+Различные пакеты обеспечивают доступ как к большому числу
+традиционных алгоритмов, так и к самым новым из них, причём часто
+до того, как они появятся в другом открытом или проприетарном ПО.
 
-geographic data sets. Geospatial analysis capabilities within R are
-available in R packages (modules that extend the capabilities of R)
-that provide access to a large number of traditional and state of the
-art algorithms, often before they are available in other open source
-or proprietary software. R and its packages are able to process point,
-line, polygon and grid data. Users can accomplish a broad array of
-tasks such as: image classification, statistical analysis to infer
-spatial relationships and patterns of features, and others listed in
-the core features below. The functions available via R complement and
-advance capabilities found in GIS and image processing software.
+С помощью R можно обрабатывать точечные, линейные и полигональные 
+векторные данные, и также растры. Пользователи могут решать широкий 
+спектр задач: классификация изображений, статистический анализ для
+выявления пространственных связей и структуры свойств и многое другое,
+перечисленное в разделе "Базовые функции" ниже. Функции, доступные в 
+R, дополняют и развивают возможности ГИС-пакетов и программ для работы
+с данными дистанционного зондирования Земли (ДЗЗ).                  
 
-The core R interface is a command line window which provides excellent
-flexibility and control but tends to lengthen the time required to
-become a proficient user when compared to software with a graphical
-user interface (GUI). Fortunately R is well documented on the web site
-which eases the learning process. Scripts are often used to automate
-processing steps and there are projects that are developing open
-source GUIs for R (http://rwiki.sciviews.org/doku.php?id=guis:guis).
-
-R is an implementation of the S programming language and there is
-significant compatibility between R and legacy S and S-Plus code as
-well as between R and the modern commercial version of S, TIBCO
-Spotfire S+. This makes it possible to convert different
-versions of S code to run on R without major code modifications.
+Основной интерфейс R — командная строка, которая даёт отличную гибкость
+и контроль, но требует большего времени, чтобы стать опытным пользователем, 
+по сравнению с программами с графическим интерфейсом. С другой стороны, 
+R хорошо документирован (имеется в т.ч. и онлайн-документация), что облегчает
+процесс обучения. Существует несколько проектов по созданию графического 
+интерфейса к R (http://rwiki.sciviews.org/doku.php?id=guis:guis).  
+Для автоматизации работы используются скрипты.
+  
+**R** представляет собой свободная реализацию языка программирования **S**. 
+Между R и S/S-Plus (а также современной коммерческой версией S, TIBCO Spotfire 
+S+) достигнута значительная кодовая совместимость. Это позволяет переносить
+разные версии S-кода в R без больших модификаций.  
 
 .. image:: ../../images/screenshots/1024x768/r-screenshot.png
   :scale: 50 %
   :alt: project logo
   :align: right
 
-Core Features
+Базовые функции
 --------------------------------------------------------------------------------
 
-* Complete Object Oriented Programming Language designed for Statistics and similar Mathematical intensive applications
-* Hundreds of community contributed add-on packages for spatial statistics
-* Classes for spatial data
-* Handling spatial data
-* Reading and writing spatial data
-* Point pattern analysis
-* Geostatistics
-* Disease mapping and areal data analysis
-* Spatial regression
-* Ecological analysis
+* Полностью объектно-ориентированный язык программирования, спроектированный для статистики и прочих подобных математических приложений
+* Сотни распространяемых сообществом дополнительных пакетов для пространственной статистики
+* Классы для пространственных данных
+* Обработка пространственных данных
+* Чтение и запись пространственных данных
+* Анализ структур точечных данных
+* Геостатистика 
+* Картирование заболеваний и площадной анализ данных
+* Пространственная регрессия 
+* Экологический анализ
 
-Details
+Дополнительная информация 
 --------------------------------------------------------------------------------
 
-**Website:** http://cran.r-project.org
+**Веб-сайт:** http://cran.r-project.org
 
-**Licence:** GPL
+**Лицензия:** `GPL <http://www.gnu.org/licenses/gpl.html>`_
 
-**Software Version:** 2.15.1
+**Версия ПО:** 2.15.1
 
-**Supported Platforms:** Windows, Linux, Mac, Unix
+**Поддерживаемые платформы:** Windows, Linux, Mac, Unix
 
-**Community Support:** http://cran.r-project.org/web/views/Spatial.html
+**Поддержка сообществом:** http://cran.r-project.org/web/views/Spatial.html
 
 
-Quickstart
+Начало работы
 --------------------------------------------------------------------------------
     
-* :doc:`Quickstart documentation <../quickstart/R_quickstart>`
+* :doc:`Введение <../quickstart/R_quickstart>`
