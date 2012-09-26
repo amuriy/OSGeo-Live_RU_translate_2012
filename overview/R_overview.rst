@@ -9,14 +9,18 @@
   :align: right
   :target: http://cran.r-project.org
 
-R for Spatial Data
+R для пространственных данных
 ================================================================================
 
-Statistical Programming
+Статистическое программирование
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-R is a powerful, widely used software environment for statistical
-computing and graphics which excels at analyzing and processing
+R — мощная и широко распространённая программная среда для
+статистических вычислений и графики, которая отлично подходит
+для анализа и обработки геопространственных данных.      
+Возможности геопространственного анализа с помощью R доступны
+через пакеты R ()
+
 geographic data sets. Geospatial analysis capabilities within R are
 available in R packages (modules that extend the capabilities of R)
 that provide access to a large number of traditional and state of the
