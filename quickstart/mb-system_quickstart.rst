@@ -10,43 +10,47 @@
   :target: http://www.ldeo.columbia.edu/res/pi/MB-System/
 
 ********************************************************************************
-MB-System Quickstart 
+Начало работы с MB-System
 ********************************************************************************
 
-
-Running
+Запуск
 ================================================================================
 
-Users familiar
-with :doc:`GMT <../overview/gmt_overview>` and :doc:`GDAL <../overview/gdal_overview>` will
-be right at home with MB-System. In fact, MB-System makes heavy use of
-GMT for its map rendering. MB-System is a modular, command line driven
-suite of about 75 programs which work together to process massive (often
-terabytes) worth of multi-beam swath bathymetry and sidescan sonar data
-using automated scripts. Data files in dozens of data formats can be left
-co-mingled and intact on the drive and only those needed will be
-automatically selected, allowing for efficient processing and seamless mixing
-of datasets collected at different times, by different ships, in different
-data formats. Cartographic output and advanced 3D data cleaning software is also
-included.
+Пользователи, знакомые с :doc:`GMT <../overview/gmt_overview>` и
+:doc:`GDAL <../overview/gdal_overview>`, будут чувствовать себя "как дома"
+при использовании MB-System. Дело в том, что MB-System активно
+использует GMT для отрисовки карт. 
+
+MB-System — набор из 75 утилит для обработки батиметрических данных
+и изображений, полученных при многолучевой съёмке, интерферометрии
+и с помощью гидролокаторов бокового обзора.     
+Утилиты используются совместно в виде скриптов для автоматизации;
+массивы обрабатываемых данных могут достигать терабайт.
+
+Данные в десятках разных форматов могут быть смешаны или оставлены
+нетронутыми на диске, либо могут быть извлечены только необходимые данные.
+Это позволяет производить эффективную обработку и "бесшовное" смешивание
+наборов данных, собранных в разное время, по разным судам, в разных форматах.
+Также включены развитые средства очистки 3D-данных и картографический
+вывод. 
 
 
-Documentation
+Документация
 ================================================================================
 
-The online HTML documentation can be found at
+Онлайн-документация (HTML) может быть найдена здесь:
  http://www.ldeo.columbia.edu/res/pi/MB-System/html/mbsystem_home.html
 
-The online HTML version of the Cookbook tutorial can be found at
+Онлайн-версия руководства (HTML) может быть найдена здесь:
  http://www.ldeo.columbia.edu/res/pi/MB-System/mb-cookbook/
 
-The PostScript version of the documentation can be found on this LiveDVD at
+PostScript-версия документации может быть найдена на этом LiveDVD здесь:
  `/usr/local/mbsystem/ps/ <../../mbsystem/ps/>`_
 
-The PDF version of the cookbook is included on this disc at
+PDF-версия документации может быть найдена на этом LiveDVD здесь:
  `/usr/local/mbsystem/mbcookbook.pdf <../../mbsystem/mbcookbook.pdf>`_
 
-The data used in the cookbook examples can be found on this disc at
+Данные, используемые в руководстве, могут быть найдены здесь:
  `/usr/local/mbsystem/examples/ <../../mbsystem/examples/>`_
 
-See also the `MB-System entry in the GRASS GIS wiki <http://grass.osgeo.org/wiki/MB-System>`_
+См. также `страницу про MB-System <http://grass.osgeo.org/wiki/MB-System>`_ на вики-сайте GRASS.
