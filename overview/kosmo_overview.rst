@@ -12,66 +12,70 @@
 Kosmo Desktop
 ================================================================================
 
-Desktop GIS
+Настольная ГИС
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Kosmo - Desktop is a user friendly, desktop GIS application which allows you to explore, edit 
-and analyse spatial data from a variety of databases, vector and raster formats. 
+Kosmo Desktop — дружественная к пользователю настольная ГИС, которая
+позволяет просматривать, править и анализировать пространственные данные
+в множестве растровых и векторных форматах, а также работать с базами
+данных.    
 
-Kosmo - Desktop follows OGC standards and provides excellent topology integrity. 
-It's plug-in architecture enables it to be easily customised for specific purposes.
+Kosmo следует стандартам OGC и предоставляет отличную поддержку топологии.
+Архитектура приложения, основанная на плагинах, позволяет легко
+приспосабливать Kosmo к решению конкретных задач.      
 
 .. image:: ../../images/screenshots/1024x768/kosmo.jpg
   :scale: 50 %
   :alt: screenshot
   :align: right
 
-Core Features
+Базовые функции
 --------------------------------------------------------------------------------
 
-Supported formats:
+Поддерживаемые форматы:
 
-* Vectorial file formats: Shapefiles, GML, DXF, DWG, DGN, CSV (by an extension)
-* Vectorial databases: PostgreSQL + PostGIS, Oracle, MySQL
-* Raster file formats: ECW, MrSID, Tiff, JPG, GIF, PNG, BMP
-* OGC services: WMS 1.0.0/1.1.0/1.3.0, WFS 1.0.0/1.1.0
+* Векторные данные: Shapefiles, GML, DXF, DWG, DGN, CSV (с любым расширением)
+* Пространственные базы данных: PostgreSQL + PostGIS, Oracle, MySQL
+* Растровые данные: ECW, MrSID, Tiff, JPG, GIF, PNG, BMP
+* OGC-сервисы: WMS 1.0.0/1.1.0/1.3.0, WFS 1.0.0/1.1.0
 
-Key features:
+Основные особенности:
 
-* User friendly GUI, focused on an easy learning curve
-* Available in 12 languages (English, Spanish, Italian, German, Croatian, Czech, Russian, Slovak, Catalan, Euskera, Brassilian Portuguese, Finnish)
-* Advanced printing module based on OpenOffice offimatic suite (by an extension)
-* Topology consistency rules: pre/during/post edition
-* Topology validation and cleaning tools (intersect/eliminate/clean)
-* Geoprocessing wizard extension: buffer/dissolve/merge/clip/intersection/spatial join/difference (by an extension)
-* Raster georreferencing tool (by an extension)
-* Sextante 0.6 integrated (by an extension)
+* Дружественный к пользователю интерфейс, способствующий лёгкому освоению
+* Доступны 12 языков интерфейса (английский, испанский, итальянский, немецкий, русский и другие)
+* Продвинутый модуль для печати, основанный на OpenOffice (по расширению)
+* Правила для согласования топологии: до / во время / после правки
+* Проверка топологии и инструменты очистки данных (пересечения/ликвидация/очистка)
+* Дополнение для геообработки: буфер / разложение / слияние / отсечение / пересечение / пространственное слияние / отличие (по расширению)
+* Инструмент привязки растров (по расширению)
+* Интегрирована библиотека SEXTANTE (по расширению)
 
-Implemented Standards
+
+Реализованные стандарты 
 --------------------------------------------------------------------------------
 
 * Web Map Service (WMS) 1.0.0/1.1.0/1.3.0
 * Web Feature Service (WFS) 1.0.0/1.1.0
-* Styled Layer Descriptor (SLD) (import/export)
+* Styled Layer Descriptor (SLD) (импорт/экспорт)
 
 
-Details
+Дополнительная информация
 --------------------------------------------------------------------------------
 
-**Website:** http://www.opengis.es
+**Веб-сайт:** http://www.opengis.es
 
-**Licence:** GNU General Public License (GPL) version 2
+**Лицензия:**  `GPL версия 2  <http://www.gnu.org/licenses/gpl-2.0.html>`_
 
-**Software Version:** 2.0.1
+**Версия ПО:** 2.0.1
 
-**Supported Platforms:** Windows, Linux
+**Поддерживаемые платформы:** Windows, Linux
 
-**API Interfaces:** Java
+**Интерфейсы API:** Java
 
-**Commercial Support:** http://www.saig.es/index.php?lang=en
+**Коммерческая поддержка:** http://www.saig.es/index.php?lang=en
 
 
-Quickstart
+Начало работы
 --------------------------------------------------------------------------------
     
-* :doc:`Quickstart documentation <../quickstart/kosmo_quickstart>`
+* :doc:`Введение <../quickstart/kosmo_quickstart>`
