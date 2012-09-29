@@ -10,38 +10,40 @@
 
 
 ********************************************************************************
-GDAL/OGR Quickstart
+Начало работы с GDAL/OGR
 ********************************************************************************
 
-You will need nothing but a terminal for this quickstart. If you want to
-visualize the results, you can use one of the Desktop GIS Software
-applications on OSGeo-Live like :doc:`../overview/qgis_overview`. 
+Для начала работы вам не понадобится ничего, кроме терминала
+(командной строки). Если вы захотите визуализировать свои результаты,
+вы можете использовать одну из настольных ГИС из состава OSGeo-Live,
+например, QGIS (:doc:`../overview/qgis_overview`). 
 
-This Quick Start is devided in two parts GDAL (raster data) and OGR
-(vector data). We will start with GDAL.
+Это введение разбито на две части — GDAL (растровые данные) и OGR
+(векторные данные).  
 
-This Quick Start describes how to:
+Ниже описывается, как:
 
 GDAL
-  * Explore your image data with gdalinfo
-  * Format translations with gdal_translate 
-  * Reproject your data with gdalwarp
-  * Mosaic your data with gdal_warp or gdal_merge.py
-  * Build a shapefile as a raster tileindex with gdaltindex
+  * получать информацию о растровых данных с помощью *gdalinfo*;
+  * конвертировать в различные форматы с помощью *gdal_translate*; 
+  * перепроецировать данные с помощью *gdalwarp*;
+  * создавать мозаику из растров с помощью *gdal_warp* или *gdal_merge.py*;
+  * создавать шейп-файл с тайловым индексом растров с помощью *gdaltindex*.
    
 
 OGR
-  * get information about your data with ogrinfo 
-  * use ogr2ogr to transform your data to other formats
+  * получать информацию о векторных данных с помощью *ogrinfo*; 
+  * использовать *ogr2ogr* для конвертации данных в другие форматы и их обработки.
  
 
-Get to know GDAL
+Знакомимся с GDAL
 ================================================================================
 
-You will find the demo data at :file:`/usr/local/share/data`. We want to have a
-look at the :doc:`Natural Earth data <../overview/naturalearth_overview>` in this quickstart. We want to work with a
-copy of the data. So the first step is to copy the data to your home
-directory.
+Вы можете найти тестовые данные здесь :file:`/usr/local/share/data`. В этом
+"введении" мы будем использовать набор данных 
+:doc:`Natural Earth <../overview/naturalearth_overview>`. Лучше работать с
+копией данных, так что первым делом скопируйте их в вашу домашнюю
+директорию.  
 
 :: 
   
@@ -49,15 +51,17 @@ directory.
   cp -R /usr/local/share/data/natural_earth/ ./gdal_natural_earth 
 
  
-You find a NaturalEarth Raster file and a tfw-file at:
+Возьмём какой-либо растровый файл из состава Natural Earth и world-файл
+к нему (файл привязки):
+
 :: 
 
  cd /home/user/gdal_natural_earth/HYP_50M_SR_W
 
+.. tip:: Чтобы посмотреть на файл, откройте его в какой-либо настольной 
+ГИС, например, QGIS. 
 
-.. tip:: Open the file with a Desktop GIS like QGIS. And have a look.
-
-Get information about the raster data with gdalinfo
+Получение информации о растровом файле с помощью gdalinfo
 ================================================================================
 :: 
   
@@ -87,82 +91,85 @@ Get information about the raster data with gdalinfo
 	Band 2 Block=10800x1 Type=Byte, ColorInterp=Green
 	Band 3 Block=10800x1 Type=Byte, ColorInterp=Blue
 
-Note: 
-  * Driver is "GTiff/GeoTIFF"
-  * Size is 10800x5400
-  * 3 Bands of type Byte. 
-  * Coordinates
-  * no coordinate system
+Заметим, что растр имеет следующие характеристики: 
+  * Драйвер "GTiff/GeoTIFF";
+  * размер 10800x5400;
+  * 3 канала типа Byte;
+  * есть координатная привязка;
+  * координатная система не задана.
 
 
-
-Simple Format Translation
+Простая конвертация форматов
 ================================================================================
 
-First get to know your drivers. The `--formats` commandline switch of
-gdal_translate can be used to see a list of available format drivers.  
+Вначале узнаем, какие драйверы поддерживаются. В этом нам поможет
+флаг `--formats` утилит GDAL (например, *gdal_translate*), с его помощью
+выводится полный список доступных драйверов.
 
-Each format reports if it is 
-  * read only (ro), 
-  * read/write (rw) or 
-  * read/write/update (rw+).
+Каждый формат представлен в виде:
+  * только чтение (ro), 
+  * чтение/запись (rw) или
+  * чтение/запись/обновление (rw+).
 
 ::
 
  gdal_translate --formats
 
-The `--format` commandline switch can be used to query details about a
-particular driver, including creation options, and permitted data types.
+Флаг `--formats` можно использовать для получения детального описания 
+конкретного драйвера с указанием опций создания и разрешённых типов данных.
 
 ::
 
  gdalinfo --format jpeg
  gdal_translate --format png 
 
-Translation
+
+Конвертация
 ================================================================================
 
-Translations are accomplished with the gdal_translate command. The
-default output format is GeoTIFF:
+Конвертация осуществляется с помощью утилиты *gdal_translate*. Выходной 
+формат по умолчанию — GeoTIFF:
 
 ::
 
  gdal_translate HYP_50M_SR_W.tif HYP_50M_SR_W.png 
 
-The `-of` flag is used to select an output format and the -co flag is used
-to specify a creation option:
+Флаг `-of` используется для выбора выходного формата, флаг `-co` — для
+указания опций создания выходного файла:
 
 ::
 
   gdal_translate -of JPEG -co QUALITY=40 HYP_50M_SR_W.tif HYP_50M_SR_W.jpg
 
-The `-ot` switch can be used to alter the output data type.  
+Флаг `-ot` служит для изменения типа выходного файла: 
 
 ::
  
    gdal_translate -ot Int16 HYP_50M_SR_W.tif HYP_50M_SR_W_Int16.tif
 
-Use gdalinfo to verify data type.
+Используйте *gdalinfo*, чтобы проверить тип данных. 
 
 
-Rescaling
+Изменение размера и масштабирование данных
 ================================================================================
 
-The `-outsize` switch can be used to set the size of the output file. 
+Для изменения размера выходного файла может быть использован флаг `-outsize`.
 
 ::
 
     gdal_translate -outsize 50% 50% HYP_50M_SR_W.tif  HYP_50M_SR_W_small.tif
 
-Use gdalinfo to verify the size.
+Используйте *gdalinfo*, чтобы проверить размер растра. 
 
-The `-scale` switch can be used to rescale data. Explicit control of the
-input and output ranges is also available. The gdalinfo `-mm` switch can
-be used to see pixel min/max values. 
+Для перемасштабирования данных существует флаг `-scale`. Доступен также
+прямой контроль за диапазоном входных и выходных данных. Для вывода
+минимальных/максимальных значений растра может быть использован флаг  
+*gdalinfo* `-mm`.
 
-Let's split our image into two with `-srcwin` which makes a copy based on
-pixel/line location (xoff yoff xsize ysize). You also could use `-projwin`
-and define the corners in georeferenced coordinates (ulx uly lrx lry).
+Теперь разрежем наш растр на две части с помощью флага `-srcwin`, который
+делает копию данных на основе положения пикселов исходного растра (xoff 
+yoff xsize ysize). Вы также можете использовать флаг `-projwin`, чтобы задать
+границы растра в координатах географической привязки (ulx uly lrx lry).    
 
 ::
 
@@ -171,19 +178,19 @@ and define the corners in georeferenced coordinates (ulx uly lrx lry).
     gdal_translate -srcwin 5400 0 5400 5400 HYP_50M_SR_W.tif  east.tif
 
 
-Raster tileindex with gdaltindex
+Индекс растровых тайлов с помощью gdaltindex
 ================================================================================
 
-You can build a shapefile as a raster tileindex. For every image a
-polygon is generated with the bounds of the extent of the polygon and
-the path to the file.
+Вы можете создать шейп-файл с индексом растровых тайлов. Для каждого
+растра сгенерируется полигон с границами по охвату растра и с указанным
+путём к файлу. 
 
 ::
 
  gdaltindex index_natural_earth.shp *st.tif
 
-Have a look at your output shapefile with QGIS and ogrinfo (you
-will learn more about ogrinfo later in this tutorial)
+Посмотрим на получившийся шейп-файл в QGIS и *ogrinfo* (мы ещё рассмотрим 
+ogrinfo ниже).  
 
   .. image:: ../../images/screenshots/800x600/gdal_gdaltindex.png
      :scale: 80
@@ -209,31 +216,32 @@ will learn more about ogrinfo later in this tutorial)
     POLYGON ((-179.999999999999972 90.0,-0.00000000001796 90.0,-0.00000000001796 -89.999999999982009,-179.999999999999972 -89.999999999982009,-179.999999999999972 90.0))
   
 
-Reprojecting
+Перепроецирование
 ================================================================================
 
-For this process we assume that HYP_50M_SR_W.tif has been properly
-created with bounds. As we saw before with gdainfo no coordinate system 
-was set. So we assign WGS84 as coordinate system to the image in the
-first step.
+Для следующих действий предположим, что растр HYP_50M_SR_W.tif
+имеет нужный охват. Как выяснилось ранее с помощью *gdalinfo*, у 
+растра не задана координатная система, поэтому первым делом мы
+назначим WGS84 в качестве таковой.
 
 ::
 
      gdal_translate -a_srs WGS84 HYP_50M_SR_W.tif HYP_50M_SR_W_4326.tif
 
-The gdalwarp command can be used to reproject images. Here we reproject
-the WGS84 geographic image to the Mercator projection:
+Команда *gdalwarp* служит для перепроецирования растров. Попробуем
+перепроецировать наш растр в проекцию Меркатора:
 
 ::
 
    gdalwarp -t_srs '+proj=merc +datum=WGS84' HYP_50M_SR_W_4326.tif mercator.tif
 
-Use gdalinfo to verify the change and have a look at the image.
+Используйте *gdalinfo*, чтобы проверить изменения и посмотреть на
+свойства растра. 
 
   .. image:: ../../images/screenshots/800x600/gdal_mercator.png
      :scale: 80
 
-Here we reproject to the Ortho projection.  
+Теперь перепроецируем растр в ортографическую проекцию:
 
 ::
 
@@ -243,26 +251,27 @@ Here we reproject to the Ortho projection.
 .. image:: ../../images/screenshots/800x600/gdal_ortho.png
      :scale: 80
 
-Note how the poles are clipped?  This is because the edges at the pole
-can't be reprojected gdalwarp does not read all the data.  We can force
-gdalwarp to read a bunch of surplus data around chunks as one way to 
-resolve this. Read more about this in the RasterTutorial http://trac.osgeo.org/gdal/wiki/UserDocs/RasterProcTutorial.
+Вы обратили внимание, что земные полюса "обрезаны"? Это случилось потому,
+что приполярные области не могут быть перепроецированы *gdalwarp*, т.к. 
+программа не получает на входе полный набор данных. Мы может заставить 
+*gdalwarp* читать много избыточных данных по частям как один из вариантов
+решения этой проблемы. Подробнее читайте на странице RasterTutorial http://trac.osgeo.org/gdal/wiki/UserDocs/RasterProcTutorial.   
 
 
-
-Mosaicing
+Создание мозаик
 ================================================================================
 
-gdal_merge.py is a python script that can be used for simple mosaicing
-tasks. Mosaic the east.tif and west.tif into a single file:
+*gdal_merge.py* — Python-скрипт, который применяется для задач простого
+мозаицирования растров. Например, создадим мозаику из двух растров (east.tif
+и west.tif) в виде единого файла merged.tif:
 
 ::
 
    gdal_merge.py  east.tif west.tif -o merged.tif
 
-
-The same task can be accomplished with gdalwarp. gdalwarp has a variety
-of advantages over gdal_merge, but can be slow to merge many files:
+Подобная задача может быть решена и с помощью *gdalwarp*, это утилита имеет
+ряд преимуществ перед *gdal_merge.py*, но может медленно работать при сшивке
+большого количества растров:
 
 ::
 
@@ -270,7 +279,7 @@ of advantages over gdal_merge, but can be slow to merge many files:
 
 
 
-Get to know OGR
+Знакомимся с OGR
 ================================================================================
 
 :: 
@@ -278,10 +287,10 @@ Get to know OGR
   cd /home/usr/gdal_natural_earth/
 
 
-.. tip:: Open the shape file with a Desktop GIS like QGIS. And have a look.
+.. tip:: Чтобы посмотреть на данные, откройте шейп-файл в любой настольной ГИС типа QGIS. 
 
 
-Get information about the vector data with ogrinfo
+Получение информации о векторных данных с помощью ogrinfo
 ================================================================================
 
 :: 
@@ -297,7 +306,8 @@ Get information about the vector data with ogrinfo
   6: 10m-urban-area (Polygon)
   7: 10m_populated_places_simple (Point)
 
-Get a summary about your data with ogrinfo together with `-so`.
+Краткую информацию о векторных данных можно получить с помощью
+утилиты *ogrinfo* с флагом `-so`.
 
 ::
 
@@ -323,14 +333,16 @@ Get a summary about your data with ogrinfo together with `-so`.
 	SHAPE_AREA: Real (19.11)
 
 
-If you run ogrinfo without a parameter you will get a summary about your data and afterwards a section for every dataset.
+Если вы запустите *ogrinfo* без параметров, то получите краткую информацию
+о всех данных, а потом отдельный блок информации для каждого из наборов
+данных. 
 
 ::
 
 	ogrinfo ../natural_earth/ 10m-admin-0-countries
 
-
-You can forward the result from ogrinfo to grep to filter and get only the attribute COUNTRY.
+Вы можете отфильтровать вывод *ogrinfo*  с помощью стандартной утилиты *grep*
+и получить, например, только атрибуты поля COUNTRY.
 
 ::
 
@@ -347,17 +359,17 @@ You can forward the result from ogrinfo to grep to filter and get only the attri
 	etc.
 
 
-You can convert your data to other formats. Get the list of the
-supported formats with `--formats`.
 
-Use ogr2ogr to convert data between file formats 
+
+Использование ogr2ogr для конвертации данных между форматами
 ================================================================================
 
-You can use ogr2ogr to converts simple features data between file
-formats. You can use `--formats` to get the list of the supported formats
-with read/write information. 
+Вы можете использовать утилиту *ogr2ogr* для конвертации векторных
+данных (стандарта *simple features*) между различными форматами.  
+Полный список форматов OGR с указанием поддержки чтения/записи 
+выводится флагом `--formats`.
 
-Convert the countries to GML.
+Давайте сконвертируем шейп-файл *countries* в формат GML.
 
 ::
 
@@ -365,36 +377,37 @@ Convert the countries to GML.
   ogr2ogr -f GML countries.xml 10m-admin-0-countries.shp	  
 
 
-Things to try
+Стоит также попробовать
 ================================================================================
 
-Here are some additional challenges for you to try:
+Есть несколько действий, которые стоит попробовать при работе
+с GDAL/OGR:
 
-#. Try gdalwarp or gdal_merge.py to mosaic your data
+#. Попробуйте мозаицировать растры с помощью *gdalwarp* или *gdal_merge.py*
 
-#. Try gdaladdo to build internal overviews
+#. Попробуйте создать внутренние слои "пирамид" (копий данных низкого разрешения)
 
-#. QGIS uses GDAL/OGR too to suport many formats. It also provides the GdalTools Plugin to process raster data. This plugin integrates the gdal-tools into QGIS. 
+#. QGIS использует GDAL/OGR для поддержки большого числа форматов. Эта ГИС также предоставляет плагин GdalTools для работы с растровыми данными, который интегрирует утилиты GDAL в QGIS.
 
-#. Try ogr2ogr to import/export your vector data to other formats like PostGIS. Have a look at the options ogr2ogr provides.
+#. Попробуйте *ogr2ogr* для импорта/экспорта векторных данных в различные распространённые форматы (например, PostGIS). Эта утилита имеет довольно длинный списко опций.
 
-#. Try the QGIS plugin OGR-Layer-Konverter.
+#. Попробуйте конвертацию данных в QGIS через OGR.
 
 
-What Next?
+Что дальше?
 ================================================================================
 
-This is only the first step on the road to using GDAL and OGR. There is
-a lot more functionality you can try.
+Это "введение" — только первый шаг по дороге освоения GDAL/OGR. На самом
+деле, доступно гораздо больше функциональности, чем описано здесь.
 
-GDAL Project home
+Официальная страница GDAL:
 
   http://www.gdal.org
 
-All about OGR
+Всё об OGR:
 
   http://gdal.org/ogr/index.html
 
-GDAL Tutorial
+Руководство по GDAL:
 
   http://trac.osgeo.org/gdal/wiki/UserDocs/RasterProcTutorial
