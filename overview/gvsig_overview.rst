@@ -19,105 +19,99 @@
 gvSIG Desktop
 ================================================================================
 
-Desktop GIS
+Настольная ГИС
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-gvSIG_ is a Geographic Information System (GIS) desktop application
-designed for capturing, storing, handling, analysing and deploying any kind of
-referenced geographic information in order to solve complex management and
-planning problems. gvSIG is known for its user-friendly interface and being
-able to access all common vector and raster formats. It features
-a wide range of tools for working with geographic information (query,
-layout creation, geoprocessing, networks, etc.), which turns gvSIG into the
-ideal tool for users working in the land realm.
+gvSIG_ — настольная ГИС, предназначенная для сбора, хранения, обработки, 
+анализа и развёртывания любой географически привязанной информации для
+решения комплексных проблем управления и планирования. gvSIG известен
+дружественным к пользователю интерфейсом, дающим возможность доступа
+к наиболее распространённым форматам данных, как векторным, так и растровым. 
+gvSIG имеет обширный набор средств для работы с географической информацией
+(выборки, создание макетов, геообработка, сетевой анализ и т.д.), которые делают
+её идеальным инструментом для пользователей, работающих в сфере ГИС.   
 
-gvSIG is known for:
+gvSIG известна тем, что: 
 
-* integrating in the same view both local and remote data through OGC standards.
-* being easily extendible, allowing continuous application 
-  enhancement, as well as enabling the development of tailor-made solutions.
-* being available in over 20 languages (Spanish, English, German, French, 
-  Italian,...) .
-* being available for Windws, Linux, and Mac OS X platforms:
+* интегрирует единый вид как для локальных, так и данных из удалённых источников по стандартам OGC ;
+* легко расширяема и позволяет производить как последовательное развитие программы, так и возможность разработки решений "под заказ";           
+* доступна на 20 языках (испанский, английский, немецкий, французский, итальянский и т.д.);
+* доступна для Windows, Linux и Mac OS X.
 
 .. image:: ../../images/screenshots/1024x768/gvsig_desktop.png
   :scale: 50 %
   :alt: screenshot
   :align: right
 
-Core Features
+Базовые функции
 --------------------------------------------------------------------------------
 
-* Provides common GIS tools like data loading, map navigation, query 
-  map information like alphanumeric information, distance measurement, thematic
-  cartography, legend edition using common legend types, labelling,
-  feature selection by many selection types, data tables with statistics,
-  ordering, table relations, table linking, layout manager, geoprocessing tools,
-  CAD, raster processing, etc.
+* Предоставляет базовые ГИС-функции: открытие данных, навигация в окне карты, запрос информации с карты, измерения расстояний, тематическая картография, редактирование легенд с использованием их общих типов, подписывание объектов, разных типы выборки объектов, статистика по атрибутам, отношения таблиц, линковка таблиц, менеджер макетов, инструменты геообработки, функции CAD, обработка растров и т.д.         
 
-* Interoperable: able to work with most known data formats:
+* Работает с большинством распространённых форматов:
 
-  * raster : ecw,  ENVI hdr, ERDAS img, (Geo)TIFF, GRASS, ...
-  * vector & CAD: shapefile, GML, KML, DGN, DXF, DWG
-  * databases: PostGIS, MySQL, Oracle, ArcSDE
-  * remote: ECWP, ArcIMS, OGC standards
+  * растровые данные: ECW, ENVI hdr, ERDAS img, (Geo)TIFF, GRASS;
+  * векторные ГИС- и CAD-данные: shp-файлы, GML, KML, DGN, DXF, DWG;
+  * базы данных: PostGIS, MySQL, Oracle, ArcSDE;
+  * удалённые источники данных: ECWP, ArcIMS, стандарты OGC.
 
-* Discovery services client to localize data resources within an
-  SDI (catalogue and gazeteer services)
+* Работа с клиентскими службами для локализации ресурсов данных в рамках SDI (каталоги и географические справочники): 
+
+  * каталоги — Z3950, SRW, CSW (ISO/19115 and ebRIM);
+  * географические справочники — ADL, WFS, WFS-G.
   
-  * Catalogues: Z3950, SRW, CSW (ISO/19115 and ebRIM)
-  * Gazetteers: ADL, WFS, WFS-G
+* Более 300 геоалгоритмов доступны через библиотеку SEXTANTE и интеграцию с GRASS.
   
-* More than 290 geoalgorithms via SEXTANTE library and GRASS integration
+* Интеграция развитые CAD-инструменты:
+
+  * векторные данные: создание, изменение и удаление элементов;
+  * командная консоль в стиле CAD;
+  * инструменты типа сетки, командный стек, комплексная выборка элементов;
+  * инструменты для создания элементов — точек, линий, полигонов, эллипсов и т.д.;
+  * инструменты для модификации объектов типа вращения, симметрии и т.д.
   
-* Integrated advanced CAD tools:
+* Встроенные развитые средства для работы с растрами:
 
-  * vector data: modify, create and delete elements
-  * command console typical element in CAD software
-  * tools like help, grid, command stack, complex element selections
-  * tools for inserting elements like points, polygons, lines, ellipses, etc...
-  * tools to modify its rotation, symmetry,...
-  
-* Integrated advanced raster tools:
+  * привязка и перепроецирование;
+  * экспорт, обрезка и т.д.;
+  * легенды для растров, гистограммы;
+  * фильтры, векторизация;
+  * управление предпросмотром и регионами интереса.
 
-  * georeferencing and reprojecting
-  * export, clipping
-  * look up tables, histogram
-  * filters, vectorization
-  * overviews and regions of interest management
-
-* Scripting support
-* Powerful reprojection engine via PROJ4
+* Поддержка скриптования
+* Мощные средства перепроецирования посредством PROJ.4
 
 
-Implemented Standards
+Реализованные стандарты
 --------------------------------------------------------------------------------
 
-Advanced client support of numerous Open Geospatial Consortium (OGC) standards
+Развитая поддержка клиентов многих стандартов Open Geospatial 
+Consortium (OGC):
 
-* Load WMS, WFS and WCS layers
-* Export/import of SLD legends
-* Export/import of Web Map Context (WMC)
-* Search on catalogues with  CSW (ISO/19115 and ebRIM)
-* Search on gazetteers using WFS-G recommendation
+* Загрузка слоёв WMS, WFS и WCS 
+* Экспорт/импорт символики в SLD 
+* Экспорт/импорт Web Map Context (WMC)
+* Поиск в каталогах с помощью CSW (ISO/19115 и ebRIM)
+* Поиск в географических справочниках с использованием рекомендаций WFS-G. 
 
-Details
+Дополнительная информация 
 --------------------------------------------------------------------------------
 
-**Website:** http://www.gvsig.org/
+**Веб-сайт:** http://www.gvsig.org/
 
-**Licence:** GNU General Public License (GPL) version 2
+**Лицензия:**  `GPL версия 2 <http://www.gnu.org/licenses/gpl-2.0.html>`_
 
-**Software Version:** 1.11
+**Версия ПО:** 1.11
 
-**Supported Platforms:** Windows, Linux, Mac
+**Поддерживаемые платформы:** Windows, Linux, Mac
 
-**Support:** http://www.gvsig.org/web/organization/services
+**Поддержка:** http://www.gvsig.org/web/organization/services
 
 
 .. _gvSIG: http://www.gvsig.org
 
-Quickstart
+
+Начало работы
 --------------------------------------------------------------------------------
     
-* :doc:`Quickstart documentation <../quickstart/gvsig_quickstart>`
+* :doc:`Введение <../quickstart/gvsig_quickstart>`
