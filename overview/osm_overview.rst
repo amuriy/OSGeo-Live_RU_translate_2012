@@ -1,72 +1,65 @@
-:Author: Hamish Bowman
-:Reviewer: Cameron Shorter, LISAsoft
-:Version: osgeo-live5.5
-:License: Creative Commons
+:Автор: Hamish Bowman
+:Проверил: Cameron Shorter, LISAsoft
+:Версия: osgeo-live5.5
+:Лицензия: Creative Commons
 
 .. image:: ../../images/project_logos/logo-osm.png
   :scale: 80 %
-  :alt: project logo
+  :alt: Логотип проекта
   :align: right
   :target: http://www.openstreetmap.org
 
 OpenStreetMap
 ================================================================================
 
-Tools for mapping the world
+Инструменты для картографирования мира
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`OpenStreetMap <http://www.openstreetmap.org>`_ is a project aimed
-squarely at creating and providing free geographic data such as street
-maps to anyone who wants them. The project was started because most maps
-you think of as free actually have legal or technical restrictions on their
-use, holding back people from using them in creative, productive or
-unexpected ways.
+`OpenStreetMap <http://www.openstreetmap.org>`_ - проект направленный на создание и распространение свободных географических данных, таких как картры улиц, любому, кто испытывает потребность в таких данных. Проект был запущен по причние того, что большинстов карт, считающихся свободными, на самом деле имеют правовые или технические ограничения в использовании. Эти обстоятельства ограничивают использование карт в решении творческих и производственных задач, а так же других неожиданных применений.
 
-Five programs have been included: JOSM, Merkaartor, Gosmore, Osmarender, and
-Osm2pgsql. In addition recent sample data for the host city and a number
-of JOSM plugins have been included.
+Включено пять программ: JOSM, Merkaartor, Gosmore, Osmarender и Osm2pgsql. Так же включен свежий набор данных для одного города и несколько плагинов для JOSM.
 
 
-Core Features
+Основные возможности
 --------------------------------------------------------------------------------
 
 .. image:: ../../images/screenshots/1024x768/osm-screenshot.jpg
   :scale: 50 %
-  :alt: screenshot
+  :alt: Скриншот
   :align: right
 
-* Global massively crowd-sourced dataset
-* A number of editors to choose from
-* A number of renderers to choose from (including online)
-* Free to use
-* Widespread geo-application integration
+* Всемирный набор данных, созданный большим количеством пользователей
+* Несколько программ-редакторов на выбор
+* Несколько вариантов рендеринга, в том числе онлайн
+* Бесплатное использование
+* Интеграция с множеством гео-приложений
 
-Details
+Дополнительная информация
 --------------------------------------------------------------------------------
 
-**Website:** http://www.openstreetmap.org
+**Веб-сайт:** http://www.openstreetmap.org
 
-**Licences:**
+**Лицензии:**
 
-* OpenStreetMap data: http://wiki.openstreetmap.org/index.php/OpenStreetMap_License
+* Данные OpenStreetMap: http://wiki.openstreetmap.org/index.php/OpenStreetMap_License
 
-* JOSM: GNU General Public License (GPL) version 2
+* JOSM: GPL версия 2
 
 .. <!-- see /usr/share/doc/josm/copyright -->
 
-* JOSM plugins collection: Ranging from Public Domain to GPLv3
+* Плагины JOSM: от Public Domain до GPL версии 3
 
-* Merkaartor: GNU General Public License (GPL) version 2
+* Merkaartor: GPL версия 2
 
-* Gosmore: Public Domain and GPLv2
+* Gosmore: Public Domain и GPL версия 2
 
 .. <!-- see /usr/share/doc/gosmore/copyright -->
 
-* Osmarender: GNU General Public License (GPL) version 2
+* Osmarender: GPL версия 2
 
-**Software Versions:**
+**Версии ПО:**
 
-* JOSM: Latest stable snapshot (svn r5353)
+* JOSM: Последняя стабильная версия (svn r5353)
 
 * Merkaartor: 0.17.2
 
@@ -76,16 +69,16 @@ Details
 
 * osm2pgsql: 0.69 (svn r22215)
 
-**Supported Platforms:** GNU/Linux, Mac OSX, MS Windows
+**Поддерживаемые платформы:** GNU/Linux, Mac OSX, MS Windows
 
-**API Interfaces (data):** REST (via Xapi), XML
+**Интерфейсы API (данные):** REST (via Xapi), XML
 
-**Support:** http://wiki.openstreetmap.org/
+**Поддержка:** http://wiki.openstreetmap.org/
 
 
-Quickstart
+Начало работы
 --------------------------------------------------------------------------------
 
-* :doc:`Quickstart documentation <../quickstart/osm_quickstart>`
+* :doc:`Документация по началу работы <../quickstart/osm_quickstart>`
 
 

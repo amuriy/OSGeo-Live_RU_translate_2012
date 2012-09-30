@@ -1,67 +1,67 @@
-:Author: Daniel Kastl
-:Reviewer: Cameron Shorter, LISAsoft
-:Version: osgeo-live5.5
-:License: Creative Commons Attribution 3.0 Unported (CC BY 3.0)
+:Автор: Daniel Kastl
+:Проверил: Cameron Shorter, LISAsoft
+:Версия: osgeo-live5.5
+:Лицензия: Creative Commons Attribution 3.0 Unported (CC BY 3.0)
 
 .. image:: ../../images/project_logos/logo-pgRouting.png
   :scale: 100 %
-  :alt: pgRouting logo
+  :alt: Логотип pgRouting
   :align: right
   :target: http://www.pgrouting.org/
 
 pgRouting
 ================================================================================
 
-GIS Tools
+Инструменты ГИС
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-pgRouting extends the :doc:`PostGIS <postgis_overview>`/`PostgreSQL <http://www.postgresql.org>`_ geospatial database to provide geospatial routing functionality.
+PgRouting расширяет возможности пространственных баз данных :doc:`PostGIS <postgis_overview>`/`PostgreSQL <http://www.postgresql.org>`_ функциями пространственной маршрутизации.
 
-Advantages of the database routing approach are:
+Преимущества использования баз данных при решении задач маршрутизации:
 
-* Data and attributes can be modified by many clients, like :doc:`Quantum GIS <qgis_overview>` and :doc:`uDig <udig_overview>` through JDBC, ODBC, or directly using Pl/pgSQL. The clients can either be PCs or mobile devices.
-* Data changes can be reflected instantaneously through the routing engine. There is no need for precalculation.
-* The "cost" parameter can be dynamically calculated through SQL and its value can come from multiple fields or tables.
+* Данные могут быть изменены при помощи множества клиентов, таких как :doc:`Quantum GIS <qgis_overview>` и :doc:`uDig <udig_overview>` через JDBC, ODBC, или напрямую при помощи  PL/pgSQL. Клиенты могут быть как десктопными так и мобильными.
+* Изменения данных моментально отражаются роутинговым движком. Нет необходимости в предварительной обработке.
+* Значение стоимости могут быть расчитаны динамически при помощи SQL в зависимости от значений нескольких полей таблицы.
 
 .. image:: ../../images/screenshots/800x600/pgrouting.png
   :scale: 60 %
-  :alt: pgRouting query in pgAdminIII
+  :alt: Запрос к pgRouting в pgAdminIII
   :align: right
 
-Core Features
+Основные возможности
 --------------------------------------------------------------------------------
 
-pgRouting provides functions for:
+PgRouting предоставляет следующие возможности:
 
-* Shortest Path Dikstra: routing algorithm without heuristics
-* Shortest Path A-Star: routing for large datasets (with heuristics)
-* Shortest Path Shooting-Star: routing with turn restrictions (with heuristics)
-* Traveling Salesperson Problem (TSP)
-* Driving Distance calculation (Isolines)
+* Поиск кратчайшего пути алгоритмом Дейкстры: роутинговый алгоритм без эвристики
+* Поиск кратчайшего пути алгоритмом A* (A-star): роутинговый алгоритм для больших наборов данных (с эвристикой)
+* Поиск кратчайшего пути алгоритмом падающей звезды (Shooting-Star): маршрутизация с ограничениями поворотов (с эвристикой)
+* Задача комивояжера (TSP)
+* Расстояние до точки от всех ребер графа (Isolines)
 
 .. Implemented Standards
    ---------------------
 
 .. * OGC standards compliant
 
-Details
+Дополнительная информация
 --------------------------------------------------------------------------------
 
-**Website:** http://www.pgrouting.org
+**Веб-сайт:** http://www.pgrouting.org
 
-**Licence:** GNU General Public License (GPL) version 2
+**Лицензия:** GNU General Public License (GPL) version 2
 
-**Software Version:** 1.05
+**Версия ПО:** 1.05
 
-**Supported Platforms:** Linux, Windows, Mac
+**Поддерживаемые платформы:** Linux, Windows, Mac
 
-**API Interfaces:** SQL
+**Интерфейсы API:** SQL
 
-**Commercial Support:** http://www.pgrouting.org
+**Коммерческая поддержка:** http://www.pgrouting.org
 
-Quickstart
+Начало работы
 --------------------------------------------------------------------------------
 
-* :doc:`Quickstart documentation <../quickstart/pgrouting_quickstart>`
+* :doc:`Документация по началу работы <../quickstart/pgrouting_quickstart>`
 
 
