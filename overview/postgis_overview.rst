@@ -8,11 +8,11 @@
 .. Writing Tip:
   Metadata about this document
 
-:Author: OSGeo-Live
-:Author: Barry Rowlingson
-:Reviewer: Cameron Shorter, LISAsoft
-:Version: osgeo-live5.5
-:License: Creative Commons Attribution 3.0 Unported (CC BY 3.0)
+:Автор: OSGeo-Live
+:Автор: Barry Rowlingson
+:Проверил: Cameron Shorter, LISAsoft
+:Версия: osgeo-live5.5
+:Лицензия: Creative Commons Attribution 3.0 Unported (CC BY 3.0)
 
 
 .. Writing Tip:
@@ -26,13 +26,13 @@
 
 .. image:: ../../images/project_logos/logo-PostGIS.png
   :scale: 30 %
-  :alt: project logo
+  :alt: Логотип проекта
   :align: right
   :target: http://postgis.refractions.net/
 
 .. image:: ../../images/logos/OSGeo_project.png
   :scale: 100 %
-  :alt: OSGeo Project
+  :alt: Проект OSGeo
   :align: right
   :target: http://www.osgeo.org/incubator/process/principles.html
 
@@ -42,7 +42,7 @@ PostGIS
 .. Writing Tip:
   Application Category Description:
 
-Spatial Database
+Пространственная база данных
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. Writing Tip:
@@ -58,13 +58,11 @@ Spatial Database
   * Remaining paragraph or 2 in this overview section should provide a
     wider description and advantages from a user perspective.
 
-PostGIS spatially enables the popular PostgreSQL object-relational database, allowing it to be used as a back-end database for geographic information systems (GIS) and web-mapping applications in the same manner as Oracle Spatial enables the Oracle database.
+PostGIS пространственно расширяет популярную объектно-реляционную базу данных PostgreSQL, позволяя использовать ее в качестве серверной базы данных для геоинформационных систем (ГИС) и картографических веб-приложений. Расширения PostGIS для PostgreSQL подобны расширению Oracle Spatial для СУБД Oracle.
 
-PostGIS is stable, fast, standards compliant, with hundreds of spatial functions and is currently the most widely used Open Source spatial database. PostGIS is used by diverse organisations from around the world, including risk-averse government agencies and organisations storing terabytes of data serving millions of web requests per day.
+PostGIS стабилен, быстр и соответствует стандартам. Он содержит сотни пространственных фунций и является наиболее широко используемой пространственной базой данных с открытым кодом. PostGIS используется различными организациями со всего мира, в том числе несклонными к риску правительственными агенствами и организациями хранящими терабайты данных и обслуживающими миллионы веб-запросов каждый день.
 
-Database administration is available for desktop and the web via pgAdmin, phpPgAdmin, and others.
-Data import/export can be done by command line tools (shp2pgsql, pgsql2shp, ogr2ogr, dxf2postgis) or
-from desktop and web GIS clients. These clients can also map and manipulate PostGIS spatial data tables.
+Администрирование баз данных возможно на десктопе и через веб-интерфейс при помощи pgAdmin, phpPgAdmin и пр. Импорт и экспорт данных может быть выполнен как при помощи инструментов коммандной строки (shp2pgsql, pgsql2shp, ogr2ogr, dxf2postgis) так и через десктопные и веб ГИС-приложения. Эти приложения также позволяют отображать пространственные таблицы PostGIS и манипулировать ими.
 
 .. Writing Tip:
   Provide a image of the application which will typically be a screen shot
@@ -76,53 +74,53 @@ from desktop and web GIS clients. These clients can also map and manipulate Post
 
 .. image:: ../../images/screenshots/800x600/pgadmin.gif
   :scale: 55 %
-  :alt: pgAdmin database manager
+  :alt: Менеджер баз данных pgAdmin
   :align: right
 
-Core Features
+Основные возможности
 --------------------------------------------------------------------------------
 
-* Hundreds of spatial functions
+* Сотни пространственных функций
   
-  * Buffers, unions, overlays, distance and more
+  * Буферы, объединения, перекрытия, расстояния и многое другое
 
-* ACID transactional integrity
-* R-Tree spatial index
-* Multi-user support
-* Row-level locking
-* Replication
-* Partitioning
-* Role-based security
-* Table-spaces, schemas
+* Целостность транзакций ACID
+* Пространственные индексы на R-деревьях
+* Поддержка нескольких пользователей
+* Блокировка на уровне записей
+* Репликация
+* Разбиение
+* Система прав, основанная на ролях
+* Пространства таблиц, схемы
 
-Implemented Standards
+Реализованные стандарты
 --------------------------------------------------------------------------------
 
 .. Writing Tip: List OGC or related standards supported.
 
-* OGC standards compliant (SFSQL)
+* Соответствует стандартам OGC (SFSQL)
 
-Details
+Дополнительная информация
 --------------------------------------------------------------------------------
 
-**Website:** http://postgis.refractions.net/
+**Веб-сайт:** http://postgis.refractions.net/
 
-**Licence:** GNU General Public License (GPL) version 2
+**Лицензия:** GPL версия 2
 
-**Software Version:** 1.5
+**Версия ПО:** 1.5
 
-**Supported Platforms:** Windows, Linux, Mac
+**Поддерживаемые платформы:** Windows, Linux, Mac
 
-**API Interfaces:** SQL
+**Интерфейсы API:** SQL
 
 .. Writing Tip:
   Link to webpage which lists the primary support details for the application,
   preferably this would list both community and commercial contacts.
 
-**Support:** http://www.osgeo.org/search_profile
+**Поддержка:** http://www.osgeo.org/search_profile
 
 
-Quickstart
+Начало работы
 --------------------------------------------------------------------------------
     
-* :doc:`Quickstart documentation <../quickstart/postgis_quickstart>`
+* :doc:`Документация по началу работы <../quickstart/postgis_quickstart>`

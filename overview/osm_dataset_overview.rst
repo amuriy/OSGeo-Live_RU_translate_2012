@@ -1,11 +1,11 @@
-:Author: Hamish Bowman
-:Reviewer: Cameron Shorter, LISAsoft
-:Version: osgeo-live5.5
-:License: Creative Commons Attribution 3.0 Unported (CC BY 3.0)
+:Автор: Hamish Bowman
+:Проверил: Cameron Shorter, LISAsoft
+:Версия: osgeo-live5.5
+:Лицензия: Creative Commons Attribution 3.0 Unported (CC BY 3.0)
 
 .. image:: ../../images/project_logos/logo-osm.png
   :scale: 100 %
-  :alt: project logo
+  :alt: Логотип проекта
   :align: right
   :target: http://www.osm.org/
 
@@ -13,52 +13,52 @@
 OpenStreetMap
 ================================================================================
 
-Map Data
+Картографические данные
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-OpenStreetMap is a crowd sourced map of the world which has grown to become one of the most detailed sources of local-scale map data available. Source map data is created and maintained by thousands of volunteers from around the world, using processes similar to the maintaining of the wikipedia encyclopedia.
+OpenStreetMap краудсорсинговая карта мира, которая стала одним из самых подробных и доступных источников картографических данных локального масштаба. Исходные картографические данные созданы и поддерживаются сотнями волонтеров по всему миру похожим на википедию способом.
 
-The most visible aspect to OSM is the online web-tile interface from http://osm.org, but the maps can also be viewed, imported, or edited in many applications such as Quantum GIS, OpenLayers, ArcGIS and dedicated OSM applications.
+Основной видимый аспект это онлайн веб-карта расположенная по адресу http://osm.org, однако просмотр, импорт и редактирование карт возможен во многих приложениях таких как  Quantum GIS, OpenLayers, ArcGIS, а так же в приложениях ориентированных на работу с OSM.
 
-The heart of the project is the underlying data which is open for all to edit, view, or create custom rendered maps. Fundamentally OSM's focus is on the data, the rich maps simply fall out of this.
+Сердце проекта - данные, которые достпуны каждому для редактирования, просмотра и самостоятельного рендеринга. По существу OSM сосредоточен на данных, карты с широким набором возможностей напротив остаются в стороне.
 
-The OSGeo-Live distribution includes a city sized extract of OSM data which is used for examples by some applications.
+Дистрибутив OSGeo-Live содержит фрагмент данных охватывающий один город, который используется для примеров некоторыми приложениями.
 
 .. image:: ../../images/screenshots/1024x768/osm-screenshot.jpg 
   :scale: 55 %
-  :alt: OSM screenshot
+  :alt: Скриншот OSM
   :align: right
 
-Core Features
+Основные возможности
 --------------------------------------------------------------------------------
 
-* Vector features are tagged with names and other attributes.
-* Extract local subsets of the data.
-* Data is stored as latitude-longitude WGS84 nodes, strings of nodes, and meta-features allowing for point, polyline, and area coverage.
-* Rich attribute tagging, often far more detailed than any other source.
-* A global repository of local knowledge.
+* Векторные элементы тегируются именем и другими аттрибутами
+* Извелечение данных на определенную местность
+* Данные храняться в формате долгота-широта на эллипсоиде WGS84. Основные элементы: узлы, последовательности узлов, и мета-элементы, которые в совокупности позволяют хранить точки, полилинии и площадные объекты
+* Обширная аттрибутивная информация, более подробная чем в любых других источниках.
+* Глобальное хранилище локальных сведений
 
-Data Sets included in OSGeo-Live
+Наборы данных включенные в OSGeo-Live
 --------------------------------------------------------------------------------
 
 Nottingham.osm.bz2:
- A large extract of the greater city area as a BZip2 compressed XML text file.
+ Большой фрагмент данных на территорию большого города в формате XML, сжатый при помощи BZip2.
 
 Nottingham_CBD.osm.bz2:
- A smaller subset covering just the central business district.
+ Меньший фрагмент, покрывающий территорию центрального делового района
 
-Details
+Дополнительная информация
 --------------------------------------------------------------------------------
 
-**Website:** http://www.osm.org
+**Веб-сайт:** http://www.osm.org
 
-**License:** CC-By-SA, Open Data Commons Open Database License (ODbL)
+**Лицензия:** CC-By-SA, Open Data Commons Open Database License (ODbL)
 
-**Data Version:** Live database
+**Версия данных:** Постоянно обновляемая БД
 
-**Data format:** XML
+**Формат данных:** XML
 
-**Spatial coordinate system:** Lat-Long WGS84
+**Система координат:** Долгота-широта на эллипсоиде WGS84
 
-**Support:** http://wiki.osm.org
+**Поддержка:** http://wiki.osm.org
 
