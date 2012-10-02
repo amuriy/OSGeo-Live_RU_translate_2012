@@ -5,108 +5,106 @@
 
 .. image:: ../../images/project_logos/logo-osm.png
   :scale: 100 %
-  :alt: project logo
+  :alt: логотип проекта
   :align: right
   :target: http://www.osm.org
 
 
 ********************************************************************************
-OpenStreetMap Quickstart 
+Начало работы c OpenStreetMap 
 ********************************************************************************
 
-Programs
+Программы
 ================================================================================
 
 JOSM
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**JOSM** (Java OpenStreetMap Editor) is an editor for OpenStreetMap (OSM)
-written in Java. The current version supports stand alone GPX tracks,
-GPX track data from OSM database and existing nodes, line segments and
-metadata tags from the OSM database.
+**JOSM** (Java OpenStreetMap Editor) — редактор для OpenStreetMap (OSM),
+написанный на языке Java. Текущая версия поддерживает одиночные GPX-треки,
+данные о GPX-треках из базы данных OSM и существующие узлы, линейные сегменты и
+теги метаданных из базы данных OSM.
 
-* Homepage: http://josm.openstreetmap.de
+* Домашняя страница: http://josm.openstreetmap.de
 
-The JOSM plugin collection contains the following plugins:
+В наборе JOSM содержатся следующие плагины:
 
-* colorscheme	     - Allows to create different color schemes.
-* livegps	     - Supports live GPS input together with gpsd.
-* measurement	     - Adds a dialog and a layer to measure length and angle of segments and create measurement paths.
-* openvisible	     - Allows opening gpx and osm files that intersect the currently visible screen area.
-* surveyor	     - Allows adding markers/nodes on current gps positions.
-* cadastre-fr        - A special handler for the French land registry WMS server.
-* DirectUpload       - Directly uploads GPS Traces from current active layer in JOSM to openstreetmap.org.
-* editgpx            - Anonymizes timestamps and deletes parts of huge GPX tracks very fast.
-* lakewalker         - Helps vectorizing WMS images.
-* routing            - Provides routing capabilities.
+* colorscheme        —  позволяет создавать различные цветовые схемы.
+* livegps	     —  поддерживает ввод данных GPS в реальном времени совместно с gpsd.
+* measurement	   —  добавляет диалоговое окно и слой для измерений длин и углов сегментов и создания линий для измерений.
+* openvisible	     —  позволяет открывать файлы в форматах *GPX* и *osm*, данные в которых пересекаются с текущей видимой областью.
+* surveyor	    —  позволяет добавлять маркеры/узлы для текущих GPS-местоположений.
+* cadastre-fr       —  специальный модуль для работы с WMS-сервером Француской кадастровой службы.
+* DirectUpload      —  напрямую загружает GPS-треки из текущего активного в JOSM слоя на openstreetmap.org.
+* editgpx            —  обеспечивает анонимность временных меток и очень быстро удаляет части больших GPX-треков.
+* lakewalker        —  помогает в оцифровке WMS-изображений.
+* routing           —  обеспечивает функциональность построения маршрутов.
 
 
-Further reading
+Смотрите также
 --------------------------------------------------------------------------------
 
-* User guide: http://wiki.openstreetmap.org/wiki/JOSM/Guide
-* `Video tutorial <http://showmedo.com/videotutorials/video?name=1800050&amp;fromSeriesID=180>`_
-* Online tutorial: http://www.use-it.be/europe/docs/OSMmanual/
-* Open the sample data with :menuselection:`File --> Open... --> /usr/local/share/data/osm/feature_city.osm.bz2`
-* Further instructions are given when you launch the application.
+* Руководство пользователя: http://wiki.openstreetmap.org/wiki/JOSM/Guide
+* `Видео-урок <http://showmedo.com/videotutorials/video?name=1800050&amp;fromSeriesID=180>`_
+* Учебник онлайн: http://www.use-it.be/europe/docs/OSMmanual/
+* Откройте образец данных с помощью меню :menuselection:`Файл (File) --> Открыть... (Open...) --> /usr/local/share/data/osm/feature_city.osm.bz2`
+* Дальнейшие инструкции будут предложены при запуске приложения.
 
 
 Merkaartor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Merkaartor** is a map editor for OpenStreetMap which uses the Qt toolkit.
-It's a bit more user friendly than JOSM, but has a few less features.
+**Merkaartor** — редактор карт для OpenStreetMap, который использует интерфейс Qt.
+Он легче в использовании, чем JOSM, но обладает меньшей функциональностью.
 
-* Homepage: http://merkaartor.be
-* Online help: http://merkaartor.be/wiki/merkaartor/Documentation
+* Домашняя страница: http://merkaartor.be
+* Справка онлайн: http://merkaartor.be/wiki/merkaartor/Documentation
 
 Gosmore
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Gosmore** is an in-development OpenStreetMap viewer, wayfinder, and search client
-with support for speech synthesis and fetching the current user's
-current GPS location using `gpsd <http://savannah.nongnu.org/projects/gpsd>`_.
+**Gosmore** — это разрабатываемый в настоящий момент просмотрщик данных OpenStreetMap, а также инструмент для построения маршрутов и поисковый клиент с поддержкой речевого синтеза и получения текущего расположения пользователя
+по GPS с помощью `gpsd <http://savannah.nongnu.org/projects/gpsd>`_.
 
-* Homepage: http://wiki.openstreetmap.org/index.php/Gosmore
-* Online wiki help: http://wiki.openstreetmap.org/wiki/Gosmore#User_Interface
-* Before running Gosmore you will need to convert a `planet-*.osm` data file. Some data is provided in the `/usr/local/share/osm/` directory.
+* Домашняя страница: http://wiki.openstreetmap.org/index.php/Gosmore
+* Вики-справка онлайн: http://wiki.openstreetmap.org/wiki/Gosmore#User_Interface
+* Перед запуском Gosmore потребуется конвертировать файл данных `planet-*.osm`. Некоторые данные представлены в директории `/usr/local/share/osm/`.
 
-Upon launching Gosmore from the Geospatial menu or Desktop folders, you will
-be given the chance to create the required data file if needed. You can also
-manually import it with:
+После запуска Gosmore из меню Geospatial или папок на Рабочем столе вам представится возможность
+создать необходимый файл с данными, если потребуется. Вы можете также импортировать его с помощью команды:
 
 ::
 
   bzip2 -dc /usr/local/share/data/osm/Nottingham_CBD.osm.bz2 | gosmore rebuild
 
-This will create gosmore.pak and only needs to be run once. You can then
-search for locations within the OSM dataset, for example "Jubilee Campus".
-Use the middle and right mouse buttons to set the origin and
-destination for shortest path routing. Use the "O" button to access the
-program options, and the "3D" button to get a perspective view useful
-for in-car GPS navigation.
+Выполнение этой команды (запускать которую необходимо один раз) приведёт к созданию файла "gosmore.pak".
+После этого станет возможен поиск местоположений в наборе данных OSM, например, "Jubilee Campus".
+Используйте среднюю и правую кнопки мыши, чтобы задать начальную и 
+конечную точки для поиска кратчайшего пути. Используйте кнопку "O" для доступа к
+настройкам программы, и кнопку "3D" для включения перспективного вида, полезного 
+для использования GPS в автомобиле.
 
 
 Osmarender
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Osmarender** is a rule-based rendering tool for generating SVG images of
-OSM data. It takes as its input an OpenStreetMap dataset and a rules file.
-It outputs an SVG image that is marked up in accordance with the styles
-defined in the rule file. In future it may be replaced with software
-like `TileMill <http://wiki.openstreetmap.org/wiki/Tilemill>`_.
+**Osmarender** — инструмент для рендеринга на основе правил для создания SVG-изображений данных
+OSM. Инструмент использует набор данных OpenStreetMap и файл с правилами в качестве входных данных.
+Результатом является SVG-изображение, которое оформлено в соответствии со стилями,
+назначенными в файле с правилами. В будущем этот инструмент может быть замещён другим программным обеспечением,
+например, `TileMill <http://wiki.openstreetmap.org/wiki/Tilemill>`_.
 
-* Homepage: http://wiki.openstreetmap.org/wiki/Osmarender
+* Домашняя страница: http://wiki.openstreetmap.org/wiki/Osmarender
 
-Example:
+Пример:
 
-.. note:: This requires approx. 1 GB free RAM and takes a few days to process
-   the full city. A single village or suburb extract should be much more manageable.
-   See `Xapi <http://wiki.openstreetmap.org/wiki/Xapi>`_ in the OSM Wiki for
-   details on how to download smaller chunks into an ``.osm`` file, or use
-   *JOSM* or *Merkaartor* to download a smaller chunk.
-   A smaller subset file called `Nottingham_CBD.osm` has been included for your
-   convenience, but even that still make take a rather long time to process.
+.. note:: Этот пример потребует приблизительно 1 ГБ свободной оперативной памяти и несколько дней для обработки
+   целого города. Небольшой город или район города будет обработан быстрее.
+   См. `Xapi <http://wiki.openstreetmap.org/wiki/Xapi>`_ в OSM-вики для
+   дальнейших инструкций о том, как скачать меньшие объёмы данных в виде файла ``.osm``, или используйте
+   *JOSM* или *Merkaartor* для скачивания такого небольшого фрагмента.
+   Файл с небольшим объёмом данных называется `Nottingham_CBD.osm`. Он включен в поставку для вашего
+   удобства, однако обработка даже этого файла займет достаточно продолжительное время.
 
 ::
 
@@ -114,7 +112,7 @@ Example:
   bzip2 -d feature_city_CBD.osm.bz2
   osmarender feature_city_CBD.osm
 
-You can view the results in a SVG viewer like `Inkscape` or `Firefox`:
+Вы можете просмотреть результаты в SVG-вьюере, например в `Inkscape` или `Firefox`:
 
 ::
 
@@ -124,24 +122,25 @@ You can view the results in a SVG viewer like `Inkscape` or `Firefox`:
 osm2pgsql
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**osm2pgsql** is a utility program that converts OpenStreetMap (.osm) data
-into a format that can be loaded into PostgreSQL (PostGIS). It is often
-used to render OSM data visually using Mapnik, as Mapnik can query
-PostgreSQL for map data, but does not work directly with OSM files.
+**osm2pgsql** — служебная программа для преобразования данных OpenStreetMap (.osm)
+в формат, который может быть загружен в PostgreSQL (PostGIS). Она часто используется
+при рендеринге данных OSM с последующим отображением средствами Mapnik, так Mapnik может выполнять запросы к
+PostgreSQL для получения картографических данных, но не может напрямую работать с файлами OSM.
 
-* Homepage: http://wiki.openstreetmap.org/wiki/Osm2pgsql
+* Домашняя страница: http://wiki.openstreetmap.org/wiki/Osm2pgsql
 
 
 osm2poidb
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**osm2poidb** is a utility program that extracts Point of Interest (POI) data
-from a OpenStreetMap (.osm) data extract. The results are saved into a SQLite
-database file. A processed version of the OSM feature city extract provided with
-this disc can be found in the `/usr/local/share/data/osm` directory, and explored
-with the `SQLite database browser` program in the Databases menu. On this disc
-it is used by the :doc:`GpsDrive <../overview/gpsdrive_overview>` software to
-provide a searchable list of local amenities. To run it manually, do:
+**osm2poidb** — служебная программа, которая извлекает данные о т.н. "точках интереса" (POI) из
+выгрузки данных OpenStreetMap (*.osm). Результаты сохраняются в файл базы данных SQLite.
+Обработанная версия объектов OSM типа "город", входящая в состав данных на этом диске,
+находится в директории `/usr/local/share/data/osm` и может быть обнаружена
+с помощью программы `SQLite database browser` в меню Базы данных (Databases). На этом диске
+используется программное обеспечение :doc:`GpsDrive <../overview/gpsdrive_overview>` для 
+получения доступного для поиска списка местных объектов инфраструктуры (ключ *amenity*). 
+Чтобы запустить его "вручную", выполните следующую команду:
 
 ::
 

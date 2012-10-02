@@ -1,11 +1,11 @@
-:Author: Hamish Bowman
-:Reviewer: Cameron Shorter, LISAsoft
-:Version: osgeo-live5.5
-:License: Creative Commons Attribution 3.0 Unported  (CC BY 3.0)
+:Автор: Hamish Bowman
+:Проверил: Cameron Shorter, LISAsoft
+:Версия: osgeo-live5.5
+:Лицензия: Creative Commons Attribution 3.0 Unported  (CC BY 3.0)
 
 .. image:: ../../images/project_logos/logo-gpsdrive.png
   :scale: 80 %
-  :alt: project logo
+  :alt: Логотип проекта
   :align: right
   :target: http://www.gpsdrive.de
 
@@ -13,53 +13,45 @@
 GpsDrive
 ================================================================================
 
-GPS Navigation Software 
+GPS-навигация
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`GpsDrive <http://www.gpsdrive.de>`_ is a car (bike, ship, plane, foot)
-navigation system. GpsDrive displays your position provided from a GPS
-on a zoomable map. The map file is auto-selected depending on your position
-and preferred map scale.  All GPS receivers which support the NMEA protocol
-should be usable, as well as many USB GPSs using a binary protocol known to
-the `Gpsd <http://gpsd.berlios.de>`_ GPS daemon and multiplexer.
+`GpsDrive <http://www.gpsdrive.de>`_ — это автомобильная (велосипедная, водная, воздушная, пешеходная) навигационная система. GpsDrive отображает ваше местоположение, полученное из GPS, на масштабируемой карте. Файл карты выбирается автоматически в зависимости от вашего расположения и указанного масштаба. Все GPS-приёмники, по идее, должны быть совместимы, поскольку обычно USB-GPS используют бинарный протокол, доступный для `gpsd <http://gpsd.berlios.de>`_ — GPS-сервиса и мультиплексора.
 
-Core Features
+Базовые функции
 --------------------------------------------------------------------------------
 
 .. image:: ../../images/screenshots/1024x768/gpsdrive-cyclemap.png
   :scale: 50 %
-  :alt: screenshot
+  :alt: Внешний вид
   :align: right
 
-* Download LANDSAT or OpenStreetMap data from the Web, or register your own images
-* Live rendering of OpenStreetMap data stored in a PostGIS database using Mapnik
-* Live rendering from NASA's Blue Marble high-resolution mosaic
-* Verbal instructions using eSpeak
-* Highly customizable dashboard and GUI
-* GPX track and route support, a number of waypoint storage options including
-  SQLite and GpsBabel-compatible plain text files
-* Search for nearest POI waypoints within a given radius
-* Route planning
-* Included server to keep track of your friends' positions
-* Kismet Wifi integration
+* Загрузка из сети данных LANDSAT или OpenStreetMap, либо регистрация вашего собственного изображения
+* Рендеринг "на лету" данных OpenStreetMap, записанных в базе данных PostGIS, с использованием Mapnik
+* Рендеринг "на лету" из мозаики высокого разрешения NASA Blue Marble
+* Голосовые сообщения посредством eSpeak
+* Гибко настраиваемая информационная панель и графический интерфейс
+* Поддержка GPX-треков и маршрутов, множество опций хранения путевых точек, включая SQLite и текстовый файл, совместимый с GpsBabel
+* Поиск ближайших POI в заданном радиусе
+* Планирование маршрута
+* Наличие сервера, хранящего местоположения ваших друзей
+* Интеграция с Kismet Wifi
 
-Details
+Дополнительная информация
 --------------------------------------------------------------------------------
 
-**Website:** http://www.gpsdrive.de
+**Веб-сайт:** http://www.gpsdrive.de
 
-**Licence:** GNU General Public License (GPL) version 2
+**Лицензия:** `GPL версия 2 <http://www.gnu.org/licenses/gpl-2.0.html>`_
 
-**Software Version:** 2.12svn
+**Версия ПО:** 2.12svn
 
-**Supported Platforms:** GNU/Linux, Mac OSX
+**Поддерживаемые платформы:** GNU/Linux, MacOS X
 
-**Support:** http://gpsdrive.de/support.shtml
+**Поддержка:** http://gpsdrive.de/support.shtml
 
 
-Quickstart
+Начало работы
 --------------------------------------------------------------------------------
 
-* :doc:`Quickstart documentation <../quickstart/gpsdrive_quickstart>`
-
-
+* :doc:`Введение <../quickstart/gpsdrive_quickstart>`

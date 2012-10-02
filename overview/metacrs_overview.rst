@@ -1,12 +1,12 @@
-:Author: OSGeo-Live
-:Author: Mike Adair
-:Reviewer: Cameron Shorter, LISAsoft
-:Version: osgeo-live5.5
-:License: Creative Commons Attribution 3.0 Unported (CC BY 3.0)
+:Автор: OSGeo-Live
+:Автор: Mike Adair
+:Проверил: Cameron Shorter, LISAsoft
+:Версия: osgeo-live5.5
+:Лицензия: Creative Commons Attribution 3.0 Unported (CC BY 3.0)
 
 .. (no logo) .. image:: ../../images/project_logos/logo-GDAL.png
 ..  :scale: 60 %
-..  :alt: project logo
+..  :alt: Логотип проекта
 ..  :align: right
 ..  :target: http://trac.osgeo.org/metacrs/wiki
 
@@ -19,118 +19,117 @@
 MetaCRS
 ================================================================================
 
-Coordinate Reference System Transformations
+Трансформации координатных систем
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../../images/project_logos/logo-metacrs.png
   :scale: 100 %
-  :alt: map projection example
+  :alt: Пример проекции карты
   :align: right
   :target: http://trac.osgeo.org/metacrs/wiki
 
 
-`The group of MetaCRS projects <http://trac.osgeo.org/metacrs/wiki>`_ provide
-libraries of methods to transform between different coordinate reference
-systems. A geographic coordinate reference systems allows all points on the
-earth to be described as set of coordinates (such as latitude, longitude and
-elevation). Different systems are used to represent the 3 dimensional earth
-on a flat, 2 dimensional map.
+`Группа проектов MetaCRS <http://trac.osgeo.org/metacrs/wiki>`_ предоставляет 
+библиотеки методов для трансформации между различными координатными системами. 
+Географические координатные системы позволяют все точки на Земле описать как набор координат 
+(таких, как широта, долгота и высота). Различные системы координат используются для представления 
+поверхности Земли на "плоской" двухмерной карте.
 
-The MetaCRS libraries are included in other projects and some are also
-available via a command line interface.
+Библиотеки MetaCRS включены в другие проекты, и некоторые из них также доступны 
+через интерфейс командной строки.
 
-The sub-projects that make up MetaCRS include:
+Подпроекты MetaCRS включают:
 
-* PROJ.4 (C++) - used in MapServer, GRASS GIS, PostGIS, Mapnik, Thuban, OGDI, TopoCad, OGRCoordinateTransformation and various others.
-* Proj4js (JavaScript) - used in OpenLayers.
-* CS-Map (C++) - used in MapGuide.
+* PROJ.4 (C++) — используется в MapServer, GRASS GIS, PostGIS, Mapnik, Thuban, OGDI, TopoCad, OGRCoordinateTransformation и многом другом.
+* Proj4js (JavaScript) — используется в OpenLayers.
+* CS-Map (C++) — используется в MapGuide.
 * GeoTIFF/libgeotiff (C++).
 * Proj4J (Java).
-* `SpatialReference.org <http://spatialreference.org/>`_  - website to retrieve coordinate system definitions.
+* `SpatialReference.org <http://spatialreference.org/>`_  — веб-сайт, содержащий описания координатных систем.
 
-Core Features
+Базовые функции
 --------------------------------------------------------------------------------
 
-* Provides point transformation from one coordinate reference system to another.
-* Includes transformation between datums.
-* Large number of projection classes supported.
+* Трансформация точек из одной координатной системы в другую.
+* Трансформация между датумами.
+* Поддержка большого количества классов проекции.
 
 
-Implemented Standards
+Реализованные стандарты
 --------------------------------------------------------------------------------
 
-The projects typically use coordinate system definitions as defined by the 
-`European Petroleum Survey Group (EPSG) <http://www.epsg.org/>`_ and defined in
-Well Known Text (WKT) format.
+Как правило, проекты используют описания координатных систем, определённые в 
+`European Petroleum Survey Group (EPSG) <http://www.epsg.org/>`_ и описанные в формате 
+Well Known Text (WKT).
 
 PROJ.4
 --------------------------------------------------------------------------------
 
-  **Website:**  http://trac.osgeo.org/proj/
-  
-  **Licence:** `X/MIT style Open Source license <http://trac.osgeo.org/proj/wiki/WikiStart#License>`_
-  
-  **Software Version:** 4.7.0
-  
-  **Supported Platforms:** Windows, Linux, Mac
-  
-  **API Interfaces:** C, C++, Python, Java, Ruby
-  
-  **Support:** http://lists.maptools.org/mailman/listinfo/proj
+  **Веб-сайт:**  http://trac.osgeo.org/proj/
+
+  **Лицензия:** `в стиле X/MIT <http://trac.osgeo.org/proj/wiki/WikiStart#License>`_
+
+  **Версия ПО:** 4.7.0
+
+  **Поддерживаемые платформы:** Windows, Linux, Mac
+
+  **Интерфейсы API:** C, C++, Python, Java, Ruby
+
+  **Поддержка:** http://lists.maptools.org/mailman/listinfo/proj
 
 Proj4js
 --------------------------------------------------------------------------------
 
-  **Website:**  http://proj4js.org
-  
-  **Licence:** `X/MIT style Open Source license <http://trac.osgeo.org/proj/wiki/WikiStart#License>`_
-  
-  **Software Version:** 1.1.0
-  
-  **Supported Platforms:** Windows, Linux, Mac
-  
-  **API Interfaces:** JavaScript
-  
-  **Support:** http://lists.osgeo.org/mailman/listinfo/MetaCRS
+  **Веб-сайт:**  http://proj4js.org
+
+  **Лицензия:** `в стиле X/MIT <http://trac.osgeo.org/proj/wiki/WikiStart#License>`_
+
+  **Версия ПО:** 1.1.0
+
+  **Поддерживаемые платформы:** Windows, Linux, Mac
+
+  **Интерфейсы API:** JavaScript
+
+  **Поддержка:** http://lists.osgeo.org/mailman/listinfo/MetaCRS
 
 CS-Map
 --------------------------------------------------------------------------------
 
-  **Website:**  http://trac.osgeo.org/csmap/
-  
-  **Licence:** `custom <http://svn.osgeo.org/metacrs/csmap/trunk/CsMapDev/license.txt>`_
-  
-  **Software Version:** 13.0
-  
-  **Supported Platforms:** Windows, Linux, Mac
-  
-  **API Interfaces:** C, C++
+  **Веб-сайт:**  http://trac.osgeo.org/csmap/
 
-  **Support:** http://lists.osgeo.org/mailman/listinfo/MetaCRS
+  **Лицензия:** `собственная <http://svn.osgeo.org/metacrs/csmap/trunk/CsMapDev/license.txt>`_
+
+  **Версия ПО:** 13.0
+
+  **Поддерживаемые платформы:** Windows, Linux, Mac
+
+  **Интерфейсы API:** C, C++
+
+  **Поддержка:** http://lists.osgeo.org/mailman/listinfo/MetaCRS
 
 GeoTIFF/libgeotiff
 --------------------------------------------------------------------------------
 
-  **Website:**  http://trac.osgeo.org/geotiff/
-  
-  **Licence:** `X/MIT style Open Source license <http://trac.osgeo.org/proj/wiki/WikiStart#License>`_
-  
-  **Software Version:** 1.4.0
-  
-  **Support:** http://lists.maptools.org/mailman/listinfo/geotiff
-  
+  **Веб-сайт:**  http://trac.osgeo.org/geotiff/
+
+  **Лицензия:** `в стиле X/MIT <http://trac.osgeo.org/proj/wiki/WikiStart#License>`_
+
+  **Версия ПО:** 1.4.0
+
+  **Поддержка:** http://lists.maptools.org/mailman/listinfo/geotiff
+
 Proj4J
 --------------------------------------------------------------------------------
 
-  **Website:**  http://trac.osgeo.org/proj4j/
-  
-  **Licence:** `Apache License, Version 2.0 <http://www.apache.org/licenses/LICENSE-2.0>`_
-  
-  **Software Version:** 
-  
-  **Supported Platforms:** Windows, Linux, Mac
-  
-  **API Interfaces:** Java
-  
-  **Support:** http://lists.osgeo.org/mailman/listinfo/proj4j
-  
+  **Веб-сайт:**  http://trac.osgeo.org/proj4j/
+
+  **Лицензия:** `Apache, версия 2.0 <http://www.apache.org/licenses/LICENSE-2.0>`_
+
+  **Версия ПО:**
+
+  **Поддерживаемые платформы:** Windows, Linux, Mac
+
+  **Интерфейсы API:** Java
+
+  **Поддержка:** http://lists.osgeo.org/mailman/listinfo/proj4j
+

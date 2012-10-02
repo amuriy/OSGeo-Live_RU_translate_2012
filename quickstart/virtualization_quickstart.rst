@@ -1,102 +1,102 @@
-:Author: OSGeo-Live
-:Author: Micha Silver
-:Reviewer: Cameron Shorter, LISAsoft
-:Version: osgeo-live6.0
-:License: Creative Commons Attribution-ShareAlike 3.0 Unported  (CC BY-SA 3.0)
+:Автор: OSGeo-Live
+:Автор: Micha Silver
+:Рецензент: Cameron Shorter, LISAsoft
+:Версия: osgeo-live6.0
+:Лицензия: Creative Commons Attribution-ShareAlike 3.0 Unported  (CC BY-SA 3.0)
 
 ********************************************************************************
-OSGeo-Live Quickstart for Running in a Virtual Machine
+Быстрый запуск OSGeo-Live в виртуальной машине 
 ********************************************************************************
 
-This Quick Start describes one way to run OSGeo-Live within a VirtualBox virtual machine. For other methods, follow links from the "See Also" section below.
+Это руководство описывает один из способов запуска OSGeo-Live в виртуальной машине VirtualBox. Для 
+остальных способов проследуйте по ссылке из "См. также".
 
-Virtual Machine Advantages
+Преимущества виртуальных машин
 --------------------------------------------------------------------------------
 
-* Response speed of a VM is much faster than on the DVD, and typically comparable with installing directly on the host machine.
+* Работать с виртуальной машиной зачастую гораздо быстрее, чем с DVD, а установка практически такая же, как и на хост-машину.
 
-* All configuration changes, software updates, and saved files are permanent, just like on any "regular" computer. So
+* Все изменения конфигурации, обновления программного обеспечения и сохранения файлов являются постоянными, как и на любом "обычном" компьютере. Поэтому:
 
- * You can customize and update the system
- * You can save your work within the VM
- * You can install additional software
+ * Вы можете настроить и обновить систему
+ * Вы можете сохранить вашу работу в виртуальной машине
+ * Вы можете установить дополнительное программное обеспечение
  
-* You can backup your virtual machine installation.
+* Вы можете сделать резервную копию вашей установленной вируальной машины.
 
-System Requirements
+Системные требования
 --------------------------------------------------------------------------------
 
-* RAM: 2 GB at least. The Xubuntu system runs well with 1 GB of RAM, and you'll need to keep at least the same amount of memory for your host system. So a total of 2 GB will be needed for smooth operation.
-* Spare Hard Disk Space: The virtual disk file (vmdk) from:  `live.osgeo.org <http://live.osgeo.org/en/download.html>`_  unzips to almost 10 GB. And you'll want more space to allow some room to work on the virtual machine. So 20 GB is a good recommendation.
-* CPU: Any CPU will do, but a processor which supports "Virtualization Technology" will be faster. You can check your computer CPU `here <http://www.intel.com/support/processors/sb/cs-030729.htm>`_.
+* ОЗУ: 2 GB и выше. Xubuntu хорошо работает и с 1 Гб оперативной памяти, но вы должны будете оставить примерно такой же объем ОЗУ для хост-системы. Таким образом, для бесперебойной работы потребуются 2 GB.
+* Свободное место на жестком диске: файл виртуального диска (vmdk) с:  `live.osgeo.org <http://live.osgeo.org/en/download.html>`_  занимает почти 10 GB. А так как вам понадобится больше свободно места для работы в витуальной машине, то рекомендуемый объем свободного места — 20 GB.
+* Процессор: любой, однако процессор, поддерживающий "Virtualization Technology", будет работать быстрее. Вы можете проверить свой процессор `здесь <http://www.intel.com/support/processors/sb/cs-030729.htm>`_.
 
-Most machines produced in the last 4-5 years will meet these requirements.
+Большинство компьютеров не старше 4-5 лет соответствуют данным требованиям.
 
-Howto
+Инструкция
 --------------------------------------------------------------------------------
 
-**Downloads**
+**Загрузка**
 
-Download `Virtual Box <http://www.virtualbox.org/>`_  for your platform, and install the software. On windows run the installer, or on Ubuntu-like linux systems do the following:
+Загрузите и установите`VirtualBox <http://www.virtualbox.org/>`_  для вашего типа операционной системы. В Windows запустите Installer. В дистрибутивах Linux на базе Ubuntu выполните следующую команду:
 
   ``apt-get install virtualbox-ose``
 
-In addition download the OSGeo Virtual disk file (vmdk) from `live.osgeo.org <http://live.osgeo.org/en/download.html>`_
-. Click on the "Download virtual machine" button. Then unzip the downloaded file (using `7zip <http://www.7-zip.org>`_ ).
+Также вы можете скачать OSGeo Virtual disk (vmdk) с `live.osgeo.org <http://live.osgeo.org/en/download.html>`_. Щёлкните на кнопку "Download virtual machine". Затем распакуйте загруженный файл (можете использовать `7zip <http://www.7-zip.org>`_ ).
 
 
-**Create a Virtual Machine**
+**Создание виртуальной машины**
 
-Start the VirtualBox application and click on the New button to create a new VM, and then Next.
+Запустите VirtualBox и нажмите на кнопку *Создать*, затем нажмите *Вперёд*.
 
   .. image:: ../../images/screenshots/800x600/virtualbox.png
          :scale: 50 %
 
-Enter a name such as OSGeo-Live, and choose Linux as the "Operating system", and Ubuntu as the "Version".
+Введите имя, например "OSGeo-Live", выберите операционную систему Linux, версия — Ubuntu.
 
   .. image:: ../../images/screenshots/800x600/virtualbox_select_name.png
          :scale: 70 %
 
-In the next screen set the memory to 1024 MB (or more if your host computer has more than 4GB).
+Установите размер основной памяти 1024 MB (или больше, если у вашего компьютера более 4GB ОЗУ).
 
   .. image:: ../../images/screenshots/800x600/vmdk_memory.jpg
               :scale: 65 %
 
-Continue to the next screen and choose "Use existing hard disk" . Now click on the button (a folder icon) to browse to where you saved the osgeo-live-vm-6.0.vmdk file. Select this file, press Next and Create.
+Для продолжения нажмите "Вперёд". Выберите "Использовать существующий жёсткий диск". Нажмите на кнопку обзора (иконка в виде папки) и укажите путь, куда вы сохранили *osgeo-live-vm-6.0.vmdk*. Выберите этот файл, нажмите "Открыть", затем "Создать".
 
   .. image:: ../../images/screenshots/800x600/vmdk_disk.jpg
                    :scale: 65 %
 
-Once the VM is created, click on the Settings button. In the "General" section, go to the Advanced tab, and click to select "Show at top of screen" for the Mini toolbar.
+После того, как виртуальная машина будет создана, нажмите кнопку "Свойства". В пункте меню "Общие" выберите вкладку "Дополнительно", и для мини-тулбаре отметьте "Расположить сверху экрана".
 
   .. image:: ../../images/screenshots/800x600/vmdk_general_advanced.jpg
                    :scale: 65 %
 
-Go to the "Display" section and increase video memory to 32 or 64 MB.
+Откройте пункт "Дисплей" и установите значение видео-памяти равным 32 или 64 MB.
 
   .. image:: ../../images/screenshots/800x600/vmdk_display.jpg
                    :scale: 65 %
 
-In addition, move to the "Shared Folders" section, and click the "Add folder" (green + icon on the right) to find a directory on your host computer that you wish to share inside the VM.
+Далее перейдите в пункт меню "Общие папки", выберите "Добавить папку" (иконка с зеленым "плюсом" на папке справа). Выберите папку на локальной машине, которую вы бы хотели сделать доступной из виртуальной машины.
 
  .. image:: ../../images/screenshots/800x600/vmdk_shared_folders.jpg
                       :scale: 65 %
 
-Once the "Folder path" and "Folder name" are defined, click OK, and again OK to finish and close the settings window.
+После того, как будут указаны "Путь к папке" и "Имя папки", нажмите OK и еще раз OK для того, чтобы закончить настройку параметров и закрыть окно свойств.
 
 
-**Running the Virtual Machine**
+**Запуск виртуальной машины**
 
-Now bootup the VM by clicking the Start (green arrow) button.
+Теперь можете запустить виртуальную машину, нажав кнопку "Старт" (с зелёной стрелкой).
 
-Once the OSGeo system comes up, you have the option to add the VirtualBox "Guest Additions" to improve video performance, and enable the shared folders option that was defined above. The guest addition installations are supplied as an ISO file togther with the VirtualBox application from Oracle, and are not licensed as Free and Open Source Software. This ISO is mounted within the VM as a CD, and the installation is run from there. Here's how it's done:
+После того, как OSGeo-Live загрузится, вы можете установить "Дополнения гостевой ОС" в VirtualBox, чтобы улучшить производительность видео и включить возможность просматривать общие папки, параметры которой задали выше. Дополнения гостевой ОС обычно идут в виде ISO-образа вместе с VirtualBox, но они не лицензированы в качестве свободного и открытого программного обеспечения. ISO-образ монтируется в виртуальную машину в CD-привод, Установка будет производиться с него. Ниже пример, как это сделать.
 
-In the VirtualBox window, open the :menuselection:`Devices` menu and click :menuselection:`Install Guest Additions`. This will mount the Guest Additions as a CD drive in your OSGeo Live VM.
+В окне VirtualBox откройте меню :menuselection:`Устройства` и выберите :menuselection:`Установить Дополнения гостевой ОС`. После этого ISO-образ смонтируется в CD-привод виртуальной машины OSGeo-Live.
 
   .. image:: ../../images/screenshots/800x600/vmdk_guest_additions.jpg
                         :scale: 80 %
 
-Once the CD folder appears, open a terminal and run the following commands:
+После этого откройте терминал и выполните следующие команды:
 
 ``user@osgeolive:~$ sudo apt-get install linux-headers-`uname -r```
 
@@ -104,18 +104,18 @@ Once the CD folder appears, open a terminal and run the following commands:
 
 ``user@osgeolive:/media/VBOXADDITIONS_4.1.18_78361$ sudo ./VBoxLinuxAdditions.run``
 
-This will complete after a few moments. Reboot your VM, and you will now be able to run in full screen mode, and mount your shared folders. In the above example, we defined a Shared Folder path on the host system and named it "GIS" in the VM Settings. To mount it within the VM, open a terminal window and run:
+Немного подождите, пока закончится установка. После перезагрузки у вас появится возможность работать в полноэкранном режиме и подключать общие папки. В предыдущем примере мы определили путь к общей папке на локальном компьютере и присвоили ей имя "GIS" в свойствах виртуальной машины. Чтобы примонтировать её в виртуальной машине, откройте терминал и выполните:
 
 ``user@osgeolive:~$ mkdir GIS``
 
 ``user@osgeolive:~$ sudo mount -t vboxsf -o uid=user,rw GIS /home/user/GIS``
 
-Now files on your host machine in the chosen folder will also be available in the VM in the "GIS" folder in user's home directory.
+После этого файлы, которые вы поместите в общую папку на локальной машине, будут также доступны в виртуальной машине в папке "GIS" в домашней директории пользователя.
 
-See Also:
+См. также:
 --------------------------------------------------------------------------------
- * OSGeo wiki pages: 
-        `Other ways to create a Virtual Machine <http://wiki.osgeo.org/wiki/Live_GIS_Virtual_Machine>`_
+ * Вики-сайт OSGeo: 
+        `Другие методы создания виртуальной машины <http://wiki.osgeo.org/wiki/Live_GIS_Virtual_Machine>`_
 
  * :doc:`osgeolive_quickstart`
  * :doc:`osgeolive_install_quickstart`

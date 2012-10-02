@@ -1,130 +1,131 @@
-:Author: OSGeo-Live
-:Author: Cameron Shorter
-:Version: osgeo-live4.0
-:License: Creative Commons Attribution-ShareAlike 3.0 Unported  (CC BY-SA 3.0)
+:Автор: OSGeo-Live
+:Автор: Cameron Shorter
+:Лицензия: osgeo-live4.0
+:Лицензия: Creative Commons Attribution-ShareAlike 3.0 Unported  (CC BY-SA 3.0)
 
 ********************************************************************************
-OSGeo-Live Quickstart for Virtual Box
+Начало работы с OSGeo-Live в VirtualBox
 ********************************************************************************
 
-Here we describe a method for running an OSGeo-Live DVD or ISO in the `VirtualBox <http://www.virtualbox.org/>`_ Virtual Machine.
+Описание метода запуска OSGeo-Live DVD или ISO в виртуальной машине `VirtualBox <http://www.virtualbox.org/>`_.
 
-VirtualBox is an Open Source Virtual Machine which is used by many of the OSGeo-Live developers and testers.
+VirtualBox является виртуальной машиной с открытым исходным кодом, которая используется большим количеством разработчиков и тестеров OSGeo-Live.
 
-System Requirements
+Системные требования
 --------------------------------------------------------------------------------
 
-* RAM: 1 GB, preferably 2 GB if you plan to run other applications as well
-* Spare Hard Disk Space:
+* ОЗУ: 1 Гб; рекомендуется 2 Гб, если вы планируете запускать другие приложения 
+* Свободное место на жестком диске:
 
- * |osgeo-live-hdspace| if running from ISO
- * 17 GB if installing locally from an ISO
+ * |osgeo-live-hdspace| если запускаете ISO-образ
+ * 17 Гб при установке с ISO-образа
 
-Create a Virtual Machine
+Создание виртуальной машины
 --------------------------------------------------------------------------------
-Download and install `Virtual Box <http://www.virtualbox.org/>`_. On linux do the following:
+Загрузите и установите `Virtual Box <http://www.virtualbox.org/>`_. В дистрибутиве Linux, основанном на Debian, выполните:
 
   ``apt-get install virtualbox-ose``
 
-Open Virtual Box 
+Откройте VirtualBox 
 
   .. image:: ../../images/screenshots/800x600/virtualbox.png
     :scale: 70 %
 
-Select :guilabel:`New` to create a new Virtual Machine.
+Выберите :guilabel:`New` для создания новой виртуальной машины.
 
   .. image:: ../../images/screenshots/800x600/virtualbox_create_vm.png
     :scale: 70 %
 
-Select :guilabel:`Next`
+Нажмите :guilabel:`Next`
 
   .. image:: ../../images/screenshots/800x600/virtualbox_select_name.png
     :scale: 70 %
 
-Set a name for the image, and select "Linux", "Ubuntu".
+Задайте имя виртуальной машины, выберите тип "Linux", "Ubuntu".
 
   .. image:: ../../images/screenshots/800x600/virtualbox_memory.png
     :scale: 70 %
 
-Set Base Memory to at least 768 MB, 1 GB is better for trialing java based applications.
+Установите объём выделяемой оперативной памяти (минимум 768 Мб), 1 Гб для лучшей работы Java-приложений.
 
   .. image:: ../../images/screenshots/800x600/virtualbox_no_hard_disk.png
     :scale: 70 %
 
-Simple install: Deselect "Boot Hard Disk", the Virtual Machine will always
-boot from an simulated DVD.
+Простая установка: удалите "Boot Hard Disk", виртуальная машина будет всегда 
+загружаться с виртуального DVD-привода.
 
-If you wish to have a persistent virtual machine, which stores state
-between sessions and which can have improved screen resolution settings
-and tools set, then include the hard disk, and install later.
+Для сохранения состояния сессий и настроек виртуальной машины 
+включите и установите виртуальный жёсткий диск.
 
   .. image:: ../../images/screenshots/800x600/virtualbox_warning_no_hard_disk.png
     :scale: 70 %
 
-Select :guilabel:`Continue`
+Нажмите :guilabel:`Continue`
 
   .. image:: ../../images/screenshots/800x600/virtualbox_final_check.png
     :scale: 70 %
 
-Select :guilabel:`Finish`
+Нажмите :guilabel:`Finish`
 
   .. image:: ../../images/screenshots/800x600/virtualbox_select_settings.png
     :scale: 70 %
 
-The image is now created, but we now need to simulate having an OSGeo-Live DVD in the CD drive.
+Всё, создание виртуального жёсткого диска завершено. Теперь нужно создать виртуальный привод с 
+OSGeo-Live DVD в нём.
 
-Right click on the "osgeo-live" image, and select :guilabel:`Settings`.
+Щёлкните правой кнопкой мыши на образе "osgeo-live" и выберите :guilabel:`Settings`.
 
   .. image:: ../../images/screenshots/800x600/virtualbox_set_cd.png
     :scale: 70 %
 
-Select "Storage", CD/DVD Device, ...
+Выберите "Storage", CD/DVD Device, ...
 
   .. image:: ../../images/screenshots/800x600/virtualbox_add_dvd.png
     :scale: 70 %
 
-Select the OSGeo-Live image.
+Выберите образ OSGeo-Live.
 
   .. image:: ../../images/screenshots/800x600/virtualbox_start_vm.png
     :scale: 70 %
 
-Now you can start the virtual machine as per the :doc:`osgeolive_quickstart`
+Теперь вы можете запустить виртуальную машину в соответствии с :doc:`osgeolive_quickstart`
 
-Create permanent Virtual Machine
+Создание постоянной виртуальной машины
 --------------------------------------------------------------------------------
-If you plan to use the OSGeo-Live DVD a lot, you will likey want to create a permanent virtual machine, as per: :doc:`osgeolive_install_quickstart`.
+Если вы планируете использовать OSGeo-Live DVD постоянно, то установите его в виртуальную машину, как описано
+здесь: :doc:`osgeolive_install_quickstart`.
 
-Increase Display Size
+Увеличение разрешения экрана
 --------------------------------------------------------------------------------
-You can then add the virtual boots tools which support higher screen
-resolution support, copy and paste between guest and host, graphics
-acceleration, and more.
+Вы можете установить дополнительные инструменты, которые поддерживают большее разрешение экрана, 
+функцию копирования и вставки между гостевой и хост-системами, графическое ускорение
+и другое.
 
-Make sure you're computer is connected to the internet.
+Убедитесь, что ваш компьютер подключён к сети Интернет.
 
   .. image:: ../../images/screenshots/800x600/virtualbox_synaptic_menu.png
     :scale: 70 %
 
-Select the synaptic package manager application.
+Выберите приложение для управления пакетами *Synaptic*.
 
-Enter password = "user"
+Введите пораль = "user"
 
   .. image:: ../../images/screenshots/800x600/virtualbox_synaptic_select_tools.png
     :scale: 70 %
 
-Mark "virtualbox-ose-guest-utils" for installation.
+Отметьте "virtualbox-ose-guest-utils" для установки.
 
   .. image:: ../../images/screenshots/800x600/virtualbox_synaptic_apply.png
     :scale: 70 %
 
-Apply the changes.
+Примените изменения.
 
-Reboot the virtual machine and the display settings should match your host
-computer's display settings. These can be changed via:
+Перезагрузите виртуальную машину. Настройки экрана виртуальной машины станут такими же, как и у  
+физической машины. Они могут быть изменены:
 
-Select: :menuselection:`Applications --> Settings --> Xfce 4 Settings Manager --> Display`
+Выберите: :menuselection:`Applications --> Settings --> Xfce 4 Settings Manager --> Display`
 
-See Also:
+См. также:
 --------------------------------------------------------------------------------
 
  * :doc:`osgeolive_quickstart`

@@ -1,6 +1,6 @@
-:Author: Hamish Bowman
-:Version: osgeo-live6.0
-:License: Creative Commons Attribution-ShareAlike 3.0 Unported  (CC BY-SA 3.0)
+:Автор: Hamish Bowman
+:Версия: osgeo-live6.0
+:Лицензия: Creative Commons Attribution-ShareAlike 3.0 Unported  (CC BY-SA 3.0)
 
 .. image:: ../../images/project_logos/logo-viking.png
   :scale: 100 %
@@ -9,45 +9,42 @@
   :target: http://sourceforge.net/apps/mediawiki/viking/
 
 ********************************************************************************
-Viking Quickstart 
+Начало работы с Viking
 ********************************************************************************
 
-Running
+Запуск
 ================================================================================
 
-Getting Started
+Приступаем к работе
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. from /usr/share/doc/viking/GETTING_STARTED
+.. из /usr/share/doc/viking/GETTING_STARTED
 
-To quickly get started using Viking, follow these instructions.
+Для быстрого запуска Viking, выполните следующие шаги.
 
-1) Get some data from your GPS device. There are a couple ways to do this,
-a suitable GPX file containing a couple of tracks can be found on the disc
-at :file:`~/data/vector/R/test_trk2.gpx`.
+1) Получите данные с вашего GPS-устройства. Есть несколько способов сделать это.
+Найти файл GPX, содержащий насколько треков для примера, можно на диске 
+в :file:`~/data/vector/R/test_trk2.gpx`.
 
-2) Open up Viking and use :menuselection:`File --> Open` to open the GPX file.
-Viking will try to change its viewing area to the center of the layer (file)
-but sometimes if you have waypoints and tracks which are very far apart you 
-won't see anything. If this is the case, expand the layer (on the Layers 
-Panel to the left), then expand "Waypoints", find a waypoint and right-click 
-on it and click "Goto".
+2) Запустите Viking и выполните :menuselection:`File --> Open` для того, чтобы открыть GPX-файл.
+Viking будет пытаться масштабировать окно просмотра по центру карты,
+поэтому, если у вас есть точки и треки, которые удалены друг от друга на большое расстояние, 
+то вы ничего не увидите. Для того, чтобы их увидеть, откройте слой (слева на панели  
+слоёв), затем откройте "Waypoints", найдите маршрутную точку и приблизьте её, щёлкнув по ней  
+правой кнопкой мыши и выбрав пункт "Goto".
 
-3) Now add a map layer (:menuselection:`Layers --> New Map Layer`), choose a suitable
-cache  directory where you would like to store your tracks and click OK. Zoom
-to a comfortable level (I suggest 4 mpp) by clicking the left and right mouse 
-buttons on the gray area where your tracks are. Now from the menu choose 
-:menuselection:`Tools --> Maps Download`, Click where you would like to download a map. 
-You can set it to auto-download the tiles by right clicking on the "Map" layer,
-selecting `Properties`, and ticking the `Autodownload maps` check box. 
-Regardless of what tool you are using, the middle mouse button always pans. 
+3) Теперь добавьте слой карты (:menuselection:`Layers --> New Map Layer`), выберите подходящий
+каталог, куда бы вы хотели сохранять свои данные, и нажмите OK. Нажимая левую и правую кнопки мыши на 
+серой области, приблизьте слой для удобного рамещения данных в окне. Далее в меню выберите  
+:menuselection:`Tools --> Maps Download`, укажите место, куда вы хотите загрузить карту. 
+Вы можете установить автоматическую загрузку тайлов, щёлкнув правой кнопкой мыши на слое "Map",
+далее выбрать `Properties` и отметив пункт `Autodownload maps`. 
+Независимо от того, какой инструмент вы используете, средней кнопкой мыши вы всегда можете подвинуть карту. 
 
-4) You will notice the maps are being drawn on top of the tracks, which is 
-probably not what you want. Look at the Layers Panel to the left. Notice how 
-the layer named "Map" is ABOVE your TrackWaypoint layer that your GPS data is 
-in. This means that it will be drawn last, or on top of the other layers. 
-Select the Map layer from the list and click the down arrow button beneath 
-the list. Your tracks will now be drawn over the map.
+4) Загруженные карты будут отображаться поверх треков. 
+Измените в панели слоев их порядок. Поместите слой с треками над слоем карты для их корректного 
+отображения.
+
 
 .. TODO: some explanation of the layers, etc. is required.
 

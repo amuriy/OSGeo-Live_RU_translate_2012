@@ -1,54 +1,53 @@
-:Author: Hamish Bowman
-:Reviewer: Cameron Shorter, LISAsoft
-:Version: osgeo-live5.5
-:License: Creative Commons Attribution 3.0 Unported  (CC BY 3.0)
+:Автор: Hamish Bowman
+:Проверил: Cameron Shorter, LISAsoft
+:Версия: osgeo-live5.5
+:Лицензия: Creative Commons Attribution 3.0 Unported  (CC BY 3.0)
 
 .. image:: ../../images/project_logos/logo-zygrib.png
   :scale: 150 %
-  :alt: project logo
+  :alt: Логотип проекта
   :align: right
   :target: http://www.zygrib.org
 
 zyGrib
 ================================================================================
 
-Weather forecasting 
+Прогноз погоды
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-zyGrib is a program to download and visualize weather forecast data in
-the standard GRIB distribution format.
+zyGrib — это программа для загрузки и визуализации данных прогноза погоды в стандартном обменном формате GRIB.
 
-Core Features
+Базовые функции
 --------------------------------------------------------------------------------
 
 .. image:: ../../images/screenshots/1024x768/zygrib_xynthia_010b.jpg
   :scale: 40 %
-  :alt: screenshot
+  :alt: Внешний вид
   :align: right
 
-* Visualization of meteorologic data from files in GRIB format
-* Automatic download of weather and wave forecasts
-* Automatic download from IAC (fleetcode) data
-* Play animations of 5-day forecasts
-* Create your own regional weather maps (worldwide), or view a detailed quantitative forecast for a particular location.
-* Plot wind, pressure, temperature, humidity, rain, snow, cloud cover, dew point, and high altitude data.
+* Визуализация метеорологических данных из файлов в формате GRIB
+* Автоматическая загрузка прогнозов погоды и волнения
+* Автоматическая загрузка данных IAC (полётные коды)
+* Анимация прогноза на 5 дней
+* Создание собственных региональных погодных карт или просмотр детального прогноза для определённых локаций
+* Нанесение ветров, давления, температуры, влажности, дождей, снега, облачности, точек росы и высотных данных
 
-Details
+Дополнительная информация
 --------------------------------------------------------------------------------
 
-**Website:** http://www.zygrib.org
+**Веб-сайт:** http://www.zygrib.org
 
-**Licence:** GNU General Public License (GPL) version 3
+**Лицензия:** `GPL версия 3 <http://www.gnu.org/licenses/gpl.html>`_
 
-**Software Version:** 3.9.2
+**Версия ПО:** 3.9.2
 
-**Supported Platforms:** GNU/Linux, Mac OSX, MS Windows
+**Поддерживаемые платформы:** GNU/Linux, Mac OS X, MS Windows
 
-**Support:** http://zygrib.org/forum/
+**Поддержка:** http://zygrib.org/forum/
 
 
-Quickstart
+Начало работы
 --------------------------------------------------------------------------------
 
-* :doc:`Quickstart documentation <../quickstart/zygrib_quickstart>`
+* :doc:`Введение <../quickstart/zygrib_quickstart>`
 

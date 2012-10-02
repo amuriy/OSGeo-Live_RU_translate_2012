@@ -1,62 +1,56 @@
-:Author: activityworkshop
-:Reviewer: Cameron Shorter, LISAsoft
-:Version: osgeo-live5.5
-:License: Creative Commons Attribution 3.0 Unported (CC BY 3.0)
+:Автор: activityworkshop
+:Проверил: Cameron Shorter, LISAsoft
+:Версия: osgeo-live5.5
+:Лицензия: Creative Commons Attribution 3.0 Unported (CC BY 3.0)
 
 .. image:: ../../images/project_logos/logo-prune.png
-  :alt: project logo
+  :alt: Логотип проекта
   :align: right
   :target: http://gpsprune.activityworkshop.net/
 
 GpsPrune
 ================================================================================
 
-GPS Track-Editing
+Просмотр, правка и конвертация GPS-треков
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`GpsPrune <http://gpsprune.activityworkshop.net/>`_ is a tool for viewing,
-editing and converting coordinate data from GPS systems.  It uses OpenStreetMap
-imagery to show recorded tracks and waypoints, and provides a variety of tools
-to let you edit, crop and prune the data points.  It also has functions for
-correlating photos and audio files to the coordinates using the file timestamps.
+`GpsPrune <http://gpsprune.activityworkshop.net/>`_ — это инструмент для просмотра, редактирования и конвертации координатных данных GPS. Он использует карты OpenStreetMap для отображения записанных треков и путевых точек и предоставляет множество средств для редактирования, обрезки и очистки треков. Также он имеет функции сопоставления фотографий и аудиофайлов с координатами, используя временные метки.
 
-GpsPrune uses Gpsbabel, if available, to read data directly from a GPS receiver,
-and can send the edited data back to the receiver too.
+При возможности GpsPrune использует Gpsbabel для чтения данных прямо из GPS-приёмника, и может передавать отредактированные данные обратно в приёмник.
 
-GpsPrune runs on Mac OSX, Windows and Linux, and is available
-in over ten different languages.
+GpsPrune работает на Mac OS X, Windows и Linux, имеет поддержку более 10 различных языков.
 
-Core Features
+Базовые функции
 --------------------------------------------------------------------------------
 
 .. image:: ../../images/screenshots/1024x768/prune_denver.png
   :scale: 50 %
-  :alt: screenshot
+  :alt: Внешний вид
   :align: right
 
-* Load data from text files, gpx files, kml/kmz files, or directly from a GPS receiver
-* Zoomable map imagery from OpenStreetMap or any compatible server (OpenCycleMap, CloudMade etc)
-* Altitude or speed profile view
-* Editing tools for deleting, reversing and compressing tracks
-* Interactive 3d view of the data, or export to POV format for 3D rendering
-* Save data to text files, gpx files, kml/kmz files, or directly to a GPS receiver
-* Automatic correlation of photographs and audio files with the loaded data using timestamps
-* Creation of charts such as altitude against distance, speed against time
+* Загрузка данных из текстовых файлов, GPX, KML/KMZ или напрямую из GPS-приёмника
+* Масштабируемая карта из OpenStreetMap или другого совместимого сервера (OpenCycleMap, CloudMade и др.)
+* Просмотр профиля высоты или скорости
+* Инструменты для удаления, реверсирования и сжатия треков
+* Интерактивный 3D-просмотр данных или экспорт в формат POV для 3D рендеринга
+* Сохранение данных в текстовые файлы, GPX, KML/KMZ или напрямую в GPS-приёмник
+* Автоматическое сопоставление фотографий и аудиофайлов с загруженными данными с помощью временных меток
+* Создание графиков высоты по пройденному пути и скорости по времени
 
-Details
+Дополнительная информация
 --------------------------------------------------------------------------------
 
-**Website:** http://gpsprune.activityworkshop.net/
+**Веб-сайт:** http://gpsprune.activityworkshop.net/
 
-**Licence:** GNU General Public License (GPL) version 2
+**Лицензия:** `GPL версия 2 <http://www.gnu.org/licenses/gpl-2.0.html>`_
 
-**Software Version:** 13.1
+**Версия ПО:** 13.1
 
-**Supported Platforms:** GNU/Linux, Mac OSX, Windows
+**Поддерживаемые платформы:** GNU/Linux, Mac OS X, Windows
 
 
-Quickstart
+Начало работы
 --------------------------------------------------------------------------------
 
-* :doc:`Quickstart documentation <../quickstart/gpsprune_quickstart>`
+* :doc:`Введение <../quickstart/gpsprune_quickstart>`
 

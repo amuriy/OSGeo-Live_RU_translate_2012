@@ -1,137 +1,87 @@
-:Author: Hamish Bowman
-:Version: osgeo-live6.0
-:License: Creative Commons Attribution-ShareAlike 3.0 Unported  (CC BY-SA 3.0)
+:Автор: Hamish Bowman
+:Версия: osgeo-live6.0
+:Лицензия: Creative Commons Attribution-ShareAlike 3.0 Unported  (CC BY-SA 3.0)
 :Copyright: 2011 by The OSGeo Foundation
 
 .. image:: ../../images/project_logos/logo-gpsdrive.png
   :scale: 100 %
-  :alt: project logo
+  :alt: Логотип проекта
   :align: right
   :target: http://www.gpsdrive.de
 
 ********************************************************************************
-GpsDrive Quickstart 
+Начало работы с GpsDrive
 ********************************************************************************
 
-Running
+Запуск
 ================================================================================
 
-You will most likely want to install
-the `gpsd <http://savannah.nongnu.org/projects/gpsd>`_ package so that you can talk
-to your GPS; without that GpsDrive is just a nice map viewer.
+Вы определённо захотите установить пакет `gpsd <http://savannah.nongnu.org/projects/gpsd>`_, который позволит взаимодействовать с вашим GPS; без него GpsDrive будет просто симпатичной смотрелкой для карт.
 
-OpenStreetMap tiles will be generated automatically using the
-the :doc:`Mapnik <../overview/mapnik_overview>` library to
-render :doc:`OpenStreetMap <../overview/osm_dataset_overview>` map data stored
-in a preloaded :doc:`PostGIS <../overview/postgis_overview>` database.
-Static map tiles may also be downloaded from the internet without any extra installation.
-Verbal output is supported if the "espeak" software is installed.
+На диске предустановлена СУБД :doc:`PostGIS <../overview/postgis_overview>` с картографическими данными :doc:`OpenStreetMap <../overview/osm_dataset_overview>`. Тайлы из этих данных генерируются автоматически с использованием библиотеки :doc:`Mapnik <../overview/mapnik_overview>`. Также статические тайлы карты могут быть загружены из сети Интернет без установки. Голосовые сообщения поддерживаются при наличии установленного пакета "espeak".
 
 
-Setting up your GPS
+Подключение GPS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you have a GPS connected you will want to start the gpsd service.
-To do that run:
+Для подключения GPS нужно запустить сервис *gpsd*. Для этого выполните:
 
 ::
 
   sudo dpkg-reconfigure gpsd
 
-and
+и
 
 ::
 
   sudo /etc/init.d/gpsd start
 
-BlueTooth GPS users should take special care to read up about the no-probe
-option (for this reason we have not started gpsd automatically).
+Пользователям BlueTooth-GPS нужно будет почитать про опцию *no-probe* (по этой причине мы не запускаем gpsd автоматически).
 
-* 'xgps' is a good program to check that Gpsd can see your GPS ok.
+* Есть хорошая программа *xgps*. Она проверяет, нормально ли *gpsd* видит ваш GPS.
 
 
-Using without a GPS as a mapbook
+Использование без GPS в качестве атласа
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-If you don't have a GPS connected you can turn on Explore Mode
-with the 'e' key and then use the arrow keys to move around.
-Right-click to set the destination target.
+Если у вас нет GPS, вы можете переключиться в Explore Mode, нажав клавишу 'e'. Для перемещения используйте клавиши со стрелками. Щелчок правой кнопкой мыши указывает пункт назначения.
 
 
-Quick help
+Быстрая помощь
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-For help type '**man gpsdrive**' and '**gpsdrive --help**' at
-a Terminal prompt. This will show how to switch to Car or PDA
-mode which may be useful if you are working with a small screen
-like on a netbook.
+Для получения помощи наберите **man gpsdrive** и **gpsdrive --help** в командной строке. Там вы можете узнать, как переключиться в режимы *Car* или *PDA*, который полезен, если вы работаете с маленьким экраном вроде нетбука.
 
 
-Customizing the display
+Настройка отображения
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Besides the options given in the Preferences menu and the different 
-car/PDA/desktop modes offered from the command line, you can change the
-displayed dashboard meters. Just click on one of the three dashboard
-positions and select a new item. You can toggle on and off the dashboard
-and map controls with the '**d**' and '**m**' keys.
+Помимо опций, доступных в меню Preferences и режимов car/PDA/desktop из командной строки, вы можете изменить значения элементов приборной доски щелчком мыши по ним. Отображение панели управления картой и приборной доски можно включать и выключать клавишами **d** и **m**.
 
 
-Mapnik rendering of OpenStreetMap data
+Рендеринг данных OpenStreetMap посредством Mapnik
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-If you have a local PostGIS database running (for example the one that comes
-with this Live DVD) you can setup GpsDrive to render very pretty street maps
-on the fly from OpenStreetMap.org data using the Mapnik renderer. The
-PostgreSQL database it looks for on this disc is called "osm_local_smerc".
-As this OpenStreetMap extract has only been loaded for the city hosting
-the FOSS4G conference, you may wish to add your own Planet.osm data with the
-`osm2pgsql` program or switch off *Mapnik Mode* from the *Map Control*
-window and use the built-in or downloaded static map tiles.
+Если у вас запущена локальная база данных PostGIS (например, та, что есть на этом Live DVD) вы можете настроить GpsDrive на рендеринг "на лету" отличных карт OpenStreetMap с помощью Mapnik. На данном диске эта PostgreSQL база называется "osm_local_smerc". Здесь хранится только выгрузка карты города, в котором проходила конференция FOSS4G, так что вы возможно захотите добавить свои данные из Planet.osm с помощью программы `osm2pgsql` или выключить *Mapnik Mode* в окне *Map Control* и использовать встроенные или загруженные статические тайлы карты.
 
 
-Finding amenities
+Поиск объектов
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-With the *Find POI* tool you can search out for the nearest points of interest
-loaded into your SQLite waypoint database. To get you started OpenStreetMap
-data for the city of Nottingham has been loaded. e.g. *Find all pubs within 2 km
-of the conference hall*.
+С помощью инструмента *Find POI* можно искать ближайшие точки интереса, загруженные в SQLite-базу путевых точек. Для экспериментов загружены данные OpenStreetMap для города Ноттингем. Можете поискать все пабы в радиусе 2 километров от конференц-зала.
 
 
-Downloading maps
+Загрузка карт
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Use the :menuselection:`Options --> Maps --> Download` tool to preview
-and download new map tiles. Currently the OpenStreetMap web-tiles and
-NASA OnEarth T-WMS server are available as sources. There are a few command
-line programs which come with GpsDrive which will let you bulk-download
-a set of tiles covering your local area.
+Для предварительного просмотра и загрузки новых тайлов карты воспользуйтесь инструментом :menuselection:`Options --> Maps --> Download`. В данный момент в качестве источников доступны веб-тайлы OpenStreetMap и T-WMS сервер NASA OnEarth. С GpsDrive устанавливаются пара программ для командной строки, которыми можно делать массовую загрузку набора тайлов, покрывающих нужную область.
 
 
-Keeping tabs on your friends
+Местоположение ваших друзей
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In the Preferences menu you can turn on the Friendsd service. This
-transmits your position to a central server and lets your friends know
-where you are. It comes with a program to run a private server if you
-don't want the whole world seeing where you are. To enable this service
-go into the Preferences menu and select the Friends tab. Type in a name
-for yourself and click on the [Lookup] button to get the IP address of
-the default friendsd server. Finally tick the Enable friends service box
-and press [Close]. Icons showing where your friends are and where they are
-headed will be shown at scales less than 1:10 million. There seem to be
-a lot of friendly types in Europe.
+В меню *Preferences* вы можете включить сервис Friendsd. Он передаёт вашу позицию на центральный сервер и позволяет вашим друзьям знать, где вы находитесь. Если вы не желаете, чтобы весь мир знал, где вы есть, можно запустить свой приватный сервер. Для включения данного сервиса войдите в меню Preferences и перейдете на вкладку Friends. Введите свое имя и нажмите кнопку [Lookup] для получения IP-адреса стандартного сервера friendsd. Наконец, поставьте галку Enable friends service и нажмите [Close]. Значки, отмечающие положения и направления движения ваших друзей, будут отображаться на масштабах меньше 1:10 000 000.
 
 
-Verbal instructions
+Голосовые сообщения
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-GpsDrive can give you verbal warnings when you are nearing your
-destination, etc. To try this out you must start the eSpeak software
-which has been disabled by default on this Live-Disc to save memory.
-To switch it on you will have to edit (as root) the
-**/etc/default/speech-dispatcher** file and set **RUN=yes**.
-Then launch the service with "`sudo service speech-dispatcher start`".
-GpsDrive will automatically find it at run time if it is switched on.
-In the Speech tab of the Preferences menu you can enable/disable it,
-change the voice, and verbosity level.
+GpsDrive может сообщать голосом о вашем приближении к цели и прочем. Чтобы попробовать эту функцию, надо запустить программу eSpeak. На этом Live DVD она отключена по умолчанию для экономии памяти. Для включения вам нужно с правами root отредактировать файл **/etc/default/speech-dispatcher**, поставив там **RUN=yes**. Затем запустите сервис командой "`sudo service speech-dispatcher start`". Если сервис работает, GpsDrive автоматически обнаружит его при запуске. В меню *Preferences* на вкладке Speech вы можете включить/выключить эту функцию, изменить голос и уровень подробности сообщений.
 
 
-Further reading
+Смотрите также
 ================================================================================
 
-* *GpsDrive*: http://www.gpsdrive.de
-* Help and support pages: http://gpsdrive.sf.net
+* Страница GpsDrive: http://www.gpsdrive.de
+* Страница поддержки: http://gpsdrive.sf.net

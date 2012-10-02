@@ -1,69 +1,47 @@
-:Author: activityworkshop
-:Version: osgeo-live4.5
-:License: Creative Commons Attribution-ShareAlike 3.0 Unported  (CC BY-SA 3.0)
+:Автор: activityworkshop
+:Версия: osgeo-live4.5
+:Лицензия: Creative Commons Attribution-ShareAlike 3.0 Unported  (CC BY-SA 3.0)
 
 .. image:: ../../images/project_logos/logo-prune.png
-  :alt: project logo
+  :alt: Логотип проекта
   :align: right
   :target: http://gpsprune.activityworkshop.net/
 
 ********************************************************************************
-GpsPrune Quickstart 
+Начало работы с GpsPrune
 ********************************************************************************
 
-Running
+Запуск
 ================================================================================
 
-To run GpsPrune on the live DVD, select the icon "GpsPrune" in the Navigation and Maps menu.
-To work with data, you will then either load a recorded track from a file, load data from
-a GPS receiver using *Gpsbabel*, get coordinates from Wikipedia, or enter your own coordinates
-by hand.  The easiest way to start is to load any gpx file, kml or kmz file using the menu command
-:menuselection:`File --> Open file` and selecting the file you wish to load. A suitable GPX file
-containing a couple of tracks can be found on the disc at :file:`~/data/vector/R/test_trk2.gpx`.
+Для запуска GpsPrune на Live DVD выберите иконку "GpsPrune" в меню *Navigation and Maps*. Для работы вам потребуется загрузить данные из файла или GPS-приёмника, используя *Gpsbabel*, получить координаты из Википедии или ввести координаты вручную. Проще всего начать с загрузки любого текстового, KML или KMZ-файла, используя меню :menuselection:`File --> Open file` и выбрав файл, который вы желаете загрузить. Подходящий GPX-файл со множеством треков можно найти на этом диске :file:`~/data/vector/R/test_trk2.gpx`.
 
-Now you should see your track marked in blue, and waypoints (if any) marked with their names.
-If you have a network connection, it's recommended to activate the maps by clicking the globe
-icon at the top of the main map display, or with the menu option :menuselection:`View --> Show Map`.
+Сейчас вы должны видеть свой трек, окрашенный синим цветом, и путевые точки, обозначенные их именами. Если у вас есть подключение к сети, рекомендуем активировать карты щелчком по глобусу в верхней части окна карты или через меню :menuselection:`View --> Show Map`.
 
-You can now drag the map around with the mouse, and zoom in and out to see greater details.
-Clicking on a point will show the details including altitude and timestamp if available.
-Below the main map display is an altitude chart, which will show the profile of the track
-if it contains altitudes.  Clicking on this display will select the corresponding point.
+Вы можете перемещаться по карте мышью и приближаться/удаляться, чтобы рассмотреть подробности. Щелчок по точке отобразит детальную информацию, включая высоту и временную метку, при доступности. Под картой есть график высот, который показывает профиль трека (при наличии данных о высотах). Щелчок по графику переведёт на соответствующую точку.
 
-Customizing the display
+Настройка отображения
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-You can change the map with the menu option :menuselection:`Settings --> Set map background`.
-You can select one of the maps already defined, or you can add your own custom server if you
-know the URL.  You can also add a Cloudmade map if you know the style number.
+Вы можете изменить карту с помощью меню :menuselection:`Settings --> Set map background`. Можно выбрать из имеющихся карт или добавить свой сервер, если вам известен его URL. Можно подключить карту Cloudmade, если вам известен номер нужного стиля.
 
-The default colours can be changed with the menu option :menuselection:`Settings --> Set colours`.
+Стандартные цвета можно изменить через меню :menuselection:`Settings --> Set colours`.
 
-If you save your settings with the menu option :menuselection:`Settings --> Save settings`, they
-will be remembered for the next time you run GpsPrune.  However, note that when using this live DVD,
-all files that you save in the regular file system are lost when you shut down the computer.
+Если вы сохраните свои настройки в меню :menuselection:`Settings --> Save settings`, они будут использованы и при следующих запусках GpsPrune. Однако помните, что файлы, сохраненные вами в файловой системе этого Live DVD, будут потеряны после выключения компьютера.
 
-Downloading maps
+Загрузка карт
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-To save the downloaded map tiles to disk, you can select the menu option
-:menuselection:`Settings --> Save maps to disk` and select a directory in which to save the images.
-This helps to speed up the display as it doesn't have to download the images again.  Again, this
-makes more sense on an installed system than on a live DVD.
+Для сохранения загруженных тайлов карты на диск вы можете выбрать меню :menuselection:`Settings --> Save maps to disk` и указать директорию для сохранения изображений. Это ускоряет отображение, поскольку не требуется загружать те же изображения каждый раз. Опять же, это имеет больший смысл на установленной системе, чем на Live DVD.
 
-Using GpsPrune on other systems
+Использование GpsPrune в других операционных системах
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-After trying out GpsPrune on this live DVD, you may want to use it on another system, whether
-it's another Linux system or Mac OSX or Windows.  Some linux distributions include GpsPrune in their
-normal software libraries (just search for "Prune" or "GpsPrune"), or you can just download the
-latest copy from the home page.
+После ознакомления с GpsPrune на этом Live DVD, вы возможно, захотите использовать его на других системах, будь то другой дистрибутив Linux, или Mac OS X, или Windows. Некоторые дистрибутивы Linux включают GpsPrune в свои репозитории пакетов (поищите "Prune" или "GpsPrune"). Можно загрузить последнюю версию с домашней страницы проекта.
 
-It doesn't need to be installed, but it does need a java runtime to be installed, version
-1.5 or higher.  You can extend GpsPrune's functionalities by installing other free software, such as
-*Gpsbabel*, *Gnuplot*, *Exiftool* or *Java3d*.
+Сама программа не требует установки, но надо установить JAVA Runtime версии 1.5 или выше. Вы можете расширить функционал GpsPrune, установив другое свободное ПО, такое, как *Gpsbabel*, *Gnuplot*, *Exiftool* или *Java3d*.
 
-Further reading
+Смотрите также
 ================================================================================
 
-* GpsPrune home page: http://gpsprune.activityworkshop.net/
-* Screenshots: http://gpsprune.activityworkshop.net/screenshots.html
-* How-tos and instructions: http://gpsprune.activityworkshop.net/how-tos.html
+* Домашняя страница GpsPrune: http://gpsprune.activityworkshop.net/
+* Скриншоты: http://gpsprune.activityworkshop.net/screenshots.html
+* Руководства и инструкции: http://gpsprune.activityworkshop.net/how-tos.html
 
