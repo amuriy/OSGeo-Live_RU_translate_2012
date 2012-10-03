@@ -13,53 +13,68 @@
 Natural Earth
 ================================================================================
 
-Map Data
+Картографические данные
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Natural Earth provides cartographers an off-the shelf solution for creating small-scale world, regional, and country maps at 1:10-, 1:50-, and 1:110- million scales. Both political (administrative) and physical (natural) features are included and vector features align perfectly with included raster data.
+Данные **Natural Earth** предоставляют картографам полноценное решение
+для создания мелкомасштабных карт мирового, регионального и государственного
+масштабов (от 1:110 000 00 до 1:50 000 000 и 1:10 000 000). Включены как социально-
+экономические данные (например, административные границы), так и физические
+(природные); векторные данные идеально сочетаются с растровыми.    
 
-Natural Earth solves the common problem that many cartographers face: finding vector data for making publication-quality small-scale maps at the appropriate level of detail for the maps they are making.
+Данные **Natural Earth** решают известную проблему, с которой знакомы многие
+картографы: наличие данных для создания качественных мелкомасштабных карт,
+причём данных с соответствующей детальностью.
 
 .. image:: ../../images/screenshots/1024x768/naturalearth.png
   :scale: 55 %
   :alt: natural earth screenshot
   :align: right
 
-Core Features
+Основные особенности
 --------------------------------------------------------------------------------
 
-* Vector features include name and other attributes        
-* Large polygons are split for more efficient data handling such as bathymetric layers.   
-* Projection friendly vectors precisely match at 180 degrees longitude. Lines contain enough data  points for smooth bending in conic projections, but not so many that computer processing speed suffers.
-* Raster data includes grayscale-shaded relief and cross-blended hypsometric tints derived from the latest NASA SRTM Plus elevation data and tailored to register with Natural Earth Vector.
-* Optimized for use in web mapping applications, such as Google or Yahoo, with built-in scale attributes to direct features to be shown at different zoom levels.
+* Векторные данные включают названия и другие атрибуты.
+* Большие полигоны разрезаны для более эффективной обработки данных (например, батиметрические данные).
+* Векторные данные, "дружественные к проекциям": адаптированы для перепроецирования с учётом меридиана 180 градусов; все линии содержат достаточно точек для плавного изгиба в конических проекциях, но не настолько много, чтобы сильно замедлять обработку.
+* Растровые данные включают светотеневую отмывку рельефа и гипсометрические карты (сделанные методом "поперечного смешивания" цветов). Они созданы на основе свежих цифровых моделей рельефа NASA SRTM Plus и с учётом привязки векторных данных Natural Earth.
+* Данные оптимизированы для использования в веб-картографических приложениях, например, Google или Yahoo, причём имеют встроенные в атрибуты уровни масштабирования для отображения на различных масштабах.   
 
 
-Data Sets
+Наборы данных
 --------------------------------------------------------------------------------
 
-Cultural Vector Data Themes:
-  Includes countries, disputed areas, states and provinces (1st order administrative divisions), and populated places (cities, towns). Roads, rails, urban polygons, parks and protected areas, Pacific nation groups, and water boundary indicators round out the cultural offerings.
+Векторные данные культурной тематики включают:
+  административные границы государств, границы спорных территорий, штатов и
+провинций (1-й порядок), а также густонаселённые районы (города). Автомобильные и
+железные дороги, районы заселения, парки и охраняемые природные территории, а 
+также водные объекты закрывают список.  
 
-Physical Vector Data Themes:
-  Include coastline, land, ocean, minor islands, reefs, physical region features and points, rivers, lakes, glaciated areas, Antarctic ice shelves, bathymetry, geographic lines, and graticles.
+Векторные данные природной тематики включают:
+  береговые линии, границы суши и океанов, небольшие острова, рифы, полигоны и точки
+природных территорий, реки, озёра, ледники, районы антарктического шельфа, батиметрические
+данные, географическую координатную сетку.      
 
-Raster Data Themes:
-  Greyscale shaded relief, cross blended hypsometric tints, satellite-derived land cover data, idealized world environment, ocean bottom, and bathymetry. Optional baked in content includes: land cover, shaded relief, ocean water, and drainages with lakes.
+Растровые данные включают:
+  светотеневую отмывку рельефа и гипсометрические карты (сделанные методом "поперечного
+смешивания" цветов); карты растительного покрова, полученные по данным космосъёмки; 
+карты возможной "идеализированной" (максимально ненарушенной) природной среды; 
+рельеф океанского дна и батиметрию. Дополнительно включены: растительный покров, карты 
+"отмывки" рельефа, океанографические карты, водотоки и озёра.     
+   
 
-
-Details
+Дополнительная информация 
 --------------------------------------------------------------------------------
 
-**Website:** http://naturalearthdata.com
+**Веб-сайт:** http://naturalearthdata.com
 
-**License:** None, the data is public domain.
+**Лицензия:** None, the data is public domain.
 
-**Data Version:** 1.4
+**Версия ПО:** 1.4
 
-**Data format:** SHP and TIF+TFW
+**Форматы данных:** SHP и TIF+TFW
 
-**Spatial coordinate system:** WGS84.
+**Система координат:** WGS84.
 
-**Support:** http://naturalearthdata.com/forums/
+**Поддержка:** http://naturalearthdata.com/forums/
 
