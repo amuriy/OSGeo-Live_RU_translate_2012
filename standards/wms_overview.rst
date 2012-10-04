@@ -26,7 +26,7 @@
 
 .. Writing Tip: Name of application
 
-Веб-сервис карт (Web Map Service - WMS)
+WMS (Web Map Service)
 ================================================================================
 
 .. Writing Tip:
