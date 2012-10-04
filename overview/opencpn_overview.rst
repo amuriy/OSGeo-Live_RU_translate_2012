@@ -14,16 +14,26 @@
 OpenCPN
 ================================================================================
 
-Marine GPS navigation software
+Морская GPS-навигация
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-OpenCPN provides free navigation software for use at the helm of vessels of all types and sizes, as well as offline for route planning. It has been developed by a team of active sailors using real world conditions for program testing and refinement.
+**OpenCPN** — свободное программное обеспечение для морской навигации
+на судах всех типов и размеров, а также для планирования маршрутов. Она
+была разработана командой практикующих моряков, использующих программу
+в реальных условиях для тестирования и улучшения.      
 
-OpenCPN presents a user with the vessel's current position, speed and course superimposed upon accurate navigational chart images, tide and current predictions. Information received by standard radio links describing the position and intent of other vessels can also be shown.
+OpenCPN предоставляет пользователю информацию о текущем местоположении
+судна, его скорости и курсе, совмещённую с точными навигационными картами и
+прогнозными схемами приливов и течений. Информация, полученная по стандартным
+радиолиниям — положение судна и курсы других судов — также может быть
+отображена.
 
-As the host vessel moves, new charts are selected and displayed at user specified resolution and detail. Further, the user may enter routes and waypoints allowing interface to an external autopilot for precise course following.
+Так как принимающее информацию судно движется, новые карты выбираются и 
+отображаются пользователем в заданном разрешении и детальности. Кроме того,
+пользователь может самостоятельно вводить маршруты и путевые точки, позволяя
+использовать внешний автопилот для точного следования по курсу.
+ 
 
-
-Core Features
+Базовые функции
 --------------------------------------------------------------------------------
 
 .. image:: ../../images/screenshots/1024x768/opencpn_screenshot.png
@@ -31,35 +41,35 @@ Core Features
   :alt: screenshot
   :align: right
 
-OpenCPN supports:
+OpenCPN поддерживает:
 
-* BSB raster, C-MAP (CM93/2) and S-57 ENC vector charts
-* AIS input decoding
-* NMEA GPS or `Gpsd <http://gpsd.berlios.de>`_ daemon input
-* Waypoint / autopilot navigation
-* Unlimited route/mark creation
-* Quilted charts
-* International language support
-* Cross-platform support
-* GRIB weather data overlay
+* растры BSB, C-MAP (CM93/2) и векторные карты S-57 ENC; 
+* декодирование AIS;  
+* GPS-сервисы NMEA или `gpsd <http://gpsd.berlios.de>`_; 
+* путевые точки / навигация с автопилотом;
+* создание неограниченного числа маршрутов / путевых меток;
+* "Quilted"-графики; 
+* поддержку многих языков;
+* кроссплатформенность;
+* наложение метеоданных в формате GRIB.
 
-Details
+Дополнительная информация
 --------------------------------------------------------------------------------
 
-**Website:** http://www.opencpn.org
+**Веб-сайт:** http://www.opencpn.org
 
-**Licence:** GNU General Public License (GPL) version 2
+**Лицензия:** GNU General Public License (GPL) version 2
 
-**Software Version:** 2.5.0
+**Версия ПО:** 2.5.0
 
-**Supported Platforms:** GNU/Linux, Mac OSX, MS Windows
+**Поддерживаемые платформы:** GNU/Linux, Mac OSX, MS Windows
 
-**Support:** http://www.cruisersforum.com/forums/f134
+**Поддержка:** http://www.cruisersforum.com/forums/f134
 
 
-Quickstart
+Начало работы
 --------------------------------------------------------------------------------
 
-* :doc:`Quickstart documentation <../quickstart/opencpn_quickstart>`
+* :doc:`Введение <../quickstart/opencpn_quickstart>`
 
 
