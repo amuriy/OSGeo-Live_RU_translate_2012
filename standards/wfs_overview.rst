@@ -16,40 +16,51 @@
 
 .. image:: ../../images/project_logos/logo-OGC-left.png
   :scale: 100 %
-  :alt: OGC logo
+  :alt: Логотип OGC
   :align: right
 
 .. image:: ../../images/project_logos/logo-OGC-right.png
   :scale: 100 %
-  :alt: OGC logo
+  :alt: Логотип OGC
   :align: right
 
 .. Writing Tip: Name of application
 
-Web Feature Service (WFS)
+WFS (Web Feature Service)
 ================================================================================
 
 .. Writing Tip:
   1 paragraph or 2 defining what the standard is.
 
-The OGC® Web Feature Service Interface Standard (WFS) defines  web interface operations for querying and editing vector geographic features, such as roads or lake outlines.  (http://www.opengeospatial.org/standards/wfs)
+Стандарт `WFS <http://www.opengeospatial.org/standards/wfs>`_ — веб-сервис пространственных
+объектов, определяющий интерфейсы и операции, которые позволяют запрашивать и редактировать
+векторные пространственные данные, такие, как дороги или береговые линии.
 
 .. image:: ../../images/standards/wfs.jpg
   :scale: 55%
-  :alt: WFS in Context
+  :alt: Место WFS среди стандартов OGC
 
-The WFS standard defines operations that enable clients to:
+Данный стандарт описывает следующие операции, доступные клиентам (в скобках указано
+название операции):
 
-* Discover which feature collections are available (GetCapabilities)
-* Describe the attribute fields available for  features (DescribeFeatureType)
-* Query a collection for a subset of features based on a provided filter (GetFeature)
-* Add, edit or delete features (Transaction)
+* Определять доступные наборы объектов (GetCapabilities)
+* Определять существующие поля объектов (DescribeFeatureType)
+* Фильтровать набор объектов по указанному ограничению (GetFeature)
+* Добавлять, редактировать или удалять объекты (Transaction)
 
-All WFSs support input and output data using Geography Markup Language (GML). Some WFSs also support other encodings, such as GeoRSS or shapefiles.
+Входящие и исходящие данные веб-сервиса представлены в формате GML. Некоторые из
+сервисов могут поддерживать и другие форматы данных, например GeoRSS или shape-файлы.
 
-Users typically interact with WFSs through browser based or desktop geospatial clients, which allows them to access vector map layers from external agencies, over the Internet. An excellent example of using a WFS service to provide open and interoperable access to large amounts of geospatial content via a government portal is the USGS Framework Web Feature Services offered in support of the development of the National Spatial Data Infrastructure (NSDI) (http://frameworkwfs.usgs.gov/). Selected US Framework map layers are available as WFS layers and also available through a browser interface provided by the USGS.
+Для получения доступа к слоям векторной карты сторонней организации, представленных
+в виде веб-сервисов в сети Интернет, пользователи используют веб-интерфейс или настольные
+ГИС-приложения. Отличным примером предоставления открытого доступа к большим объёмам
+пространственных данных на государственном портале является платформа веб-сервисов 
+пространственных объектов геологической службы США, предлагаемая в поддержку развития
+национальной инфраструктуры пространственных данных (`NSDI <http://frameworkwfs.usgs.gov/>`_). 
+Выбранные слои карт платформы могут быть использованы и как веб-сервисы, и через
+веб-интерфейс сайта геологической службы.
 
-See Also
+См. также
 --------------------------------------------------------------------------------
 
 .. Writing Tip:

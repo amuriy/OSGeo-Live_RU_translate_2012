@@ -16,33 +16,47 @@
 
 .. image:: ../../images/project_logos/logo-OGC-left.png
   :scale: 100 %
-  :alt: OGC logo
+  :alt: Логотип OGC
   :align: right
 
 .. image:: ../../images/project_logos/logo-OGC-right.png
   :scale: 100 %
-  :alt: OGC logo
+  :alt: Логотип OGC
   :align: right
 
 .. Writing Tip: Name of application
 
-Web Coverage Service (WCS)
+WCS (Web Coverage Service)
 ================================================================================
 
 .. Writing Tip:
   1 paragraph or 2 defining what the standard is.
 
-The OGC® Web Coverage Service Interface Standard (WCS) defines a standard interface and operations that enable interoperable access to geospatial "coverages". The term "grid coverages" typically refers to content such as satellite images, digital aerial photos, digital elevation data, and other phenomena represented by values at each measurement point. (http://www.opengeospatial.org/standards/wcs)
+Стандарт `WCS <http://www.opengeospatial.org/standards/wcs>`_ (веб-сервис покрытий) определяет
+интерфейсы и операции, позволяющие взаимодействовать с пространственными данными, называемыми
+"покрытие". Этим термином описываются спутниковые снимки, результаты аэрофотосъёмки, цифровые
+модели рельефа и другие данные, представленные значениями в каждой измеряемой точке.
 
 .. image:: ../../images/standards/wcs.jpg
   :scale: 55%
-  :alt: WCS in Context
+  :alt: Место WCS среди стандартов OGC
 
-The OGC Web Coverage Service (WCS) Interface Standard is a data service. The WCS standard defines a data access service that enables coverages, such as digital elevation models, to be queried using an HTTP based interface. The response to a WCS request includes coverage metadata and an output coverage whose pixels are encoded in a specified binary image format, such as GeoTIFF or NetCDF. 
+WCS является сервисом предоставления данных. Он позволяет загружать покрытия, например, цифровые
+модели рельефа, через HTTP-интерфейс. В ответ на запрос сервис вернёт метаданные и закодированные
+в определённый формат, например, GeoTIFF или NetCDF, данные пикселей покрытия.
 
-As with other OGC standards, there are numerous excellent examples of deployed WCS implementations. One example is NDBC High Frequency (HF) Radar Web Coverage Service (WCS) developed and deployed by the US National Ocean and Atmospheric Administration (NOAA) (http://hfradar.ndbc.noaa.gov/). HF Radar is used to remotely measure ocean surface currents. Another is the National Aeronautical and Space Administration (NASA) WCS for accessing Atmospheric Infrared Sounder (AIRS) Data (http://idn.ceos.org/KeywordSearch/Metadata.do?Portal=webservices&KeywordPath=[Project%3A+Short_Name%3D%27EOS%27]&EntryId=NASA_GES_DISC_AIRS_Atmosphere_Data_Web_Coverage_Service&MetadataView=Full&MetadataType=1&lbnode=mdlb1). This is one of the Goddard Earth Systems Data and Information Service Center's OGC WCS instances that provides Level 3 Gridded atmospheric data products derived from AIRS data as generated on board NASA's Aqua spacecraft.
+Как и для остальных стандартов OGC, для WCS cуществует много прекрасных примеров использования. 
+`Один из таких <http://hfradar.ndbc.noaa.gov/>`_ — веб-сервис, предоставляющий данные с высокочастотного
+радара национального центра данных береговых бакенов (NDBC, США). Данный сервис был разработан в
+Национальном управлении океанических и атмосферных исследований (NOAA, США) и используется для
+мониторинга морских течений. 
+`Другой <http://idn.ceos.org/KeywordSearch/Metadata.do?Portal=webservices&KeywordPath=[Project%3A+Short_Name%3D%27EOS%27]&EntryId=NASA_GES_DISC_AIRS_Atmosphere_Data_Web_Coverage_Service&MetadataView=Full&MetadataType=1&lbnode=mdlb1>`_ пример — 
+сервис предоставления данных с датчика Atmospheric Infrared Sounder (AIRS) Национального аэрокосмического
+агентства (NASA, США). Это один из сервисов веб-покрытий, развёрнутых в "Центре данных и информационных
+сервисов земных систем им. Годдарта" (GES DISC), предоставляющих информацию о наблюдении за атмосферой
+Земли с датчика AIRs, расположенного на спутнике NASA-Aqua.
 
-See Also
+См. также
 --------------------------------------------------------------------------------
 
 .. Writing Tip:

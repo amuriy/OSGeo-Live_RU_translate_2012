@@ -16,50 +16,59 @@
 
 .. image:: ../../images/project_logos/logo-OGC-left.png
   :scale: 100 %
-  :alt: OGC logo
+  :alt: Логотип OGC
   :align: right
 
 .. image:: ../../images/project_logos/logo-OGC-right.png
   :scale: 100 %
-  :alt: OGC logo
+  :alt: Логотип OGC
   :align: right
 
 .. Writing Tip: Name of application
 
-Web Map Service (WMS)
+Веб-сервис карт (Web Map Service - WMS)
 ================================================================================
 
 .. Writing Tip:
   1 paragraph or 2 defining what the standard is.
 
-The (OGC®) Web Map Service Interface Standard (WMS) provides a simple HTTP interface for requesting geo-registered map images from one or more distributed geospatial databases. The response to the request is one or more map images (returned as JPEG, PNG, etc) that can be displayed a browser and desktop applications. (http://www.opengeospatial.org/standards/wms) 
+Стандарт OGC `WMS <http://www.opengeospatial.org/standards/wms>`_ (картографический веб-сервис)
+предоставляет простой интерфейс http-запросов для получения геопривязанных изображений
+карт нескольких распределённых пространственных баз данных. В ответе сервиса на запрос
+будет одно или более изображений карты (в формате JPEG, PNG и др.), которые могут быть показаны
+в браузере или настольном приложении.
 
 .. image:: ../../images/standards/wms.jpg
   :scale: 55%
-  :alt: WMS in Context
+  :alt: Место WMS среди стандартов OGC
 
-The WMS standard defines three operations: 
+Стандарт WMS определяет три операции: 
 
-* GetCapabilities (required): Obtain service-level metadata, which is a machine-readable (and human-readable) description of the WMS's information content and acceptable request parameters. 
+* GetCapabilities (обязательный) получает метаданные сервиса в машиночитаемом (и человекочитаемом) формате, описывающие контент WMS и допустимые параметры запросов.
 
-* GetMap (required): Obtain a map image whose geospatial and dimensional parameters are well defined. 
+* GetMap (обязательный) возвращает изображение карты с заданными размерами и геопространственной привязкой.
 
-* GetFeatureInfo (optional): Ask for information about particular features shown on a map. 
+* GetFeatureInfo (необязательный) запрашивает информацию о конкретных пространственных объектах на карте.
 
-This standard is now implemented in hundreds of products, many of which are registered at (http://www.opengeospatial.org/resource/products/compliant).
+Этот стандарт реализован в сотнях приложений, многие из них есть в списке 
+по адресу http://www.opengeospatial.org/resource/products/compliant.
 
-An excellent example of a portal that uses WMS is NC OneMap (http://www.nconemap.com/): “NC OneMap relies on Web Map Services (WMS) to bring data together from multiple hosts. NC OneMap partners establish a WMS from their servers. This OGC standard allows data to be created and stored in numerous proprietary software configurations (ESRI, MapInfo, Intergraph, etc), but is viewable by all.” 
+`NC OneMap <http://www.nconemap.com/>`_ — отличный пример портала с использованием стандарта WMS. 
+NC OneMap основывется на WMS для объединения вместе данных из нескольких источников. Необходимые
+веб-сервисы карт расположены на серверах партнёров NC OneMap. Этот стандарт OGC позволяет создавать
+и хранить данные во многих проприетарных приложений (ESRI, MapInfo, Intergraph, и др.), но для просмотра
+эти данные доступны всем.
 
-See Also
+См. также:
 --------------------------------------------------------------------------------
 
 .. Writing Tip:
   Describe Similar standard
 
-An OGC WMS Cookbook and other materials for developers can be found at http://www.opengeospatial.org/resource/cookbooks. 
+"Кулинарная книга" OGC WMS и другие материалы для разработчиков доступны по 
+адресу http://www.opengeospatial.org/resource/cookbooks. 
 
-Other OGC portrayal service standards: 
- 
+Другие стандарты OGC:
 
 * :doc:`wfs_overview`
 * :doc:`wcs_overview`
