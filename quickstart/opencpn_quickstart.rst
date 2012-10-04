@@ -10,80 +10,81 @@
   :target: http://www.opencpn.org
 
 ********************************************************************************
-OpenCPN Quickstart 
+Начало работы с OpenCPN
 ********************************************************************************
 
-OpenCPN is a concise Chart Plotter and Navigator (CPN). As always, never
-use a piece of software or electronic equipment as your only means of
-navigation and keep an eye out the window.
+OpenCPN — карт-плоттер и навигатор (CPN). 
+
+Совет: никогда не полагайтесь на лишь одно какое-то программное обеспечение
+для навигации и смотрите в окно. :)
 
 
-Running
+Запуск
 ================================================================================
 
-Setting up your charts
+Настройка морских карт
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Before running OpenCPN on the LiveDVD you should activate the sample data.
-This is a condition of redistributing NOAA's free nautical charts.
-The first time you run OpenCPN from the `Geospatial` menu or Desktop icon
-you will be presented with the option to do this automatically.
 
-.. To do this manually, open a Terminal from the main Applications menu and
- run :command:`opencpn_noaa_agreement.sh` at the command prompt. The user's
- password is given in the file on the main desktop.
+До запуска OpenCPN с LiveDVD вы должны активировать пробные данные.
+Это условие распространения открытых морских карт NOAA. 
+Первый раз, когда вы запускаете OpenCPN из меню `Geospatial` или через иконку
+на рабочем столе, вы будете ознакомлены с опцией, позволяющей сделать это
+автоматически.  
 
-You can download additional US nautical charts from NOAA
-at http://www.charts.noaa.gov
+Чтобы активировать карты вручную, откройте терминал и запустите 
+:command:`opencpn_noaa_agreement.sh` в командной строке. Пароль пользователя
+находится в специальном файле на рабочем столе.
+
+Вы можете загрузить дополнительные морские карты с `сервера NOAA <http://www.charts.noaa.gov>`_.
 
 
-Setting up your GPS
+Настройка GPS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-If you have a GPS connected you will want to start the gpsd service.
-To do that run:
+
+Если у вас имеется подключённый GPS-приёмник, неплохо было бы запустить
+сервис *gpsd*. Для этого выполните в командной строке:
 
 ::
 
   sudo dpkg-reconfigure gpsd
 
-and
+и
 
 ::
 
   sudo /etc/init.d/gpsd start
 
-BlueTooth GPS users should take special care to read up about the no-probe
-option.
+Пользователи GPS с BlueTooth должны обратить особое внимание на опцию "no-probe".   
 
 .. no longer true? : (for this reason we have not started gpsd automatically)
 
 
-* '`xgps`' is a good program to check that Gpsd can see your GPS ok.
+* `xgps` — полезная программа для проверки, может ли *gpsd* работать с вашим GPS.
 
 
-Documentation
+Документация
 ================================================================================
 
-* Documentation is available from
-  the `Help menu <../../opencpn/help_en_US.html>`_, or
-  online at http://www.opencpn.org/ocpn/opencpn_manual
+* Документация доступна из меню `Help menu <../../opencpn/help_en_US.html>`_ или онлайн по адресу http://www.opencpn.org/ocpn/opencpn_manual.
 
-*  `Getting started tips <../../opencpn/tips.html>`_
+* `Советы для начинающих <../../opencpn/tips.html>`_
 
 
-See also
+См. также
 ================================================================================
 
-Current weather and wave forecast data can be downloaded and draped over your
-charts using the GRIB plugin. The :doc:`zyGrib software <../overview/zygrib_overview>`
-(also on this disc) is an easy way to download that. See
-the :doc:`zyGrib quickstart <../quickstart/zygrib_quickstart>` for details.
-Enable the plugin from the right most tab of the OpenCPN configuration menu;
-a new icon will appear at the right end of the main toolbar.
+Данные прогнозов погоды и волнения могут быть загружены и нанесены поверх
+морских карт с использованием GRIB-плагина. Программа
+:doc:`zyGrib <../overview/zygrib_overview>` — самый простой путь для загрузки подобных
+данных. Смотрите документ :doc:`Начало работы с zyGrib <../quickstart/zygrib_quickstart>`
+для подробностей. Включите плагин на самой верхней вкладке меню настроек OpenCPN; 
+должна появиться новая иконка в правой части главной панели инструментов.     
 
-If you saved the zyGRIB file into your home directory, navigate
-to :file:`/home` and select your ``user`` directory as the GRIB data directory.
-Then right click on the file listing's background to show hidden files, including
-the ``.zygrib`` directory that contains the GRIB download files.
+Если вы сохранили файл zyGRIB в вашу домашнюю директорию, перейдите в :file:`/home`
+и выберите ``user`` в качестве директории с данными GRIB. Затем щёлкните правой
+кнопкой мыши рядом со списком файлов, чтобы увидеть скрытые файлы, включая
+директорию ``.zygrib``, которая содержит загруженные GRIB-файлы.
 
-There is no need to uncompress the file.  Click on the ">" to the left of
-the filename and select from the list of available forecast times.
+Нет необходимости распаковывать файл. Щёлкните по знаку ">" слева от имени файла
+и выберите доступные прогнозы погоды из списка.
+
