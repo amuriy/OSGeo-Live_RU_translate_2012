@@ -1,4 +1,4 @@
-:Author: OSGeo-Live
+﻿:Author: OSGeo-Live
 :Reviewer: Cameron Shorter, LISAsoft
 :Version: osgeo-live5.5
 :License: Creative Commons Attribution 3.0 Unported (CC BY 3.0)
@@ -7,56 +7,52 @@
 
 .. image:: ../../images/project_logos/logo-uDig.png
   :scale: 30
-  :alt: udig logo
+  :alt: Логотип udig
   :align: right
   :target: http://udig.refractions.net/
 
-User-friendly Desktop Internet GIS (uDig)
+Удобная настольная интернет-ГИС (uDig)
 ================================================================================
 
-Desktop GIS
+Настольная ГИС
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../../images/screenshots/1024x768/udig-overview.png
   :scale: 50
-  :alt: udig workshop
+  :alt: Интерфейс udig
   :align: right
 
-User-friendly Desktop Internet GIS (uDig) is an open source spatial data viewer/editor, with special emphasis on the OpenGIS standards for internet GIS, the Web Map Server (WMS) and Web Feature Server (WFS) standards.
+Удобная настольная интернет-ГИС (uDig) представляет собой программу для редактирования/просмотра пространственных данных с открытым исходным кодом и с особым акцентом на стандарты OpenGIS для интернет-ГИС, например, WMS/WFS.
 
-uDig is:
+uDig — это:
 
-* **User-friendly**, providing a familiar graphical environment for GIS users;
-* **Desktop located**, running natively on Windows, Mac OS/X and Linux;
-* **Internet oriented**, consuming standard and de facto geospatial web services; and,
-* **GIS ready**, providing the framework on which complex analytical capabilities can be built, and gradually subsuming those capabilities into the main application.
+* **Удобная** — предоставление знакомой графической среды для пользователей ГИС.
+* **Настольная** — нативно запускается под Windows, Mac OS X и Linux.
+* **Интернет-ориентированная**  — много стандартных и де-факто геопространственных веб-сервисов.
+* **Полноценная** — обеспечивает основу, на которой могут быть построены сложные аналитические возможности, с последующей возможностью переноса их в основное приложение.
 
-For developers uDig provides a common Java platform for building spatial applications with open source components. The website provides series of clear tutorials covering making a simple tool through to releasing your own custom application.
+Для разработчиков uDig предоставляет общую Java-платформу для создания пространственных приложений с открытыми компонентами (компоненты с открытым исходным кодом). Веб-сайт предоставляет наборы понятных руководств от разработки простейших инструментов и до создания собственных приложений.
 
-Core Features
-
+Базовые функции
 --------------------------------------------------------------------------------
 
-* Desktop Client with Drag and Drop integration for File explorer and Web Browser
-* Integrate with your existing infrastructure: ArcSDE, Oracle, DB2 and more
-* Work with local files: Shapefile, jpeg, png, tiff and more.
-* Work with advanced spatial raster formats: ECW, MrSID, JPEG 2000
-* Support for compliant Web Map Servers (:doc:`GeoServer <geoserver_overview>`, MapServer tested)
-* Integrated Web experience with an embedded browser that recognises OGC web
-  services and smoothly adds links to the onscreen map
-* Style Layer Descriptor control of rendering allowing you to publish your Map using the same
-  settings in uDig as with popular Web Map Servers
-* Deep integration of standards allowing the application to swap between the appropriate service
-  as required for display, interaction and editing
-* Printing and PDF Generation
-* For Developers
+* Настольный клиент с интеграцией Drag-and-Drop, проводника файлов и веб-браузера.
+* Интеграция с имеющейся инфраструктурой: ArcSDE, Oracle, DB2 и др.
+* Работа с локальными файлами: shapefile, jpeg, png, tiff и др.
+* Работа с расширенными пространственными форматами: ECW, MrSID, JPEG 2000.
+* Поддержка стандартных веб-сервисов WMS (:doc:`GeoServer <geoserver_overview>`, протестировано с MapServer).
+* Интеграция опыта работы с веб и встроенного браузера с поддержкой OGC-сервисов, а также возможность добавлять ссылки на отображаемую карту.
+* Управление SLD для отрисовки и публикации карт, используя те же установки, что и в популярных WMS.
+* Глубокая интеграция стандартов, позволяющая приложению переключаться между соответствующими службами для отображения, взаимодействия и редактирования.
+* Печать и генерация PDF.
+* Для разработчиков:
   
-  * Java Application built using the :doc:`GeoTools <geotools_overview>`, `JTS Topology Suite (JTS) <http://tsusiatsoftware.net/jts/main.html>`_
-  * Industrial strength plug-in system provided by Eclipse Rich Client Platform
-  * Use of native widgets
+  * Сборка приложений на Java, используя :doc:`GeoTools <geotools_overview>`, `JTS Topology Suite (JTS) <http://tsusiatsoftware.net/jts/main.html>`_.
+  * Продвинутая система плагинов, предоставляемая платформой Eclipse.
+  * Использование нативных виджетов.
 
-Implemented Standards
 
+Реализованные стандарты
 --------------------------------------------------------------------------------
 
 * OGC Web Map Server (WMS)
@@ -66,30 +62,28 @@ Implemented Standards
 * Web Map Server Cache (WMS-C)
 * OGC Style Layer Descriptor (SLD)
 
-Details
 
+Дополнительная информация
 --------------------------------------------------------------------------------
 
-**Website:** http://udig.refractions.net/
+**Веб-сайт:** http://udig.refractions.net/
 
-**Licence:** GNU Lesser General Public License (LGPL) version 2
+**Лицензия:** `LGPL версия 2 <http://www.gnu.org/copyleft/lesser.html>`_
+
+**Версия ПО:** 1.2.2
+
+**Поддерживаемые платформы:** Windows, Linux, Mac
+
+**Интерфейсы API:** GeoTools, ImageIO-Ext, Java Advanced Imaging, Eclipse Rich Client Platform, Eclipse Modelling Framework
+
+**Поддержка:** http://udig.refractions.net/users/
+
+**Разработчики:** http://udig.refractions.net/developers/
 
 
-**Software Version:** 1.2.2
-
-**Supported Platforms:** Windows, Linux, Mac
-
-**API Interfaces:** GeoTools, ImageIO-Ext, Java Advanced Imaging, Eclipse Rich Client Platform, Eclipse Modelling Framework
-
-**Support:** http://udig.refractions.net/users/
-
-**Developers:** http://udig.refractions.net/developers/
-
-
-Quickstart
-
+Начало работы
 --------------------------------------------------------------------------------
 
-* :doc:`Quickstart documentation <../quickstart/udig_quickstart>`
+* :doc:`Введение <../quickstart/udig_quickstart>`
 
 
