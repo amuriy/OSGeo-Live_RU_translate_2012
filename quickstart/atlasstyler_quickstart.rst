@@ -4,47 +4,46 @@
 
 .. image:: ../../images/project_logos/logo-AtlasStyler.png
   :scale: 100 %
-  :alt: project logo
+  :alt: логотип проекта
   :align: right
   :target: http://en.geopublishing.org/AtlasStyler
 
 ********************************************************************************
-AtlasStyler Quickstart 
+Начало работы с AtlasStyler 
 ********************************************************************************
 
-Manuals
+Руководства
 ================================================================================
-* `AtlasStyler manual, German, Created for version 1.2 <../../geopublishing/AtlasStyler_v1.2_DE_Handbuch_090601.pdf>`_  
+* `Руководство по AtlasStyler (нем. яз.), Создано для версии 1.2 <../../geopublishing/AtlasStyler_v1.2_DE_Handbuch_090601.pdf>`_  
 
-Tutorials
+Уроки
 ================================================================================
 
-AtlasStyler (Styling layers with SLD)
+AtlasStyler (дизайн слоёв с помощью SLD, Styled Layer Descriptor)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* `AtlasStyler Labelling tutorial, English, Created for version 1.3 <../../geopublishing/tutorial_AtlasStyler_Labelling/AtlasStyler_v1.3_EN_LabellingTutorial_091012.pdf>`_
-* `AtlasStyler tutoriel d'étiquetage SLD, French, Created for version 1.3 <../../geopublishing/tutorial_AtlasStyler_Labelling/AtlasStyler_v1.3_FR_Tutoriel_etiquetage_091012.pdf>`_
+* `AtlasStyler Labelling tutorial, Английский, Создано для версии 1.3 <../../geopublishing/tutorial_AtlasStyler_Labelling/AtlasStyler_v1.3_EN_LabellingTutorial_091012.pdf>`_
+* `AtlasStyler tutoriel d'etiquetage SLD, Французский, Создано для версии 1.3 <../../geopublishing/tutorial_AtlasStyler_Labelling/AtlasStyler_v1.3_FR_Tutoriel_etiquetage_091012.pdf>`_
 
-More tutorials are posted as blog entries at `http://en.geopublishing.org <http://en.geopublishing.org>`_ (you have to be online to visit this webpage).
+Больше уроков размещено в блоге по адресу `http://en.geopublishing.org <http://en.geopublishing.org>`_ .
 
-Running
+Действия
 ================================================================================
 
-Getting Started
+Начало
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-AtlasStyler is an end-user based application, that allows you to create .SLD files for your vectordata. 
+AtlasStyler — это приложение, позволяющее создавать SLD-файлы на основе ваших векторных данных.
 
-0) The OSGeo-Live DVD uses the Xubuntu Operating system which has a temporary small problem with Java-based applications: As a solution please right-click on menu-bar (Where 'Applications' and 'Places' is listed) and select 'Customize Panel'. There check the 'Autohide' option. The menubar is now hidden unless your mouse reaches the top of the screen. 
+0) OSGeo-Live DVD использует операционную систему Xubuntu, у которой наблюдаются небольшая проблема при работе Java-приложений: Для решения сделайте щелчок правой кнопки мыши на панели меню (где расположены 'Приложения' ('Applications') и 'Места' ('Places')) и выберите 'Модифицировать панель' ('Customize Panel'). Проверьте флажок 'Автоматически скрывать' ('Autohide'). Теперь панель меню скрыта, пока вы не подведёте мышку к верхней части экрана.
 
-1) Go to :menuselection:`Geospatial --> Desktop GIS --> AtlasStyler` to start the application.
+1) Выберите :menuselection:`Geospatial --> Desktop GIS --> AtlasStyler` для запуска приложения.
  
-2) Use the import buttons to either add ESRI Shapefiles oder PostGIS datasources to your project. 
+2) Используйте кнопки испорта для добавления shp-файла как источника для своего проекта.
 
-3) To import PostGIS, the correct database settings are already preset in the dialog. Just enter the password 'user' to add the '10m_land' layer.
+3) До импорта PostGIS правильные настройки базы данных уже должны быть установлены. Просто введите пароль 'user' для добавления слоя '10m_land'.
 
-4) To import a Shapefile, choose '/home/user/data/natural_earth/10m_lakes.shp' for example. 
+4) Импортируйте shp-файл. Например, '/home/user/data/natural_earth/10m_lakes.shp'. 
 
-5) Click the tool-icon in the layer legend and select style. The main AtlasStyler dialog will open. While you change the style, the 'automatic preview' option at the bottom will allow to see your changes on the fly. If the data is too big (or the system too slow) deactivate the 'automatic preview' checkbox.
+5) Нажмите в слое на иконку в виде инструмента и выберите стиль. Откроется общее диалоговое окно AtlasStyler. Как только вы изменяете стиль, установленный флажок 'automatic preview' позволяет сразу увидеть изменения. Если данных слишком много (или система медленная), отключите флажок 'automatic preview'.
 
-6) Have fun and/or please give feedback to tzeggai@wikisquare.de
-
+6) Наслаждайтесь и/или, пожалуйста, пишите на tzeggai@wikisquare.de

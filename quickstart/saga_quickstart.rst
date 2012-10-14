@@ -1,125 +1,141 @@
-:Author: Johan Van de Wauw
+﻿:Author: Johan Van de Wauw
 :Version: osgeo-live4.0
 :License: Creative Commons Attribution-ShareAlike 3.0 Unported  (CC BY-SA 3.0)
 
 .. image:: ../../images/project_logos/logo-saga.png
   :scale: 100 %
-  :alt: project logo
+  :alt: логотип проекта
   :align: right
   :target: http://www.saga-gis.org
 
 
 ********************************************************************************
-SAGA GIS Quickstart
+Начало работы в ГИС SAGA
 ********************************************************************************
 
-Running
+Запуск
 ================================================================================
 
-To run SAGA GIS on the Live DVD, click on the SAGA link on the Desktop.
+Для запуска ГИС SAGA с Live DVD кликните ярлык SAGA на рабочем столе.
 
-When opening SAGA for the first time, you are presented with 3 subwindows: the Workspace, the object properties and the messages window. The information in the object properties window will change depending on your selection in the workspace window.
+Открыв SAGA первый раз, вы увидите 3 главных элемента интерфейса: Рабочую область, Свойства объекта и Окно сообщений. Информация в Свойствах объекта будет изменяться в соответствии с вашим выбором в Рабочей области.
 
   .. image:: ../../images/screenshots/1024x768/saga_guioverview.png
      :scale: 80
 
-Opening Data
+Добавление данных
 ================================================================================
 
-Open the SAGA GUI and load the grid `/home/user/saga/DGM_30m_Mt.St.Helens_SRTM.grd` via the **File|Grid|Load Grid** menu. You will 
-get a message in the General tab of the Messages window regarding the success or 
-failure of this task. You should see something like `Load Grid: DGM_30m_Mt.St.Helens_SRTM.grd...okay`. 
-Once you loaded the dataset, it will show up in the Data tab of the Workspace window. 
-It will be listed under Grids and the grid system it belongs to. 
+Откройте SAGA GUI и загрузите растр `/home/user/saga/DGM_30m_Mt.St.Helens_SRTM.grd` через меню **File|Grid|Load Grid**. На 
+вкладке General Окна сообщений вы получите сообщение об успешном или 
+неуспешном выполнении этой задачи. Вы должны увидеть что-то вроде `Load Grid: DGM_30m_Mt.St.Helens_SRTM.grd...okay`. 
+После загрузки набора данных он появится на вкладке *Data* Рабочей области. 
+Данные будут находиться в списке Grids в соответствии с системой координат файла. 
 
-In this case, the grid system information will look like **30;312x 458y; 557970x 5108130y**. The first number is
-the cell size (30 meters), the next two numbers show the number of cells in x and y 
-direction respectively, and the last two numbers are the origin of the grid. SAGA's grid 
-systems are referenced by the bottom left corner. This, and some more useful information 
-on the dataset show up if you select the Description tab of the Properties window. Once 
-you click on the tab, you will see not only more detailed information on the grid system, 
-but also the Value Type of the grid (here FLOAT), the Value Range, some statistical measures 
-and the Memory Size.
+В данном случае информация о системе координат выглядит как **30;312x 458y; 557970x 5108130y**. 
+Первое число это — размер ячейки (30 метров), следующие два показывают количество ячеек в направлениях
+*x* и *y* соответственно, а два последних - начало координат растра, которое в SAGA 
+обычно находится  в нижнем левом  углу. Эта и другая полезная информация 
+о наборе данных будет показана, если вы выберете вкладку *Description* окна Свойств объекта. После 
+открытия вкладки вы увидите не только более подробную информацию о системе координат растра, 
+но и тип его данных (здесь FLOAT), диапазон значений, некоторые статистические показатели 
+и размер занимаемого дискового пространства.
 
 
-Displaying Data
+Визуализация данных
 ================================================================================
 
-To display the dataset in a map view, just double click on the dataset in the Data tab of the Workspace window. A new Map window will open up with the dataset displayed. The canvas is framed: top and left the x- and y-world coordinates are displayed. Bottom and right you see rulers in map units. Move the mouse pointer over the map and watch the x-, y- and z-coordinates displayed in the bottom bar of the SAGA GUI window. The z-coordinates displayed correspond to the elevation values of the dataset (be aware that the values displayed are always those of the dataset selected in the Data or Maps tab).
+Для отображения данных в виде карты просто дважди кликните на соответствующем 
+наборе данных вкладки Data Рабочей области. Появится окно новой карты с добавленным
+в него набором данных. Рамка отображает реальные координаты *x* и *y* на земной поверхности
+в единицах измерения проекции данных. Двигая указатель мыши по карте, вы можете видеть,
+как изменяются значения x-, y- и z-координат, отображающиеся на нижней панели SAGA. 
+Значения z-координаты отвечают отметкам абсолютной высоты набора данных (имейте в виду, 
+что отображающиеся значения всегда соответствуют тому набору данных, который выбран на 
+вкладке Data или Maps).
 
-Now use the navigation tools to zoom and pan. The Zoom tool is selected by default. A left click on the map zooms in, a right click zooms out. Holding the left mouse button down, dragging to the opposite corner and letting the mouse button up allows you to zoom to an area of interest. If you zoom in quite a lot, you will see that the cell values are getting displayed. To pan, select the Pan tool and click and drag to move the map. Have a look at the other bottoms in the tool bar: these allow you to zoom e.g. to Full Extent.
+Теперь воспользуйтесь инструментами навигации для увеличения и передвижения карты. 
+Инструмент *Zoom* выбран по умолчанию. Левый клик мыши по карте увеличивает масштаб отображения, 
+а правый — уменьшает. Протягивание по диагонали карты курсора с удерживанием в нажатом состоянии
+левой кнопки мыши позволяет увеличить масштаб отображения определённого фрагмента. Если вы 
+продолжите увеличивать масштаб отображения, то сможете увидеть отдельные ячейки растра. Для 
+передвижения изображения воспользуйтесь инструментом *Pan*, нажав и протягивая указатель мыши
+вместе с изображением. Обратите внимание и на другие кнопки панели инструментов: они позволяют
+вам изменить масштаб отображения, например, до полного охвата — *Full Extent*.
 
 .. image:: ../../images/screenshots/800x600/saga_fullextent.png
 
-.. tip:: Saga zooms very fast, if you are lost while browsing your data, click the 'Zoom to Full Extent' button in the toolbar
+.. tip:: SAGA увеличивает масштаб отображения очень быстро, поэтому если вы растерялись, просматривая свои данные, просто кликните на панели инструментов кнопку *Zoom to Full Extent*.
 
-Creating shaded relief map view
+Создание растра светотеневой отмывки рельефа
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Let's enhance the map display by calculating a shaded relief map. Switch to
-the Modules tab of the Workspace window and click on the plus sign left to 
-the **Terrain Analysis - Lightning, Visibility** module library: the list 
-with the modules of this library will show up. Now select the Analytical Hillshading module and then select the Settings tab of the Properties window. This will show up the module parameters (also have a look at the Description tab, which will display more information about the module and it's parameters). Click in the right column of the Grid system parameter (where [not set] is displayed) and select the grid system of the Mt. St. Helens dataset. Next click into the right column of the Elevation parameter and select the dataset. Click in the right column of the Shading Method option and select Standard. Now press the Apply and then the Execute button. A new dataset containing the hillshade will be calculated.
+Улучшим визуализацию данных, рассчитав карту теневой отмывки рельефа. Перейдите на
+вкладку *Modules* Рабочей области и кликните на символе плюса слева от 
+библиотеки **Terrain Analysis - Lightning, Visibility**: появится 
+список входящих в нее модулей. Теперь выберите модуль *Analytical Hillshading* и перейдите на
+вкладку *Settings* окна Свойств объекта. В ней отображаются параметры модуля (обратите также внимание на вкладку *Description*, которая содержит подробную информацию о модуле и его параметрах). Кликните в правой колонке параметра *Grid system* (там где отображается [not set]) и выберите систему координат набора данных **Mt. St. Helens**. Далее кликните в правой колонке параметра *Elevation* и выберите ваш набор данных. В правой колонке опции *Shading Method* выберите *Standard*. Теперь нажмите кнопку *Apply*, а затем — *Execute*. В результате будут рассчитаны значения теневой отмывки.
 
-Have a look at the Data tab of the Workspace window - you will find the newly created dataset. Double click on the 'Analytical Hillshading' dataset and select New in the dialog popping up. This will display the dataset in a new map view. After inspecting the dataset, close the Map window by selecting Close from the Window menu.
+Проверьте вкладку Рабочей области *Data* — вы увидите только что созданный набор данных. Дважды кликните по набору данных *Analytical Hillshading* и выберите *New* в диалоговом окне. Набор данных отобразится в окне новой карты. После изучения набора данных закройте окно карты, выбрав *Close* из меню *Window*.
 
-Now double click on the hillshade dataset again, but select the Map containing the elevation dataset in the dialog popping up (Add layer to selected map). This will place the hillshade on top of the elevation dataset.
+Теперь снова дважды кликните по набору данных с теневой отмывкой, но в открывшемся диалоговом окне выберите карту, уже содержащую высотные данные (Add layer to selected map). В результате растр теневой отмывки рельефа наложится на слой абсолютных высот.
 
-Switch to the Maps tab of the Workspace window. You will see the entry of your map and the datasets the map is composed of. The drawing order is top to bottom. Now do a right click on the 'Analytical Hillshading' dataset and select Move To Bottom from the context menu popping up. This will change the drawing order, placing the hillshade beneath the elevation dataset (which now shows up again in the map view). Now select the elevation dataset (by left clicking) and have a look at the Settings tab of the Properties window. Find the Display section of the parameters and click in the right column of the Transparency option. Enter a value of 30 and press the Apply button. Now you will see your elevation values shaded by relief.
+Перейдите на вкладку *Maps* Рабочей области. Вы увидите содержимое вашей карты и наборы данных, из которых она состоит, в порядке их отрисовки — снизу вверх. Кликните правой кнопкой мыши по набору данных *Analytical Hillshading* и выберите *Move To Bottom* из появившегося контекстного меню. Это изменит порядок отрисовки, переместив слой аналитической отмывки под слой абсолютных высот (который теперь снова станет видимым в окне карты). Выберите набор данных абсолютных высот (кликом левой кнопки мыши) и обратите внимание на вкладку *Settings* окна Свойств объекта. Перейдите к секции параметров Display и кликните в правой колонке опции *Transparency*. Введите значение **30** и нажмите кнопку *Apply*. Теперь вы можете увидеть значения абсолютной высоты, оттененные с помощью аналитической отмывки.
 
-Feel free to try other Transparency settings or even try other Shading Methods in the Analytical Hillshading module (in case you do not change the output dataset parameter, the changes will be written to the grid already created, i.e. you will see the changes in the map view immediately).
+Попробуйте другие настройки *Transparency* или же *Shading Methods* в модуле Analytical Hillshading (в случае, если вы не измените параметры результирующего набора данных, изменения будут записаны в уже созданный растр, т.е. вы сразу же увидите результат на карте).
 
 .. image:: ../../images/screenshots/1024x768/saga_withhillshade.png
     :scale: 80
 
-3D visualization
+3D-визуализация
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In a next step, you might like to visualize your map in 3D. Be sure your Map window is selected and press the Show 3D-View button in the tool bar. In the dialog popping up, select the grid system containing your elevation dataset and set the Mt. St. Helens dataset as the Elevation parameter. Once you press the Okay button, the 3D view of your map will show up. Hold the left mouse button pressed and move the mouse to rotate and tilt the map. Use the right mouse button to zoom in/out and shift the map. Also have a look at the tool bar of the 3D View: the buttons replicate the mouse operations and offer further functionality. To close the 3D view select the Close option from the Window menu.
+Возможно, далее вы захотите визуализировать ваши данные в 3D. Проверьте, чтобы было выбрано окно соответствующей карты и нажмите на панели инструментов кнопку *Show 3D-View*. В появившемся диалоговом окне выберите систему координат, которая соответствует набору данных абсолютных высот и установите *Mt. St. Helens* в качестве параметра Elevation. После нажатия кнопки *Okay* появится 3D-вид вашей карты. Удерживайте нажатой левую кнопку мыши и двигайте указатель для вращения и наклона поверхности. Используйте правую кнопку мыши для увеличения/уменьшения масштаба отображения и движения поверхности. Обратите внимание на панель инструментов 3D-вида: кнопки повторяют функции мыши и дают дополнительные возможности. Для закрытия 3D-вида выберите *Close* в меню Window.
 
 .. image:: ../../images/screenshots/1024x768/saga_3d.png
     :scale: 80
 
-Creating Contour Lines
+Построение изолиний
 ================================================================================
-As a short introduction to SAGA vector capabilities, we will now generate 
-Contour Lines from the digital elevation model. This can be done by using 
-the **Shapes - Grid | Contour Lines From Grid** if you open the modules tab in the workspace, or you can equally well open the module using the menu: **Modules|Shapes|Grid|Vectorization**. Choose your grid system and grid 
-(this has to be the elevation). You can leave the options as they are, but perhaps it is better to choose an equidistance of 50m instead of the standard 10m. 
-A few seconds later your contour map has been generated and you should find it back under the data tab in the workspace. Try opening your contour map in a new map. All contour lines now have the same colour, which is not that attractive. If you select your data set (in the workspace, data tab) and check the Settings in the Object Properties window, you can find a section: Display: color classification. You can change the classification from 'Unique symbol' to graduated color. Then you should still adjust the attribute which is used for this graduated color to the elevation. Press apply, and you are presented with coloured contour lines.
+В качестве краткого знакомства с возможностями SAGA по работе с векторными данными построим 
+горизонтали на основе цифровой модели рельефа. Это можно сделать с помощью 
+**Shapes - Grid | Contour Lines From Grid**, если вы откроете вкладку модулей в рабочей области, 
+или же с помощью меню **Modules|Shapes|Grid|Vectorization**. Установите систему координат вашего растра и собственно растр 
+(это должна быт абсолютная высота). Дальнейшие установки можно оставить без изменений, однако лучше изменить высоту сечения рельефа на 50м вместо стандартных 10м. 
+Несколько секунд спустя создастся слой изолиний, который можно увидеть, перейдя на вкладку данных Рабочей области. Откройте его в новой карте. Все горизонтали имеют один и тот же цвет, что не очень удобно. Если вы выберете свой набор данных (вкладка данных рабочей области) и посмотрите на вкладку *Settings* окна свойств объекта, то увидите раздел *Display: color classification*. Здесь можно изменить способ классификации "Unique symbol" на градуированный цвет. После этого необходимо указать высоту в качестве атрибута на основе которого будут изменяться цветовые значения. Нажмите применить, чтобы увидеть цветные горизонтали.
 
-Check your history
+Проверка истории
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-If you select a dataset (eg your contour lines) in the workspace tab, you can switch the object properties tab to 'history' to review which module and which options were used to create the dataset. This information is also kept when you save your files (in .hshp and .hgrd files).
+Выбрав набор данных (например, изолинии) на вкладке Рабочей области, можно перейти на вкладку *history* окна Свойств объекта, чтобы увидеть какие модули и с какими настройками были использованы для создания этого набора данных. Эта информация также записывается во время сохранения файлов (в файлах с расширениями .hshp и .hgrd).
 
 .. image:: ../../images/screenshots/1024x768/saga_contour_history.png
     :scale: 80
 
-Saving data
+Сохранение данных
 ================================================================================
-To save the work you have created you should open the data tab in the workspace, and right click on the file you want to save. SAGA will save grid files to its own native format (\*.sgrd) and shapefiles to the standard ESRI shapefile format (\*.shp). It is also possible to save the project, by choosing **File|Project|Save Project**. This will save all the map views and data settings, as well as offering to save the data files.
+Для того, чтобы сохранить результаты работы, перейдите на вкладку данных Рабочей области и кликните правой кнопкой мыши по файлу, который вы собираетесь сохранить. SAGA сохранит растровые файлы в собственном формате (\*.sgrd) а векторные — в общепринятом ESRI shapefile (\*.shp). Выбрав **File|Project|Save Project**, можно сохранить проект — это опция позволит сохранить все карты и настройки визуализации данных, а также предложит сохранить непосредственно все файлы данных.
 
-Importing/Exporting data
+Импорт/Экспорт данных
 ================================================================================
-If you want to import or export data different modules are present. Most useful is the module: Import/Export GDAL/OGR, which can be found in the **modules|file|GDAL/OGR menu**. Using this module many raster formats can be imported, including geotiff. The same module can also be used to export data to these formats.
+Для импорта и экспорта данных существуют различные модули. Наиболее полезный из них — *Import/Export GDAL/OGR*, который расположен в меню **modules|file|GDAL/OGR**. С использованием этого модуля можно импортировать большое число растровых форматов, в т.ч. GeoTIFF. Этот же модуль может быть использован и для экспорта данных в различные растровые форматы.
 
-.. tip:: SAGA GIS grid format is supported by GDAL since version 1.7.0. Grid Files saved by SAGA can be opened by many other programs using GDAL. However, you must open the '\*.sdat' file and not the '\*.sgrd' file.
+.. tip:: формат растровых данных SAGA ГИС поддерживается GDAL, начиная с версии 1.7.0. Благодаря этому растровые файлы, сохраненные в SAGA, могут быть открыты и другими программами, использующими GDAL. Однако, для этого нужно открывать файл с расширением '\*.sdat' а не '\*.sgrd'.
 
-In this example we will use the digital elevation (SRTM) data from the region around Barcelona as you would download it from the web.
+В этом примере мы используем данные цифровой модели рельефа SRTM для территории неподалёку от г. Барселоны.
 
-The data file we want to use is `SRTM_u03_n041e002.tif` and can be found 
-under `/home/user/data/raster` . You can import this using the Import/Export GDAL/OGR module, which can also be found in the **modules|file|GDAL/OGR menu**. 
+Файл данных, который мы хотим использовать (`SRTM_u03_n041e002.tif`), находится 
+в директории `/home/user/data/raster`. Его можно импортировать с помощью модуля *Import/Export GDAL/OGR*, расположенного в меню **modules|file|GDAL/OGR**. 
 
-After importing this dataset and opening it in a new window, you will most likely be disappointed: It looks all gray! Let's check what might be the cause: Some pixels near the coast seem to have a very small value (-32768) (you can check the value of a pixel by checking the Z: value in the status bar while moving your mouse over the grid).
+После импорта набора данных и открытия его в новом окне, вы, вероятно, будете разочарованы: он же весь серый! Проверим, что тому причиной: некоторые пиксели возле побережья имеют очень маленькие значения (-32768) (проверить значения пикселей можно с помощью Z: чисел на панели статуса, которые изменяются во время перемещения курсора мыши по карте).
 
-These pixels actually have no data, so we should adjust the nodata settings: in the object properties window (after selecting the dataset in the workspace window), set the maximum no data value to -32768 and apply. 
-After doing that, we can reset our color scale to fit the range of the data. An easy method is right clicking on the grid in the workspace and choosing 'Classification|Set Range to minimum maximum'.
+На самом деле эти пиксели не имеют значений, поэтому нам следует откорректировать параметры отсутствующих данных: в окне свойств объекта (после выбора набора данных в окне рабочей области), установите максимальное значения отсутствующих данных равным "-32768" и нажмите кнопку *Apply*. 
+После этого мы можем установить цветовую шкалу в соответствии с диапазоном значений данных. Проще всего это сделать правым кликом мыши по растру в рабочей области, выбрав из контекстного меню "Classification|Set Range to minimum maximum".
 
-You are now ready to repeat the first steps to create a hillshaded map or explore some of the other modules of SAGA!
+Теперь вы готовы к тому чтобы повторить вышеописанные шаги по созданию карты теневой отмывки рельефа или же исследовать другие модули SAGA!
 
-More Information
+Дополнительная информация
 ================================================================================
-More documentation can be found on the SAGA website:
+Дополнительную документацию можно найти на веб-сайте SAGA:
  * http://www.saga-gis.org
-and specifically in the documentation archive:
+особенно в архиве документации:
  * http://www.saga-gis.org/en/about/references.html 
  * http://sourceforge.net/projects/saga-gis/files/SAGA%20-%20Documentation/ 

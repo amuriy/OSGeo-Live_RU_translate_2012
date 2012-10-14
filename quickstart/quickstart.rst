@@ -1,9 +1,9 @@
-.. OSGeo-Live documentation master file, created by
-   sphinx-quickstart on Fri Jul 16 22:04:05 2010.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. Основной файл документации OSGeo-Live, созданный
+   sphinx-quickstart on Пт Июль 16 22:04:05 2010.
+   Вы можете адаптировать этот файл под свои нужды, но должны сохранять
+   корневую директиву `toctree`.
 
-OSGeo-Live Quick Starts
+OSGeo-Live - Начало работы
 ================================================================================
 
 .. toctree::
@@ -15,7 +15,7 @@ OSGeo-Live Quick Starts
   virtualization_quickstart
   usb_quickstart
 
-Application Quick Starts
+Приложения - Начало работы
 ================================================================================
 .. toctree::
   :maxdepth: 5

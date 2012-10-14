@@ -4,62 +4,63 @@
 :License: Creative Commons Attribution-ShareAlike 3.0 Unported  (CC BY-SA 3.0)
 
 ********************************************************************************
-OSGeo-Live Quickstart
+Начало работы c OSGeo-Live 
 ********************************************************************************
 
-This Quick Start describes how to start OSGeo-Live from a DVD or USB.
+Здесь описано, как начать работать с OSGeo-Live с DVD-диска или USB.
 
-System Requirements
+Системные требования
 --------------------------------------------------------------------------------
 
-Your computer should have at least:
+Ваш компьютер должен иметь следующую минимальную конфигурацию:
 
-* RAM: 1 GB.
-* CPU: 1 GHz i686 or compatible (Intel/AMD)
-* Hard Disk: 
+* Память: 1 Гб
+* Процессор: i686 или совместимый (Intel/AMD) с частотой 1 ГГц 
+* Жёсткий диск: 
 
- * None required if running directly from the DVD 
- * |osgeo-live-hdspace| if you wish to install the operating system. 
+ * Не требуется, если приложение запускается напрямую с DVD
+ * |osgeo-live-hdspace|, если Вы желаете установить операционную систему.
 
-* Mouse: a 3-button mouse is useful, especially for Mac trackpad users. 
+* Мышь: предпочтительна трёхкнопочная, в особенности для пользователей Mac.
 
-Run:
+Действия
 --------------------------------------------------------------------------------
 
-  Source an OSGeo-Live DVD, ISO available from: http://download.osgeo.org/livedvd 
-  Put the DVD into your computer's CD drive, then reboot your computer.
+Исходный код OSGeo-Live DVD и образы диска ISO доступны по адресу 
+http://download.osgeo.org/livedvd.
+Вставьте DVD в дисковод и перезагрузите Ваш компьютер.
 
-  If your computer is set to boot from CD (as is often the case) you should
-  boot up into an Xubuntu system, with Geospatial applications installed.
-  Otherwise you'll have to adjust the BIOS boot settings or press the boot
-  menu button just after powering-up.
+Если Ваш компьютер загружается с DVD-привода (как правило, так оно и есть), Вы сразу
+получите ОС Xubuntu с установленными приложениями.
+В противном случае, измените настройки BIOS или нажмите кнопку вызова меню
+загрузки сразу после включения компьютера.
 
    .. image:: ../../images/screenshots/800x600/osgeolive_boot_select.png
      :scale: 70 %
-     :alt: boot select
+     :alt: выбор загрузчика
 
-  When you see the above screen, you can press the spacebar to get to the special
-  boot-up options menu. In most cases you won't have to do that.
+Когда видите такой экран (см. выше), Вы можете нажать пробел для получения меню
+загрузки. В большинстве случаев Вам не придётся делать этого.
 
    .. image:: ../../images/screenshots/800x600/osgeolive_boot.png
      :scale: 70 %
-     :alt: boot
+     :alt: загрузчик
 
-  Sit back while the system boots up.
+Отдохните, пока система загружается.
 
    .. image:: ../../images/screenshots/800x600/osgeolive_menu.png
      :scale: 70 %
-     :alt: boot select
+     :alt: выбор загрузчика
 
-  Try the many applications from the :menuselection:`Geospatial` menu. 
+Попробуйте и другие приложения из меню :menuselection:`Geospatial`.
 
-  Getting started with the Xfce desktop: (an online work in progress)
-    http://docs.xfce.org/start
+Начало работы с рабочим столом Xfce:
+   http://docs.xfce.org/start
 
-  Getting started with the Ubuntu operating system: (a nice PDF e-book)
-    `/usr/local/share/doc/Getting_Started_with_Ubuntu_12.04.pdf </usr/local/share/doc/Getting_Started_with_Ubuntu_12.04.pdf>`_
+Начало работы с Ubuntu: книга в формате PDF
+`/usr/local/share/doc/Getting_Started_with_Ubuntu_12.04.pdf </usr/local/share/doc/Getting_Started_with_Ubuntu_12.04.pdf>`_
 
-  Further online help with the Ubuntu operating system: (n.b. we use the traditional Xfce desktop interface, not the tablet-like Unity desktop interface)
+Онлайн-помощь при работе с Ubuntu: обратите внимание, мы используем традиционный интерфейс Xfce, не Unity!
     https://help.ubuntu.com/12.04/
 
     https://help.ubuntu.com/12.04/serverguide/C/
@@ -67,10 +68,9 @@ Run:
     https://help.ubuntu.com/11.04/ubuntu-classic/gnome-classic-index/C/
 
 
-See Also:
+См. также:
 --------------------------------------------------------------------------------
 
- * :doc:`virtualization_quickstart`
- * :doc:`osgeolive_install_quickstart`
+ * :doc:`virtualization_quickstart` и * :doc:`osgeolive_install_quickstart`
  * :doc:`usb_quickstart`
 

@@ -4,75 +4,75 @@
 :License: Creative Commons Attribution-ShareAlike 3.0 Unported  (CC BY-SA 3.0)
 
 ********************************************************************************
-Install OSGeo-Live to Hard Disk
+Установка OSGeo-Live на жёсткий диск
 ********************************************************************************
 
-OSGeo-Live can be installed onto your hard disk, the same way an Ubuntu
-distribution is installed.
+OSGeo-Live может быть установлен на жёсткий диск Вашего компьютера тем же
+способом, что и другие дистрибутивы, основанные на Ubuntu.
 
-This process can also be run inside a Virtual Machine to create a permanent
-OSGeo-Live Virtual Machine from a DVD or ISO image.
+Этот процесс также может быть запущен внутри виртуальной машины с образа DVD или
+ISO для создания виртуальной машины с OSGeo-Live.
 
-System Requirements
+Системные требования
 --------------------------------------------------------------------------------
 
-* |osgeo-live-hdspace| of spare Hard Disk Space
+* |osgeo-live-hdspace| свободного места на жёстком диске
 
-Install OSGeo-Live
+Установка OSGeo-Live
 --------------------------------------------------------------------------------
 
   .. image:: ../../images/screenshots/800x600/osgeolive_install_start.png
     :scale: 70 %
 
-Select :guilabel:`Install RELEASE`
+Выберите :guilabel:`Install RELEASE`
 
   .. image:: ../../images/screenshots/800x600/osgeolive_install_password.png
     :scale: 70 %
 
-Enter password="user"
+Введите пароль "user"
 
   .. image:: ../../images/screenshots/800x600/osgeolive_install1_language.png
     :scale: 70 %
 
-Select language
+Выберите язык
 
   .. image:: ../../images/screenshots/800x600/osgeolive_install2_timezone.png
     :scale: 70 %
 
-Select timezone
+Выберите временную зону
 
   .. image:: ../../images/screenshots/800x600/osgeolive_install3_keyboard.png
     :scale: 70 %
 
-Select keyboard
+Выберите клавиатуру
 
   .. image:: ../../images/screenshots/800x600/osgeolive_install4_disk.png
     :scale: 70 %
 
-Specify which disk to want to install on. (Beware, this may delete an existing
-  installed partition).
-
+Укажите диск, на который хотите установить OSGeo-Live. Будьте осторожны, это
+может удалить существующую разметку диска.
+  
   .. image:: ../../images/screenshots/800x600/osgeolive_install5_username.png
     :scale: 70 %
 
-Defaults for settings are:
+Значения по умолчанию:
 
-   * Name = "user"
-   * username = "user"
-   * password = "user"
-   * computer name = "osgeolive"
-   * Log In automatically
+   * Имя = "user"
+   * логин = "user"
+   * пароль = "user"
+   * компьютер = "osgeolive"
+   * Входить автоматически
 
   .. image:: ../../images/screenshots/800x600/osgeolive_install7_check.png
     :scale: 70 %
 
-Select :guilabel:`Install`
+Выберите :guilabel:`Install`
 
-Go and get a cup of coffee while installation is in progress.
+Выпейте чашку кофе, пока приложение устанавливается.
 
-That is it.
+Это всё.
 
-See Also:
+См. также:
 --------------------------------------------------------------------------------
 
  * :doc:`osgeolive_quickstart`

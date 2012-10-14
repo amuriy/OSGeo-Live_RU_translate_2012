@@ -1,11 +1,11 @@
-:Author: OSGeo-Live
+﻿:Author: OSGeo-Live
 :Reviewer: Cameron Shorter, LISAsoft
 :Version: osgeo-live5.5
 :License: Creative Commons Attribution 3.0 Unported (CC BY 3.0)
 
 .. image:: ../../images/project_logos/logo-saga.png
   :scale: 100 %
-  :alt: project logo
+  :alt: логотип проекта
   :align: right
   :target: http://www.saga-gis.org
 
@@ -13,68 +13,68 @@
 SAGA
 ================================================================================
 
-Desktop GIS
+Настольная ГИС
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-SAGA (System for Automated Geoscientific Analyses) is an
-open source geographic information system (GIS) used for editing and analysing
-spatial data. It includes a large number of modules for the analysis of
-vector (point, line and polygon), table, grid and image data. Among
-others the package includes modules for geostatistics, image
-classification, projections, simulation of dynamic processes (hydrology,
-landscape development) and terrain analysis. The functionality can be
-accessed through a GUI, the command line or by using the C++ API.
+SAGA (System for Automated Geoscientific Analyses) это географическая информационная
+система (ГИС) с открытым исходным кодом, используемая для редактирования и анализа
+пространственных данных. Она содержит большое количество модулей для анализа
+векторных (точечных, линейных и полигональных), атрибутивных, растровых данных и
+изображений. Кроме этого, пакет включает модули для геостатистического анализа, классификации
+изображений, работы с проекциями, моделирования динамических процессов (гидрология,
+развитие ландшафта) и анализа рельефа. Доступ к функциям предоставляется через графический
+интерфейс пользователя, командную строку или интерфейс программирования приложения (C++ API).
 
-SAGA has been in development since 2001, and the centre of SAGA development is
-located in the Institute of Geography at the University of Hamburg, with
-contributions from the growing world wide community.
+SAGA разрабатывается с 2001 года, центр разработки
+расположен в Институте географии Гамбургского университета, также её
+развитию содействует растущее международное сообщество.
 
 .. image:: ../../images/screenshots/1024x768/saga_overview.png
   :scale: 40%
-  :alt: screenshot
+  :alt: снимок экрана
   :align: right
 
-Core Features
+Базовые функции
 --------------------------------------------------------------------------------
 
-* Access to a large number of scientific modules via the Graphical User Interface or the command line
+* Доступ к большому количеству аналитических модулей через графический интерфейс пользователя или командную строку
 
- * Import/Export to different file formats
- * Reprojection/Resampling of data
- * Manipulation of vector data (merging/intersection/attributes)
- * Manipulation of point clouds from lidar data
- * Raster data: interpolation, cost analysis, ...
- * Image analysis: filters, edge detection, cluster analysis, segmentation
- * Digital Terrain Analysis: generate geomorphometric indexes, channel networks, profiles, contour lines, ...
- * Geostatistics: modules for variogram fitting and kriging
+ * Импорт/Экспорт в различные форматы файлов
+ * Перепроецирование и передискредитация (ресэмплинг) данных
+ * Манипуляция векторными данными (слияние/пересечение/атрибуты)
+ * Манипуляция "облаками точек", полученными на основе данных лазерного высотного сканирования (LiDAR)
+ * Растровые данные: интерполяция, анализ стоимости, ...
+ * Анализ изображений: фильтры, определение границ, кластерный анализ, сегментация
+ * Анализ цифровых моделей рельефа: расчет геоморфометрических индексов, построение сети тальвегов, профилей, изолиний и многое другое
+ * Геостатистика: модули для анализа вариограмм и кригинга
 
-* Fast user interface for managing and visualising data
+* Дружественный интерфейс пользователя для управления данными и их визуализации 
 
- * 3D visualisation
+ * 3D-визуализация
 
-* Straightforward C++ API for creating new modules
-* Scripting through command line, bindings for python
-* SAGA can be accessed from the R statistical language through the RSAGA module
+* Простой C++ API для создания новых модулей
+* Работа со скриптами через командную строку, привязки для Python
+* RSAGA — доступ к SAGA из среды языка R 
 
-Details
+Дополнительная информация
 --------------------------------------------------------------------------------
 
-**Website:** http://www.saga-gis.org
+**Веб-сайт:** http://www.saga-gis.org
 
-**Licence:** LGPL v2.1 (api); GPLv2 (GUI and modules)
+**Лицензия:** `LGPL v2.1 <http://www.gnu.org/copyleft/lesser.html>`_ (API); `GPLv2 <http://www.gnu.org/licenses/gpl-2.0.html>`_ (GUI и модули)
 
-**Software Version:** 2.0.8
+**Версия ПО:** 2.0.8
 
-**Supported Platforms:** Windows, Linux, FreeBSD
+**Поддерживаемые платформы:** Windows, Linux, FreeBSD
 
-**API Interfaces:** C++
+**Интерфейсы API:** C++
 
-**Support:** http://www.saga-gis.org
+**Поддержка:** http://www.saga-gis.org
 
 
-Quickstart
+Начало работы
 --------------------------------------------------------------------------------
 
-* :doc:`Quickstart documentation <../quickstart/saga_quickstart>`
+* :doc:`Введение <../quickstart/saga_quickstart>`
 
 
