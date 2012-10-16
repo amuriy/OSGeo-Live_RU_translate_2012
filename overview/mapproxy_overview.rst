@@ -4,112 +4,112 @@
 :License: Creative Commons Attribution 3.0 Unported (CC BY 3.0)
 
 .. image:: ../../images/project_logos/logo-mapproxy.png
-  :alt: project logo
+  :alt: логотип проекта
   :align: right
   :target: http://mapproxy.org/
 
 MapProxy
 ================================================================================
 
-Proxy WMS & tile services
+WMS прокси-сервер и сервис тайлинга 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../../images/screenshots/800x600/mapproxy.png
-  :alt: MapProxy diagram
+  :alt: диаграмма MapProxy
   :align: right
 
-MapProxy speeds up mapping applications by pre-rendering and integrating maps from multiple sources and storing in a local cache.
-Layers can be made transparent, projections can be changed, multiple map layers can be transformed into one, watermarks can be added, and more...
+MapProxy ускоряет картографические приложения с помощью предварительной отрисовки, объединяет карты из различных источников и сохраняет их в локальном кэше.
+Слоям карты может быть задана прозрачность, а их проекции могут быть изменены. Несколько слоёв могут быть объединены в один. Есть возможность добавлять "водяные знаки" и многое другое...
 
-MapProxy is flexible and scales from simple to complex use-cases: from a single tile cache for an OpenLayers web client to a central SDI node that combines, unifies and accelerates dozens of distributed WMS services.
+MapProxy — расширяемое и гибкое решение простых и комплексных задач: от простого тайлового сервиса для веб-клиента OpenLayers до центрального узла SDI, объединяющего и ускоряющего множество распределённых WMS-сервисов.
 
-MapProxy is used for the German broadband atlas to deliver maps for thousands of users and the German Federal Agency for Cartography an Geodesy uses MapProxy to aggregate WMS services from all 16 states on the fly.
+MapProxy применяется для публикации атласа телекоммуникаций Германии, используемого тысячами пользователей. Федеральное агентство по картографии и геодезии Германии использует MapProxy для аггрегации на лету WMS-сервисов всех 16 административных регионов.
 
 
-Core Features
+Базовые функции
 --------------------------------------------------------------------------------
 
 .. image:: ../../images/screenshots/800x600/mapproxy_demo.png
   :width: 796
   :height: 809
   :scale: 70 %
-  :alt: MapProxy demo
+  :alt: демо MapProxy
   :align: right
 
-Input sources:
+Источники данных:
   * WMS 1.0.0–1.3.0 (MapServer, GeoServer, etc.)
   * TMS, WMTS (TileCache, GeoWebcache, etc.)
-  * Mapserver and Mapnik (directly, without WMS)
-  * any TileCache, Google Maps or Bing compatible source
+  * Mapserver и Mapnik (напрямую, без WMS)
+  * Любые источники данных, совместимые с TileCache, Google Maps или Bing.
 
-Services:
+Сервисы:
   * WMS (1.0.0-1.3.0)
   * TMS
   * WMTS
   * KML SuperOverlays
 
-Tile cache:
-  * stores identical images just once (e.g. ocean tiles)
-  * stores tiles in filesystem, MBTile files or CouchDB
-  * add watermark to tiles
+Кэш тайлов:
+  * одинаковые изображения хранятся в единственном экземпляре (например тайлы поверхности океанов);
+  * хранение тайлов в файловой системе, в файлах MBTile или в CouchDB;
+  * добавление "водных знаков" на тайлы.
 
-Source options:
-  * limit sources to geometries (from Shapefile for example)
-  * add transparency to opaque layers
-  * merge multiple sources
-  * reproject to other SRS
+Особенности работы с источниками данных:
+  * возможность ограничить охват исходных данных геометриями (например, из shp-файла);
+  * добавление прозрачности для непрозрачных слоёв;
+  * объединение нескольких источников;
+  * перепроецирование в другие системы координат.
 
-WMS Features:
-  * build layer trees from different sources
-  * create ``GetMap`` responses from cache with support for free-zooming and any projection (for any Desktop GIS)
-  * accelerates existing WMS 10 to 100 times
-  * respond to ``GetLegendGraphic`` requests
-  * cascade ``GetFeatureInfo`` requests with optional XSL transformations
-  * on-the-fly reprojection
-  * convert WMS versions and image formats
+Функции WMS:
+  * построение деревьев слоёв из различных источников;
+  * формирование ``GetMap`` ответов из кэша с поддержкой свободного масштабирования и перепроецирования (для любой настольной ГИС);
+  * ускорение существующих WMS от 10 до 100 раз;
+  * формирование ответов на ``GetLegendGraphic`` запросы;
+  * каскадные ``GetFeatureInfo`` запросы с дополнительными XSL-преобразованиями;
+  * перепроецирование "на лету";
+  * преобразование версий WMS и форматов изображений.
 
-Security:
-  * flexible and powerful authorization API
-  * fine-grained control over services and layers
-  * restrict access to polygon areas
-  * integrate with existing user databases and authentication methods
+Безопасность:
+  * гибкий и мощный API авторизации;
+  * детальный контроль доступа к слоям и сервисам;
+  * ограничение доступа полигональными областями;
+  * интеграция с существующими базами данных пользователей и системами аутентификации.
 
-Other features:
-  * simple but powerful configuration format (YAML/JSON)
-  * OpenLayers based demo client
-  * run multiple WMS services in one MapProxy instance
-  * add attribution lines to the images
-  * support for non-image raster data like DEMs
-  * many more
+Другие функции:
+  * простой, но мощный формат конфигурационных файлов (YAML/JSON);
+  * демо клиент на базе OpenLayers;
+  * запуск нескольких WMS служб, используя один экземпляр MapProxy;
+  * добавление "водяных знаков";
+  * поддержка не-растровых изображений, таких, как цифровые модели рельефа;
+  * многое другое.
 
-Implemented Standards
+Реализованные стандарты
 --------------------------------------------------------------------------------
 
-MapProxy implements the following open specifications:
+MapProxy реализует следующие открытые спецификации:
 
 * OGC WMS 1.0.0, 1.1.0, 1.1.1, 1.3.0
-* OGC WMTS 1.0.0 (KVP and RESTful)
+* OGC WMTS 1.0.0 (KVP и RESTful)
 * OSGeo TMS 1.0.0
 * OGC KML 2.2 SuperOverlays
 
 
-Details
+Дополнительная информация
 --------------------------------------------------------------------------------
 
-**Website:** http://mapproxy.org/
+**Веб-сайт:** http://mapproxy.org/
 
-**Licence:** `Apache Software License 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>`_
+**Лицензия:** `Apache, версия 2.0 <http://www.apache.org/licenses/LICENSE-2.0>`_
 
-**Software Version:** 1.4.0
+**Версия ПО:** 1.4.0
 
-**Supported Platforms:** Linux, Mac, Windows
+**Поддерживаемые платформы:** Linux, Mac, Windows
 
-**Support:** http://mapproxy.org/support.html
+**Поддержка:** http://mapproxy.org/support.html
 
-**Documentation:** <../../mapproxy/index.html>`_
+**Документация:** <../../mapproxy/index.html>`_
 
 
-Quickstart
+Начало работы
 --------------------------------------------------------------------------------
 
-* :doc:`Quickstart documentation <../quickstart/mapproxy_quickstart>`
+* :doc:`Введение <../quickstart/mapproxy_quickstart>`

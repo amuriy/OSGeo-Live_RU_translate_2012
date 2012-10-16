@@ -5,7 +5,7 @@
 
 .. image:: ../../images/project_logos/logo-marble.png
   :scale: 75 %
-  :alt: project logo
+  :alt: логотип проекта
   :align: right
   :target: http://edu.kde.org/marble/
 
@@ -13,53 +13,53 @@
 Marble
 ================================================================================
 
-3D desktop globe
+Настольный 3D-глобус
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Marble is an open source KDE Education Project program similar
-to `NASA World Wind <http://worldwind.arc.nasa.gov/java/>`_ or
-Google Earth. Besides choosing any number of maps to view on your
-globe (including `OpenStreetMaps <http://www.osm.org>`_), you are
-encouraged to include a KDE Marble widget in your application.
+Marble — программа с отрытым исходным кодом из пакета *KDE Education Project*, аналогичная
+`NASA World Wind <http://worldwind.arc.nasa.gov/java/>`_ или
+Google Earth. Помимо выбора любого количества карт для просмотра на вашем
+глобусе (в том числе `OpenStreetMaps <http://www.osm.org>`_), вы можете
+использовать виджет KDE Marble в вашем приложении.
 
 
-Core Features
+Базовые функции
 --------------------------------------------------------------------------------
 
 .. image:: ../../images/screenshots/1024x768/marble-history.png
   :scale: 50 %
-  :alt: screenshot
+  :alt: снимок экрана
   :align: right
 
-* Virtual globe and world atlas
-* Navigate globe in 3D
-* Mouse-click reveals Wikipedia article for destination
-* Multiple maps (and planets, moons) to choose from
-* Solar day/night overlay
-* Measure distances
-* Switch between view-from-space and 2D projected map views
-* `OpenStreetMap <http://www.osm.org>`_ integration
+* Виртуальный глобус и атлас мира
+* 3D-навигация
+* Щелчок мыши показывает статью из Wikipedia для выбранной точки
+* Несколько карт (а также планет и лун) на выбор
+* Имитация дня/ночи
+* Измерение расстояний
+* Переключение между видом из космоса и видом "плоской" карты
+* Интеграция с `OpenStreetMap <http://www.osm.org>`_
 
 
-Details
+Дополнительная информация
 --------------------------------------------------------------------------------
 
-**Website:** http://edu.kde.org/marble/
+**Веб-сайт:** http://edu.kde.org/marble/
 
-**Licence:** GNU Lesser General Public License (LGPL) version 2.1
+**Лицензия:** `LGPL версия 2.1 <http://www.gnu.org/copyleft/lesser.html>`_
 
-**Software Version:** 1.3.4
+**Версия ПО:** 1.3.4
 
-**Supported Platforms:** GNU/Linux, Mac OSX, MS Windows
+**Поддерживаемые платформы:** GNU/Linux, Mac OS X, MS Windows
 
-**API Interfaces:** Qt designer, C++, Python, D-BUS, Shell script
+**Интерфейсы API:** Qt Designer, C++, Python, D-BUS, Shell script
 
-**Support:** http://techbase.kde.org/Projects/Marble
+**Поддержка:** http://techbase.kde.org/Projects/Marble
 
 
-Quickstart
+Начало работы
 --------------------------------------------------------------------------------
 
-* :doc:`Quickstart documentation <../quickstart/marble_quickstart>`
+* :doc:`Введение <../quickstart/marble_quickstart>`
 
 

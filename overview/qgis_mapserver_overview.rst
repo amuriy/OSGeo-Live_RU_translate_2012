@@ -5,64 +5,64 @@
 
 .. image:: ../../images/project_logos/logo-qgis_mapserver.png
   :scale: 100 %
-  :alt: project logo
+  :alt: логотип проекта
   :align: right
   :target: http://www.qgis.org
 
 .. image:: ../../images/logos/OSGeo_project.png
   :scale: 100 %
-  :alt: OSGeo Project
+  :alt: Проект OSGeo
   :align: right
   :target: http://www.osgeo.org
 
 QGIS Server
 ================================================================================
 
-Web Service
+Веб-сервис
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-QGIS Server provides a web map service (WMS) using the same libraries as the Quantum GIS (QGIS) desktop application.
-Maps and print templates created in QGIS desktop can be published as web maps simply by copying the QGIS project file into the server directory. The resulting web maps look exactly the same as in the desktop.
-QGIS Server is usually run as CGI/FastCGI module within the Apache Webserver.
+QGIS Server реализует WMS-сервис, используя те же библиотеки, что и настольное приложение Quantum GIS (QGIS).
+Карты и шаблоны для печати, созданные в настольной ГИС QGIS, могут быть опубликованы в веб простым копированием файла проекта в директорию сервера. В результате веб-карты выглядят так же, как и в настольном приложении.
+QGIS Server обычно работает как CGI/FastCGI модуль веб-сервера Apache.
 
 .. image:: ../../images/screenshots/1024x768/qgis-mapserver-screenshot.jpg
   :scale: 40 %
-  :alt: project logo
+  :alt: снимок экрана QGIS Mapserver
   :align: right
 
 
-Core Features
+Базовые функции
 --------------------------------------------------------------------------------
 
-* Web Map Service (WMS) implementation
-* Built-in PDF output
-* WYSIWYG map creation with QGIS
-* Advanced cartographic symbolisation
-* Supports Styled Layer Descriptor (SLD)
+* Реализация WMS
+* Встроенный генератор PDF
+* Создание карт в QGIS в стиле WYSIWYG 
+* Расширенная картографическая символика
+* Поддержка стилей в формате SLD
 
-Implemented Standards
+Реализованные стандарты
 --------------------------------------------------------------------------------
 
 * OGC Web Map Service (WMS) 1.3.0
 * OGC Styled Layer Descriptor (SLD) 1.0
 
-Details
+Дополнительная информация
 --------------------------------------------------------------------------------
 
-**Website:** http://www.qgis.org/
+**Веб-сайт:** http://www.qgis.org/
 
-**Licence:** GPL
+**Лицензия:** `GPL версия 2 <http://www.gnu.org/licenses/gpl-2.0.html>`_
 
-**Software Version:** 1.8.0
+**Версия ПО:** 1.8.0
 
-**Supported Platforms:** Windows, Linux
+**Поддерживаемые платформы:** Windows, Linux
 
-**Commercial Support:** http://www.sourcepole.com/
+**Коммерческая поддержка:** http://www.sourcepole.com/
 
 
-Quickstart
+Начало работы
 --------------------------------------------------------------------------------
 
-* :doc:`Quickstart documentation <../quickstart/qgis_mapserver_quickstart>`
+* :doc:`Введение <../quickstart/qgis_mapserver_quickstart>`
 
 

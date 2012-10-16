@@ -5,7 +5,7 @@
 
 .. image:: ../../images/project_logos/logo-Zoo.png
   :scale: 50 %
-  :alt: project logo
+  :alt: Логотип
   :align: right
   :target: http://zoo-project.org/
 
@@ -21,81 +21,72 @@ ZOO-Project
 WPS Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-ZOO-Project provides a developer friendly Web Processing Service (WPS) framework for creating and chaining Web Processing Services.
-A WPS provides web access to functions which run spatial algorithms.
-ZOO-Project supports many programming languages and comes with two demo applications using simple
-spatialtools Services Providers (a C shared library and a Python module)
-based on the GEOS and OGR Libraries.
+ZOO-Project предоставляет разработчикам удобный инструмент картографических
+веб-сервисов (Web Processing Service, WPS), предназначенный для создания и 
+формирования последовательностей WPS.
 
-ZOO is made of three parts:
+WPS предоставляет веб-доступ к функциям для запуска алгоритмов геообработки.
+ZOO-Project поддерживает множество языков программирования и содержит в комплекте
+два демонстрационных приложения, которые используют простые пространственные 
+сервис-провайдеры (разделяемые библиотеки C и модули Python) на основе библиотек GEOS и OGR.
+
+ZOO включает три части:
 
 .. image:: ../../images/screenshots/1024x768/zoo-project-demo-2.png
   :scale: 40 %
-  :alt: screenshot
+  :alt: снимок экрана
   :align: right
 
-*ZOO Kernel* : A powerful server-side C Kernel which makes it possible to
-manage and chain Web services coded in different programming languages. 
+*Ядро ZOO* : Мощное серверное ядро на языке C, которое позволяет управлять и выстраивать в цепочку веб-сервисы, написанные на различных языках программирования. 
 
-*ZOO Services* : A growing suite of example Web services based on various
-Open Source libraries.
+*Сервисы ZOO* : Растущий набор услуг, например, веб-ориентированных, на различных
+библиотеках с открытым исходным кодом. 
 
-*ZOO API* : A server-side JavaScript API able to call and chain the ZOO
-Services, which makes the development and chaining processes easier. 
+*ZOO API* : Серверные JavaScript API, позволяющие вызывать и выстраивать в цепочку сервисы ZOO, которые делают разработку и формирование цепочек проще. 
 
-ZOO is based on a 'WPS Service Kernel' which constitutes the ZOO's core
-system (aka ZOO Kernel). The latter is able to load dynamic libraries and
-to handle them as on-demand Web services. The ZOO Kernel is written in C
-language, but supports several common programming languages in order to
-connect to numerous libraries and above all to simplify the Web service
-end-developer's job.
+ZOO основывается на 'WPS Service Kernel', который предоставляет базовую систему ZOO (т.е. ядро ZOO). Напоследок имеется возможность загрузки динамических библиотек и обращение к ним по запросам веб-служб. Ядро ZOO написано на языке C, но поддерживает несколько распространенных языков программирования, что позволяет соединять функционал нескольких библиотек и, кроме того, упрощает разработку веб-сервисов.
 
-A ZOO service is a link composed of a metadata file (.zcfg) and the code
-for the corresponding implementation. The metadata file describes all the
-available functions which can be called using a WPS Exec Request, as well
-as the desired input/output. Services contain the algorithms and
-functions, and can now be implemented in C/C++, Fortran, Java, Python, PHP
-and JavaScript. 
+Сервисы ZOO представляют ссылку, состоящую из файла метаданных (*.zcfg) и кода для соответствующей реализации. Файл метаданных описывает все возможные функции, которые могут быть вызваны при помощи "WPS Exec Request", а также все необходимые входные ивыходные параметры. Сервисы содержат алгоритмы и функции, и могут быть реализованы на языках программирования C/C++, Fortran, Java, Python, PHP и JavaScript. 
 
-Core Features
+Базовые функции
 --------------------------------------------------------------------------------
 
-* Multi language WPS server 
-* Simple Web Service creation and deployment procedure
-* Simple WPS chaining with ZOO API
+* Многоязычный WPS-сервер 
+* Простые процедуры создания и опубликования веб-сервисов
+* Простое выстраивание в цепочку WPS при помощи ZOO API
 
-Implemented Standards
+Реализованные стандарты
 --------------------------------------------------------------------------------
 
 * OGC WPS 1.0.0
 
-Demo
+Демо
 --------------------------------------------------------------------------------
 
-* `Demo using simple C Services Provider based GEOS and OGR libraries <http://localhost/zoo-demo/spatialtools.html>`_
-* `Demo using simple Python Services Provider based GEOS and OGR libraries <http://localhost/zoo-demo/spatialtools-py.html>`_
-* `Simple html form to process your request to the ZOO Kernel <http://localhost/zoo-demo/spatialtools.html>`_
+* `Демонстрация использования простого сервис провайдера на языке С на базе библиотек GEOS и OGR <http://localhost/zoo-demo/spatialtools.html>`_
+* `Демонстрация использования простого сервиса на Python на базе библиотек GEOS и OGR <http://localhost/zoo-demo/spatialtools-py.html>`_
+* `Простая HTML-форма для обработки запросов к ядру ZOO <http://localhost/zoo-demo/spatialtools.html>`_
 
 
-Details
+Дополнительная информация
 --------------------------------------------------------------------------------
 
-**Website:** http://zoo-project.org
+**Веб-сайт:** http://zoo-project.org
 
-**Licence:** MIT x/11
+**Лицензия:** MIT x/11
 
-**Software Version:** 1.2.0
+**Версия ПО:** 1.2.0
 
-**Supported Platforms:** Windows, Linux, Mac
+**Поддерживаемые платформы:** Windows, Linux, Mac
 
-**Programing language support:** C, Python, Java, PHP, Fortran, Javascript
+**Интерфейсы API:** C, Python, Java, PHP, Fortran, JavaScript
 
-**Support:** http://zoo-project.org/trac
+**Поддержка:** http://zoo-project.org/trac
 
 
-Quickstart
+Начало работы
 --------------------------------------------------------------------------------
 
-* :doc:`Quickstart documentation <../quickstart/zoo-project_quickstart>`
+* :doc:`Введение <../quickstart/zoo-project_quickstart>`
 
 
