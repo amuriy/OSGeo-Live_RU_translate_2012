@@ -5,99 +5,99 @@
 
 .. image:: ../../images/project_logos/logo-qgis_mapserver.png
   :scale: 100 %
-  :alt: project logo
+  :alt: логотип проекта
   :align: right
 
 ********************************************************************************
-QGIS Server Quickstart
+Начало работы с QGIS Server
 ********************************************************************************
 
-QGIS Server provides a web map service (WMS) based on libraries from the Quantum GIS (QGIS) desktop application.
+QGIS Server реализует WMS-сервис на базе библиотек настольного приложения Quantum GIS (QGIS).
 
-This Quick Start describes how to:
+Этот документ описывает, как:
 
-  * update an existing QGIS project and render it with QGIS Server
-  * create a new QGIS project and open the WMS directly in a browser
+  * обновить существующий проект QGIS и визуализировать его с помощью QGIS Server;
+  * создать новый проект QGIS и открыть WMS непосредственно в браузере.
 
-Documentation:
+Документация:
   * http://www.qgis.org/wiki/QGIS_Server_Tutorial
 
-Quick start for Server Installation on Debian/Ubuntu:
+Инструкция по установке QGIS Server на Debian/Ubuntu:
 
   * :command:`apt-get install qgis-mapserver libapache2-mod-fcgid`
   * -> http://localhost/cgi-bin/qgis_mapserv.fcgi
 
-QGIS Web Client:
+QGIS веб-клиент:
   * https://github.com/qgis/qgis-web-client
 
-Start GeoExt viewer
+Запуск просмотрщика GeoExt
 ================================================================================
 
-OSGeo-Live contains an example of web map viewer based on the GeoExt Javascript framework and using QGIS Server for rendering the map.
+OSGeo-Live содержит пример просмотрщика карт на базе JavaScript-библиотеки GeoExt, использующего QGIS Server для визуализации карты.
 
-* Click :menuselection:`Geospatial --> Web Services --> QGIS Server`
+* Нажмите :menuselection:`Geospatial --> Web Services --> QGIS Server`
 
-You should see a browser window with a web map viewer showing a world map.
+Вы должны увидеть окно браузера с веб-просмотрщиком карт, отображающим карту мира.
    
 .. image:: ../../images/screenshots/800x600/qgis_mapserver_browser.jpg
 
-We will now change the map styling using QGIS.
+Теперь мы изменим стиль отображения карты, используя QGIS.
 
 
-Edit QGIS project
+Редактирование проекта QGIS
 ================================================================================
 
-#. Click :menuselection:`Geospatial --> Desktop GIS --> Quantum GIS`.
+#. Нажмите :menuselection:`Geospatial --> Desktop GIS --> Quantum GIS`
 
-#. Choose :menuselection:`File --> Open Project...` from the menu bar.
+#. Выберите в меню :menuselection:`File --> Open Project...`
 
-#. Select :file:`QGIS-NaturalEarth-Example.qgs` and press :guilabel:`Open`.
+#. Укажите файл :file:`QGIS-NaturalEarth-Example.qgs` и нажмите :guilabel:`Open`
 
-   * You should see the same world map rendered by QGIS.
-     We will now change river styling and look at the result in the web map viewer. 
+   * Вы должны увидеть ту же карту мира, отрисованную QGIS
+     Теперь мы изменим стиль отображения рек и посмотрим на результат в веб-просмотрщике карт.
 
-#. Double click :file:`10m_rivers_lake_centerlines` in the Layers tree.
+#. Дважды щёлкните на :file:`10m_rivers_lake_centerlines` в списке слоёв
 
-#. Change the color in Outline Options to a different blue tone.
+#. Измените цвет в *Outline Options* на другой оттенок голубого
 
-#. Press :guilabel:`OK`.
+#. Нажмите :guilabel:`OK`
 
-   * Rivers are now rendered in a new color.
+   * Реки должны отобразиться другим цветом
 
-#. Save the project with :menuselection:`File --> Save Project`.
+#. Сохраните проект, нажав :menuselection:`File --> Save Project`
 
-#. Reopen the web browser
+#. Откройте веб-браузер заново
 
-#. Zoom in
+#. Увеличьте масштаб
 
-   * You should now see rivers rendered in the same new color.
+   * Вы должны увидеть, что реки отображаются тем же новым цветом.
 
 
-Create a new QGIS project
+Создание нового проекта QGIS
 ================================================================================
 
-#. Reopen QGIS
+#. Снова откройте QGIS
 
-#. Choose :menuselection:`File --> New Project`.
+#. Выберите :menuselection:`File --> New Project`
 
-#. Click :menuselection:`Layer --> Add Vector Layer...`.
+#. Нажмите :menuselection:`Layer --> Add Vector Layer...`
 
-#. Browse to dataset :file:`/home/user/data/natural_earth/10m_admin_0_countries.shp`.
+#. Перейдите к набору данных :file:`/home/user/data/natural_earth/10m_admin_0_countries.shp`
 
-#. Press :guilabel:`Open`.
+#. Нажмите :guilabel:`Open`
 
-   * You should see all world countries.
+   * Вы должны увидеть границы стран мира.
 
-#. Save the project with :menuselection:`File --> Save Project`.
+#. Сохраните проект, нажав :menuselection:`File --> Save Project`
 
-#. Use file name :file:`/home/user/world.qgs` and press :guilabel:`Save`.
+#. Укажите :file:`/home/user/world.qgs` и нажмите :guilabel:`Save`
 
-#. Open the `WMS URL <http://localhost/cgi-bin/qgis_mapserv?map=/home/user/world.qgs&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&BBOX=-91.901820,-180.000000,83.633800,180.000000&CRS=EPSG:4326&WIDTH=722&HEIGHT=352&LAYERS=10m_admin_0_countries&STYLES=default&FORMAT=image/png&DPI=96&TRANSPARENT=true>`_.
+#. Откройте `WMS URL <http://localhost/cgi-bin/qgis_mapserv?map=/home/user/world.qgs&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&BBOX=-91.901820,-180.000000,83.633800,180.000000&CRS=EPSG:4326&WIDTH=722&HEIGHT=352&LAYERS=10m_admin_0_countries&STYLES=default&FORMAT=image/png&DPI=96&TRANSPARENT=true>`_.
 
-   * You should see all world countries, this time rendered by QGIS Server.
+   * Вы должны увидеть страны мира, отрисованные на этот раз с помощью QGIS Server.
 
 
-What Next?
+Что дальше?
 ================================================================================
 
-To learn more about QGIS Server, a good starting point is the `QGIS Server Wiki page <http://hub.qgis.org/wiki/quantum-gis/QGIS_Server_Tutorial>`_.
+Хорошей отправной точкой для более подробного изучения QGIS Server является `вики-страница QGIS Server <http://hub.qgis.org/wiki/quantum-gis/QGIS_Server_Tutorial>`_.

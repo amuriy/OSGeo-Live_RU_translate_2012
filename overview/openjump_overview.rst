@@ -9,14 +9,21 @@
   :align: right
   :target: http://www.openjump.org
 
-OpenJUMP GIS
+OpenJUMP
 ================================================================================
 
-Desktop GIS
+Настольная ГИС
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
-OpenJUMP is an easy to use and powerful desktop GIS that enables users
-to display, edit, analyse and conflate geographic data.
+OpenJUMP — лёгкая в использовании и вместе с тем мощная настольная ГИС,
+которая позволяет пользователям отображать, править, анализировать и
+объединять геопространственные данные.
+
+OpenJUMP предоставляется в двух изданиях — CORE (базовая установка) и PLUS,
+которое включает множество полезных дополнений.
+
+OpenJUMP хороша 
+
 It comes in a CORE and a PLUS edition, with the latter adding lots of useful plugins. 
 OpenJUMP is excellent for data editing and rapid prototyping of GIS functions.
 

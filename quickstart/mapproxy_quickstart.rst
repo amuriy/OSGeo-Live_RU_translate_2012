@@ -3,93 +3,93 @@
 :License: Creative Commons Attribution-ShareAlike 3.0 Unported  (CC BY-SA 3.0)
 
 .. image:: ../../images/project_logos/logo-mapproxy.png
-  :alt: project logo
+  :alt: логотип проекта
   :align: right
   :target: http://mapproxy.org/
 
-MapProxy Quickstart
+Начало работы с MapProxy 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-MapProxy is *the* swiss army knife for all WMS and tile services.
-It caches, accelerates and transforms data from existing map services and serves any desktop or web GIS client.
+MapProxy — "швейцарский армейский нож" для работы с WMS-сервисами и сервисами тайлирования.
+Он кэширует и трансформирует данные уже существующих картографических сервисов, а также ускоряет доступ к ним.
 
 .. image:: ../../images/screenshots/800x600/mapproxy.png
-  :alt: MapProxy diagram
+  :alt: диаграмма MapProxy
   :align: center
 
-MapProxy is not only a tile cache solution, but also offers many new and innovative features like full support for WMS clients.
+MapProxy — это не только кэширующий сервер тайлирования. Он предлагает множество новых и инновационных функций, таких, как полная поддержка WMS-клиентов.
 
-Start demo service
+Запуск демо-службы
 --------------------------------------------------------------------------------
 
-MapProxy has flexible deployment options and you can integrate it in Apache for example. But you can also start MapProxy as a standalone service, which is the best option to get started.
+MapProxy имеет гибкие возможности развёртывания. К примеру, вы можете интегрировать его в веб-сервер Apache. Но вы можете запустить его и как самостоятельную службу, что будет лучшим вариантом для начала работы.
 
-To start MapProxy as a standalone service click on :menuselection:`Geospatial --> Web Services --> MapProxy --> Start MapProxy`.
+Для запуска MapProxy в виде самостоятельного сервиса нажмите :menuselection:`Geospatial --> Web Services --> MapProxy --> Start MapProxy`.
 
 
-View MapProxy Demo
+Просмотр демо MapProxy
 --------------------------------------------------------------------------------
 
-The MapProxy demo page contains a rudimentary WMS and tile client for each configured layer. You can't select the projection for WMS layers for example, but it is enough to quickly verify that your installation works.
+Демо-страница MapProxy содержит простейшие WMS-сервис и клиент для каждого преднастроенного слоя. Например, вы не сможете выбрать проекцию для WMS-слоя, но этого варианта достаточно для того, чтобы убедиться, что сервис работает.
 
-You can open the demo in Firefox: `<http://localhost:8011/demo>`_
+Вы можете открыть демо-страницу в веб-браузере: `<http://localhost:8011/demo>`_
 
-View in Desktop GIS
+Просмотр в настольной ГИС
 --------------------------------------------------------------------------------
 
-You can add MapProxy in any WMS Desktop GIS like uDig, QGIS or gvSIG. The service URL is: `<http://localhost:8011/service?>`_
+Вы можете добавлять сервисы MapProxy в любую настольную ГИС: uDig, QGIS или gvSIG. Адрес сервиса: `<http://localhost:8011/service?>`_
 
-The MapProxy example configuration contains a few layers that use different map engines and map data. See below for more details about each layer. 
+Пример конфигурационного файла MapProxy содержит несколько слоёв, которые используют различные картографические движки и данные. Детальная информация о каждом слое приведена ниже.
 
 .. figure:: ../../images/screenshots/800x600/mapproxy_udig.png
-  :alt: MapProxy example in uDig
+  :alt: пример MapProxy в uDig
   :align: center
   
-  Single WMS layer with data from two cascaded sources and `FeatureInformation` from one source.
+Одиночный WMS-слой, с данными из двух каскадных сервисов и возможностью делать `FeatureInformation` запросы к одному из них.
 
-Available layers
+Доступные слои
 --------------------------------------------------------------------------------
 
 **mapnik**:
-  The world population rendered by Mapnik. You don't need to start the Mapnik service, because this layer makes use of the integrated Mapnik support in MapProxy.
+  Карта населения мира, отрисованная Mapnik. Нет необходимости явно запускать сервис Mapnik, потому что этот слой может использовать интегрированную поддержку Mapnik в MapProxy.
 
 **tilelite**:
-  TileLite is a simple server that delivers tiles from the Mapnik world population service. This layer demonstrates the ability to include existing tile services in MapProxy and to make them available as WMS.
-  You need to start TileLite with *Start Mapnik & TileLite* before accessing this layer.
+  TileLite — простой сервер, предоставляющий тайлы с сервиса Mapnik "Карта населения мира". Этот слой демонстрирует возможность использования существующих тайловых сервисов в MapProxy и организации к ним доступа через WMS.
+  Перед тем, как использовать этот слой, вам необходимо запустить TileLite, вызвав *Start Mapnik & TileLite*.
 
 **geoserver**:
-  The US population rendered by the :doc:`GeoServer <../overview/geoserver_overview>` WMS. This layer also supports ``GetFeatureInfo`` requests which are cascaded to the source WMS.
-  You need to start GeoServer with |osgeolive-appmenupath-geoserver| before accessing this layer.
+  Карта населения US, отрисованная :doc:`GeoServer <../overview/geoserver_overview>` из WMS. Этот слой поддерживает ``GetFeatureInfo`` запросы, которые каскадно перенаправляются на базовый сервис.
+  Перед тем, как использовать этот слой, вам необходимо запустить GeoServer: |osgeolive-appmenupath-geoserver|.
 
 **mapnik_geoserver**:
-  This layer demonstrates the ability to combine multiple sources into one layer. It combines the world population from Mapnik with the US population from GeoServer. The ``GetFeatureInfo`` support for the US population is still available.
-  You need to start GeoServer with |osgeolive-appmenupath-geoserver| before accessing this layer.
+  Этот слой демонстрирует возможность объединения нескольких источников в один слой. Он объединяет карту карту населения мира, отрисованную Mapnik, и карту населения US с GeoServer. Запросы ``GetFeatureInfo`` к карте населения US всё так же работают.
+  Перед тем, как использовать этот слой, вам необходимо запустить GeoServer: |osgeolive-appmenupath-geoserver|. 
 
 **mapserver**:
-  This layer uses Mapserver Itasca demo dataset. It is a local dataset and it uses the *coverage* feature to limit the BBOX to Itasca, IL.
+  Этот слой использует демонстрационный набор данных *Mapserver Itasca*. Это локальный набор, и для него используется функция ограничения пространственных охватом *Itasca, IL*.
 
 
-Create you own configuration
+Создание собственной конфигурации
 --------------------------------------------------------------------------------
 
-You can use ``mapproxy-util`` to create new configuration templates and to start a test server.
+Вы можете использовать ``mapproxy-util`` для создания нового шаблона конфигурации и запуска тестового сервера.
 
-To create a new configuration::
+Для создания конфигурации::
 
   mapproxy-util create -t base-config ~/mapproxy
 
-To start the test server on port 8011 with the created configuration::
+Для запуска тестового сервера, прослушивающего порт *8011*, на базе созданного конфигурационного файла::
 
   mapproxy-util serve-develop ~/mapproxy/mapproxy.yaml -b 0.0.0.0:8011
 
-You can now visit the demo page at http://127.0.0.1:8011/demo/.
-MapProxy will automatically reload if you change your configuration file.
+Теперь вы можете открыть демо-страницу по адресу http://127.0.0.1:8011/demo/.
+Тестовый сервер MapProxy автоматически перезагружается, если вы измените свой конфигурационный файл.
 
 
-What Next?
+Что дальше?
 --------------------------------------------------------------------------------
 
-* Read the `documentation of MapProxy <../../mapproxy/index.html>`_
+* Прочитайте `документацию по MapProxy <../../mapproxy/index.html>`_
 
-* Read the example configuration (``/usr/local/share/mapproxy/mapproxy.yaml``)
+* Посмотрите пример конфигурационного файла (``/usr/local/share/mapproxy/mapproxy.yaml``)
 

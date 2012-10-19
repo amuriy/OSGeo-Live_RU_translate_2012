@@ -5,33 +5,33 @@
 
 .. image:: ../../images/project_logos/logo-marble.png
   :scale: 75 %
-  :alt: project logo
+  :alt: логотип проекта
   :align: right
   :target: http://edu.kde.org/marble/
 
 ********************************************************************************
-KDE-edu Marble Quickstart 
+Начало работы с KDE-Edu Marble
 ********************************************************************************
 
-Getting Started
+Приступая к работе
 ================================================================================
 
-* Click on the desktop icon
+* Нажмите на значок на рабочем столе
 
-* If you have used Google Earth before you should be able to figure this program out without much difficulty.
+* Если вы ранее использовали Google Earth, то сможете без особых трудностей разобраться с этой программой.
 
-* In the Settings menu select full-screen mode
+* В меню Настройки выберите полноэкранный режим
 
-* Explore ...
+* Исследуйте...
 
-* Click on a city name (cursor becomes a pointing hand), within the info center select the Wikipedia tab and read about the place
+* Щёлкните по имени города (курсор примет вид указывающей руки), в информационном центре выберите вкладку "Википедия" и прочитайте статью об этом месте
 
-* In the bottom-left corner of the program window there is a subtle tab called "Map View". Click on it.
+* В нижнем левом углу окна программы расположена вкладка под названием "Карта". Щёлкните по ней.
 
-* Select another map (e.g. 'Precipitation (July)')
+* Выберите другую карту (например 'Осадки (Июль)')
 
-* Explore some more ... 
+* Исследуйте дальше... 
 
 
-See the `Marble homepage <http://edu.kde.org/marble/>`_ for more help.
+Для получения дополнительной информации смотрите `Marble homepage <http://edu.kde.org/marble/>`_.
 

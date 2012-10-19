@@ -1,4 +1,4 @@
-:Author: OSGeo-Live
+﻿:Author: OSGeo-Live
 :Author: Astrid Emde
 :Author: Christoph Baudson
 :Author: Arnulf Christl
@@ -8,174 +8,172 @@
 
 .. image:: ../../images/project_logos/logo-Mapbender.png
   :scale: 100 %
-  :alt: project logo
+  :alt: Логотип
   :align: right
 
 ********************************************************************************
-Mapbender Quickstart 
+Начало работы с Mapbender 
 ********************************************************************************
 
-Mapbender is a web based geoportal framework to publish, register, view, navigate, monitor and grant secure access to spatial data infrastructure services. 
+Mapbender — веб-ориентированный набор инструментов для разработки геопорталов, который позволяет публиковать, регистрировать, показывать пространственные данные, управлять ими, а также отслеживать и настраивать доступ к инфраструктурным пространственным сервисам. 
 
-Management interfaces empower administrators who need to maintain and categorize map and feature services and grant access to individuals, groups and other services. 
+Интерфейсы управления позволяют администраторам поддерживать и категоризировать карты и сервисы пространственных данных, а также предоставлять доступ пользователям, группам и другим сервисам.
 
-You will need nothing but a standard web browser for this quickstart.
+Для начала работы вам не потребуется ничего, кроме стандартного веб-браузера.
 
-This Quick Start describes how to:
+Быстрый старт включает:
 
-  * start Mapbender
-  * create an application 
-  * load a Web Map Service (OGC WMS)
-  * configure WMS
-  * create an individual application
-  * create a user and a group and assign applications to them
-  * load a WFS
-  * configure feature type and create an application with WFS search and digitize functionality
+  * запуск Mapbender;
+  * создание приложения;
+  * загрузка WMS (OGC WMS);
+  * настройка WMS;
+  * создание отдельных приложений;
+  * создание пользователей и групп и назначение им приложений;
+  * загрузка WFS;
+  * функция настройки и создания приложений с поддержкой WFS, в которых можно выполнять поиск и редактирование.
 
-Start Mapbender
+Запуск Mapbender
 ================================================================================
 
 .. TBD: Add menu graphic to this uDig Quickstart
 
-#. Choose  :menuselection:`Mapbender` from the start menu
+#. Выберите  :menuselection:`Mapbender` из стартового меню
 
-#. The application will take a few moments to start up
+#. Приложению необходимо несколько минут для запуска
 
-If you have any difficulties running Mapbender, please check whether your Apache web server and your PostgreSQL database are running.
+Если у вас возникнут какие либо сложности с запуском Mapbender, пожалуйста, проверьте что, веб-сервер Apache и БД PostgreSQL запущены.
 
-Welcome page
+Приветственная страница
 ================================================================================
 
-#. Before you can work with Mapbender you have to login to get access to applications.
+#. Прежде чем вы сможете работать с Mapbender, вы должны осуществить вход, чтобы получить доступ к приложениям.
 
-#. The welcome page provides links to the most important pages related to Mapbender. 
+#. Приветственная страница предоставляет ссылки на наиболее важные страницы Mapbender. 
 
-#. You can login with the user :guilabel:`root` and password :guilabel:`root` (This is the default user and password that you get after installation of Mapbender. Please change the root password if you want to run a productive environment. Please don't delete the user :guilabel:`root` as this user has access to the Mapbender template applications and is used on updates).
+#. Вы можете войти как пользователь :guilabel:`root` с паролем :guilabel:`root` (Это пользователь по-умолчанию со стандартным паролем, установленные после развёртывания Mapbender. Пожалуйста, измените пароль пользователя *root*, если вы хотите использовать установленное приложение в реальной работе. Пожалуйста, не удаляйте пользователя :guilabel:`root`, т.к. этот пользователь имеет доступ к шаблонным приложениям Mapbender и используется для обновления).
   
   .. image:: ../../images/screenshots/800x600/mapbender_welcome.png
      :scale: 80
 
-After successful login you are directed to the :guilabel:`application overview`.
+После успешного входа вы будете направлены на :guilabel:`application overview`.
 
 
-
-Application overview
+Описание приложения
 ================================================================================
-After the login you are directed to the :guilabel:`application overview` with a list of applications you are allowed to access.
-In Mapbender you have template applications, that you can use to set up your own applications.
+После входа вы будете перенаправлены на страницу :guilabel:`application overview` со списком приложений к которым вы имеете доступ. В Mapbender имеются шаблонные приложения, которые вы можете использовать для настройки ваших собственных приложений.
 
   .. image:: ../../images/screenshots/800x600/mapbender_application_overview.png
      :scale: 80
 
-Mapbender provides
-   * administration applications
-   * map applications
-   * container applications
+Mapbender предоставляет:
+   * административные приложения
+   * картографические приложения
+   * приложения-контейнеры
 
-The applications are listed in :guilabel:`categories`. Later you can define your own category and add your applications to the category you want.
+Список приложений представлен на странице :guilabel:`categories`. Позже вы можете определить свои собственные категории и добавить приложения в необходимую категорию.
 
 
-Administration applications
+Управление приложением
 ================================================================================
 
-:guilabel:`Administration applications` allow you f. e. to load services, create user, to set up new applications. 
+:guilabel:`Administration applications` позволяют вам загружать сервисы, создавать пользователей, настраивать новые приложения. 
 
-Each :guilabel:`administration application` provides different functionality. Later on your can set up your own :guilabel:`administration applications` with the functionality you would like to provide.
+Каждое административное приложение (:guilabel:`administration application`) предоставляет различную функциональность. Позже вы можете установить свои административные приложения (:guilabel:`administration applications`) с необходимой вам функциональностью.
 
-After installation user :guilabel:`root` has access to:
-   * ADMINISTRATION, ADMINISTRATION_DE - WMS, WFS, application, user/group, handling (new in version 2.7)
-   * admin2_en - WMS, application, user/group handling
-   * admin_en_services - focus on WFS and metadata handling and owsproxy    
-   * admin1 - template with all administration elements
-   * admin_wms_metadata, admin_wfs_metadata, admin_wmc_metadata - metadata handling 
+После установки пользователь :guilabel:`root` имеет доступ к:
+   * разделам "ADMINISTRATION", "ADMINISTRATION_DE - WMS", "WFS", "application", "user/group handling" (новое в версии 2.7)
+   * разделам "admin2_en - WMS", "application", "user/group handling"
+   * разделу "admin_en_services" - сфокусирован на WFS и поддержке метаданных и owsproxy    
+   * разделу "admin1" — шаблон ко всем административным элементам
+   * разделам "admin_wms_metadata", "admin_wfs_metadata", "admin_wmc_metadata" - управление метаданными 
 
-The following image shows admin2_en. At the left side you can see the menu with the possibilities which this application offers.
+На картинке ниже представлен раздел *admin2_en*. С левой стороны вы можете видеть меню с перечнем возможностей, которые предлагает приложение.
 
   .. image:: ../../images/screenshots/800x600/mapbender_admin2_en.png
      :scale: 80
 
-.. tip:: You get back to the application overview with the |HOME| button.
+.. tip:: Вы можете вернуться к окну описания приложений при помощи кнопки |HOME|.
 
   .. |HOME| image:: ../../images/screenshots/800x600/mapbender_home.png
      :scale: 100
 
-Map applications
+Картографическое приложение
 ================================================================================
-Map applications contain OGC WMS, one ore more maps, buttons, a geodata explorer, a legend element, your logo and more. 
+Картографическое приложение включает OGC WMS, одну или несколько карт, кнопки, проводник пространственных данных, элемент легенды, ваш логотип и многое другое. 
 
-#. Choose a map application :guilabel:`by click` from the :guilabel:`application overview`
+#. Выберите картографическое приложение :guilabel:`by click` из :guilabel:`application overview`
 
-#. Get to know Mapbender and try the functionality the applications provide.
+#. Попробуйте функциональность, предоставляемую приложением:
    
-   * choose for example gui, gui_digitize
+   * например, выберите gui, gui_digitize
      
   .. image:: ../../images/screenshots/800x600/mapbender_gui_digitize.png
      :scale: 80
 
-.. tip:: If your browser supports tabs you can open the applications in tabs and easily switch between them.
+.. tip:: Если ваш браузер поддерживает вкладки, вы можете открыть приложения во вкладках и легко переключаться между ними.
 
-WMS container applications
+Приложение контейнер WMS
 ================================================================================
-You can create a container application to store your WMS. WMS container are not for display. With containers you can create a sophisticated service repository.
+Вы можете создавать приложение контейнер для размещения вашего WMS. Контейнер WMS не показывается. При помощи контейнеров вы можете создавать сложные репозитории сервисов.
 
   .. image:: ../../images/screenshots/800x600/mapbender_container.png
      :scale: 60
 
-Create an individual application
+Создание собственного приложения
 ================================================================================
 
-#. go to the administration application :menuselection:`admin2_en` 
+#. Перейдите в административное приложение :menuselection:`admin2_en` 
 
-#. choose :menuselection:`Application Management --> Create new application`
+#. Выберите :menuselection:`Application Management --> Create new application`
 
-#. define a name and description for your application and choose the button **new** to create the application
+#. Назначьте имя и описание для вашего приложения и выберите кнопку **new** что бы создать приложение
 
-#. go to the link :menuselection:`Application Management --> Edit application elements` and select the new application
+#. Перейдите по ссылке :menuselection:`Application Management --> Edit application elements` и выберите новое приложение
 
-#. in the selectbox at the top choose an application that you would like to take as a template and hit the button **add all elements**. This process will take all elements from the application you selected to your new application.
+#. В списке в верхней части окна выберите приложение, которое вы хотели бы взять в качестве шаблона, и нажмите на кнопку **add all elements**. Этот процесс перенесёт все элементы из выбранного приложения в ваше новое приложение.
 
-#. you can also take a single element from another application to your new application. Choose the single element by activating the radiobutton at the element and hit the **save** Button to save this element in your new application.
+#. Также вы можете взять отдельный элемент из другого приложения для вашего нового приложения. Выберите отдельный элемент активируя переключатель на элементе и нажмите кнопку **save**, что бы сохранить этот элемент в вашем приложении.
 
-#. your application is set up. Now you need a WMS to be displayed in your application. This will be described in the section **WMS Management**.
+#. Ваше приложение настроено. Теперь вам нужен WMS для отображения в приложении. Более подробно смотрите раздел **WMS Management** этой справки.
 
 
-Copy or rename an application
+Копирование и переименование приложения
 ================================================================================
-You also can create a new application by copying an existing application. Go to :menuselection:`Application Management --> Rename/copy application`, choose the application you want to copy and define a name for the new application. This functionality not only copies the application, it also copies the services of the application and the user/groups (optional). That means that the new application already has map services and the user and groups which have access to the copied application will have access to the new application too.
+Вы также можете создать новое приложение копированием существующего. Перейдите к :menuselection:`Application Management --> Rename/copy application`, выберите приложение, которое вы хотите скопировать и определите имя нового приложения. Эта функция не только копирует приложение, она также копирует сервисы приложений и пользователей/группы (по желанию). Это означает, что у нового приложения уже есть картографический сервис, а также, если пользователи и группы имели доступ к исходному приложению, то они будут иметь доступ и к новому приложению.
 
-Delete an application
+Удаление приложения
 ================================================================================
-You can delete an application with :menuselection:`Application Management --> Delete application`. Only the application is deleted, not the services which were part of the application. 
-You are not allowed to delete applications which also belong to other users.
+Вы можете удалить приложение при помощи :menuselection:`Application Management --> Delete application`. Удаляется только приложение, а не сервисы, которые входили в его состав.
+Вы не можете удалить приложения, которые также принадлежат другим пользователям.
 
-Export an application
+Экспорт приложения
 ================================================================================
-You can export an application as SQL with :menuselection:`Application Management --> Export application (SQL)`. The SQL contains all the definitions of the application elements and can be imported in another Mapbender installation. 
+Вы можете экспортировать приложение при помощи языка SQL и :menuselection:`Application Management --> Export application (SQL)`. SQL-команды содержат все определения для элементов приложения и могут быть импортированы в другую инсталляцию Mapbender. 
 
-.. tip:: The export of an application does not contain the service information and the informations about user and group access.
+.. tip:: Экспортированное приложение не включает информацию о сервисах, информацию о правах пользователей и групп.
 
 ********************************************************************************
-WMS Management
+Управление WMS
 ********************************************************************************
 
-Loading Web Map Services
+Загрузка WMS
 ================================================================================
-You can load OGC Web Map Services (WMS) to your application.
+Вы можете загрузить WMS-сервисы в ваше приложение.
 
-A WMS returns an XML-file when the getCapabilities document is requested. This information is parsed by Mapbender and Mapbender gets all the necessary information about the service from this XML
+WMS возвращает XML-файл при запросе **getCapabilities**. Mapbender разбирает результаты запроса и получает всю необходимую информацию о сервисах из файла XML.
 
-.. tip:: You should first check the Capabilities document in your browser before you try to load it with Mapbender
+.. tip:: Прежде чем загружать XML-файл, рекомендуется посмотреть его корректность в окне браузера.
 
 
-#. Go to :guilabel:`admin2_en` and choose :menuselection:`WMS Management --> Load WMS`. Choose the application which shall contain the WMS. Link to the WMS getCapabilities URL in the text field and hit **Load**.
+#. Перейдите в раздел :guilabel:`admin2_en` и выберите :menuselection:`WMS Management --> Load WMS`. Выберите приложение которое должно содержать WMS. Укажите ссылку на WMS getCapabilities URL в поле ввода и нажмите **Load**.
 
-#. Here are some example WMS which you can load to your application:
+#. Ниже приведены несколько примеров WMS которые вы можете загрузить в ваше приложение:
 
-Cadastre of spain
+Кадастр Испании
 
 http://ovc.catastro.meh.es/Cartografia/WMS/ServidorWMS.aspx?VERSION=1.1.1&REQUEST=GetCapabilities&SERVICE=WMS
 
-Geoportal Barcelona (Geoportalbcn - link refers to a service repository)
+Геопортал Барселоны (Geoportalbcn — ссылка на репозиторий сервисов)
 
 http://www.bcn.cat/geoportal/es/geoserveis.html
 
@@ -187,9 +185,10 @@ Bird Studies Canada
 
 http://www.bsc-eoc.org/cgi-bin/bsc_ows.asp?VERSION=1.1.1&REQUEST=GetCapabilities&SERVICE=WMS
 
-Germany demo 
+Демо (Germany demo)
 
-http://wms.wheregroup.com/cgi-bin/mapserv?map=/data/umn/germany/germany.map&VERSION=1.1.1&REQUEST=GetCapabilities&SERVICE=WMS 
+http://wms.wheregroup.com/cgi-bin/mapserv?map=/data/umn/germany/germany.map&VERSION=1.1.1&REQUEST=GetCapabilities&SERVICE=WMS
+ 
 
 WhereGroup OSM WMS 
 
@@ -198,241 +197,240 @@ http://osm.wheregroup.com/cgi-bin/osm_basic.xml?REQUEST=GetCapabilities&SERVICE=
 .. image::../../images/screenshots/800x600/mapbender_admin2_en.png
   :scale: 80
 
-You can load more than one WMS in an application. Choose *WMS application settings* to change the order of the WMS or remove a WMS from your application.
+Вы можете загрузить более одного WMS в приложение. Выберите *WMS application settings* для изменения порядка следования WMS или удаления WMS из вашего приложения.
 
-The WMS with index 0 defines the default coordinate reference system and the extent of the map.
+WMS с индексом *0* определяет систему координат и охват карты по умолчанию.
 
-.. tip:: Create a container application and upload every WMS just once to this container application. You can transfer the WMS from this container to other aplications. When you update the WMS the possible changes will appear in all applications that contain this WMS. You easily can copy a WMS from one to another application with the menu entry *Link WMS to application*.
+.. tip:: Создайте приложение-контейнер и загрузите любой WMS, только один в этот контейнер. Вы можете передать WMS из контейнера в другие приложения. Когда вы обновляете WMS, возможные изменения могут появиться во всех приложениях, которые содержат этот WMS. Вы легко можете скопировать WMS из одного приложения в другое при помощи пункта меню *Link WMS to application*.
 	
 
-Configure WMS
+Настройка WMS
 ================================================================================
-After upload of a WMS you can configure the WMS for your specific application. Maybe you don't want to provide all layers or you want to change the order or titles of the layer or disable the feature info or change the maxscale for a layer.
+После загрузки WMS вы можете настроить WMS в соответствии со спецификой вашего приложения. Возможно, вам не нужно предоставлять все слои, или вы хотите изменить порядок заголовков слоёв, или отключить инструмент идентификации, или изменить максимальный масштаб слоя.
 
 .. image:: ../../images/screenshots/800x600/mapbender_wms_application_settings.png
   :scale: 80
 
-* on/off - enable/disable a layer for this individual application
-* sel - selectable in geodata explorer
-* sel_default - layer is active when the application starts
-* info / info default - layer provides feature info requests, info default activates the feature info functionality
-* minscale / maxscale - the scale range in which the layer should be displayed, 0 means no scale limitation
-* style - if a WMS provides more than one style you can choose a different style than the default style
-* prio - defines the order in which the layer are drawn
-* setWFS - connects a WMS layer with a WFS feature type configuration (you will learn more about this later)
-
+* on/off — активирует/деактивирует слой для отдельного приложения
+* sel — разрешает выбор в проводнике пространственных данных
+* sel_default — слой активируется при запуске приложения
+* info / info default — слой предоставляет возможность запрашивать атрибуты, info default активирует возможность запроса атрибутов для геометрии
+* minscale / maxscale — диапазон масштабов в которых показывается слой (если установлены в 0, то ограничения по масштабу отсутствуют)
+* style — если WMS предоставляет более одного стиля, вы можете выбрать другой стиль вместо стиля по-умолчанию
+* prio — определяет порядок отрисовки слоев
+* setWFS — соединяет слой WMS с конфигурацией WFS (подробнее об этом будет сказано далее)
 
 ********************************************************************************
-Configure your application
+Настройка вашего приложения
 ********************************************************************************
-Now you should get an idea how easy it is to change a Mapbender application without changes in the code. 
+Теперь вы должны получить представление о том, как легко можно изменить приложения Mapbender без изменения кода.
 
-When you select an element for example **mapframe1** by click on the radiobutton you see that the element has a lot of attributes. These attributes are HTML attributes. By defining a Mapbender element you define an HTML element. On start of your application Mapbender will create an HTML page from all defined elements.
+Когда вы выбираете элемент, например, **mapframe1** щелчком по переключателю, вы видите, что элемент имеет множество атрибутов. Эти атрибуты являются тэгами HTML. Определяя элементы Mapbender, вы определяете элементы HTML. При запуске вашего приложения Mapbender генерирует страницу HTML с использованием всех определённых элементов.
 
-	* id - unique name for the element
-	* on/off - enable/disable an element
-	* title - name which will be displayed as tooltip or tab
-	* HTML-TAG/CLOSE-TAG - type of HTML element to create for example div, img
-	* top, left - define the position of the element (for fixed layouts)
-	* width/height - define the size of the element
+	* id — уникальное имя элемента
+	* on/off — активировать/деактивировать элемент
+	* title — имя для всплывающей подсказки вкладки
+	* HTML-TAG/CLOSE-TAG — введите элементы HTML для определения тэгов, например, div, img
+	* top, left — определите позицию элемента (для фиксированных раскладок)
+	* width/height — определите размер элемента
 
-Some elements have element variables which allows the user to set parameters for an element. The element variables can be JavaScript variables, PHP variables, references to CSS files or CSS text definitions. 
+Некоторые элементы имеют свойства, которые позволяют пользователю устанавливать их самостоятельно (не выбирать из списка). Свойства могут быть переменными языков программирования JavaScript или PHP, ссылками на файлы CSS или текстовыми определениями CSS. 
 
-Examples for element variables:
+Примеры для различных элементов:
 
-* the copyright element has an element variable to set the copyright text
-* the overview element (overview map) has an element variable to define which WMS is used for the overview map
-* treeGDE (geodata explorer) has element variables to define the style of the geodata explorer
+* элемент *copyright* имеет свойство для установки текста копирайта;
+* элемент *overview* (обзор карты) имеет свойство для определения WMS, используемого для обзорной карты;
+* *treeGDE* (проводник пространственных данных) имеет свойство для определения стиля проводника.
 
 
-Try it yourself
+Попробуйте сами
 ================================================================================
-* change the size of the mapframe (element mapframe1)
-* change the logo image - choose foss4g-logo as image (element logo)
-* set the background-color (element body element-variable css_class_bg)
-* move your buttons (change left and top of your element to another pixel position)
-* change the copyright text
+* изменить размер окна карты (элемент *mapframe1*);
+* изменить логотип — используйте foss4g-logo в качестве изображения логотипа (элемент *logo*);
+* установить цвет фона (элемент body element-variable css_class_bg);
+* изменить местоположение управляющих элементов (изменить местоположение верхнего левого угла элемента на другую пиксельную позицию);
+* изменить копирайт.
 
 ********************************************************************************
-User and group management
+Управление пользователями и группами
 ********************************************************************************
-An access to Mapbender always requires authentication. This user has permissions to access one or a set of applications and the services (WMS, WFS) which are assigned to these applications.
+Доступ к Mapbender всегда требует аутентификации. Пользователь может получить доступ к приложениям и сервисам (WMS, WFS) после входа.
 
-There is no inherent difference between roles like :guilabel:`guest`, :guilabel:`operator` or :guilabel:`administrator`. The :guilabel:`role` of a user depends on the functionality and services the user has access through his applications.
+Нет никакого различия между встроенными ролями :guilabel:`guest`, :guilabel:`operator`, :guilabel:`administrator`, :guilabel:`role`. Функциональность зависит от сервисов, к которым пользователь имеет доступ.
 
 
-Create a user
+Создание пользователя
 ================================================================================
 
-#. To create a user go to :guilabel:`admin2_en` and select :menuselection:`User Management --> Create and edit user`
+#. Для создания пользователя перейдите по ссылке :guilabel:`admin2_en` и выберите :menuselection:`User Management --> Create and edit user`.
 
-#. Choose a name and a password for your user. 
+#. Введите имя пользователя и пароль. 
 
 .. image:: ../../images/screenshots/800x600/mapbender_create_user.png
      :scale: 80 
 
 
-Create a group
+Создание группы
 ================================================================================
-#. Create a group by :menuselection:`User Management --> Create and edit group`. Define a name and a description for your group.
+#. Создайте группу при помощи :menuselection:`User Management --> Create and edit group`. Укажите имя и описание для вашей группы.
 
 
-Assign applications to user/group
+Назначение приложения пользователю/группе
 ================================================================================
 
-#. Assign a user to a group by :menuselection:`User Management --> Add one user to several groups` or by the link :menuselection:`User Management --> Add several users to one group`
+#. Введите пользователя в группу при помощи :menuselection:`User Management --> Add one user to several groups` или по ссылке :menuselection:`User Management --> Add several users to one group`
 
-#. Assign an application to a user by :menuselection:`User Management --> Allow one user to access several applications`
+#. Назначьте пользователя приложению при помощи :menuselection:`User Management --> Allow one user to access several applications`
 
-#. Assign an application to a group by :menuselection:`User Management --> Allow one group to access several applications`
+#. Назначьте приложение группе при помощи :menuselection:`User Management --> Allow one group to access several applications`
 
-.. tip:: If you want to grant a user write access to an application you have to use :menuselection:`User Management --> Assign to edit an application to a user`.
+.. tip:: Если вам нужно предоставить пользователю доступ на запись в приложении, необходимо воспользоваться меню :menuselection:`User Management --> Assign to edit an application to a user`
 
-#. Logout from Mapbender with the |LOGOUT| button.
+#. Осуществите выход из Mapbender при помощи кнопки |LOGOUT|.
 
-#. Login as the new user
+#. Войдите под новым пользователем
 
-#. What happens when the user has access to one or more than one application?
+#. Что произойдет, если пользователь имеет доступ к нескольким приложениям?
 
   .. |LOGOUT| image:: ../../images/screenshots/800x600/mapbender_logout.png
      :scale: 100
 
 ********************************************************************************
-WFS management
+Управление WFS
 ********************************************************************************
-Mapbender supports OGC Web Feature Service WFS 1.0.0 and 1.1.0. A WFS can be used in Mapbender applications for different functionalities:
+Mapbender поддерживает OGC Web Feature Service (WFS) версий 1.0.0 и 1.1.0. WFS может быть использован приложениях Mapbender для различных целей:
 
-* search
-* spatial search
-* digitizing
-* list informations
-* generation of tooltips
-* download of data
+* поиск;
+* пространственный поиск;
+* редактирование;
+* отображение информации;
+* генерация всплывающих подсказок;
+* загрузка данных.
 
-To use a WFS you have to load a WFS in Mapbender and generate feature type configurations.
+Чтобы воспользоваться WFS, вам необходимо загрузить WFS в Mapbender и сгенерировать его конфигурацию.
 
-Afterwards you have to grant access to your new feature type configuration to an application before you can use it.
+После этого вы должны предоставить доступ к вашей новой конфигурации, прежде чем вы сможете использовать её.
 
-If you want to set up an application with WFS digitizing you need a WFS which supports transactions (WFS-T). You can for example use the software :doc:`GeoServer <../overview/geoserver_overview>` or deegree to set up a WFS-T.
+Если вам необходимо настроить приложение с поддержкой редактирования WFS, вам необходим WFS, поддерживающий транзакции (WFS-T). Например, вы можете воспользоваться :doc:`GeoServer <../overview/geoserver_overview>` или иной WFS-T.
 
-Loading Web Feature Services
+Загрузка WFS
 ================================================================================
-The modules to configure WFS are integrated in the administration application **admin_en_services**.
+Модуль для настройки WFS интегрирован в административное приложение **admin_en_services**.
 
-#. Go to *admin_en_services* and choose *WFS Management --> Load WFS*. Choose an application in the application list. Link to the WFS getCapabilities URL in the text field and hit **Load**.
+#. Перейдите в *admin_en_services* и выберите *WFS Management --> Load WFS*. Выберите приложение в списке. Укажите ссылку на WFS **getCapabilities** URL в текстовом поле и нажмите **Load**.
 
-.. tip:: You should first check the WFS getCapabilities document in your browser before you try to load it in Mapbender.
+.. tip:: В начале следует проверить корректность документа WFS getCapabilities в окне браузера прежде чем загружать его в Mapbender.
 
-Demo WFS
+Демонстрация WFS:
 
 http://wms.wheregroup.com/geoserver/wfs?REQUEST=getCapabilities&VERSION=1.0.0&SERVICE=WFS
-
 
 .. image:: ../../images/screenshots/800x600/mapbender_loadWFS.png
      :scale: 80 
 
-Create a WFS feature type configuration
+Создание конфигурации WFS
 ================================================================================
-The next step is to set up a configuration for a feature type. After the configuration and authorization of an application, the configuration can be used in your applications.
+На следующем шаге настроим конфигурацию WFS. После настройки и аутентификации в приложении, конфигурация может быть использована.
 
 .. image:: ../../images/screenshots/800x600/mapbender_configure_WFS_featureType.png
      :scale: 80 
 
-**Configuration**
+**Конфигурация**
 
-#. first you have to choose a WFS from the selectbox *Select WFS*. All feature types of this WFS will be listed
-#. choose the feature type that you want to configure
-#. after selection of the feature type a couple of fields appear (configuration fields, attribute fields)
-#. define an abstract and label for your search. 
-#. define the text on the search button (f. e. ok or search)
-#. in the style and result-style block you can define css-text
-#. define a buffer which will be used when zoomed on a result object
-#. choose the geometry column
-#. search / pos - define the columns to offer in your search and the order (pos for position) in which they shall be listed
-#. minimum_input (**Search**) - define the minimum input for the field
-#. label - define a label for the search column  
-#. show - define the columns which you want to show in the result list and define the position
-#. show_detail - define the columns which shall be displayed in the detail information window which provides informations about a single object
-#. mandatory (**digitizing**) - the column has to be set and can't be left empty
-#. edit (**digitizing**) - define which columns you want to offer for digitizing
-#. html - offer selectbox, datepicker, checkbox, textarea or file upload instead of a simple inputfield
-#. auth - here you can define authorization to get user dependent access to feature objects.  
-#. operator - (**Search**) - define which operator to use for the search.
-#. helptext - define a help text for every field.
-#. category - you can define categories. The attribut will be assigned to this category and will be displayed in a tab with the name of the category.
-#. **save** your settings
-#. your configuration will get a configuration id
+#. Для начала вам надо выбрать WFS из списка *Select WFS*. Все типы, поддерживаемые этим WFS будут перечислены;
+#. выберите тип, который необходимо настроить;
+#. после выбора типа, возникнет пара полей ввода (поля настройки, поля атрибутов);
+#. введите абстракт и метку вашего поиска;
+#. определите текст на кнопке поиска (например, OK или поиск);
+#. в стиле или блоке стиля результатов вы можете определить текст CSS;
+#. определите буфер, который может быть использован при увеличении на объекте в записи результатов поиска;
+#. выберите колонку геометрии;
+#. search / pos — определите колонки для поиска и их порядок (pos для позиции), в котором они должны отображаться;
+#. minimum_input (**Search**) - определите минимальное количество символов для поля
+#. label — определите метку для колонки поиска  
+#. show — определите колонки, которые необходимо отобразить в списке результатов и их порядок;
+#. show_detail — определите колонки, которые необходимо отображать в окне информации о выделенном объекте;
+#. mandatory (**digitizing**) — колонку необходимо установить;
+#. edit (**digitizing**) — определите, какую колонку назначить для редактирования;
+#. html — определите *selectbox*, *datepicker*, *checkbox*, *textarea* или *file upload* вместо простого текстового поля;
+#. auth — здесь вы можете определить порядок аутентификации, чтобы обеспечить доступ к пространственным объектам;
+#. operator (**Search**) — определите, какой оператор использовать для поиска;
+#. helptext — определить текст справки для каждого поля;
+#. category — вы можете определить категории. Атрибут будет назначен это категории и будет показан во вкладке с именем категории;
+#. **save** сохраните ваши настройки;
+#. вашей конфигурации будет присвоен идентификатор.
 
 
 .. image:: ../../images/screenshots/800x600/mapbender_configure_WFS_featureType_attribute_table.png
+
      :scale: 80 
 
-Assign a feature type configuration to an application
+Назначение конфигурации WFS-приложению
 ================================================================================
-Your new configuration has to be assigned to one or more applications. This is done in *WFS configuration -> Assign WFS conf to application*.
+Новая конфигурация должна быть назначена одному или нескольким приложениям. Это делается при помощи *WFS configuration -> Assign WFS conf to application*.
 
-#. Choose your WFS
-#. Choose the application
-#. Move your configuration to the *GUI configuration list* on the right
+#. Выберите WFS
+#. Выберите приложение
+#. Переместите вашу конфигурацию *GUI configuration list* вправо
 
 .. image:: ../../images/screenshots/800x600/mapbender_set_featureType_access.png
      :scale: 80 
 
 
-Set up WFS search
+Настройка поиска в WFS
 ================================================================================
-To enable your feature type configuration in an application go to *admin_en_services -> Edit application elements* choose your application and go to the element *gazetteerWFS*. The elements has an element variable *wfsConfIdString*. Here you can list you WFS configuraton ids (comma separated). In the order of the list the searches will be displayed in the application.
+Для настройки WFS в приложении перейдите *admin_en_services -> Edit application elements* выберите ваше приложение и перейдите к элементу *gazetteerWFS*. Элемент имеет свойство *wfsConfIdString*. Здесь вы можете просмотреть список конфигураций WFS (разделены запятой). В порядке списка будут отображаться результаты поиска.
 
 .. image:: ../../images/screenshots/800x600/mapbender_wfsConfIdString.png
      :scale: 80 
 
-Have a look how the search could appear in an application. In this example there is a search frame at the left where you can search for Mapbender User. You can run a spatial search and define a region to search or you can do an alphanumeric search. The search results are displayed in a result table. On click on a result entry Mapbender zooms to the location and detail information is displayed.
+Обратите внимание, как поиск может быть использован в вашем приложении. В примере ниже имеется фрейм слева, в котором осуществляется поиск пользователя Mapbender. Вы можете запустить пространственный поиск и определить регион или осуществить пространственный поиск. Результаты поиска будут отображены в специальной таблице. Щелчок на строке таблицы результатов в Mapbender переходит и приближается к местоположению объекта и выводится детальная информация.
 
 .. image:: ../../images/screenshots/800x600/mapbender_WFS_search.png
      :scale: 100
 
-Set up a WFS digitize functionality
+Настройка возможности редактирования в WFS
 ================================================================================
-The easiest way to get an application that supports WFS digitizing is to copy gui_digitize. Now you only have to connect a WMS layer with your feature type configuration. This is done in *WMS application settings* with the button *set WFS* in the layer-list. Hit the button and select your configuration id.
+Наиболее простой путь добавить возможность редактирования WFS в ваше приложение — скопировать *gui_digitize*. Теперь вам нужно только подключится к слою WMS с определенной конфигурацией пространственных объектов. Это делается при помощи *WMS application settings* с кнопкой *set WFS* в списке слоёв. Нажмите на кнопку и введите ваш идентификатор конфигурации.
 
-.. tip::Make sure that the WMS layer which is connected with the WFS configuration id supports feature info. This is how Mapbender decides whether to send a WFS getFeature request or not.
+.. tip:: Убедитесь, что слой WMS, который соединён с конфигурацией WFS, поддерживает запрос атрибутов. Таким образом Mapbender определяет, когда посылать запросы WFS **getFeature**.
 
-Now you can search with the spatial search at the right for existing objects which are displayed in a seach result frame. The objects can be updated (move object, add basepoint, edit attributes, split line, continue line, merge polygons...). You also can create new objects.
+Теперь вы можете искать с использованием пространственных запросов объекты, отображаемые в текущий момент на карте. Объекты могут быть изменены (перемещены, добавлены точки, отредактированы их атрибуты, разбиты или продолжены линии, объединены полигоны). Также вы можете создавать новые объекты.
 
 .. image:: ../../images/screenshots/800x600/mapbender_gui_digitize.png
      :scale: 80 
 
-Things to try
+Что можно попробовать
 ================================================================================
 
-Here are some additional challenges for you to try:
+Вот некоторые дополнительные задачи, чтобы попробовать:
 
-#. Try to load some WMS in your application. Try to configure your WMS with :menuselection:`Configure WMS access --> WMS application settings`.
+#. Попробуйте загрузить какой-нибудь WMS в вашем приложение. Попробуйте сконфигурировать ваш WMS с использованием :menuselection:`Configure WMS access --> WMS application settings`.
 
-#. Try to create an individual application - change the background-color, move the buttons, change the size of the map (element mapframe1). :menuselection:`Application Management --> Edit application elements`.
+#. Попробуйте создать отдельное приложение — измените цвет фона, переместите кнопки, измените размер карты (элемент *mapframe1*). :menuselection:`Application Management --> Edit application elements`.
 
 
-What Next?
+Что дальше?
 ================================================================================
 
-This is only the first step on the road to using Mapbender. There is a lot more functionality you can try.
+Это только первый шаг на пути к использованию Mapbender. Существует гораздо больше функций, которые вы можете попробовать.
 
-Mapbender Project home
+Домашняя страница Mapbender:
 
   http://www.mapbender.org/
 
-You find tutorials at
+Руководства могут быть найдены по этой ссылке:
 
   http://www.mapbender.org/Tutorials
 
-Try the tutorial in english language
+Посмотрите руководства на английском языке:
 
   http://www.mapbender.org/Mapbender_Tutorial_en
 
-Get to know Mapbender on 
+Узнайте больше о Mapbender: 
 	
 	http://projects.mapbender.osgeo.org
 
-Get involved in the project
+Примите участие в проекте:
 
 	http://www.mapbender.org/Community
