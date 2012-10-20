@@ -16,12 +16,12 @@
 
 .. image:: ../../images/project_logos/logo-OGC-left.png
   :scale: 100 %
-  :alt: OGC logo
+  :alt: Логотип OGC
   :align: right
 
 .. image:: ../../images/project_logos/logo-OGC-right.png
   :scale: 100 %
-  :alt: OGC logo
+  :alt: Логотип OGC
   :align: right
 
 .. Writing Tip: Name of application
@@ -32,22 +32,21 @@ Style Layer Descriptor (SLD)
 .. Writing Tip:
   1 paragraph or 2 defining what the standard is.
 
-The OGC® Styled Layer Descriptor (SLD)
-provides constructs for the symbolization and coloring of geographic features and coverages. It is typically used to apply styles to Web Map Services, or style GML from Web Feature Services.  (http://www.opengeospatial.org/standards/sld) 
+Стандарт OGC® Styled Layer Descriptor (SLD) предназначен для описания символики пространственных данных. Обычно применяется в сервисах Web Map Service (WMS) или Web Feature Service (WFS) (http://www.opengeospatial.org/standards/sld).
 
 .. image:: ../../images/standards/sld.jpg
   :scale: 55%
   :alt: SLD in Context
 
-Fine-grained control of the graphical representation of data is a fundamental requirement for  many mapping applications. The ability to define styling rules requires a styling language that the client and server can both understand. 
+Наличие продуманной системы управления графическим представлением данных - одно из основных требований большинства картографических приложений. Такая система предполагает существование языка описания символики, который был бы понятен как клиентским, так и серверным приложениям. 
 
-The current OGC Web Map Service (WMS) Standard enables an information provider to specify styling options by advertising a preset collection of visual portrayals for each available data set. However, while a WMS implementation currently can provide the user with a choice of style options, the WMS implementation can only tell the user the name of each style. It cannot tell the user what portrayal will look like on the map. More importantly, the user has no way of defining their own styling rules. 
+В настоящее время стандарт OGC Web Map Service (WMS) позволяет настраивать внешний вид данных. Однако эта возможность сводится к простому указанию имён созданных заранее и доступных сервису стилей для каждого набора данных. В рамках стандарта WMS не рассматривается сам язык описания символики, то есть в принципе отсутствует возможность описания собственных правил отрисовки. 
 
-The ability for a human or machine client to define these rules requires a styling language that client and server can both understand. The OGC Symbology  Encoding (SE) Standard  (http://www.opengeospatial.org/standards/symbol) specifies the format for such a map-styling language. The SLD profile of WMS enables application of SE to WMS layers using extensions of WMS operations. Additionally, SLD defines an operation for standardized access to legend symbols that may be stored remotely on a server for use in multiple applications. 
+Возможность создания подобных правил требует наличия отдельного языка описания символики. В качестве такого языка выступает стандарт OGC Symbology  Encoding (SE) Standard  (http://www.opengeospatial.org/standards/symbol). SLD профиль WMS описывает возможности, которые позволяют использовать SE для слоёв WMS. В SLD также описана операция стандартного доступа к легенде символов, которые могут храниться на удалённом сервере для совместного использования несколькими приложениями.
 
-Note that in addition to portraying the output of WMS implementations, SE can also be used to portray the output of WFS implementations and implementation of the OGC Web Coverage Service (WCS) Interface Standard.
+Отметим, что помимо использования SE в качестве языка описания символики WMS, он также может быть использован и для настройки внешнего вида данных, опубликованных в соответствии со стандартами WFS или OGC Web Coverage Service (WCS).
 
-See Also
+См. также
 --------------------------------------------------------------------------------
 
 .. Writing Tip:
