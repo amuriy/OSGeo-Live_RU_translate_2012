@@ -17,81 +17,80 @@ OpenJUMP
  
 OpenJUMP — лёгкая в использовании и вместе с тем мощная настольная ГИС,
 которая позволяет пользователям отображать, править, анализировать и
-объединять геопространственные данные.
+объединять различные геопространственные данные.
 
-OpenJUMP предоставляется в двух изданиях — CORE (базовая установка) и PLUS,
-которое включает множество полезных дополнений.
+OpenJUMP предоставляется в двух версиях — CORE (базовая установка) и PLUS,
+которая, кроме базовой, включает множество полезных дополнений.
 
-OpenJUMP хороша 
-
-It comes in a CORE and a PLUS edition, with the latter adding lots of useful plugins. 
-OpenJUMP is excellent for data editing and rapid prototyping of GIS functions.
+OpenJUMP отлично подходит для редактирования векторных данных и быстрого
+прототипирования ГИС-функций. 
 
 .. image:: ../../images/screenshots/1024x768/openjump-screenshot.png
   :scale: 50 %
   :alt: project screenshots
   :align: right
 
-Features (Core Features and PlugIns*)
+Базовые функции и плагины
 --------------------------------------------------------------------------------
 
-* Data Formats
+* Форматы данных
 
-    * reads (files): GML, SHP, DXF*, MIF*, CSV* & TIFF, JPG, PNG, JPEG2000*, MrSID*, ECW*
-    * reads (DB): PostGIS, ArcSDE*, Oracle*, MySQL* and SpatiaLite*
-    * reads (OGC standards): WKT, WMS
-    * writes: GML, SHP, WKT, DXF*, PostGIS* & JPG, TIFF and SVG*
-    * note that formats marked with a (*) come with an extra plugin
+    * чтение (файлы): GML, SHP, DXF*, MIF*, CSV* & TIFF, JPG, PNG, JPEG2000*, MrSID*, ECW*
+    * чтение (БД): PostGIS, ArcSDE*, Oracle*, MySQL* и SpatiaLite*
+    * чтение (стандарты OGC): WKT, WMS
+    * запись: GML, SHP, WKT, DXF*, PostGIS* & JPG, TIFF и SVG*
+    * заметьте, что форматы, отмеченные звёздочкой (*), доступны только через дополнительные плагины.
 
-* Editing & Conflation
+* Редактирование и объединение данных
 
-    * drawing points, lines, polygons, multigeometries, geometry collections and circles (eventually mixed in a single layer)
-    * adding, moving, deleting vertices
-    * rotating, scaling, auto-complete polygon
-    * cut, merge, simplify polygons and lines
-    * warping, quality assurance tools
+    * оцифровка точек, линий, полигонов, мультигеометрии, коллекций геометрии и кругов, в конечном итоге смешанных в одном слое;
+    * добавление, перемещение, удаление вершин;
+    * вращение, масштабирование, автозавершение полигона;
+    * разрезание, соединение, упрощение полигонов и линий;
+    * привязка векторов, инструменты оценки качества.
 
-* Analysis & Query
+* Анализ и запросы
 
-    * spatial and attribute query functions
-    * analysis : buffer, union, overlay, centroid, convex hull...
-    * statistics : length, area, layer statistics, attribute statistics, graphs...
-    * editing tools : converter, noder, polygonizer, planar graph, topology cleaning in PLUS edition, ...
-    * attribute transfer tools : join, matching*
-    * SEXTANTE raster analysis toolbox included in PLUS edition
+    * пространственные и атрибутивные запросы;
+    * анализ: буфер, объединение, перекрытие, центроиды, выпуклые оболочки...;
+    * статистика: длина, площадь, статистика по слою, статистика по атрибутам, графики;
+    * инструменты редактирования: конвертер, извлечение вершин, построение полигонов, создание планарного графа, чистка топологии (в PLUS-версии);
+    * средства для работы с атрибутами: присоединение, сравнение*
+    * библиотека геоалгоритмов SEXTANTE включена в PLUS-версию. 
 
-* Customization
+* Настройка
 
-    * internationalization (cz, de, en, es, fi, fr, hu, it, ja, pt, ta, zh)
-    * provides an API, scripting via BeanShell and Java Python
-    * (Java) plugin-system
+    * интернационализация (cz, de, en, es, fi, fr, hu, it, ja, pt, ta, zh)
+    * предоставляется API, пользовательские скрипты через BeanShell и Java Python
+    * (Java) система плагинов.
    
 
-Implemented Standards
+Реализованные стандарты
 --------------------------------------------------------------------------------
 
 .. Writing Tip: List OGC or related standards supported.
 
-* OGC standards supported: GML2, SFS, WMS and SLD; (WFS for deegree)
+* Поддерживаемые стандарты OGC: GML2, SFS, WMS and SLD; (WFS для *deegree*)
 
-Details
+Подробная информация
 --------------------------------------------------------------------------------
 
-**Website:** http://www.openjump.org
+**Веб-сайт:** http://www.openjump.org
 
-**Licence:** GPL
+**Лицензия:** `GPL <http://www.gnu.org/licenses/gpl.html>`_
 
-**Software Version:** 1.5.2 (Core Edition)
+**Версия ПО:** 1.5.2 (CORE-версия)
 
-**Supported Platforms:** Windows, Linux, Mac, Unix
+**Поддерживаемые платформы:** Windows, Linux, Mac, Unix
 
-**Community Support:** http://www.openjump.org/support.html
+**Поддержка сообщества:** http://www.openjump.org/support.html
 
-**Commercial Support:** http://sourceforge.net/apps/mediawiki/jump-pilot/index.php?title=Professional_Support_Page
+**Коммерческая поддержка:** http://sourceforge.net/apps/mediawiki/jump-pilot/index.php?title=Professional_Support_Page
 
-**Download Page:** http://sourceforge.net/projects/jump-pilot/files/ 
+**Загрузки:** http://sourceforge.net/projects/jump-pilot/files/ 
 
-Quickstart
+
+Начало работы
 --------------------------------------------------------------------------------
     
-* :doc:`Quickstart documentation <../quickstart/openjump_quickstart>`
+* :doc:`Введение <../quickstart/openjump_quickstart>`
