@@ -16,12 +16,12 @@
 
 .. image:: ../../images/project_logos/logo-OGC-left.png
   :scale: 100 %
-  :alt: OGC logo
+  :alt: Логотип OGC
   :align: right
 
 .. image:: ../../images/project_logos/logo-OGC-right.png
   :scale: 100 %
-  :alt: OGC logo
+  :alt: Логотип OGC
   :align: right
 
 .. Writing Tip: Name of application
@@ -32,31 +32,31 @@ Geography Markup Language (GML)
 .. Writing Tip:
   1 paragraph or 2 defining what the standard is.
 
-GML (http://www.opengeospatial.org/standards/gml) is an XML grammar defined to express and communicate geographical features. GML serves as a modeling language for geographic systems as well as an open interchange format for geographic transactions on the Internet. Note that the concept of feature in GML is a very general one and includes not only conventional "vector" or discrete objects, but also coverages and some elements of sensor data. The ability to integrate all forms of geographic information is key to the utility of GML.
+GML (http://www.opengeospatial.org/standards/gml) - основанный на базе XML стандарт описания географических объектов. GML используется в качестве языка описания моделей в географических системах, а также удобен как обменный формат для передачи данных в Интернет. Отметим, что концепция объекта в GML очень общая и включает в себя не только обычные "вектора" или дискретные объекты, но также покрытия и некоторые элементы данных от разнородных датчиков. Возможность объединения всех форм географической информации в одном месте - ключевой фактор полезности GML.
 
 .. image:: ../../images/standards/gml.jpg
   :scale: 55%
   :alt: GML in Context
 
-GML contains a rich set of primitives that are used to build application specific schemas or application languages. These primitives include:
+GML содержит широкий спектр примитивов, которые используются для построения схем приложений или отдельных языков. Доступные примитивы: 
 
-* Feature
-* Geometry
-* Coordinate Reference System
-* Topology
-* Time
-* Dynamic feature
-* Coverage (including geographic images)
-* Unit of measure
-* Directions
-* Observations
-* Map presentation styling rules
+* Объект (Feature)
+* Геометрия (Geometry)
+* Система координат (Coordinate Reference System)
+* Топология (Topology)
+* Время (Time)
+* Динамический объект (Dynamic feature)
+* Покрытие (включая географические изображения) (Coverage)
+* Единица измерения (Unit of measure)
+* Направления (Directions)
+* Наблюдения (Observations)
+* Правила отрисовки карты (Map presentation styling rules)
 
-Understanding the use of “Feature”, “Geometry”, and “CRS” is critical in the use and development of any GML based encoding.
+Понимания концепций “Feature”, “Geometry” и “CRS” - необходимое условие использования и разработки любых форматов, основанных на базе GML.
 
-OGC work on the GML standard began in 1998. GML was first formally approved as an OGC standard in 2001. GML became an ISO standard in 2007. GML 3.2.16 is the most current revision of the joint OGC-ISO standard. Versions 3.2.2 and 4.0 are currently in progress.
+Работа над GML началась в 1998 году, а в 2001 году это был первый утверждённый стандарт OGC. В 2007 году GML стал стандартом ИСО. Последняя версия совместного OGC-ISO стандарта GML - 3.2.16. Версии 3.2.2 и 4.0 в настоящее время находятся в разработке.
 
-See Also
+См. также
 --------------------------------------------------------------------------------
 
 .. Writing Tip:
