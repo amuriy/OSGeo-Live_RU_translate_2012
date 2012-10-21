@@ -12,76 +12,64 @@
 Ushahidi
 ================================================================================
 
-Incident Timeline & Mapping
+Мониторинг и картирование чрезвычайных ситуаций
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The `Ushahidi <http://www.ushahidi.com/>`_ Engine is a free and open source
-platform that allows anyone to gather distributed data via SMS, email or 
-web and visualize it on a map or a timeline. Ushahidi's goal is to create tools for 
-democratizing information, increasing transparency and lowering the barriers 
-for individuals to share their stories.
+Движок `Ushahidi <http://www.ushahidi.com/>`_ представляет собой открытую платформу, которая может быть использована для сбора распределённой информации посредством SMS или электронной почты и её визуализации на карте или временной шкале. Основная цель Ushahidi - создание инструментов, упрощающих доступ к информации, повышение её прозрачности и снижение барьеров для всех желающих поделиться своими данными.
 
 .. image:: ../../images/screenshots/1024x768/ushahidi-drc-screenshot.png
   :scale: 50 %
   :alt: screenshot
   :align: right
 
-Ushahidi, which means "testimony" in Swahili, was initially developed to
-map reports of violence in Kenya after the post-election fallout at the
-beginning of 2008. Ushahidi's roots are in the collaboration of Kenyan
-citizen journalists during a time of crisis. The website was used to map
-incidents of violence and peace efforts throughout the country based on
-reports submitted via the web and mobile phone. This initial deployment of
-Ushahidi had 45,000 users in Kenya, and was the catalyst for us realizing
-there was a need for a platform based on it, which could be use by others
-around the world.
+Ushahidi на языке суахили означает "свидетельское показание". Изначально данный проект разрабатывался для нанесения на карту данных об актах насилия, происходивших в Кении в начале 2008 года после прошедших выборов. Ushahidi на тот момент стал основой взаимодействия кенийсхих журналистов. Веб-сайт был использован для картирования актов насилия и миротворческих операций, проходивших по всей стране. Данные поступали из Интернет или передавались посредством мобильных телефонов. Уже тогда Ushahidi насчитывал порядка 45,000 пользователей в Кении и стал наглядным примером необходимости создания подобной платформы, которая могла бы быть использована по всему миру.
 
 
-Core Features
+Ключевые возможности
 --------------------------------------------------------------------------------
-* Interactive map.
-* Timeline.
-* Ability to subscribe to report alerts based on proximity.
-* CSS based theming.
-* 5 minute web installer.
-* Ability to upload and download mass reports.
-* Ability to layer KML/KMZ files on the map.
-* Supports custom pages and tabs.
-* Site statitics and analytics.
-* Plugin system.
-* One click upgrade.
-* Supports multiple SMS providers.
-* Trusted Reporter functionality.
-* Themes.
-* Scheduler.
-* Cache.
-* Video upload support.
-* Supports Badges for awarding users of the Ushahidi platform.
+* Интерактивная карта
+* Временная шкала
+* Возможность подписаться на оповещения исходя из близости события
+* Стили, основанные на CSS
+* Установка за 5 минут
+* Возможность пакетной загрузки/выгрузки данных
+* Возможность отображения файлов KML/KMZ на карте
+* Создание настраиваемых страниц и вкладок
+* Статистика и аналитика сайта
+* Система плагинов
+* Обновление в один клик
+* Поддержка различных SMS провайдеров
+* Функциональность Надёжных Репортеров
+* Темы
+* Планировщик
+* Кэширование
+* Поддержка загрузки видео
+* Знаки отличия для награждения пользователей платформы Ushahidi
 
-Demo
+Демо
 --------------------------------------------------------------------------------
 
-* `Ushahidi Demo instance <http://demo.ushahidi.com/>`_
+* `Пример проекта на базе Ushahidi <http://demo.ushahidi.com/>`_
 
-Details
+Дополнительная информация
 --------------------------------------------------------------------------------
 
-**Website:** http://www.ushahidi.com
+**Веб-сайт:** http://www.ushahidi.com
 
-**Licence:** GNU General Public License (GPL) version 3
+**Лицензия:** GNU General Public License (GPL) version 3
 
-**Software Version:** 2.1
+**Версия ПО:** 2.1
 
-**API Interfaces:** PHP
+**Интерфейсы API:** PHP
 
-**Supported Platforms:** Linux, Mac, Windows
+**Поддерживаемые платформы:** Linux, Mac, Windows
 
-**Support:** http://forums.ushahidi.com
+**Поддержка:** http://forums.ushahidi.com
 
 
-Quickstart
+Начало работы
 --------------------------------------------------------------------------------
 
-* :doc:`Quickstart documentation <../quickstart/ushahidi_quickstart>`
+* :doc:`Начало работы <../quickstart/ushahidi_quickstart>`
 
 
