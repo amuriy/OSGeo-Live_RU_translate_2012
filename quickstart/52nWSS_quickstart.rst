@@ -9,52 +9,53 @@
   :target: http://52north.org/security
   
 ********************************************************************************
-52°North WSS Quickstart 
+Начало работы с 52°North WSS 
 ********************************************************************************
 
-Getting Started
+Введение
 ================================================================================
 
-The 52°North WSS is a web service, that allows policy-based access to OGC Web Services acting as a proxy.
+52°North WSS — это веб-сервис, который позволяет задавать и ограничивать доступ к данным, поставляемым веб-сервисами OGC, выступая в роли прокси.
 
-For OSGeo-Live distribution, the 52°North WSS is already set up to protect an instance of each, WMS, WFS, WPS, and SOS.
-To get a list of protected services and test access to the WMS, follow these steps:
+В дистрибутиве OSGeo-Live сервис 52°North WSS уже настроен и защищает один экземпляр сервисов WMS, WFS, WPS, и SOS.
 
-1) Go to :menuselection:`Geospatial --> Web Services --> 52North --> Start 52North WSS` to start the 52°North WSS or use this `direct link <http://localhost:8080/wss/site/manage.html>`_.
+Чтобы получить список защищаемых сервисов и тестовый доступ к WMS:
+
+1) Выберите :menuselection:`Geospatial --> Web Services --> 52North --> Start 52North WSS`, чтобы запустить 52°North WSS или перейдите по `ссылке <http://localhost:8080/wss/site/manage.html>`_.
   
-2) The 52°North WSS management interface will open in a browser window.
+2) В окне браузера откроется интерфейс управления 52°North WSS.
 
-3) If necessary, authenticate as user/user.
+3) Если это необходимо, войдите как *user/user*.
 
-4) Click *Manage WSS* to get a list of those services, that can be connected using the WSS.
+4) Нажмите *Manage WSS*, чтобы получить список сервисов, к которым можно подключиться через WSS.
   
-For each protected service, called *Enforcement Point*, the table contains the base links to the service by authentication method (*httpauth*, *saml*, *WSS*, ...).
+Для каждого защищаемого сервиса (называются *Enforcement Point*) в таблице указана базовая ссылка к сервису с методом аутентификации (*httpauth*, *saml*, *WSS*, ...).
  
-To request the capabilities of the WMS
+Чтобы запросить "capabilities" сервиса WMS
 
-5) Request http://localhost:8080/wss/service/wms_demis/httpauth?SERVICE=WMS&REQUEST=GetCapabilities in a browser
+5) Запросите в браузере http://localhost:8080/wss/service/wms_demis/httpauth?SERVICE=WMS&REQUEST=GetCapabilities
 
-6) Authenticate as ``alice``/``alice`` to get access with full permissions.
+6) Войдите под ``alice``/``alice`` чтобы получить полный доступ.
 
-or
+или
 
-7) Authenticate as ``bob``/``bob`` to access the service under limited permissions. Some layers are hidden and cannot be accessed.
+7) Войдите под ``bob``/``bob`` чтобы получить ограниченный доступ. Некоторые слои скрыты и вы не сможете получить к ним доступ.
 
-To further test the protected service, load http://localhost:8080/wss/service/wms_demis/httpauth as WMS into any desktop mapping client that supports HTTP
-Basic Authentication, e.g. :doc:`uDig <../overview/udig_overview>`, and use it as you would with any other WMS.
+Чтобы продолжить тестирование защищенных сервисов, подключите  http://localhost:8080/wss/service/wms_demis/httpauth как WMS в любой клиент который поддерживает простую атентификацию HTTP (HTTP
+Basic Authentication), например :doc:`uDig <../overview/udig_overview>`, и дальше используйте WMS как обычно.
 
 
-Additional Information
+Дополнительная информация
 ================================================================================
 
-Where are the users defined?
+Где задаются пользователи?
 --------------------------------------------------------------------------------
 ``/var/lib/tomcat6/webapps/wss/WEB-INF/classes/users.xml``
 
-Where are the permissions defined?
+Где задаются права?
 --------------------------------------------------------------------------------
 ``/var/lib/tomcat6/webapps/wss/WEB-INF/classes/permissions.xml``
 
-Where do I get further information?
+Где прочитать подробнее о сервисе?
 --------------------------------------------------------------------------------
-Visit the 52°North `User Guide <http://52north.org/communities/security/general/user_guide_intro.html>`_
+В `Руководство пользователя 52°North <http://52north.org/communities/security/general/user_guide_intro.html>`_

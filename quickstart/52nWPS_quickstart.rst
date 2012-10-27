@@ -8,46 +8,45 @@
   :align: right
 
 ********************************************************************************
-52°North WPS Quickstart 
+Начало работы с 52°North WPS 
 ********************************************************************************
 
-Running
+Запуск
 ================================================================================
 
-* To run 52°North WPS on the Live DVD, go to :menuselection:`Geospatial --> Web Services --> 52North --> Start 52North WPS`	to start the 52°North WPS or use this `direct link <http://localhost:8080/52nWPS/>`_. (If the service is not reachable, try to start the Tomcat servlet engine following the steps at the bottom of the :doc:`SOS quickstart page <../quickstart/52nSOS_quickstart>`.)
+* Чтобы запустить 52°North WPS с Live DVD, выберите :menuselection:`Geospatial --> Web Services --> 52North --> Start 52North WPS` или перейдите по `ссылке <http://localhost:8080/52nWPS/>`_. Если сервис недоступен, попробуйте запустить контейнер сервлетов Tomcat, следуя шагам, описанным в конце страницы :doc:`Начало работы с SOS <../quickstart/52nSOS_quickstart>`.
 
-* The 52n WPS welcome page will appear. 
+* Появится стартовая страница 52°North WPS.
 
 .. image:: ../../images/screenshots/800x600/52nWPS_welcome_page.png
   :scale: 100 %
-  :alt: screenshot
+  :alt: снимок экрана
   :align: center
 
-* Click on the link to open the 52nWPS-TestClient. 
-* Make sure that you have started :doc:`GeoServer <../overview/geoserver_overview>` since the demonstrations require data from the local GeoServer installation.
+* Щёлкните по ссылке, чтобы открыть тестовый клиент 52nWPS. 
+* Убедитесь, что запущен :doc:`GeoServer <../overview/geoserver_overview>`, демонстрация использует данные от локально установленного GeoServer.
 
 
 .. image:: ../../images/screenshots/1024x768/52n_test_client.png
   :scale: 100 %
-  :alt: screenshot
+  :alt: снимок экрана
   :align: center
   
   
-* Push the Send-Button and the request will be transmitted to the 52°North WPS which will
-  generate a xml-representation for a buffer around the major roads of tasmania with a width of 0.05 degrees.
+* Нажмите кнопку *Send*, 52°North WPS отправит запрос который создаст XML-представление буферной зоны вокруг основных дорог Тасмании с шириной 0.05 градусов.
 
 .. image:: ../../images/screenshots/1024x768/52n_wps_response.png
   :scale: 100 %
-  :alt: screenshot
+  :alt: снимок экрана
   :align: center
   
 
-* Check out the capabilities of the 52°North WPS with this request:
+* Получите "capabilities" сервиса 52°North WPS с помощью запроса:
 
   http://localhost:8080/52nWPS/WebProcessingService?Request=GetCapabilities&Service=WPS
 
 	
-* For further questions you can contact the 52°North WPS mailing list:
+* Дополнительные вопросы можно задавать в списке рассылки 52°North WPS:
 
   geoprocessingservices@52north.org
 
