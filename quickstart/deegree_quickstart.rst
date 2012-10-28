@@ -4,63 +4,65 @@
 
 .. image:: ../../images/project_logos/logo-deegree.png
   :scale: 100 %
-  :alt: project logo
+  :alt: логотип проекта
   :align: right
   :target: http://deegree.org/
 
 ********************************************************************************
-deegree 3 webservices quickstart 
+Начало работы с deegree
 ********************************************************************************
 
-Project description
+Описание проекта
 ================================================================================
 
-deegree is open source software for spatial data infrastructures and the geospatial web. deegree includes components for geospatial data management, including data access, visualization, discovery and security. Open standards are at the heart of deegree. The software is built on the standards of the Open Geospatial Consortium (OGC) and the ISO Technical Committee 211.
+**deegree** — программный продукт с открытым исходным кодом для инфраструктур пространственных данных и геопространственных веб-приложений. deegree включает компоненты для управления пространственными данными: управление доступом, визуализация, оповещение и безопасность. deegree построен на использовании открытых стандартов Open Geospatial Consortium (OGC) и ISO 211 (ISO Technical Committee 211).
 
-This Quick Start describes how to:
-   * start deegree 3 webservices on the Live DVD
-   * use the deegree 3 services console to activate example configurations
-   * find more information
+Этот документ описывает:
+   * как запустить веб-сервисы *deegree 3* с Live DVD;
+   * как использовать консоль сервисов *deegree 3* для запуска примеров конфигураций;
+   * как найти подробную информацию.
 
 
-Start deegree webservices
+Запуск сервисов deegree
 ================================================================================
 
-Choose "Start deegree" from the start menu.
-The application will take a few moments to start up.
+Выберите "Start deegree" из меню запуска.
+Запуск приложения может занять некоторое время.
 
 
-deegree services console
+Консоль сервисов deegree
 ================================================================================
 
-When you start deegree for the first time, firefox should open (otherwise open it manually and point your browser to http://localhost:8033). Please wait until you can see the deegree 3 services console. This is a simple web-based GUI for editing the configuration files of the so-called deegree workspace.
+После первого запуска должен запуститься браузер (если этого не произошло, откройте его вручную и введите http://localhost:8033). Подождите, пока не появится консоль сервисов *deegree 3*. Консоль представляет собой простое веб-приложение для редактирования конфигурационных файлов в так называемом "рабочем пространстве" deegree.
 
 
-deegree webservices example workspaces
+Пример рабочего пространстве сервисов deegree
 ================================================================================
 
-deegree 3 is based on a unified configuration concept that's shared by all deegree 3-based applications (web services, web applications, desktop applications, command line tools). The different configuration aspects are built on the notion of a deegree workspace -- a configuration directory with a standardised layout. Within the deegree 3 services console, you get an overview of the supplied, or available preconfigured deegree 3 workspaces by clicking on the "workspaces" link (left side).
+*deegree 3* основан на концепции общей конфигурации, разделяемой всеми приложениями *deegree 3* (веб сервисами, веб-приложениями, настольными приложениями, инструментами командной строки). Различные аспекты настройки основываются на "рабочем пространстве" deegree — директории конфигурации со стандартной структурой. С помощью консоли *deegree 3* можно просмотреть уже предоставленные рабочие пространства, нажав на ссылку "workspaces" (слева).
 
-You are now in the workspace-management of the services console. At the top, the currently active workspace is displayed (a single workspace is active at any given time). The workspace view displays inactive local workspaces and official workspaces, which you can import (internet access required).
+После этого вы попадёте в раздел управления рабочими пространствами сервисной консоли. Вверху показывается текущее активное рабочее пространство (в заданный момент времени активно одно рабочее пространство). Показываются также неактивные локальные рабочие пространства и официальные пространства, которые можно импортировать (если есть доступ в Интернет).
 
-The Live DVD ships with an example INSPIRE workspace (pre-configured View and Download Service). Things to try:
+На Live DVD поставляется пример рабочего пространства INSPIRE (настроенные сервисы Просмотр и Скачивание). 
 
- * Start the INSPIRE workspace. In the "workspaces" view, click on "Start" right to "deegree-workspace-inspire-3.2-pre9". (this will take a while as several dozens of megabytes of rich INSPIRE GML are loaded)
- * Click on "see layers" -> click the "+" and activate the AdministrativeUnit layer. This layer is rendered straight from the rich INSPIRE data model and served using the configured deegree INSPIRE View Service.
- * Go back to the console and click "send requests". A simple interface for sending raw WFS requests will open up. It contains several examples (including transactions for inserting valid INSPIRE GML).
- * If you want to learn more (e.g. configuring SQL backends / relational mapping), please refer to the official handbook (see below).
+Что можно сделать:
 
-Alternatively, you may want to download other example workspace to get and idea of what else deegree webservices can do for you:
+ * Запустить рабочее пространство INSPIRE. В виде "workspaces", нажмите "Start" справа от "deegree-workspace-inspire-3.2-pre9" (потребуется некоторое время, чтобы загрузить несколько десятков мегабайт INSPIRE GML)
+ * Выберите "see layers" -> нажмите на "+", чтобы активировать слой AdministrativeUnit. Этот слой отрисовывается прямо из модели данных INSPIRE и отдаётся клиенту, используя сконфигурированный сервис просмотра deegree INSPIRE.
+ * Вернитесь в консоль и выберите "send requests" (отправить запросы). Откроется простой интерфейс для отправки запросов WFS. В нём вы можете найти несколько примеров (включая транзакции для вставки валидного INSPIRE GML).
+ * Дополнительную информацию о, например, конфигурировании SQL-бекэндов или реляционном проецировании, можно найти в официальном руководстве (см. ниже).
 
-  * deegree utahDemo: A web mapping setup (WFS/WMS/WMTS) based on data from Utah (warning: about 100 MB download)
-  * deegree CSW demo: A catalogue service setup that is compliant to the ISO Application Profile and the INSPIRE Discovery Service specification
-  * deegree WPS demo: A processing service setup with some simple example processes
+Также, вы можете скачать другие примеры рабочих пространств, чтобы получить представление о том, как работают сервисы *degree*:
 
-For further information on these example workspaces, please refer to the official deegree webservices documentation (see below).
+  * deegree utahDemo: конфигурация для веб-картографии (WFS/WMS/WMTS), использующие данные по штату Юта (предупреждение: объем данных 100 MB);
+  * демо deegree CSW: конфигурация каталогового сервиса совместимого со спецификациями ISO Application Profile и INSPIRE Discovery Service;
+  * демо deegree WPS: конфигурация сервиса геопроцессинга с простыми примерами обработки.
 
-NOTE: Unfortunately, the INSPIRE configuration included on the Live DVD is missing the configuration of the Address and CadastralParcels layer. You may download a fixed version or get support from the deegree community to learn how to fix it (http://www.deegree.org/Community).
+Подробная информация об этих примерах "рабочих пространств" доступна в официальной документации по сервисам deegree (см. ниже).
 
-What Next?
+Замечание: к сожалению, в конфигурации INSPIRE с Live DVD отсутствует конфигурация для слоя Address and CadastralParcels. Исправленную версию и поддержку от сообщества deegree можно получить по ссылке (http://www.deegree.org/Community).
+
+Что дальше?
 ================================================================================
 
-In order to learn more about the configuration of deegree webservices, please refer to: http://www.deegree.org/Documentation. It's still work in progress. Contributions, comments and funding is welcome.
+Подробную информацию о конфигурации сервисов *deegree* можно найти в документации: http://www.deegree.org/Documentation. Работа над документацией продолжается. Мы приветствуем комментарии и дополнительное финансирование.

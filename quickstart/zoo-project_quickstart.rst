@@ -4,49 +4,45 @@
 
 .. image:: ../../images/project_logos/logo-ZOO-Project.png
   :scale: 100 %
-  :alt: project logo
+  :alt: Логотип
   :align: right
 
 ********************************************************************************
-ZOO Project Quickstart 
+Начало работы с ZOO Project
 ********************************************************************************
 
-Running
+Запуск
 ================================================================================
 
-*	To run the ZOO Project demo from the OSGeo-Live DVD, click successively on the |osgeolive-appmenupath-geoserver| then on the "ZOO Project" links on the desktop 
-	or you will find it in the menu-items.
+* Для запуска демонстрации ZOO Project с OSGeo-Live DVD нажмите последовательно на |osgeolive-appmenupath-geoserver|, затем на ссылку "ZOO Project" на рабочем столе или найдите ссылку в меню.
 
-*	Firefox will open the ZOO Project Spatial Tools demo.
-
+* Веб-браузер Firefox откроет демо ZOO Project Spatial Tools.
 
 .. image:: ../../images/screenshots/1024x768/zoo-project-demo-1.png
   :scale: 50 %
-  :alt: screenshot
+  :alt: снимок экрана
   :align: center
   
-  
-*	Click on the map to select a feature from the :doc:`GeoServer <../overview/geoserver_overview>` WFS Server, the feature will be displayed in blue, then click on simple geometry process like Buffer, Centroid, ConvexHull or Boundary and the result will be displayed in yellow.
+* Щёлкните на экран для выбора для выбора пространственного объекта из :doc:`GeoServer <../overview/geoserver_overview>` WFS. Объект будет показан в синем цвете. Когда запускается простой инструмент геообработки, например, буферизация, создание центроидов, выпуклая оболочка или граница, результат будет показан жёлтым цветом.
 
 .. image:: ../../images/screenshots/1024x768/zoo-project-demo-2.png
   :scale: 50 %
-  :alt: screenshot
+  :alt: снимок экрана
   :align: center
-  
 
-*	Now select another feature near the first you've selected then click on multiple geometries process button Union, Intersection, Symmetric Difference or Difference to get the result displayed in red on the map.
+* Теперь выберите другой объект недалеко от первого и щёлкните по кнопке обработки нескольких геометрий: "объединить", "пересечь", "симметричное вычитание" или "вычитание", чтобы получить результат на карте в красном цвете.
 
 .. image:: ../../images/screenshots/1024x768/zoo-project-demo-3.png
   :scale: 50 %
-  :alt: screenshot
+  :alt: снимок экрана
   :align: center
 
 
-*	You can build your own requests and send them to the ZOO Kernel from the following page:
+* Вы можете формировать собственные запросы к ядру ZOO при помощи следующей страницы:
 		http://localhost/zoo-demo/test_services.html
 
-*	You would need the capabilities of the ZOO WPS Server:
+* Вам необходимо запросить "capabilities" у сервера ZOO WPS следующим запросом:
 		http://localhost/zoo/?Request=GetCapabilities&Service=WPS
 	
-*	For further questions you can contact the ZOO Project mailing list:
+* Вопросы можно задавать в списке рассылке ZOO:
 	zoo-discuss@gisws.media.osaka-cu.ac.jp

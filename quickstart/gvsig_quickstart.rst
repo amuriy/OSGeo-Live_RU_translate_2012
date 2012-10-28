@@ -7,377 +7,329 @@
    :align: right
 
 ********************************************************************************
-gvSIG Quickstart 
+Начало работы с gvSIG 
 ********************************************************************************
 
-Project description
+Описание проекта
 ================================================================================
 
-"gvSIG is a Geographic Information System (GIS), that is, a desktop application 
-designed for capturing, storing, handling, analyzing and deploying any kind of 
-referenced geographic information in order to solve complex management and 
-planning problems. gvSIG is known for having a user-friendly interface, being 
-able to access the most common formats, both vector and raster ones. It 
-features a wide range of tools for working with geographic-like information 
-(query tools, layout creation, geoprocessing, networks, etc.), which turns 
-gvSIG into the ideal tool for users working in the land realm." 
+gvSIG — настольная географическая информационная система (ГИС), предназначенная 
+для сбора, хранения, обработки, анализа и развёртывания любой географически 
+привязанной информации для решения комплексных проблем управления и 
+планирования. gvSIG известна дружественным к пользователю интерфейсом, дающим 
+возможность доступа к наиболее распространенным форматам данных, как векторным, 
+так и растровым. gvSIG имеет обширный набор средств для работы с географической 
+информацией (инструменты запросов, создание макетов, геообработка, сетевой анализ 
+и т.д.), которые делают её идеальным инструментом для пользователей, работающих 
+в сфере ГИС.
 `gvSIG <http://www.gvsig.org/web/projects/gvsig-desktop/description2/view?set_language=en>`__ 2011
 
-This quickstart describes how to...
+Это руководство описывает, как:
 =================================== 
 
-* Start gvSIG and create a view;
-* Define the projection of a view;
-* Add raster and vector data to a view;
-* Navigate around a view;
-* Change how layers are presented in a view;
-* Select the towns that occur within a particular region and export 
-  these to a new file;
-* To create a map with a graticule; and
-* Save the current project or exit gvSIG. 
+* Запускать gvSIG и создавать Вид (View);
+* выбирать проекцию для Вида;
+* добавлять растровые и векторные данные в окно Вида;
+* выполнять навигацию по окну Виду;
+* изменять представление слоёв в Виде;
+* делать выборку определённых объектов в векторном файле и экспортировать их в другой файл;
+* создавать карту с сеткой;
+* сохранять текущий проект.
 
-Start gvSIG and create a view
+Запуск gvSIG и создание Вида
 ================================================================================
 
-Select gvSIG from the application menu. The application usually takes about
-a minute to startup.
+Выберите gvSIG из меню приложений. Запуск программы занимает обычно около минуты.
 
-#. By default gvSIG opens with an empty project file with the 'View' document 
-   type selected. 
-#. Click on the [New] button to create a view.
+#. По умолчанию gvSIG откроется с пустым файлом проекта с документом 'View'. 
+#. Нажмите на кнопку [New] для создания Вида.
 
 .. image:: ../../images/screenshots/1024x768/gvsig_qs_001.png
    :scale: 55 
 
-Define the projection of your view
+Выбор проекции для Вида
 ================================================================================
 
-Open the view properties dialog
+Открытие окна свойств Вида
 --------------------------------------------------------------------------------
 
-#. Select the newly created view. By default it is titled ``Untitled - 0`` but
-   may be ``Untitled - 1`` if you created then deleted a view already. 
-#. Click on the [Properties] button to open the **View properties** dialog.
-#. Click on the [...] button following the 'Current projection'. 
-   This will open the **New CRS** dialog.
+#. Выберите новый созданный Вид. По умолчанию он называется ``Untitled - 0``, но может иметь название ``Untitled - 1``, если вы прежде его создали и удалили. 
+#. Нажмите кнопку [Properties] для открытия диалогового окна **View properties**.
+#. Нажмите кнопку [...] после 'Current projection'. Откроется диалоговое окно **New CRS**.
 
 .. image:: ../../images/screenshots/1024x768/gvsig_qs_002.png
    :scale: 55 
 
-Defining your Coordinate Reference System
+Выбор системы координат
 --------------------------------------------------------------------------------
 
-#. Using the dropdown list for 'Type', select EPSG.
-#. Enter the EPSG code for the Coordinate Reference System. For this example 
-   we are using EPSG=4326, which is the WGS84 2D Geographic Projection. Then
-   click on the [Search] button. This will list the selected CRS in the table 
-   below the search input field.
-#. Select [OK] to return to the **View Properties** dialog.
+#. Используя выпадающий список для 'Type', выберите EPSG-код.
+#. Введите код EPSG для выбора необходимой системы координат. Для этого примера мы используем код EPSG:4326, который соответствует системе координат WGS84. Затем нажмите на кнопку [Search]. В списке выберите систему координат в таблице ниже окна поиска.
+#. Нажмите [OK] для возврата в окно **View Properties**.
 
 .. image:: ../../images/screenshots/1024x768/gvsig_qs_003.png
    :scale: 55 
 
-Saving the view properties
+Сохранение свойств Вида
 --------------------------------------------------------------------------------
 
-#. Note that the EPSG code is now 4326 and that the map units have changed to 
-   degrees.
-#. Select [OK] to return to the **Project Manager**.
+#. Обратите внимание, что Вид теперь имеет систему координат EPSG:4326 и что единицы карты изменились на градусы.
+#. Нажмите [OK], чтобы вернуться в **Project Manager**.
 
 .. image:: ../../images/screenshots/1024x768/gvsig_qs_004.png
    :scale: 55 
 
-Open the view
+Открытие Вида
 --------------------------------------------------------------------------------
    
-#. Select the newly created view.
-#. Click on the [Open] button to open the *View*.
-#. The view window consists of three zones.
-#. The top-left cell contains a list of vector or raster layers being used in 
-   the view (i.e. Table-of-Contents).
-#. The bottom-left cell displays the extent of the main view over a selected 
-   vector file.
-#. The right cell is the main display area where raster and vector data is 
-   rendered.
-#. Select the 'Maximise window' icon to have the view occupy the entire screen.
+#. Выберите созданный новый Вид.
+#. Нажмите кнопку [Open] для открытия *Вида*.
+#. Окно Вида состоит из трёх частей.
+#. В верхнем левом окне содержится список векторных или растровых слоёв, используемых в Виде (т.н. TOC).
+#. В нижнем левом окне отображается расположение текущего фрагмента по отношению ко всей рабочей области (обзор).
+#. Окно справа — главная область, где отображаются растровые и векторные данные.
+#. Нажмите на иконку 'Maximise window' для отображения окна во весь экран.
 
 .. image:: ../../images/screenshots/1024x768/gvsig_qs_005.png
    :scale: 55 
 
-The View - adding raster and vector data
+Добавление растровых и векторных данных в текущий Вид
 ================================================================================
 
-Open the add layer dialog
+Открытие диалогового окна добавления слоя
 --------------------------------------------------------------------------------
    
-#. Click on the 'Add layer' icon in the main toolbar to open the **Add layer** dialog.
-#. Select [Add] in the **Add layer** dialog. By default the first tab is *File* 
-   so the **Open** file dialog will appear.
-#. Drill down to the ``/usr/local/share/data/natural_earth/HYP_50M_SR_W`` directory.
+#. Нажмите кнопку 'Add layer' на главной панели инструментов для открытия диалогового окна **Add layer**.
+#. Выберите [Add] в диалоговом окне **Add layer**. Первая закладка *File*, далее появится диалоговое окно **Open** для открытия файла.
+#. Перейдите в каталог ``/usr/local/share/data/natural_earth/HYP_50M_SR_W``.
 
 .. image:: ../../images/screenshots/1024x768/gvsig_qs_006.png
    :scale: 55 
 
-Selecting a raster file
+Выбор растрового слоя
 --------------------------------------------------------------------------------
    
-#. Select *gvSIG Raster Driver* from the file type dropdown list. By default 
-   the shapefile driver is used so the directory may appear empty. 
-#. Select ``HYP_50M_SR_W.tif``.
-#. Click on the [OK] button to return to the **Add layer** dialog.
+#. Выберите *gvSIG Raster Driver* из выпадающего меню типа файлов. По умолчанию
+   используется драйвер shape-файлов и каталог может показаться пустым. 
+#. Выберите ``HYP_50M_SR_W.tif``.
+#. Нажмите кнопку [OK] для возвращения в диалоговое окно **Add layer**.
 
 .. image:: ../../images/screenshots/1024x768/gvsig_qs_007.png
    :scale: 55 
 
-Selecting vector files
+Выбор векторных файлов
 --------------------------------------------------------------------------------
   
-#. The **Add layer** dialog now has the raster file listed.
-#. Select the [Add] button to add some vector files. The **Open** files dialog 
-   will appear.
-#. Select the [Up one level] button in the menu to change the directory to the 
-   ``/usr/local/share/data/natural_earth`` directory.
-#. Select *gvSIG shp driver* from the file type dropdown list.
-#. Select the ``10m_admin_1_states_provinces.shp``, ``10m_populated_places_simple.shp`` and 
-   ``10m_rivers_lake_centerlines.shp`` shapefiles from the list. Hold down the control 
-   key to select multiple files.
-#. Click on the [OK] button to return to the **Add layer** dialog.
-#. Click on the [OK] button on the **Add layer** dialog to return to the view.
+#. В список диалогового окна **Add layer** уже добавлен растровый слой.
+#. Нажмите кнопку [Add] для добавления нескольких векторных слоёв. Появится диалоговое окно **Open**.
+#. Нажмите кнопку [Up one level] в меню для изменения пути к каталогу ``/usr/local/share/data/natural_earth``.
+#. Выберите *gvSIG shp driver* из выпадающего меню типов файлов.
+#. Выберите ``10m_admin_1_states_provinces.shp``, ``10m_populated_places_simple.shp`` и ``10m_rivers_lake_centerlines.shp`` слои из списка. Удерживайте нажатой клавишу Ctrl для выбора нескольких файлов.
+#. Нажмите кнопку [OK] для возврата в диалоговое окно **Add layer**.
+#. Нажмите кнопку [OK] в диалоговом окне **Add layer** перехода в окно Вида.
 
 .. image:: ../../images/screenshots/1024x768/gvsig_qs_008.png
    :scale: 55 
 
-The View - basic navigation
+Вид — базовая навигация
 ================================================================================
 
-Zoom into a region
+Увеличение до выбранного региона
 --------------------------------------------------------------------------------
 
-Once back at the main view you'll see the vector files super-imposed over 
-the raster file. The colours shown in this screen shot may differ from yours 
-depending on the user preferences.
+Перейдя назад в главное окно, вы увидите, что векторные слои накладываются на 
+растровый слой. Цвета, показанные на рисунке ниже, могут отличаться от цветов 
+у вас на экране.
        
-#. By default the *Zoom in* tool is selected on the main toolbar. 
-#. Use the mouse pointer to draw a bounding box around South-east Australia. 
-   Do this by selecting the top-left corner of the bounding box, holding 
-   down the left-mouse-button, and dragging the bottom-right corner of 
-   the bounding box over the selected area. Release the left-mouse button once 
-   you have the approximate area defined. 
-
+#. По умолчанию выбран инструмент *Zoom in* (увеличение) на главной панели инструментов. 
+#. Используйте указатель мыши для рисования прямоугольной области вокруг юго-восточной Австралии. Для этого выберите верхний левый угол ограничительной рамки, удерживая нажатой левую кнопку мыши, перетащите правый нижний угол ограничивающего прямоугольника над выбранной областью. Отпустите левую кнопку мыши — теперь у вас определена приблизительная область навигации.
+   
 .. image:: ../../images/screenshots/1024x768/gvsig_qs_009.png
    :scale: 55 
 
-Fine-scale navigation
+Мелкомасштабная навигация
 --------------------------------------------------------------------------------
    
-The view will automatically change to show the area within the selected bounding box. 
+Вид будет автоматически меняться для отображения области с выбранным масштабом.
 
-#. The size of the Table-of-Contents column can be adjusted using the mouse to 
-   help see long file names.
-#. Adjust what is shown in the view by using the highlighted tools, so that 
-   Victoria is central. 
+#. Ширину панели со списком слоёв можно изменять с помощью мыши, чтобы увидеть полные имена файлов.
+#. Используя выделенные инструменты сделайте, чтобы штат Виктория был в центре области отображения. 
 
 .. image:: ../../images/screenshots/1024x768/gvsig_qs_010.png
    :scale: 55 
 
-The View - changing how layers look
+Вид — изменения отображения слоёв
 ================================================================================
 
-Making a polygon transparent
+Создание полигона без "заливки"
 --------------------------------------------------------------------------------
    
-#. Select the ``10m_admin_1_states_provinces.shp`` layer using the 
-   left-mouse-button and click again with the right-mouse-button.
-#. Select the *Properties* submenu.
-#. The **Layer properties** dialog box will appear.
+#. Выберите слой ``10m_admin_1_states_provinces.shp``, используя левую кнопку мыши и нажмите правую кнопку мыши.
+#. Выберите подменю *Properties*.
+#. Появится диалоговое окно **Layer properties**.
 
 .. image:: ../../images/screenshots/1024x768/gvsig_qs_011.png
    :scale: 55 
 
-Changing the symbology of a vector layer
+Изменение символики векторного слоя
 --------------------------------------------------------------------------------
    
-#. Select the *Symbols* tab at the top of the **Layers properties** dialog.
-#. Select [Choose symbol] button so the **Symbol selector** dialog appears.
-#. Uncheck the *Fill color* box so the polygons are transparent.
-#. Click on the [OK] button to return to the **Layers properties** dialog.
+#. Выберите закладку *Symbols* в верхней части диалогового окна **Layers properties**.
+#. Нажмите кнопку [Choose symbol] для открытия диалогового окна **Symbol selector**.
+#. Снимите опцию *Fill color* для отображения полигонов без "заливки".
+#. Нажмите кнопку [OK] для возвращения в диалоговое окно **Layers properties**.
 
 .. image:: ../../images/screenshots/1024x768/gvsig_qs_012.png
    :scale: 55 
 
-Changing the labelling of a vector layer
+Изменение подписей для векторного слоя
 --------------------------------------------------------------------------------
    
-#. Select the *Labelling* tab at the top of the **Layers properties** dialog.
-#. Change the text attributes to those shown on the image, then click on the 
-   [Accept] button.
+#. Выберите закладку *Labelling* в верхней части диалогового окна **Layers properties**.
+#. Измените атрибуты текста как показано на рисунке, затем нажмите на кнопку [Accept].
 
 .. image:: ../../images/screenshots/1024x768/gvsig_qs_013.png
    :scale: 55 
 
-The result
+Результат
 --------------------------------------------------------------------------------
    
-Note that this is a very basic view showing a point, a line and a polygon vector 
-file superimposed over a raster file. It is just as easy to have an aerial 
-photograph or Digital Terrain Model as a backdrop to your vector data, or
-to show other vector data stored in different formats.
+Заметим, что мы получили очень простой Вид, показывающий точечный, линейный и полигональный 
+векторные слои, наложенные поверх растрового слоя. Это также просто отобразить 
+аэрофотосъемку или цифровую модель рельефа как фоновый слой для векторных данных 
+или показать другие векторные данные разных форматов.
 
 .. image:: ../../images/screenshots/1024x768/gvsig_qs_014.png
    :scale: 55 
 
-A user exercise - change the symbology and labelling of the point and line layers
+Упражнение: изменить символику и подпись для точечного и линейного слоя
 ---------------------------------------------------------------------------------
    
-Following the previous few steps change the symbols, colour and labelling 
-of the rivers and towns to generally match the following screen shot.  
+По типу предыдущих нескольких шагов измените символ, цвет и подпись рек и городов 
+в соответствии с рисунком, показанным ниже.
 
 .. image:: ../../images/screenshots/1024x768/gvsig_qs_015.png
    :scale: 55 
 
-Simple analysis - select towns within a region
+Простой анализ: выбор городов в регионе
 ================================================================================
 
-Selecting the region
+Выбор региона
 --------------------------------------------------------------------------------
    
-#. Select the ``10m_admin_1_states_provinces.shp`` layer using the 
-   left-mouse-button.
-#. Select the 'Select by point' icon in the main toolbar.
-#. Click the polygon representing the State of Victoria. The polygon will 
-   go yellow or some other colour depending on your user preferences.
+#. Выберите слой ``10m_admin_1_states_provinces.shp``, используя левую кнопку мыши.
+#. Нажмите кнопку 'Select by point' на главной панели инструментов.
+#. Выберите полигон, который соответствует штату Виктория. Полигон окрасится в жёлтый цвет (по умолчанию), или другой цвет в зависимости от пользовательских настроек.
 
 .. image:: ../../images/screenshots/1024x768/gvsig_qs_016.png
    :scale: 55 
 
-Selecting the towns contained within a region
+Выбор городов, находящихся в регионе
 --------------------------------------------------------------------------------
    
-#. Select the ``10m_populated_places_simple.shp`` layer using the left-mouse-button.
-#. Select ``View > Selection > Selection by layer`` to open the **Selection by Layer** dialog
-#. Change the two selection criteria using the dropdown boxes on the left-hand 
-   side of the **Selection by Layer** dialog. Click the [New set] button to 
-   select towns within the selected polygon. 
-#. Select the [Cancel] button in the **Selection by Layer** dialog to return 
-   to the view. 
+#. Выберите слой ``10m_populated_places_simple.shp``, используя левую кнопку мыши.
+#. Выберите ``View > Selection > Selection by layer`` для открытия диалогового окна **Selection by Layer**
+#. Измените критерий выбора в выпадающем списке в левой стороне диалогового окна **Selection by Layer**. Нажмите кнопку [New set] для выбора городов в выбранном полигоне. 
+#. Нажмите кнопку [Cancel] в диалоговом окне **Selection by Layer** для возвращения в окно Вида. 
 
 .. image:: ../../images/screenshots/1024x768/gvsig_qs_017.png
    :scale: 55 
 
-Unselect the polygon so you can see what has happened
+Снятие выделения с полигона
 --------------------------------------------------------------------------------
    
-#. Select the ``10m_admin_1_states_provinces.shp`` layer using the left-mouse-button.
-#. Select the 'Clear selection' icon in the main toolbar.
-#. You can now see that the only those towns within Victoria are selected.
+#. Выберите слой ``10m_admin_1_states_provinces.shp``, используя левую кнопку мыши.
+#. Нажмите кнопку 'Clear selection' на главной панели инструментов.
+#. Вы увидите, что выбраны только города в штате Виктория.
 
 .. image:: ../../images/screenshots/1024x768/gvsig_qs_018.png
    :scale: 55 
 
-Export the selected towns to a new shapefile
+Экспорт выбранных городов в новый шейп-файл
 --------------------------------------------------------------------------------
    
-#. Select the ``10m_populated_places_simple.shp`` layer using the left-mouse-button.
-#. Select ``Layer > Export to... > SHP`` to start the export.
-#. The **Export to...** dialog appears. gvSIG recognises that only 26 features 
-   are selected so warns you that only a subset of the shapefile will be 
-   exported. Select the [Yes] button to continue.
-#. The **Save** dialog appears. Give the file a name and save in a 
-   directory of choice. Select the [Save] button to continue. 
-   Note that if you already have a file by the name chosen a warning message 
-   will be shown. 
-#. The **Add layer** dialog appears. Select the [Yes] button to add the new 
-   shapefile to the Table-of-Contents.
+#. Выберите слой ``10m_populated_places_simple.shp``, используя левую кнопку мыши.
+#. Выберите ``Layer > Export to... > SHP``.
+#. Появится диалоговое окно **Export to...**. gvSIG сообщит, что только выбранные 26 объектов будут экспортированы в шейп-файл. Нажмите кнопку [Yes].
+#. Появится диалоговое окно **Save**. Напишите имя файла и выберите каталог для сохранения файла. Нажмите кнопку [Save]. Заметьте: если у вас уже есть файл с таким именем, то появится предупреждение. 
+#. Появится диалоговое окно **Add layer**. Нажмите кнопку [Yes] для добавления нового шейп-файла в список слоёв.
 
 .. image:: ../../images/screenshots/1024x768/gvsig_qs_019.png
    :scale: 55 
 
-Showing only towns within a region
+Отображение одних городов в регионе
 --------------------------------------------------------------------------------
 
-#. Once you return to the view, uncheck ``10m_populated_places_simple.shp`` in 
-   the Table-of-Contents.
-#. Change the symbology and labelling of ``test.shp`` to match the screenshot 
-   below. 
-#. Now the view only includes towns and that occur within the State of Victoria.
-#. Select the 'Close window' icon to return to the **Project manager** so we
-   can create a map using this view.
+#. Как только вернётесь в окно Вида, сделайте неактивным слой ``10m_populated_places_simple.shp`` в списке слоёв.
+#. Измените символику и подписи для слоя ``test.shp``, как показано на рисунке ниже. 
+#. Теперь в окне Вида отображаются только города, которые находятся в штате Виктория.
+#. Нажмите кнопку 'Close window', чтобы вернуться в **Project manager** . Теперь мы можем создать карту, используя этот Вид.
 
 .. image:: ../../images/screenshots/1024x768/gvsig_qs_020.png
    :scale: 55 
    
-How to create a map
+Как создать карту
 ================================================================================
 
-Create a new map and open it
+Создание новой карты
 --------------------------------------------------------------------------------
 
-#. Select the *Map* document type in the **Project Manager**.
-#. Click on the [New] button to create a map.
-#. Select the newly created map. By default it is titled ``Untitled - 0``.
-#. Click on the [Open] button.
-#. An empty map will appear in its own window titled ``Map: Untitled - 0``.
-   Note that a series of points are placed over the page. This is called a
-   grid or guides and are used to snap elements to while formatting your
-   map.
-#. Select the 'Maximise window' icon to have the map occupy the entire 
-   screen. 
+#. Выберите тип документа *Map* в диалоговом окне **Project Manager**.
+#. Нажмите кнопку [New] для создания карты.
+#. Выберите вновь созданную карту. По умолчанию она будет называться ``Untitled - 0``.
+#. Нажмите кнопку [Open].
+#. Пустая карта появится в отдельном окне с названием ``Map: Untitled - 0``. Обратите внимание на ряд особенностей на рисунке. Вы можете заметить сетку и специальные линии ("направляющие") — всё это используется для привязки элементов во время редактирования карты.
+#. Нажмите кнопку 'Maximise window' для отображения карты во всей части экрана. 
 
 .. image:: ../../images/screenshots/1024x768/gvsig_qs_021.png
    :scale: 55 
 
-Insert a view with a grid/graticule
+Вставка сетки в View
 ----------------------------------- 
    
-#. Click on the 'Insert view' icon in the main menu
-#. Create a bounding box representing the extent of the map on the page by 
-   clicking on the empty map while holding down the left-mouse-button and 
-   dragging out the box, only letting go once the the area to be used is 
-   complete. This opens the **Properties of view framework** dialog.
-#. Select the *view* created earlier.
-#. Check the *Show Grid* option (this actually creates a graticule).
-#. Click on the [Configure] grid button to open the **Grid settings** dialog.
-#. In the **Grid settings** dialog change the grid interval to 1.0, that is 
-   1 degree between lines representing latitude and longitude.
-#. Select the grid format (use lines rather than points for ease of viewing).
-#. Increase the font size to 14.
-#. Select the [Ok] button to return to the **Properties of view framework** dialog then 
-   select the [Accept] button to exit and return to your map.
+#. Нажмите кнопку 'Insert view' в главном меню.
+#. Создайте область просмотра, представляющую собой охват карты на странице. Для этого нажмите на пустую карту и, удерживая левую кнопку мыши, протяните немного в пределах области просмотра, затем отпустите левую кнопку мыши для завершения. Это откроет диалоговое окно **Properties of view framework**.
+#. Выберите *Вид*, созданный ранее.
+#. Нажмите опцию *Show Grid* (это создаст сетку).
+#. Нажмите кнопку [Configure] для открытия диалогового окна **Grid settings**.
+#. В диалоговом окне **Grid settings** измените интервал сетки до 1.0 (т.е. 1 градус между параллелями и меридианами).
+#. Выберите формат сетки (используйте линии, а не точки для удобства просмотра).
+#. Увеличьте размер шрифта до 14 пунктов.
+#. Нажмите кнопку [Ok] для возвращения в диалоговое окно **Properties of view framework**, затем нажмите кнопку [Accept] для выхода и возврата в окно карты.
 
 .. image:: ../../images/screenshots/1024x768/gvsig_qs_022.png
    :scale: 55 
 
-What else can you do to a map?
+Что ещё можно сделать для карты?
 --------------------------------------------------------------------------------
    
-#. Select ``Map > Properties`` from the main menu to open the 
-   **Map Properties** dialog box. Unselect the *Visualise Grid* checkbox then 
-   select the [OK] button. The 'snap-to' guides/grid used while formatting 
-   should now be removed from the page and the image should match what is 
-   shown below.  
-#. Additional elements like a scale and north arrow can be added to the map 
-   using the icons in the main toolbar or with the submenus in the ``Map`` menu.
-#. The map can be printed or exported to PDF or Postscript for incorporation 
-   into other works.
-#. Select the 'Close window' icon to return to the **Project manager**
+#. Выберите ``Map > Properties`` в главном меню для открытия диалогового окна 
+   **Map Properties**. Деактивируйте флажок *Visualise Grid*, затем нажмите кнопку [OK]. 
+   Направляющие линии и сетка используются во время редактирования карты 
+   и сейчас должны быть удалены со страницы, так что изображение карты должно
+   соответствовать тому, что показано на рисунке ниже.  
+#. Дополнительные элементы, такие, как масштабная линейка и указатель на север, 
+   могут быть добалены в карту, используя кнопки на главной панели инструментов 
+   или в меню ``Map``.
+#. Карта может быть напечатана или экспортирована в форматы PDF или Postscript.
+#. Нажмите кнопку 'Close window' для возвращения в окно **Project manager**.
 
 .. image:: ../../images/screenshots/1024x768/gvsig_qs_023.png
    :scale: 55 
 
-Saving your project or exiting gvSIG
+Сохранение проекта и закрытие gvSIG
 ================================================================================
    
-#. Projects can be saved for use later by using the ``File > Save as...`` 
-   menu option, or
-#. Projects can be exited or closed by using the ``File > Exit`` menu option.
+#. Проект может быть сохранён для дальнейшего использования через 
+   меню ``File > Save as...``.
+#. Из проекта можно выйти или закрыть его, используя меню ``File > Exit``.
 
 .. image:: ../../images/screenshots/1024x768/gvsig_qs_024.png
    :scale: 55 
 
-Where to from here...
+Что дальше?
 ================================================================================
 
-Some English help and tutorials are available on the 
-`gvSIG <http://www.gvsig.org/web/docusr/learning/>`__ website. 
-
+Справка на английском и обучающие материалы доступны на сайте 
+`gvSIG <http://www.gvsig.org/web/docusr/learning/>`__. 
 

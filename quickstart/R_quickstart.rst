@@ -8,50 +8,45 @@
   :align: right
 
 ********************************************************************************
-R Quickstart
+Начало работы с R
 ********************************************************************************
 
-R is a free software environment for statistical computing and graphics.
+R — это свободное программное обеспечение для статистических вычислений и графики.
 
-This Quick Start describes how to:
+Этот документ описывает как:
 
-  * use R for simple arithmetic
-  * load some data from a shapefile and map it
-  * do a coordinate transformation
-  * plot some data points on a map
+  * использовать R для простых вычислений;
+  * загружать данные из шейп-файла и наносить их на карту;
+  * производить преобразования координат;
+  * добавлять точки на карту.
 
-Start R
+Запуск R
 ================================================================================
 
-Either:
+Чтобы запустить программу нужно:
 
-  * Choose ``R Statistics`` from the Spatial Tools section of the  menu - a terminal window appears running R.
-  * Enter ``R`` at a command-line shell prompt. R will start in that terminal.
+  * Выбрать ``R Statistics`` из раздела меню Spatial Tools — появится окон терминала с запущенным R. Или
+  * ввести ``R`` в окне консоли. R запустится в этом окне.
 
-Don't fear the command line - it is a source of great power. Using the up and down arrows
-to recall commands so you can edit mistakes will help greatly. Hit CTRL-C if get
-stuck and you should get the prompt back.
+Не бойтесь командной строки — она является очень мощным средством. Используйте кнопки вверх и вниз, чтобы вызывать уже введенные команды и исправлять ошибки. Используйте CTRL-C, если застряли и нужно вернуться обратно в консоль.
 
-Quit R
+Выход из R
 ================================================================================
 
-Almost everything in R is a function, including the function for quitting. Type 
-``q()`` and hit return. If you just type ``q`` you'll see the source code for the ``q`` function.
+Почти всё в R является функциями, включая функцию для выхода из программы. Введите
+``q()`` и нажмите "Enter". Если вы наберёте просто ``q``, то увидите исходный код для функции ``q``.
 
-R will ask you if you want to save your workspace as an R data image file. When you
-start R again from a directory with a ``.RData`` file it will restore all its
-data from there.
+R спросит, хотите ли вы сохранить рабочую среду в специальный файл (``.RData``). Если вы снова
+запустите R из папки, в которой уже есть этот файл, то он автоматически восстановит оттуда все данные.
 
 
-Beginning R
+Начало работы с R
 ================================================================================
 
-R is essentially a command-line program, although graphical user
-interfaces are available. You type a line of code at the prompt,
-press return, and the R interpreter evaluates it and prints the 
-result.
+R по сути является консольным приложением, хотя для него есть и графические интерфейсы.
+Вы вводите команды в консоль, нажимаете Ввод, и интерпретатор R проверяет то, что вы ввели и выводит результат.
 
-You can start with simple arithmetic
+Вы можете начать с простой арифметики:
 
 ::
 
@@ -68,13 +63,13 @@ You can start with simple arithmetic
    [1] 1.155727
 
 
-And so on. A full range of arithmetic, trigonometric, and statistical
-functions are built in, and thousands more are available from
-packages in the `CRAN <http://cran.r-project.org/>`_ archive.
+В R встроен полный комплект стандартных арифметических, тригонометрических и статистических операций
+и тысячи дополнительных доступны в виде пакетов в архиве 
+ `CRAN <http://cran.r-project.org/>`_.
 
-The main prompt in R is ``>``, but there is also the continuation prompt, ``+``, which 
-appears if R expects more input to make a valid expression. You'll see this if you
-forget a closing bracket or parenthesis.
+Основная системная "подсказка" в консоли выглядит так ``>``, но есть еще "подсказка" для продолжения — ``+``, 
+она появляется, когда R ожидает от вас ещё что-либо для завершения выражения. С ней можно столкнуться, 
+например, если вы забыли скобку или кавычку.
 
 ::
 
@@ -84,14 +79,12 @@ forget a closing bracket or parenthesis.
    [1] 1.414214
 
 
-Building Data
+Структура данных
 ================================================================================
 
-You might be wondering what the mysterious 'one' in square brackets is 
-doing in the output. This is telling you that the result is one number. R
-can store things in one-dimensional vectors, two-dimensional matrices,
-and multi-dimensional arrays. There are many functions that can 
-generate these things. Here's a simple sequence:
+Вы могли задаться вопросом, что же в результате показывает загадочная единица в квадратных скобках?
+Единица показывает, что результат — одно число. R может хранить данные в одномерных векторах, двумерных
+матрицах и многомерных массивах. Они создаются в процессе различных операций. Вот простой пример:
 
 ::
 
@@ -99,10 +92,9 @@ generate these things. Here's a simple sequence:
     [1] 1.000000 1.444444 1.888889 2.333333 2.777778 3.222222 3.666667 4.111111
     [9] 4.555556 5.000000
 
-Now you can see that the ``[9]`` is telling us that 4.555 is the ninth
-value in the vector. 
+Вы можете видеть, что ``[9]`` говорит нам, что 4.555 является девятым элементом вектора. 
 
-If you construct a matrix you get row and column labels:
+Если вы сделаете матрицу, что получите подписанные ряды и колонки:
 
 ::
 
@@ -113,9 +105,7 @@ If you construct a matrix you get row and column labels:
 	[2,]    2    5    8   11
 	[3,]    3    6    9   12
 
-Elements of matrices can be extracted using square brackets, with row and column 
-indices separated by commas. Leave an index blank to get a whole row as a vector. Use a vector
-index to get multiple rows or columns as a smaller matrix:
+Элементы матрицы могут быть получены путем ввода в квадратных скобках ряда и колонки, разделенных запятой, соответствующих её значениям. Если не вводить один из индексов, будет получен весь ряд или колонка в виде вектора. Можно также запрашивать диапазон значений:
 
 ::
 
@@ -131,17 +121,13 @@ index to get multiple rows or columns as a smaller matrix:
 	[2,]    8   11
 	[3,]    9   12
 
-Data frames are data structures that mirror the kind of structure
-found in an RDBMS such as Postgres or MySQL. Each row can be thought
-of as a record, with columns being like fields in a database. As in a
-database, each field must be of the same type for each record. 
+Фреймы данных являются структурами, очень похожими на структуры данных СУБД, таких, как PostgreSQL или MySQL. Каждый ряд может рассматриваться как запись, а колонка — как поле в базе данных. Так же, как и в базе данных, значение в поле должно быть одинакового типа для каждой записи.
 
-In many ways they work like matrices, but you can also get and set the columns by name
-using $-notation:
+Во многом эти структуры работают как матрицы, но вы можете также задавать и обращаться к колонкам, используя знак $:
 
 ::
 
-	> d = data.frame(x=1:10,y=1:10,z=runif(10)) # z is 10 random numbers
+	> d = data.frame(x=1:10,y=1:10,z=runif(10)) # z это 10 случайных чисел
 	> d
 	        x  y          z 
 	    1   1  1 0.44128080 
@@ -159,7 +145,7 @@ using $-notation:
 	 [1] 0.44128080 0.09394331 0.51097462 0.82683828 0.21826740 0.65600533
 	 [7] 0.59798278 0.19003625 0.24004866 0.35972749
 
-	> d$big = d$z > 0.6  # d$big is now a boolean true/false value
+	> d$big = d$z > 0.6  # d$big это бинарное булево значение true/false
 	> d[1:5,]
 	  x y          z   big
 	1 1 1 0.44128080 FALSE
@@ -168,7 +154,7 @@ using $-notation:
 	4 4 4 0.82683828  TRUE
 	5 5 5 0.21826740 FALSE
 
-	> d$name = letters[1:10] # create a new field of characters
+	> d$name = letters[1:10] # создать новое символьное поле
 	> d[1:5,]
 	  x y          z   big name
 	  1 1 1 0.44128080 FALSE    a
@@ -179,15 +165,14 @@ using $-notation:
 
 
 
-Loading Map Data
+Загрузка геоданных
 ================================================================================
 
-There are many packages for spatial data manipulation and statistics. Some
-are included here, and some can be downloaded from CRAN.
+Существует множество модулей для управления пространственными данными и
+статистического анализа. Некоторые из них рассмотрены здесь, а другие можно скачать из CRAN.
 
-Here we will load two shapefiles - the country boundaries and populated places
-from the Natural Earth data. We use two add-on packages to get the spatial 
-functionality:
+Давайте загрузим в R два шейп-файла — границы стран и населённые пункты из набора данных 
+Natural Earth. Мы используем два пакета для работы с геоданными — *sp* и *maptools*:
 
 ::
 
@@ -198,13 +183,11 @@ functionality:
 	> places = readShapeSpatial("/usr/local/share/data/natural_earth/10m_populated_places_simple.shp")
 	> plot(countries)
 
-This gives us a simple map of the world:
+Мы увидим простую карту Земли:
 
 .. image:: ../../images/screenshots/1024x768/r_plot1.png
 
-When an OGR dataset is read into R in this way we get back an object that
-behaves in many ways like a data frame. We can use the ``ADMIN``
-field to subset the world data and just get the UK:
+Когда OGR-совместимый набор данных загружается в R таким образом, мы получаем объект, который ведёт себя во многом как фрейм данных. Мы можем использовать поле ``ADMIN`` для выбора данных, например, только по Великобритании:
 
 ::
 
@@ -213,18 +196,14 @@ field to subset the world data and just get the UK:
 
 .. image:: ../../images/screenshots/1024x768/r_plot2.png
 
-This looks a bit squashed to anyone who lives here, since we are more familiar with
-a coordinate system centred at our latitude. Currently the object doesn't have a 
-coordinate system assigned to it - we can check this with some more functions:
+Результат выглядит несколько сплюснутым для тех кто, привык к другому виду карты, так как мы обычно сталкиваемся с системой координат, центрированной по какой-либо широте. В настоящее время у объекта система координат не прописана — мы можем это проверить следующим образом:
 
 ::
 
 	> proj4string(uk)
 	[1] NA
 
-``NA`` is a missing data marker. We need to assign a CRS to the object before we can
-transform it with the spTransform function from the rgdal package. We transform
-to EPSG:27700 which is the Ordnance Survey of Great Britain grid system:
+``NA`` обозначает, что данные отсутствуют. Нам нужно назначить систему координат объекту до того, как трансформировать его в другую систему координат с помощью функции *spTransform* из пакета *rgdal*. Мы будем трансформировать данные в систему координат EPSG:27700, которую использует Ordnance Survey Великобритании:
 
 ::
 
@@ -237,9 +216,7 @@ to EPSG:27700 which is the Ordnance Survey of Great Britain grid system:
 
 	> plot(ukos);axis(1);axis(2)
 
-This plots the base map of the transformed data. Now we want to add some points from the 
-populated place data set. Again we subset the points we want and transform them to
-Ordnance Survey Grid Reference coordinates:
+Результат — карта, показывающая трансформированные данные. Теперь нам нужно добавить несколько точек из набор данных о населённых пунктах. Мы снова отберём нужные нам точки и переведём их в нужную систему координат:
 
 ::
 
@@ -247,36 +224,31 @@ Ordnance Survey Grid Reference coordinates:
 	> proj4string(ukpop)=CRS("+init=epsg:4326")
 	> ukpop = spTransform(ukpop,CRS("+init=epsg:27700"))
 
-We add these points to the base map, scaling their size by scaled square root of the 
-population (because that makes a symbol with area proportional to population), set the
-colour to red and the plotting character to a solid blob:
+Мы добавим эти точки к нашей карте, масштабировав их по размеру в зависимости от квадратного корня населения (это сделает символ пропорциональным населению), мы также сделаем их красного цвета и используем в качестве символа "залитый" кружок:
 ::
 
 	> points(ukpop,cex=sqrt(ukpop$POP_MAX/1000000),col="red",pch=19)
 	> title("UK Population centre sizes")
 
-and our final image appears:
+и наша конечная карта будет выглядеть так:
 
 .. image:: ../../images/screenshots/1024x768/r_plot3.png
 
-Vignettes
+
+Виньетки
 ================================================================================
 
-In the past the documentation for R packages tended to be tersely-written help pages
-for each function. Now package authors are encouraged to write a 'vignette' as a friendly
-introduction to the package. If you just run the ``vignette()`` function with no arguments
-you will get the list of those vignettes on your system. Try ``vignette("sp")`` for a
-slightly technical introduction to the R spatial data structures, or ``vignette("spdep")`` for 
-a statistical analysis of spatial autocorrelation. The ``vignette("gstat")`` gives a tutorial
-in the use of that package for spatial interpolation including Kriging.
+В прошлом документация по пакетам R обычно представляла собой скупые описания для каждой функции. 
+Теперь авторам предлагается также писать так называемые "виньетки" — "дружественное к пользователю" введение в использование пакета. Если ввести команду ``vignette()`` без аргументов, то можно получить список виньеток, доступных на данный момент в системе.
+Попробуйте ввести ``vignette("sp")`` и вы получите техническое введение в структуры пространственных данных R, или ``vignette("spdep")`` чтобы почитать про статанализ пространственных автокорреляций. ``vignette("gstat")`` познакомит с использованием пакета *gstat*  для пространственной интерполяции с использованием кригинга.
 
-Further Reading
+Дополнительная информация
 ================================================================================
 
-For general information about R, try the official `Introduction to R <http://cran.r-project.org/doc/manuals/R-intro.html>`_ or any of the documentation from the main `R Project <http://www.r-project.org/>`_ page.
+Общую информацию об R можно найти в официальном `Введении в R <http://cran.r-project.org/doc/manuals/R-intro.html>`_ или в любой другой документации с домашней страницы `Проекта R Project <http://www.r-project.org/>`_.
 
-For more information on spatial aspects of R, the best place to start is probably the `R Spatial Task View <http://cran.r-project.org/web/views/Spatial.html>`_
+Подробную информацию о пространственных возможностях R можно найти в `R Spatial Task View <http://cran.r-project.org/web/views/Spatial.html>`_
 
-You might also want to check out the `R-Spatial <http://r-spatial.sourceforge.net/>`_ 
-page on sourceforge for some more links including information about the R-sig-Geo mailing list.
+Также может оказаться полезным страница `R-Spatial <http://r-spatial.sourceforge.net/>`_ 
+на *sourceforge*, где можно найти полезные ссылки и информацию о листе рассылки R-sig-Geo.
 
