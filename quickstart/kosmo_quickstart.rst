@@ -9,312 +9,312 @@
   :target: http://www.opengis.es/index.php?lang=en
 
 ********************************************************************************
-Kosmo Desktop Quick Start 
+Введение в Kosmo
 ********************************************************************************
 
-Kosmo - Desktop is a user friendly, desktop GIS application which allows you to explore, edit 
-and analyse spatial data from a variety of databases, vector and raster formats.
+Kosmo Desktop — это ГИС-приложение с понятным пользователю интерфейсом, которое позволяет
+просматривать и редактировать пространственные данные в различных форматах (базы данных, 
+векторные, растровые), а также проводить их анализ. 
 
-This Quick Start describes how to:
+В данном "введении" описано, как:
 
-* start the application    
-* load layers from files, databases and OGC services
-* navigate through the map
-* apply your styling to the loaded layers
+* запустить приложение;
+* загрузить слои из файла, базы данных и OGC-сервисов;
+* перемещаться по карте;
+* менять оформление слоёв.
 
 
-
-Start Kosmo Desktop
+Запуск Kosmo Desktop
 ================================================================================
 
-In order to start the application, follow the next steps:
+Чтобы запустить приложение, необходимо выполнить следующие шаги:
 
-#. From the start menu, select :menuselection:`Geospatial --> Desktop GIS --> Kosmo`
+#. В меню Пуск выберите опцию :menuselection:`Geospatial --> Desktop GIS --> Kosmo`
 
-#. The application will take a few seconds to start (a splash screen is shown while loading)
+#. Приложению потребуется несколько секунд, чтобы запуститься (во время загрузки появится экран-заставка).
 
    .. image:: ../../images/screenshots/800x600/kosmo_splash_screen.png
      :scale: 70 %
 
-#. In the Welcome dialog, select the option :menuselection:`Create a new project --> With a new view` (**1**) and press the *Ok* button (**2**)
+#. В диалоговом окне "Приветствие" выберите опцию :menuselection:`Create a new project --> With a new view` (**1**) и нажмите кнопку *Ok* (**2**)
 
    .. image:: ../../images/screenshots/1024x768/kosmo_welcome_dialog.png
-
-#. In the Spatial Reference System selection dialog, press the *...* button
+   
+#. В диалоговом окне "Пространственная система координат" нажмите кнопку *...*.
 
    .. image:: ../../images/screenshots/800x600/kosmo_select_srs.png
 
-#. Select the option *EPSG* in the SRS type combobox (**1**), insert the text `4326` in the text field and press the *Search* button (**2**)
+#. Выберите опцию *EPSG*  в поле-списке "Пространственная система координат" (**1**), введите текст `4326` в текстовое поле, затем нажмите кнопку *Search* (**2**).
 
-#. Select the SRS EPSG:4326 - WSG4 (**3**) and press the *Ok* button (**4**)
+#. Выберите систему координат EPSG:4326, WSG4  (**3**) и нажмите кнопку *Ok* (**4**)
 
    .. image:: ../../images/screenshots/800x600/kosmo_select_srs_epsg_4326.png
 
-#. Press the *Ok* button again to select the SRS loaded. The view will start with EPSG:4326 as the base projection
+#. Нажмите кнопку *Ok* еще раз, чтобы выбрать подгруженную систему координат. Окно вида будет использовать при запуске проекцию EPSG:4326  как базовую.
     
   
 .. tip::
-  You can see which projection has been selected as base for a specific view in the view window title bar, right to the view name
+  В заголовке окна Вид возле имени вы сможете увидеть выбранную для данного Вида проекцию.  
+  
   
 
-Kosmo Desktop main window
+Kosmo Desktop — основное окно
 ================================================================================
 
-The Kosmo Desktop main window has the following sections:
+Основное окно Kosmo состоит из следующих частей:
 
   .. image:: ../../images/screenshots/1024x768/kosmo_main_window.jpg
     :scale: 70 %
 
-* Main menus
+* Основное меню
 
-* Main toolbar
+* Панель инструментов
 
-* Layer tree
+* Дерево слоёв
 
-  Tree that contains the categories and layers that have been loaded in the current view.
+  Дерево, содержащее категории и слои, подгруженные в данном Виде
 
-* Map  
+* Карта  
 
-* Status bar
+* Строка состояния
 
-  Shows the application warning messages to the user.
+  Показывает пользователю сообщения программы.
   
-* Current cursor coordinates       
+* Координаты текущего положения курсора    
 
 
 
-Loading layers
+Подгрузка слоёв
 ================================================================================
 
-Files
+Файлы
 --------------------------------------------------------------------------------
 
-To start out, we're going to load some of the sample data included on the OSGeo-Live DVD:
+Для начала подгрузим несколько слоёв из пробных данных, входящих в OSGeo-Live DVD:
 
-#. Choose the option *View > Load Dataset...* or push the button with the green plus from the main toolbar
+#. Выберите опцию *View > Load Dataset...* или нажмите кнопку в виде зелёного плюса, находящуюся на основной панели инструментов.
 
-#. In the *Format* combobox, select *Shapefile* (**1**)
+#. В списке *Format* выберите *Shapefile* (**1**).
 
-#. In the file chooser, select the file :file:`10m_admin_0_countries.shp` from the directory :file:`/usr/local/share/data/natural_earth` (**2**)
+#. Выберите :file:`10m_admin_0_countries.shp`, находящийся в каталоге :file:`/usr/local/share/data/natural_earth` (**2**).
 
-#. Press the *Ok* button to load the selected shapefile (**3**)
+#. Нажмите кнопку *Ok* для загрузки шейпфайла (**3**).
 
    .. image:: ../../images/screenshots/800x600/kosmo_select_shape_file.png
 
-#. In the layer tree, press the visibility checkbox to make the layer visible, right clicking on the *Working* folder if needed
+#. В дереве слоёв поставьте флажок, чтобы сделать слой видимым, при необходимости щёлкнув правой кнопкой мыши (ПКМ) на папке *Working*.
 
-#. Choose again the option *View > Load Dataset...* or push the button with the green plus from the main toolbar
+#. Ещё раз выберите опцию *View > Load Dataset...*  или нажмите кнопку в виде зеленого плюса, находящуюся на основной панели инструментов.
 
-#. In the *Format* combobox, select *Image file* (**1**)
+#. В списке *Format* выберите *Image file* (**1**).
 
-#. In the file chooser, select the file :file:`HYP_50M_SR_W.tif` from the directory :file:`/usr/local/share/data/natural_earth/HYP_50M_SR_W` (**2**)
+#. Выберите :file:`HYP_50M_SR_W.tif`, который расположен в каталоге :file:`/usr/local/share/data/natural_earth/HYP_50M_SR_W` (**2**)
 
-#. Press the *Ok* button to load the selected image file (**3**)
+#. Нажмите кнопку *Ok* для загрузки файла изображения (**3**).
 
    .. image:: ../../images/screenshots/800x600/kosmo_select_raster_file.png
 
-#. In the layer tree, press the visibility checkbox to make the layer visible
+#. В дереве слоёв поставьте флажок, чтобы сделать слой видимым.
 
-#. You can see that the layer drawing order is from bottom to top in the layer tree: modify the layer order by dragging them in order to show them properly
+#. Вы можете увидеть, что порядок отрисовки слоёв начинается от нижнего слоя к верхнему. Перетаскивая слои, измените их порядок для удобного отображения данных.
 
    .. image:: ../../images/screenshots/1024x768/kosmo_load_file_example.jpg
 
 .. note::
-  The OSGeo-Live DVD contains some file data examples in the following directories:
+   OSGeo-Live содержит примеры данных, которые находятся в следующих директориях:
   
-  * :file:`~/data` (a shortcut to :file:`/usr/local/share/data` or :file:`/home/user/data`)
+  * :file:`~/data` ( ярлык :file:`/usr/local/share/data` или :file:`/home/user/data`)
   * :file:`/usr/local/share/openjump/data`
       
-  You can try to load more examples from those directories. Remember to select the correct format from the *Format* combobox       
+  Вы можете попробовать подгрузить больше данных из этих директорий. Помните, что при выборе данных необходимо указать их правильный формат в списке *Format*.
 
 .. tip:: 
-  It's possible to add all the images from a directory as an unique layer by selecting the parent directory in the *Load Dataset...* dialog: Kosmo Desktop will load them as a mosaic.
+ Чтобы добавить все изображения в директории как уникальный слой, выберите нужную директорию в диалоговом окне *Load Dataset...*. Kosmo подгрузит все изображения в виде мозаики.
 
 
-Databases
+Базы данных
 --------------------------------------------------------------------------------
+Ниже показано, как подключить базу данных.
 
-We're going to load a database table as an example:
+#. Выберите опцию *View > Load Dataset...* или нажмите кнопку в виде зеленого плюса, которая находится на основной панели инструментов
 
-#. Choose the option *View > Load Dataset...* or push the button with the green plus from the main toolbar
+#. В списке *Format*,  выберите *Database* (**1**)
 
-#. In the *Format* combobox, select *Database* (**1**)
+#. Заполните поля "Хост", "Порт", "Имя базы данных", "Имя пользователя" и "Пароль" следующим образом:
 
-#. Fill the fields host, port, database name, user name and password with the values:
-
-   * Host: localhost
+   * Хост: localhost
      
-   * Port: 5432
+   * Порт: 5432
     
-   * Database name: natural_earth
+   * Имя базы данных: natural_earth
     
-   * User name: user
+   * Имя пользователя: user
     
-   * Password: user        
+   * Пароль: user        
 
-#. Press the *Connect* button to load the tables present at the *natural_earth* database (**2**)
+#. Нажмите кнопку *Connect*, чтобы подгрузить таблицы базы данных *natural_earth* (**2**).
 
-#. Select the checkbox corresponding to the table *10m_populated_places_simple* (**3**)
+#. Выберите таблицу *10m_populated_places_simple* (**3**).
 
-#. Press the *Ok* button to load the selected database table (**4**)
+#. Нажмите кнопку *Ok* , чтобы загрузить выбранную таблицу (**4**).
 
    .. image:: ../../images/screenshots/800x600/kosmo_database_connection.png
   
-#. In the layer tree, press the visibility checkbox to make the layer visible
+#. В дереве слоёв поставьте флажок, чтобы сделать слой видимым.
 
    .. image:: ../../images/screenshots/1024x768/kosmo_load_database_example.jpg
      :scale: 70 %
 
 
-OGC services
+Сервисы OGC 
 --------------------------------------------------------------------------------
 
-#. Start the :doc:`GeoServer <../overview/geoserver_overview>` WMS included in the OSGeo-Live DVD by selecting the option |osgeolive-appmenupath-geoserver| (or from the desktop, go into *Web Services* folder and double-click the Start GeoServer icon)
+#. Запустите :doc:`GeoServer <../overview/geoserver_overview>` WMS , входящий в состав OSGeo-Live DVD, выбрав опцию |osgeolive-appmenupath-geoserver| (либо зайдите в папку  *Web Services*  и дважды кликните иконку "Запустить Геосервер").
 
-#. Press the *Load SDI Service* (IDE) button at the main toolbar to open the wizard
+#. Нажмите кнопку *Load SDI Service* (IDE) на панели инструментов, чтобы открыть мастер настройки.
 
-#. In the *Select SDI service type* panel, select the option *WMS Service* (**1**) and press the *Next* button (**2**)
+#. На панели *Select SDI service type* выберите опцию *WMS Service* (**1**) и нажмите кнопку *Next* (**2**).
 
    .. image:: ../../images/screenshots/800x600/kosmo_wms_1.png
 
-#. In the *Select Uniform Resource Locator (URL)*, type the URL http://localhost:8082/geoserver/ows?VERSION=1.1.1 (**1**) in the corresponding text field and press the *Connect* button (**2**)
+#. В текстовое поле *Select Uniform Resource Locator (URL)*, введите URL http://localhost:8082/geoserver/ows?VERSION=1.1.1 (**1**), а затем нажмите кнопку *Connect* (**2**).
 
-#. If the connection is successful, press the *Next* button to go to the next panel (**3**)
+#. Если соединение прошло успешно, то нажмите кнопку *Next* (**3**).
 
    .. image:: ../../images/screenshots/800x600/kosmo_wms_2.png
 
-#. Select the layer `North America Sample Imagery` (**1**) and press the *>* button (**2**) to move it to the right list. Press *Next* button. (**3**)
+#. Выберите слой `North America Sample Imagery` (**1**); нажмите кнопку *>*  (**2**), чтобы переместить изображение в правую часть списка, затем нажмите кнопку *Next* (**3**).
 
    .. image:: ../../images/screenshots/800x600/kosmo_wms_3.png
 
-#. Leave the default options loaded and press the *Finish* button (**1**) to start the layer loading
+#. Не изменяйте значения в появившемся окне, нажмите кнопку *Finish*  (**1**) для загрузки слоя.
 
    .. image:: ../../images/screenshots/800x600/kosmo_wms_4.png
 
-#. In the layer tree, press the visibility checkbox to make the layer visible
+#. В списке слоёв поставьте флажок, чтобы сделать слой видимым.
 
-#. Select the layer in the layer tree and press the *Zoom To Layer* button to center the map in the WMS layer view
+#. Выделите слой в списке слоёв, нажмите кнопку *Zoom To Layer*,чтобы отцентрировать карту со слоем WMS.
 
-#. Reorder the layer tree by dragging the new layer and put it over the *HYP_50M_SR_W* raster layer
+#. Поменяйте порядок подгруженных слоёв, перетаскивая их так, чтобы растровый слой *HYP_50M_SR_W* оказался внизу. 
 
    .. image:: ../../images/screenshots/1024x768/kosmo_load_wms_results.jpg
 
 
 .. note::
-  Kosmo Desktop contains a list of WMS servers by default (most of them are from Spain). 
-  If you're connected to internet, you can use them as described in the example with the local server.
+   Kosmo по умолчанию содержит список серверов WMS  (большая часть из них испанские). 
+  Если вы подключены к сети Интернет, то вы сможете использовать их, как описано в примере, используя локальный сервер.
 
 
-Map navigation tools
+Инструменты навигации по карте
 ================================================================================
 
-You can control where in the world is the map using the navigation tools present at the main toolbar:
+Вы можете контролировать положение карты, используя инструменты навигации, расположенные на основной панели интрументов.
 
-1. |ZOOM| Zoom In/Out
+1. |ZOOM| Инструменты масштабирования
 
   .. |ZOOM| image:: ../../images/screenshots/800x600/kosmo_zoom.gif
   
-  * It's the tool selected by default when you start your session
-  * Use the mouse left button to zoom in a fixed ammount at the clicked map point
-  * Use the mouse right button to zoom out a fixed amount at the clicked map point
-  * Press the mouse left button, move the mouse, draw a rectangle and release the button if you want to zoom to that rectangle
+  * Когда вы начинаете новую сессию, этот инструмент будет выбран по умолчанию.
+  * Используйте левую кнопку мыши (ЛКМ), чтобы приблизиться до необходимого уровня к выбранной точке на карте.
+  * Используйте правую кнопку мыши (ПКМ), чтобы отдалиться до необходимого уровня от выбранной точки на карте.
+  * Чтобы увеличить какую-либо территорию на карте, выделите прямоугольную область, удерживая нажатой ЛКМ.
   
-2. |PAN| Pan
+2. |PAN| Перемещение
   
   .. |PAN| image:: ../../images/screenshots/800x600/kosmo_pan.gif
 
-  * Allows to move around the world without changing the scale
-  * Press the mouse left button, move the mouse and release it in order to move the map to the desired location
-      
-3. |ZOOM_PREV| Zoom Previous
+  * Позволяет перемещаться по карте без изменения её масштаба.
+  * Зажмите ЛКМ, затем переместите мышь в желаемое место и отпустите клавишу.
+  
+3. |ZOOM_PREV| Вернуться к предыдущему виду
 
   .. |ZOOM_PREV| image:: ../../images/screenshots/800x600/kosmo_zoom_prev.gif
   
-  * Allows to zoom to the previous viewing envelope from the zoom history (if available)
+  * Возвращает к предыдущему виду, хранящемуся в истории (при его наличии).
   
-4. |ZOOM_NEXT| Zoom Next
+4. |ZOOM_NEXT| Вернуться к следующему виду
 
   .. |ZOOM_NEXT| image:: ../../images/screenshots/800x600/kosmo_zoom_next.gif
   
-  * Allows to zoom to the next viewing envelope from the zoom history (if available)
+  * Возвращает к следующему виду, хранящемуся в истории (при его наличии).
     
-5. |ZOOM_FULL_EXTENT| Zoom To Full Extent
+5. |ZOOM_FULL_EXTENT| Перейти к просмотру всех объектов
 
   .. |ZOOM_FULL_EXTENT| image:: ../../images/screenshots/800x600/kosmo_zoom_to_full_extent.gif
   
-  * Allows to change the current map envelope to include all the visible layers
+  * Изменяет вид карты таким образом, что все объекты видимых слоёв отображаются на карте.
   
-6. |ZOOM_TO_LAYER| Zoom To Layer
+6. |ZOOM_TO_LAYER| Перейти к выбранному слою
 
   .. |ZOOM_TO_LAYER| image:: ../../images/screenshots/800x600/kosmo_zoom_to_layer.gif
   
-  * Allows to change the current map envelope to adjust to the selected layer
+  * Изменяет вид карты таким образом, что все объекты выбранного слоя отображаются на карте.
     
-7. |ZOOM_TO_SELECTED_ITEMS| Zoom To Selected Items
+7. |ZOOM_TO_SELECTED_ITEMS| Перейти к выбранным объектам
 
   .. |ZOOM_TO_SELECTED_ITEMS| image:: ../../images/screenshots/800x600/kosmo_zoom_to_selected_items.gif
   
-  * Allows to change the current map envelope to adjust to the selected features
+  * Изменяет вид карты, отображая на ней все выбранные объекты 
     
-8. |PAN_TO_CLICK| Pan To Click
+8. |PAN_TO_CLICK| Переместить по щелчку
 
   .. |PAN_TO_CLICK| image:: ../../images/screenshots/800x600/kosmo_pan_to_click.gif
   
-  * Centers the map in the clicked map point, without changing the current scale
+  * Центрирует карту в точке щелчка ЛКМ без изменения масштаба
   
-9. |COORDINATE_LOCALIZATION| Coordinate Localization
+9. |COORDINATE_LOCALIZATION| Координатная локализация
 
   .. |COORDINATE_LOCALIZATION| image:: ../../images/screenshots/800x600/kosmo_coordinate_localization.gif
   
-  * Centers the map in the given X - Y coordinates
+  * Центрирует карту по ввёденным координатам X и Y (широта/долгота)
 
-Apart from those tools, it's also available the possibility to zoom in/out by using the mouse wheel.
+Кроме указанных инструментов, можно использовать колесо мыши для плавного приближения/отдаления от точки указателя.
 
 .. note::
-  If any tool/menu option is disabled, you can place the cursor over the button/option to see a tooltip where the reason is shown 
+  Если какой-либо инструмент или опция меню недоступны, можно поместить курсор на кнопку/опцию, чтобы увидеть всплывающую подсказку.
 
 
 
-Styling
+Оформление
 ================================================================================
 
-In this section we're going to style a layer by range using the country population as styling attribute:
+В этом разделе описано, как изменить оформление слоя, используя ранжирование, на основе поля *country population*:
 
-#. Select the layer `10m_admin_0_countries` in the layer tree
+#. В дереве слоёв выберите  `10m_admin_0_countries`.
 
-#. Right click on it and select the option *Simbology > Change Styles...*
+#. Щелкните по нему ПКМ и выберите опцию *Simbology > Change Styles...*.
 
-#. Click on the tab `Colour theming`
+#. Выберите `Colour theming`.
 
-#. Activate the options *Enable colour theming* and *by range* (**1**)
+#. Сделайте активными опции *Enable colour theming* и *by range* (**1**).
 
-#. Select `POP_EST` as *Attribute* (**2**), 8 as *Range count* (**3**) and RYG (Color Brewer) as *Color schema* (**4**)
+#. Выберите `POP_EST` как *Attribute* (**2**), "8" как *Range count* (**3**) и RYG (Color Brewer) как *Color schema* (**4**).
 
-#. Press the *Ok* button to apply the changes (**5**)
+#. Нажмите кнопку *Ok* , чтобы применить изменения (**5**).
 
    .. image:: ../../images/screenshots/800x600/kosmo_basic_style_classification.png
 
-#. The layer will change its style to reflect the changes:
+#. Слой поменяет своё оформление:
 
    .. image:: ../../images/screenshots/1024x768/kosmo_styled_layer_by_range.jpg
      :scale: 70 %
 
 
-Things to Try
+Что стоит попробовать?
 ================================================================================
 
-* Use the advanced style editor (`Symbology > Advanced style editor...`) to create more complex styles
+* Используйте продвинутый редактор стилей (`Symbology > Advanced style editor...`) для создания сложных стилей.
 
-* Use the `Query wizard` to select those features that accomplish a given criteria
+* Используйте редактор запросов `Query wizard` для выбора объектов, удовлетворяющих заданному условию.
 
-* Activate the layer editing mode and use the available tools to edit it
+* Активируйте режим редактирования и используйте доступные инструменты редактирования.
 
-* Generate a set of topology rules for a layer and try to edit it
+* Сгенерируйте набор правил топологии для слоя и попробуйте его отредактировать.
 
-* Activate the set of extensions that form part of the application and see the new tools that are present
+* Активируйте расширения, которые являются частью приложения, обратите внимание на новые доступные инструменты.
 
 
-What Next?
+Что дальше?
 ================================================================================
 
-There is a set of manuals and video-tutorials available at http://www.opengis.es/index.php?lang=en
+Документация и видео-материалы доступны на сайте Kosmo: http://www.opengis.es/index.php?lang=en

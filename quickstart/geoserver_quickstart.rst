@@ -8,263 +8,202 @@
 .. |UG| replace:: uDig 
 
 .. image:: ../../images/project_logos/logo-GeoServer.png
-  :alt: project logo
+  :alt: Логотип проекта
   :align: right
 
 ********************************************************************************
-GeoServer Quickstart 
+Начало работы с GeoServer
 ********************************************************************************
 
-GeoServer is a java application for serving maps (and data) for other
-clients to draw.
+GeoServer — это приложение, написанное на языке Java, обслуживающее карты и
+данные для их отображения в сторонних клиентах.
 
-This Quick Start describes how to:
+Эта глава описывает пути решения следующих задач:
 
-  * add a vector and raster data source to GeoServer
-  * apply color to map features using styling
-  * test the layers in a simple web map
-  * learn about clients that can display your maps
+  * добавление векторных и растровых данных в GeoServer;
+  * применение стилей оформления объектов для их отображения на карте;
+  * тестирование отображения объектов в виде карт;
+  * ознакомление с клиентами, которые могут отобразить ваши карты.
 
-Start |GS|
+Запуск |GS|
 ================================================================================
 
-#. Select the |osgeolive-appmenupath-geoserver| in the menu.
-#. The application will take a few moments to start up
-#. Go to the GeoServer web page at http://localhost:8082/geoserver/web 
+#. Выберите пункт |osgeolive-appmenupath-geoserver| в меню.
+#. Приложению потребуется некоторое время для запуска.
+#. Перейдите на веб-страницу http://localhost:8082/geoserver/web 
 
 .. image:: ../../images/screenshots/800x600/geoserver-login.png
     :scale: 70 %
 
-First Views
+Первый просмотр
 ================================================================================
 
-When you first open the |GS| page you will see the screen above, first you need to log in using the username admin and password geoserver. You will now see the *admin page* 
+При первом открытии страницы |GS| вы увидите форму ввода сверху экрана, вы должны войти, используя имя пользователя *admin* и пароль *geoserver*. После этого вы увидите *admin page*. 
 
 .. image:: ../../images/screenshots/800x600/geoserver-welcome.png
     :scale: 70 %
 
-The **Layer Preview** link at the top of the *Data* section in the left hand menu allows you to see a preview of the layers that are loaded on the server. 
-  
+Пункт **Layer Preview**, расположенный слева сверху в меню *Data*, позволяет сделать предварительный просмотр всех слоёв, загруженных на сервер. 
+
 .. image:: ../../images/screenshots/800x600/geoserver-layerpreview.png
     :scale: 70 %
 
-Scroll to the bottom of the page and click on the **OpenLayers** link in the **tiger-ny** row, this will open a new window with a preview of some of the sample data. 
+Перейдите к нижней части страницы и нажмите на ссылку **OpenLayers** в строке **tiger-ny**, после этого откроется новое окно предварительного просмотра некоторых выборочных данных. 
 
 .. image:: ../../images/screenshots/800x600/geoserver-preview.png
     :scale: 70 %
-    
-You can zoom in to the map in three ways:
 
-        * by clicking on the zoom bar on the left, the higher you click on it the more zoomed in you will see.
+Вы можете менять масштаб карты тремя разными способами:
 
-        * by using the mouse scroll wheel (if you have one), scrolling up will zoom in and down will zoom out.
+        * Щёлкать по шкале увеличения слева на экране, чем выше — тем больше увеличение.
 
-        * by dragging a box on the map while holding down the :kbd:`shift key` - this will zoom in to the box selected (or as near as will fit in the screen).
+        * Используя колесо мыши (если таковое имеется), прокрутка от себя приводит к увеличению масштаба, а к себе — к уменьшению.
 
-#. Experiment with this view and look at some of the other previews.  Once you are happy with looking at data you can move on to adding some new data.
+        * Созданием бокса в окне карты с зажатой клавишей Shift — это приблизит выбранную боксом область (настолько, насколько позволит экстент).
 
-Loading Data
+
+#. Поэкспериментируйте с этим видом и посмотрите другие примеры. 
+
+
+Загрузка данных
 ================================================================================
 
-.. note::
-    You will not be able to carry out the following steps if you are
-    running with a **read only** file system (such as the DVD). You
-    will either need to install GeoServer from the DVD to your
-    hard drive or  create a USB stick based system.
+.. Note::
+    Вы не сможете произвести следующие действия, если вы работаете с файловой системой, смонтированной только для чтения (например с DVD-диска). Вам понадобится установить GeoServer с DVD на жесткий диск или создать систему, поддерживающую USB-накопители.
 
+В этом примере мы будем использовать набор данных :doc:`Natural Earth <../overview/naturalearth_overview>` который включён в OSGeo-Live (:file:`/usr/local/share/data/natural_earth/`).
 
-In this example we are going to use the :doc:`Natural Earth data set <../overview/naturalearth_overview>`
-that is included on the Live-DVD (:file:`/usr/local/share/data/natural_earth/`).
-
-We need to create a Store for our data. From the |GS| admin page go
-to :guilabel:`Stores` and then click on :guilabel:`Add new Store`. You
-will see this page:
+Нам необходимо создать хранилище для наших данных. С начальной страницы |GS| перейдите к *Stores* и затем выберите "Add new Store". Вы увидите такую страницу:
 
 .. image:: ../../images/screenshots/800x600/geoserver-newstore.png
     :scale: 70 %
     :align: center
-    :alt: The New Store page
+    :alt: Страница создания хранилища данных
 
-Select the :guilabel:`Directory of spatial files`, you will see the following: 
+Выберите :guilabel:`Directory of spatial files`:
 
 .. image:: ../../images/screenshots/800x600/geoserver-new-vector.png
     :scale: 70 %
     :align: center
-    :alt: Filling in the New Store page
+    :alt: Заполнение поля имя хранилища данных
 
-Type in a name for the Data Store - I used *Natural Earth* and fill in
-the URL to the data set - in this case :file:`/usr/local/share/data/natural_earth/`. 
-You can use the browse button to find the directory if your data is somewhere else. Press :guilabel:`save`.
+Напишите имя для хранилища данных, например, *Natural Earth*, и заполните URL к папке с данными в этой форме :file:`/usr/local/share/data/natural_earth/`. 
+
+Вы можете использовать кнопку поиска, чтобы найти папку, если ваши данные где-то ещё. Нажмите :guilabel:`save`.
 
 .. image:: ../../images/screenshots/800x600/geoserver-naturalearth.png
     :align: center 
     :scale: 70 %
-    :alt: The Natural Earth Datastore
+    :alt: Хранилище данных Natural Earth
 
-Press :guilabel:`publish` next to one of the layers to finish up adding
-the data. This will take you to the *Layers* page:
+Нажмите :guilabel:`publish` для одного из слоёв, чтобы завершить добавление данных. Вы перейдёте на страницу *Layers*:
 
 .. image:: ../../images/screenshots/800x600/geoserver-publish.png
     :align: center
     :scale: 70 %
-    :alt: The layer publishing page
+    :alt: Страница публикации слоя
 
-As you scroll down the page you will see that |GS| has filled in many of
-the fields for you. When you reach :guilabel:`Coordinate Reference System`
-you will notice that under *Native SRS* that it says UNKNOWN 
-you will need to fill in the next box (*declared SRS*) to make sure |GS|
-knows where the data is. For the time being trust me and type epsg:4326 in
-the box, if you don't trust me then go to `http://prj2epsg.org/search <http://prj2epsg.org/search>`_ and
-paste in the string you see if you click on the link next to "UNKNOWN".
-Then click on :guilabel:`Compute from data` and :guilabel:`Compute from
-native bounds` to fill in the Bounding Boxes. Finally hit :guilabel:`save`
-and you have published your first layer.
+Пролистнув страницу вниз, вы увидите, что |GS| заполнил много полей для вас. Когда вы достигнете :guilabel:`Coordinate Reference System`, вы увидите надпись UNKNOWN под формой *Native SRS*. Вам следует заполнить форму (*declared SRS*) чтобы убедиться в том, что |GS| получил данные. Для нашего примера напечатайте в форме EPSG:4326, можете проверить правильность введённого по адресу `http://prj2epsg.org/search <http://prj2epsg.org/search>`_ в строке, которую увидите при нажатии ссылки рядом с "UNKNOWN". Затем нажмите :guilabel:`Compute from data` и :guilabel:`Compute from native bounds`, чтобы заполнить ограничивающие прямоугольники. Наконец, нажмите :guilabel:`save` — так вы опубликуете свой первый слой.
 
 .. note::
-    If you look at this layer in the layer preview it doesn't look
-    very good but that is just the default style. In the next section
-    we will look at producing a nicer style.
+    Если вы посмотрите на слой на странице предварительного просмотра, то он будет выглядеть не очень красиво, это всего лишь стиль по умолчанию. В следующем разделе мы увидим, как создавать более красивые стили.
 
-You can follow the same step with the other layers in the directory by using the :guilabel:`Add a new resource` button on the layers page. Just select the natural earth store from the drop down box to get back to the store's page.
+Вы можете  следовать теми же шагами при работе с другими слоями, используя кнопку :guilabel:`Add a new resource` на странице слоев. Выберите хранилище *natural earth* из списка для возврата к странице хранилищ.
 
-Styling
+Стилизация
 --------------------------------------------------------------------------------
 
-To style a data set into a map layer |GS| uses an OGC standard called
-:doc:`Styled Layer Descriptors (SLD) <../standards/sld_overview>`. These 
-are represented as XML files which describe the rules that are used to 
-apply various symbolizers to the data.
+При создании стилей для набора данных |GS| использует стандарт OGC :doc:`Styled Layer Descriptors (SLD) <../standards/sld_overview>`. Он представлен XML-файлами, описывающими правила, которые используются для применения способов отображения данных.
 
-To get started I styled the Land and Ocean datasets. 
-You can create SLD files using a simple text editor, but
-sometimes a graphical editor is better. There are several options here
-but I like to use |UG| as it allows me to open the shapefiles directly 
-and apply simple styles using a GUI, but also provides a simple editor 
-to modify the XML if I need to. 
+Для начала стилизуем наборы данных Land и Ocean. Вы можете создавать SLD-файлы, используя простой текстовый редактор, но иногда проще использовать графический редактор. Для этого существует ряд программ, вам может понравиться |UG|, поскольку он позволяет открывать шейп-файлы и применять стили, используя графический интерфейс, а также в нём представлен простой редактор XML.
 
-Using |UG| to create simple styles
-``````````````````````````````````
+Использование |UG| для создания простых стилей
+````````````````````````````````````````````````````````````````
 
-.. note::
+.. note:: Детальное описание использования |UG| смотрите здесь: :doc:`Начало работы с uDig<../quickstart/udig_quickstart>`
 
-   For more details on how to use |UG| see the :doc:`uDig Quickstart <../quickstart/udig_quickstart>`
-
-Once I opened |UG| up and added the shapefiles (using the
-add data button in the top left hand corner). I dragged the 10m_land
-and 10m_ocean tables into the map window. |UG| automatically applies
-a style (so you can see the data).
+Для начала откроем |UG| и добавим шейп-файлы (используя кнопку *add data* в верхнем левом углу). Перенесём слои "10m_land"
+и "10m_ocean" в окно карты. |UG| автоматически применил стиль (поэтому мы можем видеть данные). 
 
 .. image:: ../../images/screenshots/800x600/geoserver-udig_startup.png
    :align: center
    :scale: 70 %
-   :alt: Default Styling in uDig
+   :alt: Стиль по умолчанию в uDig
 
-Now obviously an orange ocean will not work (even if I could live
-with the green land). So in the :ref:`Layer list <Layer_list>` select the style
-button (it looks like an artist's palette). 
+Очевидно, что оранжевый океан выглядит немного странно. В списке слоёв :ref:`Layer list <Layer_list>` выберите кнопку стилей (она похожа на палитру красок). 
 
 .. _Layer_list:
 .. image:: ../../images/screenshots/800x600/geoserver-layer-chooser.png
    :align: center
    :scale: 70 %
-   :alt: The Layer list window
+   :alt: Окно слоев
 
-This will open the :ref:`Style Pane <Style_Pane>` - in the simple window I can easily
-select a nice blue for the oceans by clicking on the colored box on
-the fill tab and choosing from the color picker it produces. I also
-increased the opacity of the fill to 100% to make the color look
-better. I picked the same blue for the border color so it would match.
+Откроется :ref:`Style Pane <Style_Pane>` — в простом окне можео выбрать приятный голубой цвет для океанов нажатием на цветные прямоугольники в окне заливки и выбором необходимого цвета простым щелчком. Также можно повысить непрозрачность заливки до 100%, чтобы она выглядела лучше. Для границ также можно выбрать голубой цвет.
 
 .. _Style_Pane:
 .. image:: ../../images/screenshots/800x600/geoserver-style-pane.png
    :align: center
    :scale: 70 %
-   :alt: The Style Pane 
+   :alt: Панель стилей 
 
-Once I was done I clicked ``OK`` and |UG| showed me the
-changes. 
-
+Когда все сделано, нажмите ``OK``, и |UG| покажет изменения.
 
 .. image:: ../../images/screenshots/800x600/geoserver-blue-ocean.png
    :align: center
    :scale: 70 %
-   :alt: Blue Oceans
+   :alt: Синий океан
 
-Finally I prefer a more understated land color than green so
-I repeated the steps above to change the color of the land layer.
-None of the default colors seemed right to me so I went into the
-``define custom colors`` section to create one I liked.
+Теперь давайте изменим цвет суши с зелёного на более правдоподобный и повторим все шаги по изменению цвета в слое *land*. Если ни один из цветов по умолчанию вам не приглянулся, можно открыть ``define custom colors``, чтобы создать свой цвет.
 
 .. image:: ../../images/screenshots/800x600/geoserver-custom-colour.png
    :align: center
    :scale: 70 %
-   :alt: Defining a nicer land color
+   :alt: Выбор более красивого цвета земли
 
-This gives me a nice looking basic world map
+В результате получаем красивую базовую карту мира.
 
 .. image:: ../../images/screenshots/800x600/geoserver-basic-world.png
    :align: center
    :scale: 70 %
-   :alt: A basic word map
+   :alt: Базовая карта мира
 
-Adding the Style to |GS|
+Добавление стиля в |GS|
 ````````````````````````
 
-Now I need to transfer these styles to |GS| - on the style window
-there is an export button which allows me to save the SLD file that
-defines my style. Once I've saved the two styles I can go to the |GS|
-admin page again and select ``Styles`` (at the bottom of the ``Data``
-section). Then I select the ``Add New Style`` link, at the bottom of
-that page is a file upload box and a browse button. Clicking this
-allows me to hunt around on my hard drive to find the files I just
-saved. Once I've found one I want, I click the upload link (next to the browse
-button) and a copy of my file appears in the editor. If you click on the validate button the highlighted lines will give you an error but you can safely ignore the error (or delete those lines as they don't do anything).
+Теперь необходимо перенести эти стили в |GS| — в окне стилей есть кнопка *export*, позволяющая сохранить SLD-файл, который определяет наш стиль. Как только мы сохранили два стиля, можно перейти к странице |GS| *admin page* и выбрать ``Styles`` (снизу секции ``Data``). Затем выбираем ``Add New Style``, снизу страницы появится форма загрузки и кнопка поиска. Нажатие на неё позволяет произвести поиск только что сохранённых файлов на жёстком диске. Как только нужные файлы найдены, жмём *upload* (находится рядом с кнопкой поиска), и копия файла появляется в редакторе. Если щёлкнуть по кнопке *validate*, то подсвеченные линии покажут, где есть ошибки, но можно также безопасно её проигнорировать (или удалить ненужные строки).
+
 
 .. image:: ../../images/screenshots/800x600/geoserver-add-style.png
    :align: center
    :scale: 70 %
-   :alt: Adding a Style to GeoServer
+   :alt: Добавление стиля в GeoServer
 
 
-Adding the Style to the Layer
+Добавление стиля в слой
 --------------------------------------------------------------------------------
 
-Click on the :guilabel:`Layers` link in the Menu on the left of the
-|GS| window. Click on the layer (e.g. *10m_land*), then select the 
-:guilabel:`Publishing` tab and change the :guilabel:`Default Style`
-box to the name of the style you uploaded in the previous section.
-Now go to the Layer Preview page to check that it looks good.
+Нажмите :guilabel:`Layers` в левом меню окна |GS|. Нажмите на название слоя (т.е. *10m_land*), затем выберите вкладку :guilabel:`Publishing` и замените :guilabel:`Default Style` на стиль, загруженный ранее. Теперь перейдите к странице *Layer Preview*, чтобы проверить, что все выглядит хорошо.
 
-.. note:: There are example style files for all of the example Natural Earth layers in :file:`/usr/local/share/geoserver`. 
+.. note:: Здесь находятся примеры стилей для всех слоёв Natural Earth.
 
 .. TBD (needs more memory)
-    Adding a Raster
-    ===============
+Добавление растра
+==============================
 
-    In the Natural Earth folder is a folder :file:`HYP_50M_SR_W` which
-    contains a raster image. You can serve this up in |GS| directly by
-    going to the stores page and selecting :menuselection:`New Stores --> World Image` 
-    and type
-    :file:`/home/user/data/natural_earth/HYP_50M_SR_W/HYP_50M_SR_W.tif`
-    into the :guilabel:`URL` box.
+Каталог Natural Earth содержит вложенный каталог :file:`HYP_50M_SR_W`, в котором находится растровое изображение. Вы можете загрузить его напрямую в |GS|, перейдя к странице stores и выбрав :menuselection:`New Stores --> World Image` и написав :file:`/home/user/data/natural_earth/HYP_50M_SR_W/HYP_50M_SR_W.tif` в форме ввода :guilabel:`URL`.
 
-    .. image:: ../../images/screenshots/800x600/geoserver-raster.png
+ .. image:: ../../images/screenshots/800x600/geoserver-raster.png
         :align: center
         :scale: 70 %
-        :alt: Adding a Raster
+        :alt: Добавление растра
 
-    The click :guilabel:`Save` this will take you to the *New Layers
-    Chooser* then click publish and :guilabel:`Save` to finish adding the
-    raster. If you go to the Layers Preview page you
-    can see the new image. 
+Нажмите :guilabel:`Save`, вы перейдёте к *New Layers Chooser*, затем опубликуйте слой и нажмите :guilabel:`Save`, чтобы закончить добавление растра. Если вы перейдете к странице *Layers Preview*, то увидите новое изображение.
 
 
-
-Clients for WMS layers
+Клиенты для просмотра WMS-слоев
 ================================================================================
 
-A large variety of clients exist to make use of the :doc:`WMS <../standards/wms_overview>` layers you are serving
-from |GS|. This is a list of just some of them 
+Существует широкий выбор клиентов для использования :doc:`WMS<../standards/wms_overview>`, получаемого из |GS|. Здесь приведён перечень некоторых из них.
 
     * :doc:`uDig <../overview/udig_overview>`
 
@@ -273,3 +212,5 @@ from |GS|. This is a list of just some of them
     * :doc:`Atlas Styler <../overview/atlasstyler_overview>`
 
     * :doc:`MapBender <../overview/mapbender_overview>`
+
+

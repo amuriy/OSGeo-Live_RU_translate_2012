@@ -1,4 +1,4 @@
-.. Writing Tip:
+﻿.. Writing Tip:
   Writing tips describe what content should be in the following section.
 
 .. Writing Tip:
@@ -41,11 +41,11 @@
 
 .. image:: ../../images/project_logos/logo-uDig.png
   :scale: 60 %
-  :alt: project logo
+  :alt: логотип
   :align: right
 
 ********************************************************************************
-uDig Quickstart 
+Начало работы с uDig
 ********************************************************************************
 
 .. Writing Tip:
@@ -54,21 +54,20 @@ uDig Quickstart
   Eg: For a Business Intelligence application, you should describe what
   Business Intelligence is.
 
-uDig (User Friendly Internet Desktop GIS), is a GIS Desktop client for
-editing and viewing Geospatial data.
+uDig представляет собой программу для просмотра и редактирования пространственных данных.
 
 .. Writing Tip:
   Describe what will be covered in this Quick Start.
 
-This Quick Start describes how to:
+В данном "введении" рассказывается о:
 
-  * load a map layers from a shapefile and :doc:`Web Map Service (WMS) <../standards/wms_overview>`
-  * use the standard map tools
-  * apply colour to map features using styling
+  * загрузке слоёв из шейп-файлов и :doc:`Web Map Service (WMS) <../standards/wms_overview>`;
+  * использовании стандартных картографических инструментов;
+  * изменении стиля отображения карты.
 
-.. contents:: Contents
+.. contents:: Содержание
   
-start uDig
+Запуск uDig
 ================================================================================
 
 .. Writing Tip:
@@ -80,8 +79,8 @@ start uDig
 
 .. TBD: Add menu graphic to this uDig Quickstart
 
-#. Choose |osgeolive-appmenupath-udig| from menu
-#. The application will take a few moments to start up
+#. Выберите |osgeolive-appmenupath-udig| из меню.
+#. Приложению нужно несколько секунд для старта.
 
 .. image:: ../../images/screenshots/800x600/udig_Quickstart1Splash.png
    :scale: 70 %
@@ -92,80 +91,74 @@ start uDig
     https://svn.osgeo.org/osgeo/livedvd/gisvm/trunk/doc/images/screenshots/1024x768/
 
 
-If you have any difficulties, or are running uDig please review the Running uDig reference page.
+Если у вас возникли трудности с запуском uDig, пожалуйста, просмотрите страницу "Запуск uDig".
 
-Welcome View
+Начальный вид
 ================================================================================
 
-#. When you start up uDig for the first time the Welcome view takes up the entire display. This screen
-   has links to tutorials, documentation and the project website.
+#. После первого запуска uDig откроется окно "Начальный вид" и займёт весь экран. Здесь размещены ссылки на руководства, документацию и веб-сайт проекта.
 
-#. Click the arrow labelled Workbench in the upper right corner, to reveal the contents of the uDig workbench.
+#. Нажмите на стрелку с надписью "Рабочий набор" в верхнем правом углу для показа состава рабочих наборов uDig.
   
   .. image:: ../../images/screenshots/800x600/udig_welcome.png
    :scale: 70 %
    
-You can return to the Welcome view at any time by selecting the :menuselection:`Help --> Welcome` from the menu bar.
+Вы можете вернуться к "Начальному виду" в любой момент, выбрав :menuselection:`Help --> Welcome` из меню.
 
-Workbench
+Рабочий набор
 ================================================================================
 
-The Workbench window offers multiple Editors (each showing a Map) and supporting Views (offering
-information about the current Map).
+Окно Рабочего набора предоставляет множество инструментов редактирования (каждый показан на карте) и поддерживает Виды (предоставляет информацию о текущей карте). 
 
   .. image:: ../../images/screenshots/800x600/udig_workbench.png
    :scale: 70 %
 
-Shown above is a typical uDig session with the 
+Ниже представлена типичная сессия в uDig:
 
-	#. Layers view (1), 
-	#. Projects view (2), 
-	#. Catalog view (3) and 
-	#. Map editor (4). 
+	#. вид слоев (1),
+	#. вид проектов (2), 
+	#. вид каталога (3) и 
+	#. редактор карт (4). 
 
-These views will be described further as we demonstrate their use.
+Эти виды будут описаны далее по ходу демонстрации их использования.
 
-Files
+Файлы
 ================================================================================
 
-To start out with we are going to load some of the sample data included on the DVD.
+Для начала мы загрузим некоторые данные примеров.
 
-#. Choose :menuselection:`Layer --> Add` from the menu bar to open up the **Add Data** wizard
+#. Выберите :menuselection:`Layer --> Add` из меню для открытия Мастера **Add Data**.
 
-#. Select **Files** from the list of data sources
+#. Выберите **Files** из списка источников данных.
 
-#. Press :guilabel:`Next` to open up a file dialog
+#. Нажмите :guilabel:`Next`, чтобы открыть диалог выбора файлов.
 
-#. The OSGeo-Live DVD contains sample data in:
+#. OSGeo-Live содержит данные примеров в:
    
-   * :file:`~/data` (a short cut to :file:`/usr/local/share/data`)
+   * :file:`~/data` (ссылка :file:`/usr/local/share/data`)
 
-#. Select the following file from the :file:`natural_earth` folder:
+#. Выберите следующий файл из папки :file:`natural_earth`:
    
    * :file:`10m_admin_0_countries.shp`
    
-#. Press :guilabel:`Open`
+#. Нажмите :guilabel:`Open`
    
-   * A new Map editor will be opened based on the contents of your shapefile. The default name and
-     projection of the Map has been taken from your shapefile.
+   * Откроется новый редактор карт на основе содержимого шейп-файлов. Имя и проекция карты будут взяты из шейп-файла.
    
-   * You can see the **Catalog view** has been updated with an entry for :file:`10m_admin_0_countries.shp`. This
-     view is used to track the use of resources by the uDig application.
+   * Вы можете заметить, что вид **Catalog view** обновился и в нём появилась запись для шейп-файла :file:`10m_admin_0_countries.shp`. Этот вид предназначен для отображения ресурсов, используемых uDig.
    
-   * The **Layers** view shows a single layer is displayed on this map. This view is used to change
-     the order and appearance of information in your Map.
+   * Вид **Layers** отображает отдельный слой карты. Этот вид используется для изменения порядка и отображения информации на карте.
    
-   * The **Projects** view has been updated to show that your map is stored in `projects > 10m admin 0 countries`.
-     You can have multiple projects open at a time, each project can have several maps.
+   * Вид **Projects** при обновлении показывает, что карта хранится в `projects > 10m admin 0 countries`.
+     Вы можете иметь множество одновременно открытых проектов, каждый проект может иметь несколько карт.
 
-#. Open up the :file:`~/data/natural_earth/HYP_50M_SR_W` folder on the desktop
+#. Откройте папку :file:`~/data/natural_earth/HYP_50M_SR_W` на рабочем столе.
 
-#. Drag :file:`HYP_50M_SR_W.tif` onto the Map Editor, a new layer is added to to the map.
+#. Перетащите :file:`HYP_50M_SR_W.tif` в окно редактора карт, при этом появится новый слой в карте.
 
-#. You can see the order the layers are drawn in the layer view. Right now the `HYP_50M_SR_W` layer is drawn
-   on top of the `10m admin 0 countries` layer.
+#. Вы можете видеть порядок слоев, в котором они отрисовываются в окне карты. Сейчас слой `HYP_50M_SR_W` рисуется поверх слоя `10m admin 0 countries`.
 
-#. Select the `HYP_50M_SR_W` layer in the catalog view and drag it to the bottom of the list
+#. Выберите слой `HYP_50M_SR_W` в окне каталога и перетащите его вниз списка.
   
   .. image:: ../../images/screenshots/800x600/udig_QuickstartCountriesMap.jpg
    :scale: 70 %
@@ -176,131 +169,119 @@ To start out with we are going to load some of the sample data included on the D
   the margin in some printed formats.
 
 .. note::
-   One of the most common questions asked when uDig is considered for an organization is how much memory
-   the application uses. Unlike most GIS applications uDig can get by with a fixed amount of memory. The
-   above shapefile is not loaded into memory, we have a policy of keeping data on disk and drawing data
-   like this shapefile onto the screen as needed.
+  Одним из самых распространенных вопросов, задаваемых при анализе возможности использования uDig в организации является: сколько памяти использует приложение? В отличие от большинства ГИС-приложений uDig можете занимать фиксированный объемом памяти. Шейп-файлы не загружаются в память, у нас есть политика хранения данных на диске и их отображения по мере необходимости.
 
 .. Writing Tip:
   Tips are used to provide extra useful information, and will 
   likely be rendered in the margin in some printed formats.
 
-.. tip:: You can also drag and drop shapefiles directly into the uDig application!
+.. tip:: Вы можете перетащить ("drag-and-drop") шейп-файлы прямо в окно приложения uDig!
 
-Map
+
+Карта
 ================================================================================
 
-You can control where in the world the Map Editor is looking by using the navigation tools in the tool bar along the top of the screen.
+Вы можете управлять, каким именно образом редактор карт отображает контент, используя навигационные инструменты на панели инструментов в верхней части экрана.
 
 
-#. The |ZOOM| Zoom tool is available by default
+#. |ZOOM|Инструмент масштабирования доступен по умолчанию.
    
    .. |ZOOM| image:: ../../images/screenshots/800x600/udig_zoom_mode.gif
    
-   * Use the zoom tool by drawing a box using the left mouse button around the area of the world you wish
-     to see.
-   * To zoom out draw a box with the right mouse button. The current map extents will be located within
-     the box you draw.
+   * Используйте инструмент масштабирования, рисуя прямоугольник на экране вокруг области карты, которую необходимо приблизить/отдалить.
+   * Для уменьшения рисуйте прямоугольник правой клавишей мыши. Текущий экстент будет локализован внутри нарисованного прямоугольника.
 
-#. The |PAN| Pan tool can be used to scroll around your map with out changing scale.
+#. |PAN| Инструмент перемещения служит для сдвига карты без изменения масштаба.
   
    .. |PAN| image:: ../../images/screenshots/800x600/udig_pan_mode.gif
 
-#. There are also several navigation buttons that can be used at any time:
+#. Имеется несколько навигационных кнопок, которые могут быть использованы в любой момент:
  
-   * |SHOWALL| Show All, can be used to return to the full extents at any time
+   * Инструмент |SHOWALL| "Показать всё" может быть использован для возврата к полному охвату в любой момент времени.
    
      .. |SHOWALL| image:: ../../images/screenshots/800x600/udig_zoom_extent_co.gif
 
-   * |ZOOM_IN| Zoom In and |ZOOM_OUT| Zoom Out can be used to change the scale by a fixed amount.
+   * Инструменты |ZOOM_IN| "Приблизить" и |ZOOM_OUT| "Отдалить" могут быть использованы для изменения масштаба.
 
      .. |ZOOM_IN| image:: ../../images/screenshots/800x600/udig_zoom_in_co.gif
      .. |ZOOM_OUT| image:: ../../images/screenshots/800x600/udig_zoom_out_co.gif
 
-   * You can use Navigation Back |BNAV| and Forward |FNAV| in the menu bar to cycle though previously
-     visited locations.
+   * Вы можете использовать инструменты навигации "Назад" |BNAV| и "Вперёд" |FNAV| в меню для перемещения между предыдущими местоположениями.
 
      .. |BNAV| image:: ../../images/screenshots/800x600/udig_backward_nav.gif
      .. |FNAV| image:: ../../images/screenshots/800x600/udig_forward_nav.gif
 
-.. tip:: Most tools allow you to Pan by holding the center button and control the scale using the
-   scroll wheel.
+.. tip:: Большинство инструментов позволяют перемещать содержимое окна карты, зажимая центральную клавишу мыши и изменять масштаб колесом прокрутки.
 
-Web Map Server
+WMS
 ================================================================================
 
-One of the reasons to use an application like uDig is to access all the great free geospatial
-information available on the web. This section covers the use of Web Map Servers which make
-available layers of information that you can mix into your own maps.
+Одной из причин использовать приложения типа uDig — это доступ ко всем замечательным ресурсам пространственных данных в сети Интернет. Данная глава посвящена использованию WMS.
 
-.. note:: If you are not connected to the Internet run |osgeolive-appmenupath-geoserver| 
-   for a local WMS. The script will open a page with a "Service Capabilities" section and two links for WMS Services 
-   you can drag into your empty map.
+.. note:: Если у вас нет доступа в Интернет, запустите |osgeolive-appmenupath-geoserver| для создания локального WMS. Скрипт откроет страницу с данными "Service Capabilities" и двумя ссылками для WMS, которые вы можете перетащить в вашу пустую карту.
 
-.. tip:: You can also connect to Web Map Servers using the **Add Data** (:menuselection:`Layer --> Add...`) Wizard
-  for Drag and Drop.
+.. tip:: Также, вы можете подключится к WMS используя мастер **Add Data** (:menuselection:`Layer --> Add...`).
 
-#. Select :menuselection:`File --> New --> New Map` from the menu bar
+#. Выберите :menuselection:`File --> New --> New Map` в меню.
 
-#. Change to the **Web** view, click on the tab next to the **Catalog** view to reveal the *Web* view.
+#. Переключите на вид **Web**, кликните на вкладке после вида **Catalog** для отображения вида *Web*.
 
 	.. image:: ../../images/screenshots/800x600/udig_WebViewClick.png
 		:scale: 50 %
 
-#. Click on the link WMS\:`dm solutions`_ link
+#. Кликните на ссылке WMS\:`dm solutions`_ link
 
 	.. _dm solutions: http://www2.dmsolutions.ca/cgi-bin/mswms_gmap?Service=WMS&VERSION=1.1.0&REQUEST=GetCapabilities
 
-#. From the Resource Selection page we are going to choose the following layers:
+#. На странице выбора ресурсов выберите следующие слои:
 
-   * Elevation/Bathymetry
-   * Parks
-   * Cities
+   * Высоты/батиметрия
+   * Парки
+   * Населённые пункты
    
 	.. image:: ../../images/screenshots/800x600/udig_AddWMSLayers.png
 		:scale: 70 %
 
-#. Press :guilabel:`Finish` to add these layers to your map
+#. Нажмите :guilabel:`Finish` для добавления слоев на карту.
    
 	.. image:: ../../images/screenshots/800x600/udig_WMSMap.png
 		:scale: 70 %
 
-#. Use the |ZOOM| Zoom Tool to move closer to one of the Parks
+#. Используйте |ZOOM| инструмент масштабирования для приближения к одному из парков.
 
-#. Switch to the |INFO| Info Tool and click on one the parks to learn more about it
+#. Переключитесь на |INFO| инструмент информации и кликните на парке для изучения информации о нём.
 
 .. |INFO| image:: ../../images/screenshots/800x600/udig_info_mode.gif
 
-.. tip:: You can switch between the zoom and info tools by pressing `Z` and `I` on the keyboard.
+.. tip:: Вы можете переключаться между инструментами масштабирования и информации, нажимая клавиши `Z` и `I` на клавиатуре.
 
-Style
+Стили
 ================================================================================
 
-#. Select the `project > 10m admin 0 countries`, you can double click to open this Map, or Right Click and choose Open Map
+#. Выберите `project > 10m admin 0 countries`. Вы можете открыть эту карту двойным щелчком или щелчком ПКМ и выбором пункта "Открыть карту".
 
-#. Select the countries layer in the Layer view
+#. Выберите слой countries в виде "Слои".
 
-#. Open up the **Style Editor** by right clicking on `10m admin 0 countries` layer and choosing :guilabel:`Change Style`
+#. Откройте **Style Editor** щелчком ПКМ на слое `10m admin 0 countries` и выберите :guilabel:`Change Style`.
 
-#. We are going to change a few things about how countries are displayed
+#. Мы собираемся изменить настройки отображения для слоя *countries*
    
-   * Line: Click :guilabel:`Border`, click on the Color button and change the color to BLACK
+   * линии: нажмите :guilabel:`Border`, нажмите кнопку Цвет и измените цвет на чёрный;
    
-   * Fill: On Tab :guilabel:`Fill` uncheck the box :guilabel:`enable/disable fill` to turn off fill
+   * заливка: на вкладке :guilabel:`Fill` снимите выбор :guilabel:`enable/disable fill` чтобы отключить заливку;
    
-   * Label: On Tab :guilabel:`Labels` check the box :guilabel:`enable/disable labeling`, and choose the attribute **NAME** from the list of attributes
+   * подписи: на вкладке :guilabel:`Labels` поставьте выбор :guilabel:`enable/disable labeling`, и отметьте **NAME** из списка атрибутов.
 
    .. image:: ../../images/screenshots/800x600/udig_StyleEditor.png
       :scale: 70 %
 
-#. Press :guilabel:`Apply` to see what this looks like on your Map, the **Layer** view will also be updated
-   to reflect the current style
+#. Нажмите :guilabel:`Apply`, чтобы увидеть как это выглядит на нашей карте. Вид **Layer** будет также обновлён, чтобы соответствовать текущему стилю.
 
-#. When you are happy with the result you can press :guilabel:`Close` to dismiss the dialog
+#. Если вам понравился результат, вы можете нажать :guilabel:`Close`, чтобы закрыть диалог.
 
-.. note:: Some files include style settings. The Style definition can be found in files with the :file:`*.sld` extension. The name itself should be equal to the file containing the data. If such a :doc:`Styled Layer Description (SLD) <../standards/sld_overview>` file exists, the style will be applied automatically. 
+.. note:: Некоторые файлы содержат настройки стиля. Настройки стиля могут быть в файлах с расширением :file:`*.sld`. Название файла стиля должно совпадать с файлом данных. Если такой файл :doc:`Styled Layer Description (SLD) <../standards/sld_overview>` создан, то стиль будет применен автоматически. 
 
-Sometimes it is a bit hard to see what is going on with layer providing much details. To get focused on the task you like to work on, you can choose :menuselection:`Map --> Mylar` from the menu bar. Using the *Layer* view select different layers in turn to see the effect. You can turn off this effect at any time using :menuselection:`Map --> Mylar` from the menu bar.
+Иногда тяжело определить, что творится со стилем, имеющем множество деталей. Для того, чтобы сфокусироваться на задаче, с которой вы хотите работать, вы можете выбрать :menuselection:`Map --> Mylar` из меню. При помощи вида *Layer* выберите различные слои, чтобы увидеть эффект. Вы можете отключить эффект в любой момент при помощи меню :menuselection:`Map --> Mylar`.
   
 	.. image:: ../../images/screenshots/800x600/udig_MapMylar.jpg
 		:scale: 70 %
@@ -315,32 +296,31 @@ Sometimes it is a bit hard to see what is going on with layer providing much det
   found in documentation packaged on OSGeo-Live, as users might not be
   connected to the Internet.
 
-Things to Try
+Что еще
 ================================================================================
 
-Here are some additional challenges for you to try:
+Вот некоторые дополнительные действия, которые стоит попробовать:
 
-#. Try viewing your own GIS map layers, or try adding a layer from a :doc:`Web Feature Service (WFS) <../standards/wfs_overview>` 
-#. Try styling the WFS layer.
+#. Попробуйте отобразить вашу собственную карту или попробуйте добавить слой из :doc:`Web Feature Service (WFS) <../standards/wfs_overview>`.
+#. Попробуйте настроить стили слоя WFS.
 
-What Next?
+Что дальше?
 ================================================================================
 
 .. Writing tip
   Provide links to further tutorials and other documentation.
 
-This is only the first step on the road to using uDig. There is a lot more great material (and ability) left for you to discover in our **walkthrough** documents.
+Это только первый шаг к использованию uDig. Есть множество хороших материалов для изучения в документах типа **walkthrough**:
 
-* Walkthrough 1
+* Пошаговое руководство 1
 
-  Try out the use of :doc:`PostGIS <../overview/postgis_overview>`, extract data from a Web Feature Server and explore the
-  use of **Themes** with our powerful `Color Brewer` technology.
+  Попробуйте воспользоваться :doc:`PostGIS <../overview/postgis_overview>` для получения данных от WFS и изучить использование **Themes** при помощи мощной технологии `Color Brewer`.
 
   :file:`/usr/local/share/udig/udig-docs/uDigWalkthrough 1.pdf`
 
-* Walkthrough 2 - Learn how to create shapefiles and use the Edit tools to manipulate
-  feature data, covers the installation of :doc:`GeoServer <../overview/geoserver_overview>` and editing with a Web Feature
-  Server.
+* Пошаговое руководство 2
 
-  Available on http://udig.refractions.net/
+  Изучите, как создавать шейп-файлы и использовать инструменты редактирования для управления пространственными данными. Руководство охватывает установку :doc:`GeoServer <../overview/geoserver_overview>` и редактирование WFS.
+
+  Всё это доступно по ссылке http://udig.refractions.net/
 
