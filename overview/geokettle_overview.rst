@@ -12,100 +12,99 @@
 GeoKettle
 ================================================================================
 
-Extract Transform Load (ETL)
+Извлечение, преобразование и загрузка данных (ETL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-GeoKettle is a "spatially-enabled" version of `Pentaho Data Integration <http://kettle.pentaho.com>`_ (also known as Kettle). It is a powerful, metadata-driven spatial ETL (Extract, Transform and Load) tool dedicated to the integration of different data sources for building and updating geospatial databases, data warehouses and web services.
+GeoKettle — это версия `Pentaho Data Integration <http://kettle.pentaho.com>`_ (известного как Kettle), поддерживающая пространственные данные. Это мощный инструмент, использующий пространственные метаданные ETL (Extract, Transform and Load), предназначенный для интеграции различных источников данных при создании и обновлении пространственных БД, хранилищ данных и сервисов.
 
-GeoKettle enables the Extraction of data from data sources, the Transformation of data in order to correct errors, clean data, change data structure, make data compliant with standards, and Loading of transformed data into a target DataBase Management System (DBMS), GIS file, or geospatial web service. GeoKettle is particularly useful for automating complex and repetitive data processing without producing specific code, converting between data formats, migrating data between databases, feeding data into databases, etc.
+GeoKettle позволяет извлекать данные из исходного источника, чистить их, исправлять в них ошибки, изменять структуру данных, приводить данные в совместимый вид согласно выбранным стандартам и загружать подготовленные данные в целевые БД, ГИС-файлы или на пространственные сервисы. GeoKettle полезен для автоматизации сложных и повторяющихся задач обработки данных без написания специального кода, конвертирования форматов, миграции между базами данных и т.д.
 
-In the geospatial domain, Geokettle compares to FME, a proprietary spatial ETL tool. GeoKettle is stable, fast, standards compliant, with hundreds of functions and read/write support for many file formats, services and DBMS. GeoKettle is used by diverse organisations from around the world, including governmental agencies, banks, insurance and geospatial system integrators.
+Geokettle сравнивают с FME, проприетарным ETL-инструментом. GeoKettle стабилен, быстр, поддерживает множество стандартов и чтение/запись и обработку сотен различных форматов данных, сервисов и баз данных. GeoKettle используется различными организациями по всему миру, включая правительственные структуры, банки, страховые компании и системы интеграции пространственных данных.
 
 .. image:: ../../images/screenshots/1024x768/geokettle-overview.png
   :scale: 50 %
   :alt: project logo
   :align: right
 
-Core Features
+Базовые функции
 --------------------------------------------------------------------------------
 
-* Extract data from: 
+* Извлечение данных из: 
 
-  * 35+ database types: MySQL, PostgreSQL/PostGIS, Oracle, ...
-  * XML files
-  * XLS files
-  * Xbase files (dBase, Foxpro, etc)
+  * более чем 35 типов БД: MySQL, PostgreSQL/PostGIS, Oracle, ...
+  * XML-файлов
+  * XLS-файлов
+  * Xbase-файлов (dBase, Foxpro, и т.д.)
   * File systems information
   * Generated data
-  * MS Access files
+  * MS Access файлов
   * LDAP
-  * SOLAP (Spatial OLAP) system: GeoMondrian
-  * Geospatial data formats: Shapefile, GML 3.1.1, KML 2.2, all OGR supported formats
-  * OGC Web services: Web Feature Service (WFS), Sensor Observation Service (SOS), Catalogue Web Service (CSW)
+  * SOLAP (Spatial OLAP) систем: GeoMondrian
+  * Пространственных форматов данных: Shapefile, GML 3.1.1, KML 2.2, всех совместимых с OGR форматов
+  * OGC веб-сервисов: Web Feature Service (WFS), Sensor Observation Service (SOS), Catalogue Web Service (CSW)
 
-* Transformation of data:
+* Преобразование данных:
 
-  * Engine based data transfer (no code generator) 
-  * Looking up data in databases, files or memory
-  * Calculating
-  * Scripting: Javascript, SQL, RegExp
-  * Splitting
-  * Mapping
-  * Selecting
-  * Partitioning
-  * Filtering
-  * Merging
-  * Joining
-  * Duplicating
-  * Clustering (MPP)
-  * Pivotting
-  * Geospatial data analysis: buffer, centroid, distance, intersection, union, ...
-  * Advanced geoprocessing: clipping, delaunay, simplify/smooth geometry, split features, ...
-  * Spatial aggregation
-  * Cartographic preview
+  * Преобразование данных, основанное на движке (нет генератора кода) 
+  * Поиск данных в БД, файлах или памяти
+  * Произведение расчётов
+  * Написание скриптов: Javascript, SQL, RegExp
+  * Разделение
+  * Картирование
+  * Отбор
+  * Разбиение
+  * Фильтрация
+  * Объединение
+  * Присоединение
+  * Дублирование
+  * Кластеризация (MPP)
+  * Привязка
+  * Анализ пространственных данных: буфера, центроиды, дистанции, пересечения, объединения ...
+  * Геопроцессинг: вырезание, преобразование Делоне, упрощение/сглаживание геометрии, разбиение объектов, ...
+  * Пространственное объединение
+  * Предварительный просмотр карты
 
-* Load data into a target format:
+* Загрузка данных в целевые форматы:
 
-  * Database loads: MySQL, PostgreSQL/PostGIS, Oracle, ...
-  * Data warehouse population
-  * Geospatial data formats: Shapefile, GML 3.1.1, KML 2.2, all OGR supported formats
-  * OGC Web services: Catalogue Web Service (CSW), ...
-  * Partitioned loading
-  * Bulk loading
-  * Parallel loading
-  * Clustering
+  * Базы данных: MySQL, PostgreSQL/PostGIS, Oracle, ...
+  * Хранилища данных
+  * Форматы пространственных данных: Shapefile, GML 3.1.1, KML 2.2, все совместимые с OGR форматы
+  * OGC веб-сервисы: Catalogue Web Service (CSW), ...
+  * Частичные загрузки
+  * Массовые загрузки
+  * Параллельные загрузки
+  * Кластеризация
 
-* Environment:
+* Среды:
   
-  * Full GUI named "Spoon" to edit every transformation options
-  * Command line tools: execute jobs and transformations
-  * Web server: remote execution and clustering perfect in cloud
-    computing environment for very large datasets processing
-  * Programming API for Java
-  * Plugin eco-system
+  * Пользовательский интерфейс "Spoon" для управления настройками преобразований
+  * Инструменты командной строки: процессы и преобразования
+  * Веб-сервер: удаленные вычисления и кластеризация и облачные вычисления для больших наборов данных
+  * API для Java
+  * Система расширений
 
-Implemented Standards
+Реализованные стандарты
 --------------------------------------------------------------------------------
 
-* OGC standards compliant (SFS, CSW, SOS)
+* Совместимость со стандартами OGC (SFS, CSW, SOS).
 
-Details
+Дополнительная информация
 --------------------------------------------------------------------------------
 
-**Website:** http://www.geokettle.org/
+**Веб-сайт:** http://www.geokettle.org/
 
-**Licence:** GNU Lesser General Public License (LGPL) version 2.1
+**Лицензия:** LGPL version 2.1 http://www.gnu.org/copyleft/lesser.html
 
-**Software Version:** 2.0
+**Версия ПО:** 2.0
 
-**Supported Platforms:** Windows, Linux, Mac, Solaris
+**Поддерживаемые платформы:** Windows, Linux, Mac, Solaris
 
-**API Interfaces:** Java, Javascript
+**Интерфейсы API:** Java, Javascript
 
-**Support:** http://www.spatialytics.org & http://www.spatialytics.com
+**Поддержка:** http://www.spatialytics.org & http://www.spatialytics.com
 
 
-Quickstart
+Начало работы
 --------------------------------------------------------------------------------
     
-* :doc:`Quickstart documentation <../quickstart/geokettle_quickstart>`
+* :doc:`Введение <../quickstart/geokettle_quickstart>`

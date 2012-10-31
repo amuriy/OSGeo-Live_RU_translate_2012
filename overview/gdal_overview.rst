@@ -18,67 +18,64 @@
 GDAL/OGR
 ================================================================================
 
-Geospatial Data Translation Tools
+Инструменты для работы с геопространственными данными
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Geospatial Data Abstraction Library (GDAL/OGR) provides command-line
-utilities to translate and process a wide range of raster and vector
-geospatial data formats.
+Библиотека для работы с пространственными данными (Geospatial Data Abstraction
+Library - GDAL/OGR) включает набор утилит командной строки, служащих
+для преобразования и обработки широкого набора различных растровых и векторных форматов данных.
 
-The utilities are based upon a cross platform, C++ library, accessible
-via numerous programming languages.  As a library, it presents a single
-abstract data model to the calling application for all supported formats.
+Утилиты используют кроссплатформенную библиотеку C++, доступную для множества
+языков программирования. Как библиотека, GDAL предоставляет собой единую абстрактную
+модель данных для вызова приложений и для всех поддерживаемых форматов.
 
-GDAL/OGR is the most widely used geospatial data access library. It provides
-the primary data access engine for many applications including MapServer,
-GRASS, QGIS, and OpenEV. It is also utilized by packages such as OSSIM,
-Cadcorp SIS, FME, Google Earth, VTP, Thuban, ILWIS, MapGuide and ArcGIS.
+GDAL/OGR — наиболее широко распространенная библиотека доступа к пространственным данным, она предоставляет механизм доступа к первичным данным множества приложений, таких как MapServer,
+GRASS, QGIS и OpenEV и многих других. Она также используется в таких приложениях, как OSSIM,
+Cadcorp SIS, FME, Google Earth, VTP, Thuban, ILWIS, MapGuide и ArcGIS.
 
 .. image:: ../../images/screenshots/1024x768/gdal_ogr_proj_overview.png
   :scale: 60 %
-  :alt: GDAL supports many geodata formats
+  :alt: GDAL поддерживает множество форматов геоданных
   :align: right
 
-Core Features
+Основные возможности
 --------------------------------------------------------------------------------
 
-* Command-line utilities for data translation, image warping, subsetting, and various other common tasks
-* Highly efficient raster data access, taking advantage of tiling and overviews
-* Support for large files - larger than 4GB
-* Library access from Python, Java, C#, Ruby, VB6 and Perl
-* Coordinate system engine built on PROJ.4 and OGC Well Known Text coordinate system descriptions
+* Утилиты командной строки для преобразования форматов, перепроецирования, вырезания фрагментов и многих других распространённых задач.
+* Эффективный доступ к растровым данным, обеспечивающий разрезание на тайлы и обзор больших растров.
+* Поддержка больших файлов (размером более 4 Гб).
+* Доступ к библиотеке из Python, Java, C#, Ruby, VB6 и Perl.
+* Движок координатных систем, встроенный в PROJ.4 и хорошо известные текстовые описания координатных систем OGC.
 
-Popular Supported Formats
+Поддержка распространенных форматов
 --------------------------------------------------------------------------------
 
-GDAL supports over 50 raster formats, and OGR over 20 vector formats.
+GDAL поддерживает более 50 растровых форматов, OGR — более 20 векторных. Среди них:
 
-These include:
+* **Растровые:** GeoTIFF, Erdas Imagine, SDTS, ESRI Grids, ECW, MrSID, JPEG2000, DTED, и другие ...
+* **Векторные:** MapInfo (TAB и MIF/MID), ESRI Shapefile, ESRI Coverages, ESRI Personal Geodatabase, DGN, GML, PostGIS, Oracle Spatial, и другие ...
 
-* **Raster:** GeoTIFF, Erdas Imagine, SDTS, ESRI Grids, ECW, MrSID, JPEG2000, DTED, and more ...
-* **Vector:** MapInfo (tab and mid/mif), ESRI Shapefile, ESRI Coverages, ESRI Personal Geodatabase, DGN, GML, PostGIS, Oracle Spatial, and more ...
-
-Implemented Standards
+Реализованные стандарты
 --------------------------------------------------------------------------------
 
-The OGR vector data model is compliant with the OGC Simple Features specification.
+Модель векторных данных OGR совместима со спецификацией OGC Simple Features.
 
-Details
+Дополнительная информация
 --------------------------------------------------------------------------------
 
-**Website:**  http://www.gdal.org
+**Веб-сайт:**  http://www.gdal.org
 
-**Licence:** `X/MIT style Open Source license <http://trac.osgeo.org/gdal/wiki/FAQGeneral#WhatlicensedoesGDALOGRuse>`_
+**Лицензия:** `основанная на MIT <http://trac.osgeo.org/gdal/wiki/FAQGeneral#WhatlicensedoesGDALOGRuse>`_
 
-**Software Version:** 1.7.0 (1.9.1)
+**Версия ПО:** 1.7.0 (1.9.1)
 
-**Supported Platforms:** Windows, Linux, Mac
+**Поддерживаемые платформы:** Windows, Linux, Mac
 
-**API Interfaces:** C, C++, Python, Java, C#, Ruby, VB6 and Perl
+**Интерфейсы API:** C, C++, Python, Java, C#, Ruby, VB6 и Perl
 
-**Support:** http://lists.osgeo.org/mailman/listinfo/gdal-dev, http://www.osgeo.org/search_profile
+**Поддержка:** http://lists.osgeo.org/mailman/listinfo/gdal-dev, http://www.osgeo.org/search_profile
 
-Quickstart
+Начало работы
 --------------------------------------------------------------------------------
     
-* :doc:`Quickstart documentation <../quickstart/gdal_quickstart>`
+* :doc:`Введение <../quickstart/gdal_quickstart>`

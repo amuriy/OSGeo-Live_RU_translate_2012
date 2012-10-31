@@ -1,4 +1,4 @@
-:Author: Richard R. Schneider Dept. Biological Sciences University of Alberta Edmonton, Alberta, Canada 
+﻿:Author: Richard R. Schneider Dept. Biological Sciences University of Alberta Edmonton, Alberta, Canada 
 :Author: Paul Meems, TopX Geo-ICT The Netherlands (RST conversion)
 :Product: MapWindow GIS 4.8.6
 :Version: osgeo-live5.5draft
@@ -15,664 +15,343 @@
   :target: http://www.mapwindow.org
   
 ===============
-1. Introduction
+1. Введение
 ===============
-This quickstart provides an introduction to a limited set of the functionality 
-provided by MapWindow GIS v4.8.6 and it provides instructions on how to accomplish 
-a suite of basic GIS tasks. My aim is to provide an easy-to-follow guide for users that are mainly interested in displaying GIS
-data, conducting simple queries, and exporting high quality maps for use in publications and
-presentations. This being the case, not all of the functionality of MapWindow is covered. In
-particular, the guide only covers the main program and not the plug-ins (except for the shapefile
-editor).
+Это краткое руководство представляет собой введение в использование ГИС MapWindow v4.8.6 и содержит инструкции о том, как выполнить набор базовых ГИС-задач. Цель этого документа заключается в предоставлении простого пошагового руководства для пользователей, которые заинтересованы, главным образом, в отображении данных ГИС, проведении простых запросов и экспорта высококачественных карт для использования в публикациях и презентациях. Следует отметить, что не вся функциональность MapWindow отражена в данном руководстве. В-частности, руководство распространяется только на основную программу, а не на модули (за исключением редактора шейп-файлов).
 
-The MapWindow desktop software is available for free download as a single ready-to-install
-.exe file from the MapWindow website: www.mapwindow.org. MapWindow is a **native Windows**
-application that requires installation of the Microsoft .NET framework. It runs on XP, Vista, and
-Windows 7 and works fine on 64-bit machines. The program is quite intuitive to use and new users
-will be up and running quickly. With only a couple of exceptions it provides a user experience
-that meets or exceeds that of ArcMap, for the procedures covered in this guide. 
+Настольное программное обеспечение MapWindow свободно доступно для скачивания, как единый готовый к установке исполняемый файл с веб-сайта MapWindow: www.mapwindow.org. MapWindow и является **native Windows** приложением, которое требует установки Microsoft. NET Framework. Приложение запускается на XP, Vista и Windows 7 и прекрасно работает на 64-разрядных машинах. Программа довольно удобна в использовании и порог вхождения новых пользователей невысок. За исключением нескольких вещей, программа требует пользовательского опыта, который соответствует опыту работы в ArcMap или немного превышает его.
 
-The MapWindow desktop program that is the focus of this guide is just one part of a larger
-open-source project. The core software is also available as an ActiveX component, allowing
-programmers to develop customized GIS applications. It is also possible for advanced users to
-modify and extend the desktop program to fit individual needs. More information on the MapWindow
-project and its various facets can be obtained from the MapWindow website. 
+Настольное программное обеспечение MapWindow, которое описано в данном руководстве, является лишь одной частью большого проекта с открытым исходным кодом. Основная программа также доступна в виде ActiveX-компонента, позволяющего программистам разрабатывать собственные ГИС-приложения. Продвинутые пользователи также могут менять и расширять настольное приложение с учетом индивидуальных потребностей. Более подробную информацию о проекте MapWindow и его различных аспектах можно получить на веб-сайте MapWindow.
 
-Because MapWindow is under continuous development it may not behave exactly as described in
-this guide if you are using a newer version of the program. A web-based users guide is under
-development in the MapWindow website and you might want to have a look there if you are running
-into problems or want information on functions not covered here.
+MapWindow находится в постоянном развитии, поэтому его поведение может отличаться от описанного в данном руководстве, в случае использования более новой версии программы. Веб-руководство для пользователей находится в стадии разработки на веб-сайте MapWindow, и вы можете заглянуть в него если столкнетесь с проблемами или захотите получить информацию о функциях, которые здесь не рассматриваются.
 
 ===================
-2. Getting Started
-===================
---------------
-2.1 Projects
---------------
-The project file maintains a record of the different layers, labels, colors and
-styles you have defined for your map. When MapWindow starts it initiates a new project. You can
-also start a new project at any time by clicking the
-**New** toolbar button. Any changes that you make to a project are not stored until
-you click the
-**Save** toolbar button, or save when prompted on exit. Previous projects are accessed
-by clicking the
-**Open** toolbar button or selecting
-**File** from the top menu and clicking
-**Recent Projects**. You can also double click on the project file name in Windows Explorer,
-which opens the project in a new instance of MapWindow. Project files carry the extension .mwprj.
-
-Besides saving the layers and related symbology the project file stores a few
-additional settings such as map units, projections, and so on. These can be accessed by selecting
-the **File** menu and clicking on
-**Settings**. Users will generally not have to make any changes to these settings so they
-will not be discussed here.
+2. Начало работы
 
 --------------
-2.2 Plug-ins
+2.1 Проекты
 --------------
-The installation program installs a
-number of core plug-ins, such 
-**Shapefile Editor**, that provide additional functionality to the base program.
-Additional plug-ins are available from the MapWindow website. To install a new plug-in download
-the zip file and extract it to the MapWindow plug-in folder, usually C:\\Program
-Files\\MapWindow\\Plugins. Sometimes the plug-in is a single .dll, but it can also be a folder
-containing multiple files in which case the whole folder goes into \\MapWindow\\Plugins. 
+Файл проекта содержит информацию о различных слоях, надписях, цветах и стилях, определённых для вашей карты. При запуске MapWindow формируется новый проект. Вы можете также начать новый проект в любое время, нажав на кнопку **New** на панели инструментов. Любые изменения, которые вы вносите в проект, не сохраняются, пока вы не нажмете кнопку **Save** на панели инструментов или не ответите утвердительно на запрос о сохранении при выходе из программы. При нажатии на кнопку **Open** на панели инструментов или выборе подменю **Recent Projects** из меню **File** главного меню, откроется доступ к предыдущим проектам. Вы также можете дважды щёлкнуть на имени файла проекта в проводнике Windows, в результате проект откроется в новом экземпляре MapWindow. Файлы проекта имеют расширение .mwprj.
 
-Before you can use any of the plug-ins they have to be activated within MapWindow. To do
-this select 
-**Plug-ins** from the main menu and click on the plug-in you wish to activate. It
-will remain activated, even in new projects, until you click it again. Once a plug-in is
-activated a new toolbar button or menu item will be displayed enabling you to use it. 
+Кроме сохранения слоёв и связанных с ними символикой, файлы проекта хранят дополнительные настройки, такие, как единицы измерения карты, проекции и т.п. Доступ к ним можно получить, выбрав из меню **File** подменю **Settings**. Пользователям обычно не нужно вносить изменения в эти настройки, поэтому они не будут обсуждаться здесь.
+
+--------------
+2.2 Модули
+--------------
+Инсталлятор устанавливает ряд основных модулей (в т.ч. **Shapefile Editor**), которые обеспечивают дополнительную функциональность к базовой программе. Дополнительные модули доступны на веб-сайте MapWindow. Чтобы установить новый модуль необходимо скачать zip файл и распаковать его в папку модулей расширения MapWindow, как правило в C:\\Program Files\\MapWindow\\Plugins. Иногда модуль является одним .dll, но модуль может быть и папкой, содержащей несколько файлов. В этом случае вся папка перемещается в \\MapWindow\\Plugins. 
+
+Прежде чем вы сможете использовать любой из модулей, они должны быть активированы в MapWindow. Для этого выберите меню **Plug-ins** из главного меню и выберите модули, которые хотите активировать. Они будут оставаться активированным, даже в новых проектах, пока вы не деактивируете их. После того, как какой-либо модуль активирован, появятся новые кнопки на панели инструментов или пункты в меню.
 
 ----------------------
-2.3 Adding data layers
+2.3 Добавление слоёв
 ----------------------
-The maps you produce will
-usually be composed of several GIS data layers. These layers are adding either by dragging and
-dropping files from Windows Explorer onto the map display window or by clicking the 
-**Add** toolbar button. Each layer that is added is listed in the legend window (use 
-**View -> Panels -> Show Legend** if it is not visible). Double clicking the layer in
-the legend or clicking the 
-**Properties** toolbar button will bring up the 
-**Layer properties** dialog which has several tabs for making changes to a layers
-properties. For example, to change the name displayed in the legend select the 
-**General** tab and modify the text in the 
-**Name** textbox. Other properties will be dealt with in subsequent sections. To
-remove a map layer click the 
-**Remove** toolbar button. Clicking the 
-**Clear** toolbar button will remove all map layers. 
+Карты, создаваемые в ГИС, обычно состоят из нескольких "слоёв" геоданных. Слои могут быть добавлены как путём перетаскивания файлов из проводника Windows в окно карты, так и нажатием кнопки **Add** на панели инструментов. Каждый добавляемый слой появляется в окне легенды (используйте **View -> Panels -> Show Legend**, если окно скрыто). Двойной клик на слое в легенде или нажатие кнопки **Properties** на панели инструментов открывает диалог **Layer properties**, который имеет несколько вкладок для внесения изменений в свойства слоёв. Например, чтобы изменить имя, отображаемое в легенде, выберите вкладку **General** и измените текст в поле **Name**. Другие свойства будут рассмотрены в последующих разделах. Чтобы удалить слой из карты, нажмите кнопку **Remove** на панели инструментов. Кнопка **Clear** удаляет все слои карты.
 
-The colored icons displayed in the legend illustrate the type of data in the layers
-(polygon, line or point) and the current symbology. The order of the layers in the legend
-determines the overlay order in the map: layers that are higher in the list cover layers that are
-lower. If a layer seems to be missing it might be because it is completely covered by other
-layers. To change the order of a layer just click and drag it to where you want it to go. A small
-checkbox beside each legend entry allow you to turn the display of individual map layers on and
-off. 
+Цветные значки, отображаемые в легенде, иллюстрируют тип данных в слоях (полигон, линия или точка), а также текущую символику. Порядок слоёв в легенде определяет порядок отображения на карте: слои, которые находятся выше в списке слоёв, перекрывают слои, которые расположены ниже. Если кажется, что слой отсутствует, возможно, он полностью перекрыт другими слоями. Чтобы изменить порядок слоёв, просто выделите его и перетащите в нужное место. Флажок (checkbox) рядом с каждой записью в легенде позволяет переключить отображение отдельных слоёв карты.
 
-MapWindow will display different kinds of GIS data, including: vectors (polygons, lines,
-and points), rasters (rectangular grids of data), and images. Many different file formats are
-supported, including .shp, .asc, .aux, .bgd, .bil, .dem, dt1, .hdr, .img, .jpg, .sid, .std, .tif
-and others. The ESRI shapefile (.shp) is the vector format used by MapWindow when generating new
-vector files. It uses GeoTiff and the .bgd format when generating new raster files. 
+MapWindow может отображать различные виды геоданных, в том числе: векторные (полигоны, линии и точки), растровые (прямоугольные сетки данных) и изображения. Поддерживается множество различных форматов файлов, в том числе .shp, .asc, .aux, .bgd, .bil, .dem, dt1, .hdr, .img, .jpg, .sid, .std, .tif и другие. Шейп-файлы ESRI (.shp) представляют собой векторный формат, используемый MapWindow при создании новых векторных файлов. При создании растров используется форматы GeoTIFF и .bgd.
 
-To add a scale to your map open the 
-**View** menu and select 
-**Show Floating Scale Bar**. 
+Чтобы добавить масштабную линейку, необходимо открыть меню **View** и выбрать **Show Floating Scale Bar**. 
 
 -----------------
-2.4 Projections
+2.4 Проекции
 -----------------
-A projection is a mathematical
-transformation used to display the 3-dimensional earth onto your 2-dimensional computer screen.
-Different projections are available, each with its own benefits, costs, and appropriate uses. A
-detailed discussion of projections is beyond the scope of this guide, but a few basic points need
-to be covered. The main issue is that the various layers in your project all need to use the same
-projection if the overlays are to line up. In MapWindow, the projection of a layer is defined in
-a supplemental file carrying the .prj extension. This is a common format for projections, also
-used in ArcMap. A layers projection can be viewed in the 
-**General** tab of the 
-**Layer Properties** dialog, which is opened by double-clicking the layer in the
-legend or clicking the 
-**Properties** toolbar button 
+Проекция представляет собой математическое преобразование, которое используется для отображения трёхмерной поверхности Земли на двумерный экран компьютера. Имеются различные проекции, каждая имеет свои положительные и отрицательные моменты, соответствующие подходам к их использованию. Подробное обсуждение проекций выходит за рамки данного руководства, но несколько основных моментов должны быть охвачены. Основная проблема заключается в том, что различные слои в вашем проекте должны использовать одну проекцию для корректного послойного отображения. В MapWindow проекция слоя определяется в дополнительном файле с расширением *.prj. Это типовой формат для описания проекции, который также используется, например, в ArcMap. Проекцию слоя можно посмотреть во вкладе **General** диалога **Layer Properties**, который может быть вызван двойным щелчком в легенде по имени слоя или кнопкой **Properties** на панели инструментов.
 
-The first map that you add to a project defines the projection for the entire project. Each
-subsequent layer must have the same projection or MapWindow will display a warning dialog. This
-dialog allows you to reproject the incoming layer, or do nothing (in which case the layers may be
-misaligned). Note that reprojecting a layer involves more than just changing the contents of the
-.prj file, there are also changes to the shape of the polygons. Therefore, it is best to
-reproject to a new file, rather than overwriting the old. If a map layer is missing the .prj file
-it will be necessary to define a projection for it. This can be done in MapWindow using the 
-**Toolbox**, but the process is outside the scope of this guide. 
+Первая карта, добавляемая в проект, определяет проекцию для всего проекта. Каждый последующий слой должен иметь одинаковую проекцию, иначе MapWindow будет отображать диалоговое окно с предупреждением. При помощи этого диалога можно перепроецировать входящий слой или ничего не делать (в этом случае слои могут быть отображены неправильно). Отметим, что преобразование проекции слоя включает в себя больше, чем просто изменение содержания prj-файла, меняется также и геометрия. Поэтому, лучше всего осуществлять перепроецирование в новый файл, а не перезаписывать старый. Если у слоя отсутствует prj-файл, то необходимо определить проекцию самостоятельно. Это может быть сделано в MapWindow с помощью **Toolbox**, но описание этого процесса выходит за рамки данного руководства.
 
 ----------------------------
-2.5 Basic toolbar functions
+2.5 Базовые функции панели инструментов
 ----------------------------
-A suite of basic map
-functions is accessed through a set of toolbar buttons. Their use is quite intuitive so only a
-brief explanation is provided here. Note that several functions require the user to first select
-a target layer, which is done by clicking it in the legend. You can move the toolbars (click and
-drag at the dotted line) and the text labels can be toggled on and off via right-click. 
+Набор основных картографических функции может быть доступен через кнопки на панели инструментов. Их использование является интуитивно понятным, поэтому здесь приводится только краткое описание. Обратите внимание, что некоторые функции требуют, чтобы пользователь сначала выбрал целевой слой при помощи выделения в легенде. Вы можете перемещать панели инструментов (нажмите и перетащите до пунктирной линии) и включать/выключать подписи с помощью правой кнопки мыши (ПКМ).
 
 ================================================================================  =================================================================
 ================================================================================  =================================================================
-.. image:: ../../images/screenshots/800x600/mapwindow-toolbar-zoomin.png          Zoom in: either click the area of interest or draw a bounding box. Zooming in and out can also be done using the mouse wheel.
-.. image:: ../../images/screenshots/800x600/mapwindow-toolbar-zoomout.png         Zoom out.
-.. image:: ../../images/screenshots/800x600/mapwindow-toolbar-zoomfullextent.png  Zoom to the full extent of all visible layers.
-.. image:: ../../images/screenshots/800x600/mapwindow-toolbar-zoomselected.png    Zoom to selected shapes of the target layer.
-.. image:: ../../images/screenshots/800x600/mapwindow-toolbar-zoomprevious.png    Move backwards through a list of earlier map views.
-.. image:: ../../images/screenshots/800x600/mapwindow-toolbar-zoomnext.png        Move forward through a list of earlier map views.
-.. image:: ../../images/screenshots/800x600/mapwindow-toolbar-zoomlayer.png       Zoom to the extent of the target layer.
-.. image:: ../../images/screenshots/800x600/mapwindow-toolbar-pan.png             Click and drag the map within the display window.
-.. image:: ../../images/screenshots/800x600/mapwindow-toolbar-select.png          Select shapes from the target layer. Ctrl-click to select multiple shapes, or draw a bounding box. See section 4.2 for more information on selections.
-.. image:: ../../images/screenshots/800x600/mapwindow-toolbar-measure.png         Opens a dialog used to display the perimeter and area of shapes selected from the target layer or shapes drawn with the mouse.
-.. image:: ../../images/screenshots/800x600/mapwindow-toolbar-identify.png        Click to view the attributes of shapes in the target layer.
+.. image:: ../../images/screenshots/800x600/mapwindow-toolbar-zoomin.png    
+      Увеличить: либо щёлкните в нужную область, либо нарисуйте охватывающий прямоугольник. Увеличение и уменьшение также может быть сделано с помощью колеса прокрутки мыши.
+.. image:: ../../images/screenshots/800x600/mapwindow-toolbar-zoomout.png         Уменьшить.
+.. image:: ../../images/screenshots/800x600/mapwindow-toolbar-zoomfullextent.png  Масштабировать до охвата всех видимых слоёв.
+.. image:: ../../images/screenshots/800x600/mapwindow-toolbar-zoomselected.png    Масштабировать для выбранных объектов целевого слоя.
+.. image:: ../../images/screenshots/800x600/mapwindow-toolbar-zoomprevious.png    Перейти к списку предыдущих видов карты (охватов).
+.. image:: ../../images/screenshots/800x600/mapwindow-toolbar-zoomnext.png        Перейти к списку последующих видов карты (охватов).
+.. image:: ../../images/screenshots/800x600/mapwindow-toolbar-zoomlayer.png       Перейти к охвату целевого слоя.
+.. image:: ../../images/screenshots/800x600/mapwindow-toolbar-pan.png             Щёлкните и перетащите карту.
+.. image:: ../../images/screenshots/800x600/mapwindow-toolbar-select.png          Выбор объектов целевого слоя. Для выбора нескольких объектов удерживайте клавишу Ctrl или нарисуйте охватывающий прямоугольник. См. раздел 4.2 для получения дополнительной информации по выборкам.
+.. image:: ../../images/screenshots/800x600/mapwindow-toolbar-measure.png         Открывает диалог для отображения информации о периметре и площади выбранных объектов из целевого слоя, или объектов, нарисованных при помощи мыши.
+.. image:: ../../images/screenshots/800x600/mapwindow-toolbar-identify.png        Нажмите для просмотра атрибутов объектов целевого слоя.
 ================================================================================  =================================================================
 
 ==============================
-3. Producing a Map for Export
+3. Создание карт для экспорта
 ==============================
 --------------------------------
-3.1 Defining symbology: vectors
+3.1 Настройка отображения: векторные данные
 --------------------------------
-When you first add a layer all shapes are given the same
-color and outline. MapWindow has two dialogs for customizing the symbology (color scheme,
-outlines, style, etc.). One is the **Layer Properties** dialog, which can be accessed by double-clicking the layer in
-the legend.
+Когда вы впервые добавляете слой, все объекты получают одинаковый цвет заливки и контура. MapWindow имеет два способа для настройки символики (цветовая схема, обводка, стили и т.д.). Одним из них является диалог **Layer Properties**, который можно получить, дважды щёлкнув на слое в легенде.
 
 .. image:: ../../images/screenshots/800x600/mapwindow-categories.png
-  :alt: Categories toolbar button
+  :alt: кнопка панели категорий
   :align: right
   :width: 76 
   :height: 51
 
-The other is the **Categories** toolbar button. They both work much the same way. I will describe the 
-**Categories** button here because I prefer using it. 
+Другим способом является кнопка **Categories** панели инструментов. Оба способа работают одинаково. Ниже будет описана второй способ (кнопка **Categories**).
 
 +++++++++++++++++++++++++
-3.1.1 Unique values
+3.1.1 Уникальные значения
 +++++++++++++++++++++++++
 
 .. image:: ../../images/screenshots/800x600/mapwindow-button-plus.png
-  :alt: Categories generation
+  :alt: Создание категорий
   :align: right
   :width: 56
   :height: 48
 
-If your layer is made of shapes that represent distinct entities, say herds of
-caribou, then proceed as follows. Click the 
-**Categories** toolbar button to bring up the 
-**Symbology** dialog. It will be empty when you begin, indicating that no symbology
-has been defined. Next, click the 
-**Generate Categories** button (bottom left) to bring up the 
-**Category generation** dialog. Follow the steps below to assign colors based on the
-attribute of your choice. 
+Если ваш слой состоит из объектов, которые представляют собой различные сущности, скажем стада оленей, то действуйте следующим образом. Нажмите кнопку **Categories** на панели инструментов, чтобы открыть диалог **Symbology**. При первом запуске диалог будет пуст, указывая, что символика не была определена. Далее нажмите кнопку **Generate Categories** (внизу слева), чтобы вызвать диалог **Category generation**. Следуйте инструкциям ниже, чтобы назначить цвета на основе атрибутов по вашему выбору.
 
 .. image:: ../../images/screenshots/800x600/mapwindow-category-generation.png
-  :alt: Categories generation
+  :alt: Создание категорий
   :align: right
   :width: 502
   :height: 573
 
-+ Under **Classification type** select **Unique values**
-+ Under **Classification field** select the attribute you want to use for assigning different colors to shapes
-+ **Color scheme** is used to select the color palette for your shapes. Click the triangle to the right to select a different palette. The option button on the far right can be used to edit the palettes and define new ones.
-+ If **Choose color randomly** is **not** checked, colors are sequentially assigned from left to right across the entire palette.
-+ If **Set gradient** is checked a gradient from dark to light is applied to *each polygon*. This effect is really only apparent when polygons are large.
-+ The other entries in the dialog are not used for unique values.
-+ Click **Ok** to finish
++ В поле **Classification type** выберите **Unique values**
++ В поле **Classification field** выберите атрибут, на основе которого вы хотите назначить различные цвета объектам.
++ **Color scheme** используется для выбора цветовой палитры для объектов. Нажмите на треугольник справа для выбора другой палитры. Кнопка настройки справа в конце может быть использована для редактирования палитры или определения новой.
++ Если в пункт **Choose color randomly** не выбрано **not** , цвета назначаются последовательно слева-направо по всей палитре.
++ Если пункт **Set gradient** выбран, то каждому полигону назначается градиент от тёмного к светлому (*each polygon*). Это эффект уместен, только если полигоны большие.
++ Другие свойства диалога не используются для задания уникальных значений.
++ Нажмите **Ok** для завершения
 
 +++++++++++++++++++++++++
-3.1.2 Continuous data
+3.1.2 Непрерывные данные
 +++++++++++++++++++++++++
-If your layer contains continuous data, say the height of trees within stands, then you
-must define categories into which the shapes are assigned. Begin by opening the 
-**Category generation** dialog and selecting the classification field and color
-scheme as described in 3.1.1 Set the number of categories you want in the 
-**Number of categories** box. Then, under 
-**Classification type** select one of three methods for defining the category
-breakpoints: 
-**Equal intervals**, 
-**Natural breaks**, and 
-**Quantiles**. These options will only be available if the classification field
-contains numeric data (use 
-**Unique values** for text). Click 
-**Ok** to complete the process. 
+Если ваш слой содержит непрерывные данные, скажем, высоту деревьев, то вы должны определить категории, в которую отнести геометрии. Начнём с открытия диалога **Category generation** и выбора области классификации и цветовой схемы, как описано в п.3.1.1. Установим количество категорий в поле **Number of categories**. Затем в списке **Classification type** выберем один из трёх методов для определения категорий: равные промежутки (**Equal intervals**), естественные отсчёты (**Natural breaks**) и квантили (**Quantiles**). Эти опции будут доступны только в том случае, если поле классификации содержит числовые данные (использование уникальных значений (**Unique values**) для текста). Нажмите кнопку **Ok**, чтобы завершить процесс.
 
-If you wish to display the categories using a color ramp, say light red for low values
-grading to dark red for high values, select a smoothly grading color palette from the list of
-palette options (see example below). Do not check the 
-**Set gradient** option because this refers to color gradients 
-**within** polygons, something else entirely. 
+Если вы хотите отобразить категории с помощью цветовой шкалы, скажем, от светло-красного для низких значений до тёмно-красного для высоких, то выберите плавную цветовую палитру из списка опций (см. пример ниже). Не отмечайте вариант **Set gradient**, потому что это относится к цветовым градиентам внутри (**within**) полигонов.
 
-If your data layer is comprised of lines or points it may make more sense to illustrate
-gradients using symbol size (e.g., increasing line thickness or point size) rather than a color
-ramp. To do this place a check in the 
-**Use variable line width** checkbox and then define the minimum and maximum symbol
-size in the option boxes below. Symbol size will be based on whatever attribute is selected in 
-**Classification field**. 
+Если ваши слой геоданных состоит из линий или точек, то имеет смысл иллюстрировать использование градиентов через размер символов (например, увеличение толщины линии или размера точки), а не цветовой шкалы. Для этого отметьте **Use variable line width**, а затем определите минимальный и максимальный размер символов в полях ниже. Размер символа будет основываться на любом атрибуте, выбранном в **Classification field**.
 
 +++++++++++++++++++++++++++++++++
-3.1.3 Customizing the symbology
+3.1.3 Настройка отображения
 +++++++++++++++++++++++++++++++++
 
 .. image:: ../../images/screenshots/800x600/mapwindow-categories.png
-  :alt: Categories toolbar button
+  :alt: кнопка панели категорий
   :align: right
   :width: 76 
   :height: 51
-
-Once a color scheme has been generated, the categories and color assignments appear in the 
-**Shapefile categories** dialog and in the legend. Further editing is possible from
-either location. For simple changes the fastest and easiest approach is to click on the color you
-want to change in the legend. But the dialog which opens with the 
-**Categories** toolbar button has a few more options so I will focus on it here. 
+  
+После того, как цветовая схема была сформирована, присвоение категорий и цветов появятся в диалоге **Shapefile categories** и в легенде. Дальнейшее редактирование возможно из любого места. Для простого изменения самый быстрый и простой подход — это нажать на цвет, который вы хотите изменить в легенде. Но диалог, который открывается кнопкой **Categories** панели инструментов, имеет несколько вариантов, так что остановимся на нём.
 
 .. image:: ../../images/screenshots/800x600/mapwindow-shapefile-categories.png
-  :alt: Shapefile categories
+  :alt: Категории шейп-файлов
   :width: 831 
   :height: 507
 
-In the **Shapefile categories** dialog, select the category you wish to change by clicking
-on its name or color. Then: 
+В диалоге **Shapefile categories**  выберите категорию, которую необходимо изменить, нажатием на её имя или на цвет. Затем: 
 
-+ Turn the display of the category on and off using the checkbox to the left of the name
-+ Change the categorys name by typing over the existing text in the **Name** column (this only changes the legend entry; no changes are made to the attribute table)
-+ Change the order that a category is listed in the legend using the up and down arrow buttons at the bottom of the dialog
-+ Remove the category from the map by clicking the button with a minus sign
-+ Set basic options for fill color and fill style using the option boxes in the top right corner of the dialog
-+ Set additional options by clicking the **More options** button or by double-clicking on the categorys color box:
-    - Show or hide the fill, outline, and vertices
-    - Select the color and transparency level for fill, outline, and vertices
-    - Define the fill type
-    - Set the outline width and style
++ Измените отображение категории, ставя и снимая отметку слева от имени.
++ Измените имя категории, вводя новое значение в колонке **Name** (это изменит только запись в легенде, таблица атрибутов не будет изменена).
++ Измените порядок, в котором отображаются категории в легенде при помощи стрелок вверх и вниз в нижней части диалога.
++ Удалите категорию из списка при помощи кнопки со знаком минус.
++ Установите базовые настройки для цвета заливки и стиля заливки при помощи контролов в верхней правой части диалога.
++ Установите дополнительные настройки, нажав кнопку **More options** или двойным щелчком на категории:
+    - Показать/скрыть заливку, обводку и узлы
+    - Выберите цвет и прозрачность заливки, обводки или узлов
+    - Определите тип заливки
+    - Установите ширину и стиль обводки
 
-Making the top layer partially transparent is a useful way of displaying features that lie
-beneath. 
+Сделать верхний слой частично прозрачным — удобный способ отобразить геоданные в нижележащих слоях. 
 
-If you are working with continuous data you may want to fine-tune the category break
-points. For example, you may wish to flag all shapes that have a zero value with a unique color
-but display the rest of your data using a smooth color gradient. None of the classification
-schemes in the 
-**Category generation** dialog will do this for you automatically. However, you can
-specify the breakpoints for each category manually using the 
-**Expression** window of the dialog. The 
-**Expression** window displays the current breakpoints in the form of a selection
-expression. Changing the breakpoints is simply a matter of typing new values into this expression
-and clicking 
-**Apply**. It is up to you to ensure that your changes dont result in gaps between
-categories. 
+Если вы работаете с непрерывными данными, то вам может понадобиться ввести опорные точки в категорию. Например, вам нужно отметить все геометрии, которые имеют нулевые значения и уникальные цвета, но отображают большинство данных при помощи плавного градиента. Ни одна из схем классификации в диалоге **Category generation** не сделает это автоматически. Однако, вы можете определить опорные точки для каждой категории вручную при помощи окна **Expression** этого диалога. Окно **Expression** отображает текущие опорные точки в виде выражения для выборки. Изменение опорных точек представляет собой просто ввод новых значений в выражение. По завершению ввода нажмите кнопку **Apply**. Вы должны контролировать самостоятельно, чтобы значения не попадали в промежутки между категориями. 
 
 .. image:: ../../images/screenshots/800x600/mapwindow-legend.png
-  :alt: Categories in the legend
+  :alt: Категории в легенде
   :align: right
   :width: 156 
   :height: 143
-
-It is worth noting something here that can lead to unexpected results:when you generate categories,
-the original default symbology remains lurking in the background. In the example legend shown to
-the right a red color ramp has been assigned to the categories, but the original default color (blue)
-is still there too. Normally this is not an issue because all shapes are displayed using the
-category scheme. But if you manually define breakpoints and leave any gaps between categories the
-unassigned shapes will be seen in the default color. Another thing to keep in mind is that the
-default symbology is used as the template for generating categories. If you dont want your
-categories to have outlines, turn the outline off in the default symbology before generating the
-categories. Likewise, if you want the categories to have a fill, make sure it is visible in the
-default scheme first. 
+  
+Стоит отметить, что некоторые вещи могут привести к неожиданным результатам: при создании категорий оригинальная символика остается по умолчанию в фоне. Для примера, в легенде, показанной справа, градиент красного цвета назначен категории, но оригинальный цвет по умолчанию (синий) все еще там. Обычно это не проблема, потому что все формы отображаются с помощью схемы категорий. Но если вы вручную определили опорные точки и оставляете зазоры между категориями, то геоданные, не попадающие в категорию, будут отображаться цветом по умолчанию. Следует помнить, что по умолчанию символика используется в качестве шаблона для создания категорий. Если вы не хотите, чтобы у вас  присутствовала обводка, то перед созданием категории её следует отключить. Точно так же, если вы хотите, что бы в категориях присутствовала заливка, для начала убедитесь, что она видна по умолчанию. 
 
 ---------------------------------
-3.2 Defining symbology: rasters
+3.2 Настройка отображения: растровые данные
 ---------------------------------
 .. image:: ../../images/screenshots/800x600/mapwindow-coloringscheme-editor.png
-  :alt: Coloring scheme editor
+  :alt: Редактор цветовых схем
   :align: right
   :width: 380 
   :height: 400
 
-Raster layers use a different symbology dialog, called the 
-**Legend Editor**, which is left over from an earlier version of MapWindow. To open
-the 
-**Legend Editor** double-click on the layer in the legend. Scroll down to the
-Symbology section of the dialog and in the row labeled 
-**Coloring Scheme** click 
-**Edit** to bring up the 
-**Coloring Scheme Editor**. 
+Растровые слои используют иной диалог настройки символики, вызываемый **Legend
+ Editor**, который остался от предыдущих версий MapWindow. Для того чтобы открыть диалог **Legend Editor** дважды щёлкните на слое в легенде. Прокрутите до раздела символики диалога и в колонке **Coloring Scheme** нажмите **Edit** для настройки **Coloring Scheme Editor**. 
 
-The buttons along the top of this dialog have basically the same functionality as the
-buttons along on the bottom of the 
-**Symbology** dialog described in 3.1. The 
-**Generate categories** button is called 
-**Wizard** here, and takes the form of a yellow lightning bolt. It has a similar set
-of options and works in basically the same way. But only the 
-**Continuous Ramp** option allows you to preselect your color scheme. 
+Кнопки в верхней части диалога имеют схожую функциональность с кнопками в нижней части диалога **Symbology**, описанного в разделе 3.1. Кнопка **Generate categories** открывает мастер (**Wizard**) и принимает форму с желтой молнией. Он имеет схожий набор настроек и работает схожим образом. Настройка **Continuous Ramp** позволяет предварительно выбрать цветовую схему. 
 
-To change the color of a category just click on it in the 
-**Coloring Scheme Editor** There is no option to display outlines for raster cells.
-The text that is displayed in the legend can be changed via the 
-**Text** column and the breakpoint values can be manually changed via the 
-**Value** column. Hillshade is outside of the scope of this guide. 
+Для смены цвета категории нажмите на неё в **Coloring Scheme Editor**. Не существует настройки для определения обводки ячеек растров. Текст, отображаемый в легенде, может быть изменён при помощи колонки **Text**, а значения фона могут быть изменены вручную при помощи колонки **Value**. Отмывка рельефа не входит в рамки этого руководства. 
 
-Transparency is set in the 
-**Legend Editor**, four rows down from 
-**Coloring Scheme**. If a raster is sufficiently fine-scaled, transparency can be
-used to effectively combine information from the raster with other layers. To do this, move the
-raster to the top of the legend, assign a black to white color ramp, and set the transparency to
-about 50%. Whatever layer is beneath the raster will now be shaded according the rasters values.
-For example, a vector map of ecosystem types could be shaded on the basis of elevation, with
-lower elevations being darker and higher elevations being lighter. 
+Прозрачность устанавливается в **Legend Editor**, в четырёх записях ниже **Coloring Scheme**. Если растр достаточно мелкомасштабный, то прозрачность может быть использована для эффективного объединения информации из растра с другими слоями. Для этого переместите растр в верхнюю часть легенды, назначьте градиент от черного до белого цвета и установите прозрачность до 50%. Независимо от слоя, под растром, он будет оттеняться растром. Например, векторные карты типов экосистем могут быть оттенены на основе высоты: более низкие высоты — более темным цветом, возвышенности — более светлым.
 
 ------------------
-3.3 Adding labels
+3.3 Добавление подписей
 ------------------
-Labels are added using the 
-**Labels** tab of the 
-**Layer Properties** dialog, which is opened by double-clicking the layer in the
-legend. When you first open this dialog the label preview window will be empty. Click on the 
-**Setup** button to proceed (see the screen shot on the next page). Clicking on the
-small label icon to the right of the layers name in the legend opens the same dialog. The 
-**Setup** button brings up the 
-**Label Style** dialog, defaulting to the 
-**Expression** tab. The first step is to select the attribute that holds the label
-values. The available attributes are listed in the 
-**Fields** window. Double-click on the appropriate attribute and it will show up in
-the 
-**Expression** window, indicating that it has been selected. Click 
-**Apply** and a pop-up will ask you how you want to anchor the labels. 
+Надписи добавляются при помощи вкладки **Labels** диалога **Layer Properties**, который можно открыть двойным щелчком на слое в легенде. Когда вы впервые открываете этот диалог, окно предварительного просмотра надписи будет пустым. Щёлкните на кнопке **Setup** для продолжения (см. картинку на следующей странице). При нажатии на маленькую иконку справа от имени слоя в легенде откроется тот же диалог. Кнопка **Setup** активирует диалог **Label Style**, который открывается по умолчанию для вкладки **Expression**. Первым делом необходимо выбрать атрибут, который содержит значения подписей. Доступные атрибуты перечислены на окне **Fields**. Двойной щелчок на соответствующем атрибуте отображает его в окне **Expression**, показывая, что он выбран. Нажмите **Apply**, и во всплывающем окне будет запрошено, каким именно образом вы хотите нанести надписи. 
 
 .. image:: ../../images/screenshots/800x600/mapwindow-labels-setup.png
-  :alt: Label set-up
+  :alt: Настройка подписей
   :align: right
   :width: 833 
   :height: 507
 
 .. image:: ../../images/screenshots/800x600/mapwindow-label-expression.png
-  :alt: Label expression
+  :alt: Выражение для подписи
   :align: right
   :width: 833 
   :height: 507
 
-Next, open the 
-**Font** tab and select a font. Note that the default font may not be set, so you
-might not see anything until you assign the font here. Click 
-**Apply** and the labels will appear on your map. The 
-**Label style** dialog has many other options you can use to customize your labels,
-but none are mandatory. These options are fairly self-explanatory. Click 
-**Ok** to finish. 
+Далее откройте вкладу **Font** и выберите шрифт. Заметьте, что шрифт по умолчанию может быть не установлен, поэтому вы можете ничего не увидеть, до того момента, пока вы не выберите шрифт. Нажмите **Apply**, и надписи появятся на вашей карте. Диалог **Label style** имеет множество настроек для управления надписями, но все они необязательные. Нажмите **Ok** для завершения. 
 
-Once labels have been generated you can change the text and style of individual entries by
-clicking on the 
-**Categories** toolbar button. A new tab called 
-**Labels** is now available (i.e., once labels have been defined). Initially it is
-empty, which means that all categories use the style you defined in 
-**Setup**. To define unique styles for individual categories you must first generate
-label categories using the same approach as for generating symbology categories (Sec 3.1). Then
-use the rest of the dialog in the same way as described for the 
-**Shapefile categories** dialog (see 3.1.3) to modify the appearance of individual
-category labels. 
+После того, как надписи сформированы, вы можете изменить текст и стиль отдельных надписей при помощи кнопки  **Categories** панели инструментов. Теперь станет доступна новая вкладка **Labels** (т.е. как только надписи были настроены). Вначале она будет пустой, указывая, что нет категорий, использующих стиль, который вы определили в **Setup**. Для определения уникальных стилей для отдельных категорий вам необходимо сформировать категории надписей аналогично формированию символики (разд. 3.1). Затем надо использовать остальные настройки в диалоге, аналогично диалогу **Shapefile categories** (см. 3.1.3), для изменения внешнего вида отдельных надписей. 
 
 .. image:: ../../images/screenshots/800x600/mapwindow-labelmover.png   
-  :alt: Label mover
+  :alt: Расстановка подписей
   :align: right
   :width: 88 
   :height: 54
   
-The positioning of labels can be fine-tuned using the 
-**Label Mover** toolbar button. Just click and drag. 
+Местоположение надписей может быть определено кнопкой **Label Mover** на панели инструментов. 
 
 ---------------------------------
-3.4 Saving the symbology to file
+3.4 Сохранение настроек отображения в файл
 ---------------------------------
 
 .. image:: ../../images/screenshots/800x600/mapwindow-symbology.png
-  :alt: Symbology toolbar button
+  :alt: Кнопка панели символики
   :align: right
   :width: 81 
   :height: 49
 
-All symbology settings
-for a layer can be saved for use in future projects. This is done using the 
-**Symbology manager** dialog, which is opened using the 
-**Symbology** toolbar button. When you first open this dialog the preview window
-displays the symbology settings you have just defined. Click the 
-**Add Current** button to save the current symbology. You will be prompted for a
-name. The file is saved in the same folder as the layer and carries an .mwsymb extension. If you
-make additional changes to the layers symbology you can save the new version under a new name.
-The dialog also has options for removing old symbology files and renaming them. Drag and drop
-adding of symbology files is not yet supported in MapWindow 4.8.6, but will be in a future
-version. 
+Все настройки символики для слоя могут быть сохранены для новых проектов. Это может быть сделано при помощи диалога **Symbology manager**, который открывается при помощи кнопки **Symbology** на панели инструментов. При первом открытии отображается окно предварительного просмотра с настройками символики, которые вы только что назначили. Нажмите кнопку **Add Current** для сохранения текущей символики. Программа запросит имя для сохранения. Файл сохраняется в ту же папку, что и слой, и получает расширение *.mwsymb*. Если вы внесёте дополнительные изменения в символику слоя, вы можете сохранить новую версию под новым именем. В диалоге также имеются возможности удаления файлов со старой символикой или их переименования. Возможность перетаскивания ("drag-and-drop") файлов символики пока не реализована в MapWindow 4.8.6, но такая возможность планируется в новых версиях. 
 
-To apply a layers saved symbology in a new project, first add the layer to your map and
-then open the 
-**Symbology manager** dialog. Previously saved symbology files will be listed in the 
-**Available options** window. Select the one you want and click 
-**Apply options**. Note that when you open a symbology file that includes labels,
-the labels may not be visible until you click 
-**Relabel**
-**shapefile**, under the 
-**Layer** menu. 
+Для применения сохранённой символики в новом проекте для начала добавьте слой на карту, а затем откройте диалог **Symbology manager**. Ранее сохранённые файлы символики будут перечислены в окне **Available options**. Выберите один и щёлкните **Apply options**. Необходимо заметить, что когда вы открываете файл символики, содержащий подписи, подписи могут быть невидимы до того момента, пока вы не нажмёте кнопку **Relabel shapefile**, в меню **Layer**. 
 
 .. image:: ../../images/screenshots/800x600/mapwindow-button-more.png
-  :alt: Save - load symbology
+  :alt: Сохранение - загрузка символики
   :align: right
   :width: 104 
   :height: 46
 
-You can also save the core symbology to a file (.mwleg) and then apply this symbology to other layers that have the same attribute structure (e.g., successive runs from a spatial model). Do this using the 
-**Save Categories** and 
-**Load Categories** options found under the 
-**More** button at the bottom of the dialog that opens with the 
-**Categories** toolbar button. 
+Вы можете сохранить умолчальную символику в файл (.mwleg) и затем применять её к другим слоям, которые имеют схожую структуру атрибутов (т.е., удачно запускаются из пространственной модели). Это можно сделать при помощи **Save Categories** и настройки **Load Categories**, которую можно найти под кнопкой **More** внизу диалога, которая открывается при помощи кнопки **Categories** панели инструментов. 
 
 --------------------
-3.5 Exporting a map
+3.5 Экспорт карты
 --------------------
 ++++++++++++++++++++++++++++
-3.5.1 Low resolution export
+3.5.1 Экспорт с низким разрешением
 ++++++++++++++++++++++++++++
-MapWindow provides two quick ways to export low-resolution maps. The first uses the Windows
-clipboard: open the 
-**View** menu and select 
-**Copy**. You can copy the map, legend, scale bar, and north arrow. In the second
-approach the same map components are exported to a file. Open the 
-**File** menu and select 
-**Export**. A wide variety of export file formats are available. For most maps the
-.png format will be best. When colors are uniform, as they typically are in maps, the .png format
-provides a high degree of compression without any changes to the image (i.e., lossless
-compression). To specify the export format just add the appropriate extension to your file name
-(e.g., Map1.png). 
+MapWindow предоставляет два способа для экспорта карт низкого разрешения. Первый, используя буфер обмена Windows: откройте меню **View** и выберите **Copy**. Вы можете скопировать карту, легенду, масштабную линейку и стрелку "С-Ю". Во втором случае, те же самые компоненты карты экспортируются в файл. Откройте меню **File** и выберите **Export**. Доступен широкий выбор различных форматов. Для большинства карт наиболее подходит формат PNG. При однородных цветах, обычно присутствующих на карте, формат PNG обеспечивает высокий уровень компрессии с минимальным количеством искажений изображения (т.н. "сжатие без потерь"). Для определения формата для экспорта просто добавьте необходимое расширение к вашему имени файла (например, Map1.png). 
 
-The low-resolution export described here is equivalent to a screen dump of the main map
-window. Note that the 
-**Preview Map**, if you are using it, plays no role here. If there is a lot of white
-space in the main window, your exported map will have lots of white space. If you have minimized
-MapWindow (instead of running full screen), the map you produce will be small (basically a 1:1
-ratio with what you see on the screen). The resolution of the map is equivalent to the resolution
-of your computer screen. This being the case, the exported maps are ok for use in PowerPoint but
-not for printing. Even though the map may look ok in Microsoft Word when its up on your screen,
-the image quality on paper will be poor. 
+Экспорт с использованием сжатия без потерь является эквивалентом скриншота. Необходимо заметить, что пользование функции **Preview Map** не играет при этом никакой роли. Если имеется много белых полей в главном окне, то экспортированная карта будет иметь много белых полей. Если вы свернули MapWindow (вместо того, чтобы развернуть на полный экран), результат экспорта будет маленьким (обычно 1:1 того, что вы видите на экране). Разрешение карты будет эквивалентно разрешению экрана. Это случай, когда экспортированная карта подходит для PowerPoint, но не подходит для печати. Даже если карта хорошо выглядит в Microsoft Word, качество на бумаге может быть низким. 
 
 ++++++++++++++++++++++++++++++++++++++++++
-3.5.2 Preparing a publication-quality map
+3.5.2 Подготовка качественной карты к публикации
 ++++++++++++++++++++++++++++++++++++++++++
-Once you have your map looking the way you like it there are still a few steps required to
-prepare it for publication. As an example, say you are preparing a research paper or brochure and
-you want to add a map that will fit into a single column of text 7cm wide. The map you produce
-should have a resolution of 300 dpi (print quality) and fit into the allotted 7cm with a minimum
-of white space around it. It should also include an appropriate legend and perhaps a scale bar
-and north arrow. The 
-**Print Layout** dialog, accessed under the 
-**File** menu is intended to facilitate this process, but it is really just designed
-for printing, not publishing (i.e., the layout cannot be saved as a digital image). Also, the
-output resolution cannot be specified (just high and low), no modifications can be made to the
-legend, and there are limited options for defining a bounding box. This being the case, the best
-option (at present) for generating a publication quality map is to do some of the work in an
-image editor like Photoshop. 
+После формирования карты необходимо ещё несколько шагов для подготовки её к публикации. Например, вы готовите научно-исследовательскую работу или брошюру, и вы хотите добавить карту, которая впишется в одну из колонок текста 7 см в шириной. Карта должна иметь разрешение 300 точек на дюйм (качество печати) и помещаться в отведенные 7см с минимальным белыми полями. Карта также должна включать соответствующую легенду и, возможно, масштабную линейку и стрелку "С-Ю". Диалог **Print Layout**, доступ к которому можно получить через меню **File**, предназначен для облегчения этого процесса, но он скорее подходит для печати, чем для публикации (например, макет не может быть сохранен в виде файла изображения). Кроме того, выходное разрешение не может быть указано (только высокое и низкое), в легенду не могут быть внесены изменения и есть ограниченные возможности для определения рамки. В таком случае наиболее подходящим для подготовке к публикации карты является (в настоящее время) работа в графическом редакторе, таком, как Photoshop или GIMP.
 
-The first step in preparing your map for export is to define a bounding box for it. Do this
-by creating a simple rectangular shapefile that provides the margins you would like to see around
-your map (see 4.3). This layer must be included in your project, but it does not have to be
-visible. As an alternative you can use one of the existing layers in your project to define the
-map extent, but be aware that the output map will be tight-cropped (i.e., no margins). The
-practicality of defining a bounding box comes into play if you generate multiple maps with the
-same extent although margins can be added in Photoshop its tiring to have to do so for each and
-every map. 
+Первым шагом в подготовке вашей карты к экспорту является определение её охвата. Это может быть сделано при помощи отдельного шейп-файла с прямоугольной геометрией, которая задаёт охват вашей карты (см. п. 4.3). Этот слой должен быть включён в проект, но он не должен быть виден. В качестве альтернативы вы можете использовать один из существующих слоёв проекта, но следует помнить, что выходная карта будет сильно обрезана (т.е. без полей). При определении охвата необходимо "поиграть" с настройками, если вы создаёте несколько карт с одинаковым охватом, хотя поля могут быть добавлены в Photoshop, если следующие карты имеют такой же охват.
 
 .. image:: ../../images/screenshots/800x600/mapwindow-export.png
-  :alt: Export map
+  :alt: Экспорт карты
   :align: right
   :width: 406 
   :height: 260
 
-Next, open 
-**Export**, under the 
-**File** menu and select 
-**Georeferenced Map** from the list of options. In the dialog that pops up enter a
-name for the map you are exporting in the 
-**File** box. Remember to include the extension for the file type you want (e.g.,
-.png). For 
-**Clip to layer** select the layer that is to serve as your bounding box. If you
-havent defined a bounding box enter the layer with the largest extent. For 
-**Width**, enter the desired width of your map in pixels. The value you enter here
-will depend on your desired resolution and your desired width. You will find that, in addition to
-your exported map, a second file with a .wld extension is generated during the export. This file can be deleted.
+Далее, откройте **Export** в меню **File** и выберите пункт **Georeferenced Map** из списка опций.
+Введите имя экспортируемой карты в поле **File**. Не забудьте включить расширение необходимого типа файла (т.е. .png). В поле **Clip to layer** выберите слой в качестве охвата. Если вы не определили охват, выберите слой с наибольшим охватом. В поле **Width** укажите общую ширину карты в пикселах. Значение, которое вы ввели здесь, будет зависеть от назначенного разрешения и выбранной ширины. В дополнение к файлу экспортируемой карты, будет создан файл привязки с расширением .wld.
 
-Export the legend, scale bar, and north arrow, as described in the previous section
-(3.5.1). Unfortunately, there is no way to generate high-resolution versions of these map
-elements in the current version of MapWindow. Frankly, I find the legend export to be of limited
-use anyway because there is no way to customize it (except for changing the layer names).
-Therefore, I generally produce my legend within Photoshop using a high resolution template I have
-made for this purpose. Producing a legend is simply a matter of adding the template to the base
-map, moving it to the right spot, changing the colors, and revising the text. It takes only a
-couple of minutes and produces a much better result than the cluttered low-resolution legend
-exported by MapWindow. 
+Экспорт легенды, масштабной линейки и стрелки "С-Ю" выполняется аналогично описанному в предыдущем разделе (3.5.1). К сожалению, в текущей версии MapWindow не существует способа генерации версий этих элементов с высоким разрешением. Обычно экспорт легенды ограниченно применим, потому, что нет никакого способа, чтобы настроить ее (за исключением изменения названия слоев). Поэтому, можно формировать легенду в Photoshop с использованием шаблонов с высоким разрешением, которые сделаны для этих целей. Создание легенды — это просто добавление шаблона в базовую карту с размещением в нужном мест и изменением цвета и текста. Это занимает всего пару минут и даёт гораздо лучший результат, чем работа с легендой в низком разрешении, экспортируемой из MapWindow.
 
 ===================
-4. Advanced Topics
+4. Дополнительно
 ===================
-A word of caution. Many of the
-dialogs and processes discussed in this section can result in changes to your GIS data. MapWindow
-provides few warnings to alert you to such changes and the undo functionality is not yet working.
-Given the absence of a good safety net you should proceed carefully. For example, using Windows
-Explorer you might set the properties of important map layers to Read Only, or choose to work
-with copies instead of original maps. 
+Предупреждение: многие из диалогов и процессов, рассматриваемых в этом разделе, могут привести к изменениям в геоданных. MapWindow отображает несколько предупреждений, чтобы уведомить вас, что такие изменения произойдут, и что функциональность для отмены операций пока не работает.
+Учитывая отсутствие хорошей защиты, вы должны действовать осторожно. Например, с помощью Windows Explorer вы можете задать свойство "только для чтения" для важных слоёв карты, либо выбрать для работы копии вместо оригиналов. 
 
 ------------------------
-4.1 The attribute table
+4.1 Таблица атрибутов
 ------------------------
 
 .. image:: ../../images/screenshots/800x600/mapwindow-table.png
-  :alt: Table editor
+  :alt: Редактор таблиц
   :align: right
   :width: 58 
   :height: 50
 
-Vector maps are linked to
-an attribute table that contains information for each shape. For example, if the shapes are
-forest stands the attribute table might include information on vegetation type, age, height, and
-so on. When you use the 
-**Identify** toolbar button you are viewing information from the attribute table. To
-view the entire attribute table click the 
-**Table** toolbar button, which brings up the 
-**Attribute Table Editor**. This dialog allows you to view the data and also
-provides some basic database functionality. Some useful database functions provided by the table
-editor are summarized below. 
+Векторные данные соединяются с таблицей атрибутов, которая содержит информацию о каждом объекте. Например, если объект описывает лес, то таблица атрибутов может включать информацию о типе растительности, возрасте, высоте и т.п. Когда вы используете инструмент идентификации **Identify**  из панели инструментов, вы просматриваете информацию из таблицы атрибутов. Для просмотра всей таблицы атрибутов нажмите кнопку **Table** из панели инструментов, которая откроет **Attribute Table Editor**. Этот диалог позволит вам просматривать данные, а также предоставит доступ к базовой функциональности базы данных. В таблице ниже приведены наиболее полезные функции. 
 
-===============================================================================  ===
-**Function**                                                                     **Method**
-===============================================================================  ===
-Modify a single data entry                                                       Type over the existing data in a cell and it will be changed
-Copy and paste individual data entries (there is no option for copying columns)  Right-click within a cell and select **Copy** or **Paste**
-Add a new column                                                                 **Edit -> Add field**
-Remove a column                                                                  **Edit -> Remove field**
-Rename a column                                                                  **Edit -> Rename field**
-Sort a column, ascending or descending                                           Right-click on the column title and select **Sort Asc** or **Sort Desc**
-Summary statistics for a column                                                  Right-click on the column title and select **Statistics**
-Assign values to a column based on a mathematical expression                     Right click on the column title and select **Calculate values**
-Set an attribute to a constant value (for selected shapes only)                  Right click on the column title and select **Assign values**
-Generate a unique identifier for each shape                                      **Tools -> Generate MWShapeID Field**
-===============================================================================  ===
+===================================================================================  ===
+**Function**                                                                         **Method**
+===================================================================================  ===
+Изменить одну запись                                                                 Набирайте поверх созданных данных в ячейке, и она будет изменена
+Скопировать и вставить отдельные записи (возможность копировать колонки отсутствует) Щёлкните правой клавишей мыши на ячейке и выберите **Copy** или **Paste**
+Добавить новую колонку                                                               **Edit -> Add field**
+Удалить колонку                                                                      **Edit -> Remove field**
+Переименовать колонку                                                                **Edit -> Rename field**
+Отсортировать колонку по возрастанию или убыванию                                    Щёлкните ПКМ на заголовке колонки и выберите **Sort Asc** или **Sort Desc**
+Суммарная статистика по колонке                                                      Щёлкните ПКМ на заголовке колонки и выберите **Statistics**
+Назначить значения колонке на базе математического выражения                         Щёлкните ПКМ на заголовке колонки и выберите **Calculate values**
+Задать атрибуты для постоянного значения (для выбранных объектов)                  Щёлкните ПКМ на заголовке колонки и выберите **Assign values**
+Сформировать уникальный идентификатор для каждого объекта                           **Tools -> Generate MWShapeID Field**
+===================================================================================  ===
 
-If changes have been made to the table a warning dialog will appear when the table editor
-is closed. 
-**Yes** means commit the changes and 
-**No** means discard the changes. 
+Если в таблицу были внесены изменения, то будет выведено предупреждение при закрытии редактора таблиц. 
+**Yes** — записать изменения и **No** — отменить изменения. 
 
-A feature that is missing in the current version of MapWindow is the ability to link
-external datasets to the attribute table (like Joins &amp; Relates in ArcMap). Therefore, if you
-want to categorize and display shapes on the basis of an external attribute you must physically
-add the new attribute to the shapefiles attribute table. This can be done with a query in
-Microsoft Access or other database program. You can also use Excel, but unless you have an older
-version you will need to add a plug-in to Excel to provide support for .dbf export (.dbf is the
-file format that MapWindow and ArcMap use for the attribute table). A source for this plug-in is:
-http://es.sourceforge.jp/projects/sfnet_exceltodbf/ The merge can also be done using the 
-**Import External Data** option of the 
-**Swift-D** plug-in of MapWindow (though its slow). The attribute table editor has a
-tool called 
-**Generate MWShape ID field** that can help you maintain the correct order in the
-table when you are merging external data. 
-
+Функция, которая отсутствует в текущей версии MapWindow — это возможность ссылаться на внешние источники данных в таблице атрибутов (как Joins - Relates в ArcMap). Тем не менее, если вам нужно категорировать объекты на базе внешних источников данных, вам нужно физически вести необходимые атрибуты в ваш шейп-файл. Это может быть сделано в Microsoft Access или иной программе для работы с БД. Вы также можете воспользоваться Excel, но если у вас устаревшая версия, то будет необходимо добавить модуль Excel для работы с файлами .dbf (.dbf — формат файлов, который MapWindow и ArcMap используют в таблице атрибутов). Исходные коды для этого модуля располагается по адресу:
+http://es.sourceforge.jp/projects/sfnet_exceltodbf/ Объединение может быть сделано с использованием опции **Import External Data** модуля **Swift-D** MapWindow (он довольно медленный). Редактор атрибутов имеет инструмент под названием **Generate MWShape ID field**, который помогает поддерживать правильный порядок в таблице при объединении с внешними данными. 
 
 ----------------
-4.2 Selections
+4.2 Выборки
 ----------------
 .. image:: ../../images/screenshots/800x600/mapwindow-select.png
-  :alt: Select
+  :alt: Выборка
   :align: right
   :width: 89 
   :height: 55
 
-Vector shapes can be
-selected in four ways: 
+Векторные объекты могут быть выбраны четырьмя способами: 
 
 .. image:: ../../images/screenshots/800x600/mapwindow-query.png
-  :alt: Query
+  :alt: Запрос
   :align: right
   :width: 65 
   :height: 52
 
-(1) the 
-**select** toolbar button, (2) the 
-**Query** toolbar button, (3) the attribute table, and (4) the spatial query plug-in.
-The color used to highlight selected shapes can be changed in 
-**Appearance** tab of the 
-**Layer Properties** dialog. To clear a selection click 
-**Clear selection** under the 
-**View** menu. Selected shapes can be exported to a new shapefile using the 
-** selection** menu of the attribute table editor. Selections are also useful for
-visualizing queries and for limiting the scope of many geoprocessing procedures. 
+(1) кнопка **Select** панели инструментов, 
+(2) кнопка **Query** панели инструментов, 
+(3) таблица атрибутов и 
+(4) модуль пространственных запросов.
+Цвет, используемый для подсветки выделенных фигур, можно изменить во вкладке **Appearance** диалога **Layer Properties**. Для снятия выделения нажмите **Clear selection** в меню **View**. Выделенные объекты могут быть экспортированы в другой шейп-файл при помощи меню **selection** редактора таблицы атрибутов. Выборки полезны для отображения результатов выбора и для ограничения сферы работы многих инструментов геообработки. 
 
 +++++++++++++++++++++++++++++++++
-4.2.1 The Select toolbar button
+4.2.1 Кнопка выбора
 +++++++++++++++++++++++++++++++++
-The ** select** button is used to manually select shapes. The target layer must first be
-selected in the legend. Click on a shape to select it. To add additional shapes hold Ctrl while
-clicking. If Ctrl is not held, then clicking a shape will cause any previous selections to be
-removed. In the current version of MapWindow there no way of unselecting individual shapes (all
-or none). To select a block of shapes click and draw a bounding box in the desired region. 
+Кнопка **Select** используется для ручного выделения объектов. Целевой слой должен быть выделен в легенде. Нажмите на объект для его выбора. Для добавления дополнительных объектов удерживайте нажатой клавишу Ctrl при выборе. Если клавиша Ctrl не зажата при выборе, то предыдущее выделение будет сниматься. Для выбора нескольких объектов нажмите и нарисуйте охватывающий прямоугольник необходимого размера. 
 
 +++++++++++++++++++++++++++++++
-4.2.2 The Query toolbar button
+4.2.2 Кнопка формирования запроса
 +++++++++++++++++++++++++++++++
 .. image:: ../../images/screenshots/800x600/mapwindow-querybuilder.png
-  :alt: Query builder
+  :alt: Редактор запросов
   :width: 803 
   :height: 507
 
-The **Query** button pulls up the 
-**Query builder** dialog. This dialog is used to select shapes based on attributes
-defined in a search expression. The available attributes are listed in the 
-**Fields** window. Double click the attribute you want and it will appear in the 
-**Expression** window. Then select a logical symbol and the value you want to search
-for. When the expression is complete click 
-** select**. You are given the option of adding to an existing selection, excluding
-from an existing selection, or starting a new selection. The dialog will tell you how many shapes
-have been selected. 
+Кнопка **Query** открывает диалог **Query builder**. Этот диалог используется для выбора объектов на основе атрибутов, определённых в строке поиска. Доступные атрибуты перечислены в окне **Fields**. Дважды щёлкните на необходимом атрибуте, и он появится в окне **Expression**. Затем выберите логический символ и значение, которое необходимо найти. Когда ввод выражения завершится, щёлкните **select**. Можно добавить объекты в существующее выделение, исключить их из выделения или начать новое выделение. В диалоге будет выведено количество выбранных объектов. 
 
-In the example shown on the previous page an expression was defined to search for all herds
-that do not have the name Chinchaga. A total of 19 shapes fit this description and were selected.
+В примере, приведённом на предыдущей странице, в выражении был определён поиск всех стад, которые не имеют в названия "Chinchaga". В общей сложности 19 объектов соответствуют этому описанию и были отобраны.
 
 ++++++++++++++++++++++++++
-4.2.3 The attribute table
+4.2.3 Таблица атрибутов
 ++++++++++++++++++++++++++
 
 .. image:: ../../images/screenshots/800x600/mapwindow-table-editor.png
@@ -681,141 +360,68 @@ that do not have the name Chinchaga. A total of 19 shapes fit this description a
   :width: 26 
   :height: 23
 
-The attribute table can be used to both view and define selections. To view only
-selected shapes click the 
-**Show only selected shapes** button, found in the toolbar near the top of the table
-editor. Click this button again to view all records. To select a record click the grey rectangle
-at the far left of the table. The record will be highlighted, indicating that it has been
-selected. Use the standard Windows shift-click to select multiple consecutive records, or just
-click and drag the mouse along the left. Use Ctrl-click to select multiple non-consecutive
-records. Clicking the 
-**Apply** button is not required to make a selection. 
+Таблица атрибутов может быть использована для вида и выборок. Для отображения только выбранных объектов щёлкните по кнопке **Show only selected shapes** на панели инструментов в верхней части редактора таблицы. Повторное нажатие этой кнопки покажет все записи. Для выбора записи нажмите на серый треугольник в левой части таблицы. Запись будет подсвечена. Используя стандартный для Windows щелчок с зажатой клавишей Shift, можно выбрать несколько записей подряд. Аналогичный результат можно получить при перемещении указателя мыши с зажатой левой клавишей. Используйте щелчок с зажатой клавишей Ctrl для выбора множества записей. Нажатие кнопки **Apply** не требуется для выборки. 
 
-Several important selection functions are found under the 
-** selection** menu, including: invert selection, select none, and select all. This
-menu is also where the option to export selected features is found. Export means create a new
-shapefile identical to the current layer but containing only the selected features. This is a
-useful way of producing derivative maps. 
+Несколько важных функций выбора могут быть обнаружены в меню **selection**, включая: обратить выборку, снять выборку, выбрать всё. Это меню может быть найдено и  настройках экспорта выбранных объектов. "Экспорт" означает создать новый шейп-файл, идентичный текущему слою, но содержащему только выбранные записи. Это удобный путь для создания производных карт. 
 
-If the layer contains a large number of shapes it may be difficult to see a selected shape.
-You can zoom to the selected shape via the 
-**View** menu or using the 
-** selected** toolbar button in the main MapWindow interface. 
-
+Если слой содержит большое количество объектов, может быть непросто увидеть выбранные из них. Вы можете приблизиться к выбранному объекту при помощи меню **View**, используя кнопку **selected** на панели инструментов в главном окне программы. 
 
 ++++++++++++++++++++++++++++++++
-4.2.4 The spatial query plug-in
+4.2.4 Модуль пространственного поиска
 ++++++++++++++++++++++++++++++++
 
 .. image:: ../../images/screenshots/800x600/mapwindow-toolbox.png
-  :alt: Toolbox
+
+  :alt: инструменты геообработки
   :align: right
   :width: 193 
   :height: 290
   
-The **Spatial Query** dialog is a part of the GIS 
-**Toolbox**, found under the legend. The path to the 
-**Spatial Query** is: 
+Диалог **Spatial Query** является частью набора инструментов ГИС **Toolbox**, которые размещены под легендой. Частью **Spatial Query** являются: 
 **Legend -> Toolbox -> Vector Operations -> Standard**. 
 
-A spatial query means selecting shapes from one layer based on their spatial
-relationship to shapes from another layer. For example, a query might select shapes from layer A
-if, and only if, they intersect with shapes from layer B. Several types of relationship can be
-specified, including: intersect, contain, touch, overlap, and others. It is possible to restrict
-the query to shapes in layer B that have been selected. 
+Пространственный запрос — это выбор объектов из одного слоя на основе пространственных взаимосвязей с объектами из другого слоя. Например, запрос может выбрать объекты из слоя A, тогда и только тогда, когда они пересекаются с объектами из слоя B. Могут быть определены несколько типов взаимосвязей, включая: пересечение, содержание, касание, перекрытие и др. Имеется возможность ограничить запрос выбранными объектами слоя B. 
 
 ------------------------------------
-4.3 Creating and editing shapefiles
+4.3 Создание и редактирование шейп-файлов
 ------------------------------------
-Shapefiles are added and modified using a plug-in called 
-**Shapefile Editor**. Remember to activate the plug-in first in the 
-**Plug-ins** menu. Doing so brings up a new toolbar that is used to run the plug-ins
-various functions. All references to toolbar buttons below refer to the shapefile editors
-toolbar. Note that this is a large toolbar and adding it can cause many of the other toolbars to
-be hidden. To avoid this you can grab the toolbar along the row of dots, and drag it down one
-row, or to wherever you want it. 
+Шейп-файлы добавляются и изменяются при помощи модуля под названием **Shapefile Editor**. Не забудьте активировать модуль в меню **Plug-ins**. При этом будет открыта новая панель инструментов, которая используется для запуска различных функций. Все кнопки панели инструментов ссылаются на панель редактирования шейп-файлов. Следует заметить, что это большая панель и её отображение может привести к скрытию части других панелей. Для предотвращения этого вы можете потянуть панель вдоль строки с точками и переместить её ниже на одну строку или в любое другое место. 
 
-A word of caution. The shapefile toolbar works on whatever layer happens to be selected in
-the legend. If you accidentally switch layers at some point there will be no warning to let you
-know that the target has changed. Furthermore, although the shapefile toolbar does have an 
-**Undo** button, it is not yet functional in version 4.8.6. That said, you do have
-the option of setting the layer to 
-**Editing mode** in the 
-**Mode** tab of the 
-**Layer Properties** dialog. This allows you to discard all changes when ending the
-editing session. 
+Предупреждение: панель редактора шейп-файлов работает с выделенным в легенде слоем. Если вы измените выбор слоя в момент редактирования, не последует никакого предупреждения, что редактируемый слой изменён. Кроме того, хотя на панели инструментов шейп-файла имеется кнопка **Undo**, её код еще не реализован в версии 4.8.6. Как было сказано, имеется опция установки свойства слоя в так называемый **Editing mode** во вкладке **Mode** диалога **Layer Properties**. Это даёт вам возможность отменить все изменения по завершению сессии редактирования. 
 
 +++++++++++++++++++++++++++++++
-4.3.1 Creating a new shapefile
+4.3.1 Создание нового шейп-файла
 +++++++++++++++++++++++++++++++
-Shapefiles are created using the 
-**New** toolbar button. Clicking 
-**New** brings up a dialog in which you specify the name and location for the new
-file. You also select which type of shape you want: point, line, or polygon. Before creating a
-new shapefile you should load a layer into your project to set the projection and to serve as a
-spatial reference when adding your new shapes. Advanced techniques for georeferencing are beyond
-the scope of this guide. 
+Шейп-файлы создаются с использованием кнопки **New** панели инструментов. Нажатие **New** открывает диалог, в котором указывается имя и путь к новому файлу. Вы также выбираете тип геометрии: точка, линия, полигон. Прежде чем создать новый шейп-файл, вам необходимо загрузить слой в ваш проект для установки проекции в качестве системы координат добавляемых объектов. Расширенные техники работы с геопривязкой выходят за рамки этого руководства. 
 
 .. image:: ../../images/screenshots/800x600/mapwindow-coordinates.png
-  :alt: Coordinates
+  :alt: Координаты
   :align: right
   :width: 285 
   :height: 47
 
-When a shapefile is created it is empty. To add freeform shapes use the 
-**Add** toolbar button. There are two options for defining vertices. The easiest is
-to use the mouse each time you left-click a new vertex is added. When all the vertices have been
-defined, right-click the mouse to finish. An alternative approach is to define vertices by typing
-in their X and Y coordinates. A dialog is provided for this purpose when you click the 
-**Add** button. After you have entered the X and Y values click the checkmark to the
-right to add the vertex. Then go on to the next, until you are done. Right-click to complete the
-shape and exit. Note that the X and Y boxes track the current location of the mouse, so dont let
-your mouse stray out of the dialog when entering the values or the values will be changed. 
+Когда создается шейп-файл, он пустой. Чтобы добавить объекты, используйте кнопку **Add** панели инструментов. Имеется две опции для ввода вершин. Наиболее простая — это использовать мышь, каждый раз при нажатии ЛКМ будет добавляться новая вершина. Когда все вершины введены, нажатие ПКМ завершает фигуру. Альтернативным способом является задание вершин вводом координат X и Y. Для этих целей служит специальный диалог, открываемый при щелчке на кнопке **Add**. После ввода значений X и Y, щёлкните на отметке слева для ввода вершины. Повторите шаги для следующей вершины, пока не завершите. Правый клик завершает объект и осуществляет выход. Следует заметить, что поля ввода X и Y заполняются текущим местоположением указателя мыши, поэтому не двигайте мышь при вводе значений, иначе значения изменятся. 
 
-To add a regular shape (e.g., rectangle, circle, etc.) use the 
-**Insert** toolbar button. First, pick the type of shape you want by clicking the 
-**Add this** radio button of your choice. Next, fill in any required data (e.g.,
-rectangle height and width). Then go to your map and click where you want the centroid of the new
-shape to be. Repeated clicking will produce multiple shapes. Once all of your shapes have been
-added click 
-**Done** in the dialog to exit. 
+Для ввода типовой фигуры (например, треугольник, круг и т.п.) используйте кнопку **Insert** панели инструментов. Для начала, выберите тип фигуры, щёлкнув переключатель **Add this**. Затем, заполните необходимые данные (например, высоту и ширину прямоугольника). Затем перейдите к карте и щелкните в место расположения центроида нового объекта. Повторные щелчки приведут к созданию нескольких объектов. Когда все объекты будут введены, нажмите **Done** в диалоге для выхода. 
 
 +++++++++++++++++++++++++++++++++
-4.3.2 Modifying existing shapes
+4.3.2 Изменение существующего шейп-файла
 +++++++++++++++++++++++++++++++++
-The shapefile toolbar has three buttons for changing the shape of existing shapes: 
-**Move vertex**, 
-**Add vertex** and 
-**Remove vertex**. Vertices need not be visible to use these tools. When your mouse
-passes over an existing vertex it will be displayed, allowing you to move it (click and drag) or
-remove it (click) with the appropriate tool. If you are adding vertices, a new vertex will appear
-under your mouse when it travels near a shape (click to add). If the vertices are not immediately
-visible, wait a few seconds there is a slight lag when the tool initially loads. The shapes do
-not have to be selected for the tools to work. Until the 
-**Undo** feature is functional it would be advisable to work with a copy of existing
-maps when modifying vertices, not the original, since the changes are committed immediately. 
+Панель инструментов шейп-файла имеет три кнопки для изменения объектов: **Move vertex**, **Add vertex** и **Remove vertex**. Вершины не должны быть видимыми для использования этих инструментов. При подведении курсора мыши к существующей вершине она будет показана, позволяя её перемещать ("щёлкни-и-тащи") или удалить её ("щёлкни") при помощи соответствующих инструментов. Если добавляются вершины, новая вершина появится под указателем мыши (щёлкните, чтобы добавить). Если вершина сразу не появилась, подождите несколько секунд. Для работы инструментов нет необходимости выбирать объекты. До тех пор, пока не появится возможность отмены (**Undo**), рекомендуется работать с копиями существующих карт при изменении вершин, не с оригиналами. т.к. изменения вносятся сразу же. 
 
-To remove shapes from a layer they must first be selected. Then click the 
-**Remove** button to delete them. A warning box will pop up to ask you if you are
-sure. 
+Для удаления геометрии из слоя их необходимо выделить. При щелчке на кнопке **Remove** происходит их удаление. Будет выведено предупреждение для подтверждения действия. 
 
-Click the **Merge** button to merge individual shapes together. A dialog will pop up prompting
-you to select the shapes to be merged. The shapes to be merged must all belong to the same layer.  
+Щёлкните по кнопке **Merge** для объединения отдельных объектов. Будет выведено предупреждение для подтверждения действия. Объединяемые объекты должны принадлежать одному слою.  
 
 ------------------
-4.4 Geoprocessing
+4.4 Геопроцессинг
 ------------------
-MapWindow includes a set of tools for common geoprocessing tasks. The main suite of tools
-is found in the GIS 
-**Toolbox**, which is a tab under the legend. A few others exist as independent
-plug-ins. A description of geoprocessing operations is beyond the scope of this guide, but I will
-list some of the main operations here to provide readers with an understanding of the
-capabilities of MapWindow: 
+В MapWindow включен набор инструментов для общих задач геообработки. Основной набор инструментов может быть найден в ГИС **Toolbox**, которая представляет собой вкладку под легендой. Несколько дополнительных инструментов представляют собой отдельные модули. Описание операций геопроцессинга выходит за рамки данного руководства, но можно перечислить некоторые из основных операций, чтобы дать представление о возможностях MapWindow: 
 
-+ Buffer shapes
-+ Vector overlays, including intersection and union
-+ Various clipping operations, including clip using shapefile or polygon mask
-+ Dissolve shapes by attribute
-+ Calculate polygon areas
-+ Various projection functions
-+ Several raster operations, including clip by polygon, merge grids, and reclassify
++ Построение буферов 
++ Векторное наложение, включая пересечение и объединение
++ Различные операции отсечения, включая отсечение по шейп-файлу или полигональной маске
++ Объединение на основе атрибутов
++ Расчёт площади полигонов
++ Различные функции перепроецирования
++ Несколько растровых операций, включая обрезку полигоном, объединение растров и переклассификацию.

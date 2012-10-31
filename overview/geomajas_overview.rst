@@ -19,56 +19,56 @@
 Geomajas
 ================================================================================
 
-Browser GIS Client
+Браузерный ГИС-клиент
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Geomajas is an extensible web mapping framework which seamlessly integrates powerful server side algorithms into the web browser.
+Geomajas представляет собой расширяемое приложение для веб-картографии, которое предоставляет доступ к мощным инструментам серверной стороны из браузера.
 
-The focus of Geomajas is to provide a platform for **server-side integration** of geospatial data (be it through :doc:`GeoTools <geotools_overview>` or Hibernate), allowing multiple users to control and manage the data from within their own browsers. In essence, Geomajas provides a set of powerful building blocks, from which the most advanced GIS application can easily be built.
+Назначение Geomajas — создание платформы для **интеграции на стороне сервера** пространственных данных (используя :doc:`GeoTools <geotools_overview>` или в спящем режиме), что позволяет нескольким пользователям просматривать и управлять данными в своих браузерах. По сути, Geomajas предоставляет набор "строительных блоков", из которых легко можно построить ГИС-приложение с большим набором возможностей.
 
-What makes Geomajas unique is its strong server side focus. The processing, styling, filtering, caching, etc. of geospatial data always happens within a secured context. All this makes Geomajas applications incredibly scalable and performing, keeping the client a **real thin client**.
+Уникальность Geomajas заключается в акценте на стороне сервера. Обработка, настройка стилей, фильтрация, кэширование и т.д. пространственных данных происходит в "безопасном режиме". Всё это делает приложения Geomajas невероятно гибкими.
 
 .. image:: ../../images/screenshots/1024x768/geomajas_1024x768_screen1.png
   :scale: 50%
-  :alt: Geomajas Showcase
+  :alt: Демонстрация Geomajas
   :align: right
 
-Core Features
+Базовые функции
 --------------------------------------------------------------------------------
 
-* Integrated client-server architecture
-* Geometry and attribute editing
-* Custom attribute definitions
-* Advanced querying capabilities (CQL)
-* Out-of-the-box security
-* Extensible plug-in mechanism
-* Multiple front-end technologies
-* Cross browser support, without the need for browser plug-ins
+* Интегрированная клиент-серверная архитектура
+* Редактирование геометрии и атрибутики
+* Определение атрибутов пользователем
+* Возможности сложных запросов (CQL)
+* Безопасность "Out-of-the-box"
+* Расширение возможностей с помощью плагинов
+* Несколько интерфейсных реализаций
+* Кросс-браузерная поддержка без необходимости установки специальных расширений для браузера
 
-Implemented Standards
+Реализованные стандарты
 --------------------------------------------------------------------------------
 
 * OGC Web Map Service (WMS) 1.1.0, 1.1.1, 1.3.0
 * OGC Web Feature Service (WFS) 1.0.0, 1.1.0
 
-Details
+Дополнительная информация
 --------------------------------------------------------------------------------
 
-**Website:** http://www.geomajas.org/
+**Веб-сайт:** http://www.geomajas.org/
 
-**Licence:** AGPL
+**Лицензия:** AGPL http://www.fsf.org/news/agplv3-pr
 
-**Software Version:** 1.8
+**Версия ПО:** 1.8
 
-**Supported Platforms:** Windows, Linux, Mac
+**Поддерживаемые платформы:** Windows, Linux, Mac
 
-**API Interfaces:** Java
+**Интерфейсы API:** Java
 
-**Support:** http://www.osgeo.org/node/725?SET=1&MUL_TECH[]=00089
+**Поддержка:** http://www.osgeo.org/node/725?SET=1&MUL_TECH[]=00089
 
 
-Quickstart
+Начало работы
 --------------------------------------------------------------------------------
 
-* :doc:`Quickstart documentation <../quickstart/geomajas_quickstart>`
+* :doc:`Введение <../quickstart/geomajas_quickstart>`
 

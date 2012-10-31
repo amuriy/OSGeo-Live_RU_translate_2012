@@ -1,119 +1,103 @@
 :Author: OSGeo-Live
 :Author: Stephan Meissl, Stephan Krause
-:Reviewer: 
+:Reviewer:
 :Version: osgeo-live6.0
 :License: Creative Commons Attribution 3.0 Unported (CC BY 3.0)
 
 .. image:: ../../images/project_logos/logo-eoxserver-2.png
   :scale: 65 %
-  :alt: project logo
+  :alt: логотип проекта
   :align: right
   :target: http://eoxserver.org/
 
 EOxServer
 ================================================================================
 
-Web Service
+Веб-сервис
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-EOxServer is a server for Earth Observation (EO) data. More precisely it is 
-a Python application and framework for presenting EO data and metadata.
+EOxServer — это сервер для просмотра данных дистанционного зондирования Земли (ДЗЗ). Точнее, это приложение написанное на языке Python для отображения ДДЗ и их метаданных.
 
-EOxServer's mission: To provide an Open Source software framework to ease 
-the online provision of big Earth Observation data archives via Open 
-Standard services for efficient exploitation by users.
+Миссия EOxServer — предоставить свободное ПО для упрощения просмотра больших архивов данных через сервисы, использующие открытые стандарты.
 
-* Open Source: MIT-style license
-* software framework: Entirely based on Open Source (Python, :doc:`MapServer <mapserver_overview>`, 
-  Django/GeoDjango, :doc:`GDAL <gdal_overview>`, :doc:`SpatiaLite <spatialite_overview>`, or 
-  :doc:`PostGIS <postgis_overview>`, and PROJ.4)
-* ease online provision: Admin GUI and command line data registration
-* big Earth Observation data archives: Operators register existing raster data 
-  archives
-* Open Standard services: Open in the sense of freely available; Open 
-  Geospatial Consortium (OGC); WMS, WCS, EO-WMS, EO-WCS
-* efficient exploitation by users: User defined sub-setting; view and download
+* Открытый исходный код (Open Source): лицензия основанная на MIT.
+* Программное обеспечение: полностью основано на Open Source (Python, :doc:`MapServer <mapserver_overview>`, Django/GeoDjango, :doc:`GDAL <gdal_overview>`; :doc:`SpatiaLite <spatialite_overview>` или :doc:`PostGIS <postgis_overview>`; PROJ.4)
+* Лёгкое онлайн-обслуживание: графический интерфейс для администрирования и командная строка для регистрации данных.
+* Большие архивы данных Earth Observation: операторы регистрируют доступные архивы данных.
+* Сервисы, использующие открытые и находящиеся в свободном доступе стандарты Open Geospatial Consortium (OGC): WMS, WCS, EO-WMS, EO-WCS.
+* Удобство для пользователей: определяемые пользователем настройки, просмотр и получение данных.
 
 .. image:: ../../images/screenshots/1024x768/eoxserver_screenshot.jpg
   :scale: 50 %
-  :alt: EOxServer embedded client screen shot
+  :alt: встроенный клиент EOxServer
   :align: right
 
 
-Core Features
+Базовые функции
 --------------------------------------------------------------------------------
 
-The available core features are:
+Доступны следующие основные возможности:
 
-* Support of GML AP – Coverages for RectifiedGridCoverages
-* Support of adopted WCS 2.0 specification (Core including GetCapabilities, 
-  DescribeCoverage, and GetCoverage requests, KVP-, and XML/POST protocol 
-  binding)
-* Anticipated support of envisaged extensions: Coverage format, GeoTIFF 
-  encoding, predefined (or EPSG) CRSs, scaling & interpolation, and 
-  non-referenced access. By "anticipating" we mean to reflect the latest 
-  WCS.SWG discussions as well as to follow the relevant parts of the previous 
-  1.1 and 1.0 versions of WCS.
-* Support of 2-D EO Coverages derived from gmlcov:RectifiedGridCoverage
-* Support of 2-D EO Coverages derived from gmlcov:ReferenceableGridCoverage
-* Support of Dataset Series as a collection of EO Coverages e.g. in a time 
-  series
-* Support of new DescribeEOCoverageSet operation on Dataset Series and EO 
-  Coverages
-* Support of Stitched Mosaic of Rectified EO Coverages including concept of 
-  contributingFootprint
-* Support of EO Metadata (retrieval and evaluation in DescribeEOCoverageSet 
-  operation)
-* Protocoll bindings supported:
+* Поддержка покрытия GML AP для RectifiedGridCoverages.
+* Поддержка спецификаций WCS 2.0 (включая запросы GetCapabilities, DescribeCoverage и GetCoverage, протоколы KVP и XML/POST).
+* Ожидаемая поддержка предусмотренных расширений: формата покрытий, кодировки GeoTIFF, устанавливаемых пользователем координатных систем (или EPSG), масштабирование, интерполяция и доступ к непривязанным данным. Под "ожидаемым" мы подразумеваем отражение последних дискуссий WCS.SWG, а также следование соответствующим разделам предыдущих версий WCS (1.1 и 1.0 ). 
+* Поддержка 2D-покрытий EO, получаемых из gmlcov:RectifiedGridCoverage.
+* Поддержка 2D-покрытий EO, получаемых из gmlcov:ReferenceableGridCoverage.
+* Поддержка серийных наборов данных как коллекций покрытий EO, т.е. временных серий.
+* Поддержка новых операций DescribeEOCoverageSet в сериях данных и покрытиях EO.
+* Поддержка сшитых мозаик и привязанных покрытий EO, включая концепцию "contributingFootprint".
+* Поддержка метаданных EO (операция поиска DescribeEOCoverageSet).
+* Поддерживаемые привязки к протоколам:
 
  * KVP
- * XML/POST (used together with SOAP2POST Proxy to support XML/SOAP protocol 
-   binding) 
+ * XML/POST (используется вместе с SOAP2POST Proxy для поддержки протокола XML/SOAP
+ привязок протоколов)
 
-* Coverage formats supported:
+* Поддерживаемые форматы покрытий:
 
  * GeoTIFF
- * Formats supported by the GDAL library (support needs to be verified for 
-   each required format separately) 
+ * Форматы, поддерживаемые библиотекой GDAL (необходимо проверять поддержку каждого формата отдельно)
 
-* Support of EO-WMS for EO Coverages 
+* Поддержка EO-WMS для покрытий EO
 
-Implemented Standards
+Поддерживаемые стандарты
 --------------------------------------------------------------------------------
 
-* Support of numerous Open Geospatial Consortium  (OGC) standards
+* Поддержка множества стандартов Открытого геопространственного консорциума (OGC)
 
   * WCS, EO-WCS
   * WMS, EO-WMS
   * GML, GMLCOV, EO-O&M
 
-Demo
+Демонстрационные примеры
 --------------------------------------------------------------------------------
 
 * `Local <http://localhost/eoxserver/>`_
 * `Online <https://eoxserver.org/demo_stable/>`_
 
-Documentation
+Документация
 --------------------------------------------------------------------------------
 
-* `EOxServer 0.2.1 Documentation <../../eoxserver-docs/EOxServer_documentation.pdf>`_
+* `EOxServer 0.2.1 Documentation
+<../../eoxserver-docs/EOxServer_documentation.pdf>`_
 
-Details
+Подробности
 --------------------------------------------------------------------------------
 
-**Website:** http://eoxserver.org/
+**Веб-сайт:** http://eoxserver.org/
 
-**Licence:** `MIT-style license <http://eoxserver.org/doc/copyright.html#license>`_
+**Лицензия:** `Лицензия, основанная на MIT <http://eoxserver.org/doc/copyright.html#license>`_
 
-**Software Version:** 0.2.1
+**Версия ПО:** 0.2.1
 
-**Supported Platforms:** Linux, Windows, Mac
+**Поддерживаемые платформы:** Linux, Windows, Mac
 
-**API Interfaces:** Python
+**Интерфейсы API:** Python
 
-**Support:** http://eoxserver.org/doc/en/users/basics.html#where-can-i-get-support
+**Поддержка:**
+http://eoxserver.org/doc/en/users/basics.html#where-can-i-get-support
 
-Quickstart
+Начало работы
 --------------------------------------------------------------------------------
-    
-* :doc:`Quickstart documentation <../quickstart/eoxserver_quickstart>`
+
+* :doc:`Введение <../quickstart/eoxserver_quickstart>`

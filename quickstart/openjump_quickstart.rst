@@ -6,82 +6,69 @@
 :Thanks: OpenJUMP Community
 
 ********************************************************************************
-OpenJUMP Quickstart 
+Начало работы c OpenJUMP
 ********************************************************************************
 
-OpenJUMP is a desktop GIS program that allows for easy viewing and editing 
-of vector GIS data. It also has limited support for the viewing of raster
-data.
+OpenJUMP — это ГИС, позволяющая просматривать и редактировать пространственные векторные данные.
+В OpenJUMP имеется также возможность просмотра растровых данных.
 
-This Quick Start describes how to:
+Данное "введение" описывает, как:
 
-  * Open an ESRI shapefile with OpenJUMP.
-  * Style the layer created from the shapefile for easier viewing.
-  * Edit the geometries of the features in a layer.
+  * Открыть шейп-файлы в OpenJUMP;
+  * Пприменить оформление к слою, созданному из шейп-файла, для удобного просмотра;
+  * редактировать геометрию слоя.
 
-Starting OpenJUMP
+Запуск OpenJUMP
 ================================================================================
 
-OSGeo Live-DVD: start OpenJUMP link on desktop or run /usr/bin/openjump
+В OSGeo-Live: щёлкните по ссылке OpenJUMP из меню или запустите /usr/bin/openjump.
 
-General: For Windows, go to the bin folder of the OpenJUMP directory and double 
-click the openjump.exe or openjump.bat file. For Linux, execute the oj_linux.sh 
-file from a terminal. For MacOSX, click on the OpenJUMP application symbol.
+Общая информация: для Windows перейдите в папку *bin* директории *OpenJUMP* и дважды кликните на 
+openjump.exe или openjump.bat. Для Linux запустите файл oj_linux.sh. Для MacOSX кликните по значку OpenJUMP.
 
-(Please note: A Java runtime environment is required to run OpenJUMP. 
-You can download a Java runtime environment for your computer here: 
-http://java.com/en/download/index.jsp)
+(Помните: для работы OpenJUMP необходим Java runtime environment. Вы можете загрузить Java runtime environment на ваш компьютер отсюда: http://java.com/en/download/index.jsp)
 
-Basic User Interface Overview
+Базовый обзор интерфейса
 ================================================================================
 
-The OpenJUMP user interface has four (4) basic components as most other desktop GIS.
-(i) The first is a top-level menu bar for accessing most functionality. (ii) The 
-second is a main toolbar that sits just below the menu bar. The buttons give 
-access to the most important display and navigation functions. (iii) The third 
-is a tree view on the left that shows the layer list of the active project. 
-(iv) The fourth is the layer view. This is the actual map where a graphical 
-representation of the spatial data in each layer is given. Finally there is an 
-information bar at the bottom displaying mouse pointer coordinates, processing 
-reports, and memory usage. A project window contains a layer list and a layer 
-view. Each instance of OpenJUMP can contain multiple projects. In our quick 
-start, we will only be working with a single window.
+Интрфейс OpenJUMP, как и в многих других ГИС, состоит из четырёх основных компонентов.
+(i) Первый — панель меню, содержащая большую часть функционала. 
+(ii) Второй компонент — основная панель инструментов, находящаяся под панелью меню. Кнопки дают доступ к самым важным функциям отображения и навигации. 
+(iii) Третий — дерево слоев, находящееся слева, которое показывает список слоев активного проекта.
+(iv) Четвертый — вид карты, графически отображающий пространственные данные каждого из слоёв. В самом низу находится панель, на которой отображаются координаты текущего положения указателя мыши, отчёты обработки данных и использование памяти. 
+
+Окно проекта содержит список слоёв и Вид карты. Каждая сессия OpenJUMP может содержать множество проектов. 
+Здесь будет рассмотрена работа с одним окном.
 
 .. image:: ../../images/screenshots/1024x768/openjump_ss_01.png
    :scale: 55 
 
-Open an ESRI Shapefile
+Открытие шейп-файла
 ================================================================================
 
-This section of the quick start briefly explains how to open an ESRI shapefile.
+Этот раздел кратко описывает, как открыть ESRI Shapefile.
 
-On the top-level menu bar in OpenJUMP, select the [File] menu. Then select the 
-option [Open File...]. This will present you with a dialog box that allows you 
-to open files containing geospatial data. In our example, you want to browse for 
-an ESRI shapefile. Look for a file with the .shp extension. Select the file and 
-click the [Finish] button on the dialog. After a few moments, you will be able 
-to see the data from your shapefile in the Layer View. You will also see a new 
-layer created for your data in the Layer List. The name of the layer will match 
-the name of the shapefile.
+Выберите меню [File] на панели меню, затем выберите опцию  
+ [Open File...]. Появится диалоговое окно, с помощью которого вы сможете открыть файлы, содержащие пространственые данные. 
+В данном примере вы подгрузите ESRI Shapefile. Найдите файл с расширением .shp, выберите его и кликните по кнопке  
+ [Finish] в диалоговом окне. Через некоторое время вы сможете увидеть данные в Виде слоёв. 
+Вы также увидите новый слой, созданный из ваших данных, в списке слоёв. Имя слоя будет соответствовать имени шейп-файла.
 
 .. image:: ../../images/screenshots/1024x768/openjump_ss_02.png
    :scale: 55 
 
-Another quicker option is to directly drag and drop your shapefile in the Layer View.
+Другой, более быстрый способ — перетащить нужный шейп-файл прямо в Вид карты.
 
-Style a Layer
+Оформление слоя
 ================================================================================
 
-This section of the quick start briefly explains how to style a layer.
+Этот раздел описывает, как изменить оформление слоя. 
 
-In the Layer List, right click* on the layer name. This will show a pop-up menu. 
-Go to the [Style] menu entry and the choose [Change Styles]. The Change Styles 
-dialog has five (5) tabs that allow you to change how the layer is displayed at 
-the Layer View. This includes changing the stroke color, the fill color, line
-style and line thickness, transparency, adding labels, and determining at which 
-maximum and minimum scales the layer is displayed at.
+Правой клавишей мыши кликните по имени слоя в Списке слоёв. В появившемся меню [Style] выберите стиль, а затем нажмите [Change Styles]. Окно "Смена оформления" состоит из пяти вкладок, позволяющих изменять отображение слоя в Виде слоёв:
+цвета, заливки, стили линий, их толщину, прозрачность, подписи, а также указывать минимальний и  максимальный
+масштабы, на которых слой отображается.
 
-* MacOSX users press the :guilabel:`Apple` key to access this menu.
+* Пользователи MacOS X  должны нажать кнопку :guilabel:`Apple`, чтобы попасть в это меню. 
 
 .. image:: ../../images/screenshots/1024x768/openjump_ss_03.png
    :scale: 55 
@@ -89,13 +76,12 @@ maximum and minimum scales the layer is displayed at.
 .. image:: ../../images/screenshots/1024x768/openjump_ss_04.png
    :scale: 55 
 
-Edit Feature Geometries in a Layer
+Редактирование геометрии слоя
 ================================================================================
 
-In the Layer List, right click on the layer name. This will show a pop-up menu. 
-Check the box next to the Editable menu entry called "Editable". This will open 
-a new floating toolbar over the Layer View on the right side. This toolbar has a 
-set of buttons that you can use to edit the geometry of a geographic feature.
+Правой клавишей мыши кликните по имени слоя в списке слоёв. 
+В меню "Редактирование" поставьте флажок возле пункта меню "Editable". 
+Справа над Видом слоёв появится плавающая панель с набором кнопок, позволяющих редактировать геометрию объектов.
 
 .. image:: ../../images/screenshots/1024x768/openjump_ss_05.png
    :scale: 55 
@@ -103,43 +89,37 @@ set of buttons that you can use to edit the geometry of a geographic feature.
 .. image:: ../../images/screenshots/1024x768/openjump_ss_06.png
    :scale: 55 
 
-Let's try a quick edit. First we need to select a geometry and then we move a 
-point of the geometry. To do that, we first click the button that shows a mouse 
-cursor in the editing toolbar. Use it to click on and select a single feature in 
-the Layer View. It should change to yellow and small yellow squares appear at 
-each angle point (vertex) in the feature geometry. 
+Давайте попробуем быстро отредактировать объект, выбрав его, а затем перестив одну из точек этого объекта.
+Чтобы сделать это, кликните по кнопке в виде указателя мыши на панели редактирования. 
+Используйте её, чтобы выбирать объект в один клик в Виде слоёв.
+После этого объект будет выделен жёлтым цветом с небольшими желтыми квадратами возле каждой точки (вершины) геометрии объекта.
 
 .. image:: ../../images/screenshots/1024x768/openjump_ss_07.png
    :scale: 55 
 
-Next, click on the button 
-that shows a blue crosshair with a yellow square in the middle, the :guilabel:`Move Vertex Tool` 
-(Hoovering over the buttons gives you a button description). You should 
-now see your mouse cursor change to a small black crosshair when you move it 
-over the Layer View. 
+Далее кликните по кнопке в виде прицела с желтым квадратом посередине :guilabel:`Move Vertex Tool`.
+(Проведите мышкой над кнопками, чтобы увидеть всплывающую подсказку).
+Указатель мыши сменится на небольшой прицел, когда вы будете проводить им над Видом слоя.
 
 .. image:: ../../images/screenshots/1024x768/openjump_ss_08.png
    :scale: 55 
 
-Try using this to move the vertex on the geometry you 
-selected by clicking an the vertex and dragging it (leaving the mouse button 
-pressed).
+Используя этот инструмент, попробуйте переместить вершину выбранной геометрии, кликая на ней и перетягивая её с зажатой левой клавишей мыши.
 
 .. image:: ../../images/screenshots/1024x768/openjump_ss_09.png
    :scale: 55 
    
-Other Learning Resources for OpenJUMP
+Другие источники для обучения OpenJUMP
 ================================================================================
 
-This is only the first step on the road to using OpenJUMP. There is a lot more 
-material left for you to discover.
+Это только первый шаг на пути использования OpenJUMP. Существует ещё много материалов для изучения.
 
-You can download tutorials for the OpenJUMP here:
+Вы можете загрузить учебные материалы OpenJUMP тут:
 http://sourceforge.net/projects/jump-pilot/files/Documentation/
 
-You can read the OpenJUMP wiki here:
+Вы можете почитать OpenJUMP-вики тут:
 http://sourceforge.net/apps/mediawiki/jump-pilot/index.php?title=Main_Page
 
-And you can get help fast on the OpenJUMP users mailing list:
+Вы сможете получить быструю помощь через список рассылки пользователей OpenJUMP:
 http://groups.google.com/group/openjump-users
 
