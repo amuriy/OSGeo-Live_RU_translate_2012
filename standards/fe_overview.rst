@@ -32,18 +32,32 @@ Filter Encoding (FE)
 .. Writing Tip:
   1 paragraph or 2 defining what the standard is.
 
-The OGC® Filter Encoding Standard (FE) defines an XML encoding for expressing filters for spatial queries in order to select a subset of features based upon specific attributes.
+Стандарт OGC® Filter Encoding (FE) определяет кодировку XML для фильтров выражений
+для пространственных запросов. Это делается для того, чтобы выбрать подмножество
+объектов, основанных на конкретных атрибутах.
 (http://www.opengeospatial.org/standards/filter)
 
 .. image:: ../../images/standards/fe.jpg
   :scale: 55%
   :alt: FE in Context
 
-A subset of features might be identified to render them in a particular color or convert them into a user-specified format. The neutral XML filter encoding allows easy parsing and validation by a server implementing the OGC WFS standard before the filter expression is transformed into the targeted language of the data store that is being queried. This standard is used by a number of OGC Web Services, including the Web Feature Service, the Catalogue Service and the Styled Layer Descriptor Standard.
 
-Filter constraints can be specified on values of spatial, temporal and scalar properties. An example of a spatial filter is: “Find all the properties in Omstead County owned by Peter Vretanos.” An example of a temporal filter is: “Find all the dams in Massachusetts that were built before 1900.” An example of a scalar filter is: “Find all the temperature sensors in Paris that are reporting temperature between 20 degrees C. and 24 degrees C.” 
+Подмножество объектов может быть определено, например, для их отрисовки в определённых
+цветах или конвертации в определённый пользователем формат.               
 
-See Also
+Нейтральное кодирование XML-фильтра способствует лёгкому разбору и валидации сервером,
+реализующим стандарт OGC WFS, до того, как выражение фильтра преобразуется в целевой язык
+хранилища данных, к которому сделан запрос. Этот стандарт используется в ряде веб-сервисов
+OGC, включая стандарты Web Feature Service, Catalogue Service и Styled Layer Descriptor (SLD).
+
+Ограничения фильтра могут быть определены через значения пространственных, временных
+и скалярных свойств. Пример пространственного фильтра: "Найти все свойства в Omstead County,
+принадлежащие Peter Vretanos". Пример временного фильтра: "Найти все плотины в штате Массачусетс, 
+которые были построены до 1900 года". Пример скалярного фильтра: "Найти все датчики температуры в
+Париже, показывающие температуру между 20°С и 24°С."
+
+
+См. также
 --------------------------------------------------------------------------------
 
 .. Writing Tip:
