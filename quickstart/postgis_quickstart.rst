@@ -1,6 +1,6 @@
-:Author: Barry Rowlingson
-:Author: Astrid Emde
-:Author: Cameron Shorter
+:Author: Барри Роулингсон
+:Author: Астрид Эмде
+:Author: Камерон Шортер
 :Version: osgeo-live5.0
 :License: Creative Commons Attribution-ShareAlike 3.0 Unported  (CC BY-SA 3.0)
 
@@ -12,108 +12,100 @@
 
 
 ********************************************************************************
-PostGIS Quickstart
+Введение в PostGIS 
 ********************************************************************************
 
-PostGIS adds spatial capabilities to the PostgreSQL relational database. It extends
-PostgreSQL so it can store, query, and manipulate spatial data. In this Quickstart we will
-use 'PostgreSQL' when describing general database functions, and 'PostGIS' when
-describing the additional spatial functionality provided by PostGIS.
+PostGIS добавляет дополнительную функциональность к СУБД PostgreSQL. PostGIS расширяет возможности 
+PostgreSQL с точки зрения хранения пространственных данных, запросов к ним и управления ими. В данном
+"введении" будут описаны основные функции PostgreSQL и PostGIS.
 
-Client-server Architecture
+Архитектура Клиент-Сервер
 ================================================================================
 
-PostgreSQL, like many databases, works as a server in a client-server system.
-The client makes a request to the server and gets back a response. This is the
-same way that the internet works - your browser is a client and a web server sends
-back the web page. With PostgreSQL the requests are in the SQL language and the
-response is usually a table of data from the database.
+PostgreSQL, как и другие СУБД, работает в качестве сервера в системе клиент-сервер.
+Клиент отправляет серверу запрос и получает отклик. По такому же принципу работает сеть Интернет:
+ваш браузер является клиентом, посылающим запрос, а веб-сервер возвращает обратно веб-страницу. 
+Запросы PostgreSQL производятся с помощью языка SQL, откликами обычно являются таблицы данных из базы данных.
 
-There is nothing to stop the server being on the same computer as the client, and this
-enables you to use PostgreSQL on a single machine. Your client connects to the server
-via the internal 'loopback' network connection, and is not visible to other computers
-unless you configure it to be so.
+Ничего не мешает серверу PostgreSQL находится на одном компьютере с клиентом. 
+Ваш клиент подключается к серверу по внутреннему IP-интерфейсу обратной связи, который не виден для других компьютеров (если вы не настроите иначе).
 
-Three clients will be illustrated here: the command-line client,
-:doc:`Quantum GIS <../overview/qgis_overview>`, and the ``pgAdmin`` graphical database client.
+Здесь будут показаны три клиента: клиент командной строки, :doc:`Quantum GIS <../overview/qgis_overview>` 
+и графический клиент базы данных — ``pgAdmin``.
 
-Creating A Spatially-Enabled database
+Создание баз данных, поддерживающих пространственную информацию 
 ================================================================================
 
-.. review comment: Suggest providing a screen grab (or 2) which shows how to select
-   and open an xterm. Cameron
+.. review comment: Предлагаю добавить скриншот, а лучше два, показывающий как выбрать и открыть терминал (xterm). Камерон
 
-Command-line clients run from within a Terminal Emulator window. Start a Terminal
-Emulator from the Applications menu in the Accessories section. This gives you a
-Unix shell command prompt. Type::
+Клиенты командной строки запускаются из окна эмулятора терминала. Запустите эмулятор терминала из меню *Приложения* в разделе *Дополнительное*.
+Это даст вам доступ к оболочке командной строки. Напечатайте::
 
    psql -V
 
-and hit enter to see the PostgreSQL version number.
+нажмите Ввод, чтобы увидеть версию PostgreSQL.
 
-A single PostgreSQL server lets you organise work by arranging it into separate
-databases. Each database is an independent regime, with its own tables, views, users 
-and so on. When you connect to a PostgreSQL server you have to specify a
-database.
+Один сервер PostgreSQL позволяет организовать работу, распределив её по отдельным базам данных.
+Каждая из баз данных будет работать в своем режиме, со своими собственными таблицами, видами, пользователями, и т.п.
+При установлении соединения к серверу PostgreSQL вы должны указать нужную базу данных.
 
-You can get a list of databases on the server with the::
+Чтобы получить список баз данных, хранящихся на сервере, напечатайте команду::
 
    psql -l
 
-command. You should see several databases used by some of the projects on the system. 
-We will create a new one for this quickstart.
+Вы увидите несколько баз данных, используемых несколькими проектами системы. 
+В этом введении будет создана новая база данных. 
 
 .. tip:: 
-   The list uses a standard unix pager - hit space for next page, :kbd:`b` to go back, :kbd:`q` 
-   to quit, h for help.
+   Список использует стандартный Unix-pager: нажмите пробел, чтобы перейти на следующую страницу, :kbd:`b`, чтобы вернуться, :kbd:`q` 
+   для выхода и :kbd:`b` для вызова справки.
 
-PostgreSQL gives us a utility program for creating databases, ``createdb``. We need to
-create a database with the PostGIS extensions, so we need to tell it what template
-to start from. We'll call our database ``demo``. The command is then:
+PostgreSQL предоставляет служебную программу для создания базы данных ``createdb``.
+Мы создадим базу данных с помощью расширения PostGIS, указав используемый шаблон.
+Назовите базу данных ``demo``. У этом случае команда будет выглядеть следующим образом:
 
-.. review comment: createdb is a utility programm not a unix command
+.. review comment: createdb - служебная программа, а не команда  unix
 
 ::
 
    createdb -T template_postgis demo
 
 .. tip:: 
-   You can usually get help for command line tools by using a ``--help`` option.
+  Вы можете получить справку в командой строке, использую опцию ``--help``.
 
 
-If you now run ``psql -l`` you should see your ``demo`` database in the listing.
+Если вы запустите команду ``psql -l``, то должны увидеть базу ``demo`` в списке баз данных.
 
-You can also create PostGIS databases using the SQL language. First we'll delete the 
-database we just created using the ``dropdb`` command, then use the ``psql`` command
-to get an SQL command interpreter:
+Вы можете создать базу данных PostGIS с помощью языка SQL. Сначала мы удалим только что созданную базу данных с помощью команды
+``dropdb``, потом используем команду ``psql``, чтобы получить интерпретатор команд SQL:
 
 :: 
 
   dropdb demo
   psql -d postgres
  
-This connects to the database called ``postgres``, which is a system database that
-all servers should have. Now enter the SQL to create a new database:
+Эти команды подключат к системной базе данных ``postgres``, которую должны иметь все сервера.
+Введите запрос SQL, чтобы создать новую базу данных:
 
 :: 
 
  postgres=# CREATE DATABASE demo TEMPLATE=template_postgis;
 
-Now switch your connection from the ``postgres`` database to the new ``demo`` database. 
-In the future you can connect to it directly with ``psql -d demo``, but here's a neat
-way of switching within the ``psql`` command line:
+Переключите ваше соединение с базы данных ``postgres`` на новую базу данных ``demo``. 
+В дальнейшем вы сможете подключаться непосредственно к базе данных, используя команду ``psql -d demo``. Тут показан способ переключения с помощью ``psql`` в командной строке:
 
 ::
 
  postgres=# \c demo
 
 .. tip:: 
-   Hit :kbd:`CTRL` + :kbd:`C` if the psql prompt keeps appearing after pressing return. It will clear your 
-   input and start again. It is probably waiting for a closing quote mark, semicolon, or something.
+   Нажмите :kbd:`CTRL` + :kbd:`C`, если подсказка *psql* появляется после нажатия кнопки возврата. 
+   Это приведет к очищению введённой информации. Возможно, вам понадобится закрыть кавычки, двоеточие и тп. 
 
-You should see an informational message, and the prompt will change to show that you are now
-connected to the ``demo`` database. To check this has worked, type ``\dt`` to list the
-tables in the database. You should see something like this:
+Вы должны увидеть информационное сообщение, в котором будет указано, что 
+вы подключены к базе данных ``demo``. Чтобы проверить, что всё работает, напечатайте
+``\dt`` , эта команда отобразит список таблиц в базе данных.
+Вы должны увидеть подобный этому список:
 
 ::
 
@@ -123,10 +115,10 @@ tables in the database. You should see something like this:
   --------+------------------+-------+-------
    public | geometry_columns | table | user
    public | spatial_ref_sys  | table | user
-  (2 rows)
+  (2 строки)
 
-Those two tables are used by PostGIS. The ``spatial_ref_sys`` table stores information
-on valid spatial reference systems, and we can use some SQL to have a quick look:
+Это две таблицы, используемые PostGIS. Таблица ``spatial_ref_sys`` хранит информацию о системе координат, чтобы быстро просмотреть информацию,
+используйте команду SQL:
 
 ::
 
@@ -144,50 +136,43 @@ on valid spatial reference systems, and we can use some SQL to have a quick look
    4003 | EPSG      | +proj=longlat +ellps=aust_SA +no_d...
    4004 | EPSG      | +proj=longlat +ellps=bessel +no_de...
    4005 | EPSG      | +proj=longlat +a=6377492.018 +b=63...
-  (10 rows)
+  (10 строк)
 
-This confirms we have a spatially-enabled database. The ``geometry_columns`` table has the 
-job of telling PostGIS which tables are spatially-enabled. This is the next step.
+Даныне таблицы подтверждают, что наша база пространственная. Таблица 
+ ``geometry_columns`` служит для передачи информации о том, какая из таблиц содержит пространсвенную информацию.
+ 
 
-
-
-Creating A Spatial Table The Hard Way
+Создание пространственной таблицы сложным способом 
 ================================================================================
 
-Now we have a spatial database we can make some spatial tables.
-
-First we create an ordinary database table to store some city data.
-This table has two fields - one for a numeric ID and one for the city
-name:
+Теперь, имея пространственную базу данных, можно создать несколько пространственных таблиц.
+Сначала мы создадим обычную таблицу базы данных, чтобы хранить данные о городе. Эта таблица
+будет содержвать два поля — одно числовое поле-идентификатор, второе — название города:
 
 ::
 
   demo=# CREATE TABLE cities ( id int4, name varchar(50) );
 
-Next we add a geometry column to store the city locations.
-Conventionally this is called
-``the_geom``. This tells PostGIS what kind of geometry
-each feature has (points, lines, polygons etc), how many dimensions
-(in this case two), and the spatial reference
-system. We'll be using EPSG:4326 coordinates for our cities.
+Далее добавьте колонку геометрии, содержащую данные о местоположении городов. Для удобвства назовем это поле
+``the_geom``.  PostGIS подскажет, какой тип геометрии имеет каждый из объектов (точки, линии, полигоны и т.п.), 
+какая размерность и система координат.  
+Для городов мы будем использовать "географическую" систему координат EPSG:4326.
 
 ::
 
   demo=# SELECT AddGeometryColumn ( 'cities', 'the_geom', 4326, 'POINT', 2);
 
-Now if you check the cities table you should see the new column, and be informed
-that the table currently contains no rows.
+  Заглянув в таблицу города, вы увидите новую колонку, а также информацию о том, что в таблице отсутствуют строки.
 
 ::
 
   demo=# SELECT * from cities;
    id | name | the_geom 
   ----+------+----------
-  (0 rows)
+  (0 строк)
 
-To add rows to the table we use some SQL statements. To get the geometry into
-the geometry column we use the PostGIS ``ST_GeomFromText`` function to convert
-from a text format that gives the coordinates and a spatial reference system id:
+Чтобы добавить строки в таблицу, используйте команды SQL. Чтобы добавить данные геометрии в соответствующую колонку, используйте 
+функцию PostGIS ``ST_GeomFromText``, чтобы сконвертировать координаты и идентификатор референсной системы из текстового формата:
 
 ::
 
@@ -196,17 +181,15 @@ from a text format that gives the coordinates and a spatial reference system id:
   demo=# INSERT INTO cities (id, the_geom, name) VALUES (3,ST_GeomFromText('POINT(27.91162491 -33.01529)',4326),'East London,SA');
 
 .. tip:: 
-   Use the arrow keys to recall and edit command lines.
+   Используйте кнопки-стрелки для отмены и редактирования командной строки.
 
-As you can see this gets increasingly tedious very quickly. Luckily there are other ways of getting
-data into PostGIS tables that are much easier. But now we have three cities in our database, and we 
-can work with that.
+Как вы могли заметить, это быстро надоедает. К счастью, существуют иные, более лёгкие пути передачи данных в таблицы 
+PostGIS. Сейчас в нашей базе находятся три города, с которыми мы можем начать работать.
 
-
-Simple Queries
+Простые запросы
 ================================================================================
 
-All the usual SQL operations can be applied to select data from a PostGIS table:
+Все самые обычные операторы SQL могут быть использованы для выбора данных из таблицы PostGIS:
 
 ::
 
@@ -216,13 +199,11 @@ All the usual SQL operations can be applied to select data from a PostGIS table:
    1 | London, England | 0101000020E6100000BBB88D06F016C0BF1B2FDD2406C14940
    2 | London, Ontario | 0101000020E6100000F4FDD478E94E54C0E7FBA9F1D27D4540
    3 | East London,SA  | 0101000020E610000040AB064060E93B4059FAD005F58140C0
- (3 rows)
+ (3 строки)
 
-This gives us a meaningless hexadecimal version of the coordianates.
-
-If you want to have a look at your geometry in WKT format again, you
-can use the functions ST_AsText(the_geom) or ST_AsEwkt(the_geom). You can also
-use ST_X(the_geom), ST_Y(the_geom) to get the numeric value of the coordinates:
+Это возвращает нам бессмысленные значения координат в шестнадцатеричной системе.
+Если вы хотите увидеть вашу геометрию в текстовом формате WKT, используйте функцию ST_AsText(the_geom) или ST_AsEwkt(the_geom).
+Вы также можете использовать функции ST_X(the_geom), ST_Y(the_geom), чтобы получить числовые значения координат. 
 
 ::
 
@@ -232,19 +213,17 @@ use ST_X(the_geom), ST_Y(the_geom) to get the numeric value of the coordinates:
    1 | POINT(-0.1257 51.508)        | SRID=4326;POINT(-0.1257 51.508)        |     -0.1257 |    51.508
    2 | POINT(-81.233 42.983)        | SRID=4326;POINT(-81.233 42.983)        |     -81.233 |    42.983
    3 | POINT(27.91162491 -33.01529) | SRID=4326;POINT(27.91162491 -33.01529) | 27.91162491 | -33.01529
- (3 rows)
+ (3 строки)
 
 
 
-Spatial Queries
+Пространственные запросы
 ================================================================================
 
-PostGIS adds many functions with spatial functionality to
-PostgreSQL. We've already seen ST_GeomFromText which converts WKT to
-geometry. Most of them start with ST (for spatial type) and are listed in a section of
-the PostGIS documentation. We'll now use one to answer a practical
-question - how far are these three Londons away from each other, in metres,
-assuming a spherical earth? 
+Мы уже увидели, как получить геометрию из текстовых данных WKT с помощью функции ST_GeomFromText.
+Большинство таких функций начинаются с ST ("пространственный тип") и описаны в документации PostGIS.
+Мы используем одну из них, чтобы ответить на практический вопрос: на каком расстоянии в метрах
+друг от другах находятся три города с названием Лондон, учитывая сферичность земли? 
 
 ::
 
@@ -254,17 +233,15 @@ assuming a spherical earth?
   London, Ontario | London, England |   5875766.85191657
   East London,SA  | London, England |   9789646.96784908
   East London,SA  | London, Ontario |   13892160.9525778
-  (3 rows)
+  (3 строки)
 
-This gives us the distance, in metres, between each pair of
-cities. Notice how the 'WHERE' part of the line stops us getting back
-distances of a city to itself (which will all be zero) or the reverse
-distances to the ones in the table above (London, England to London, Ontario is the
-same distance as London, Ontario to London, England). Try it without the 'WHERE' part
-and see what happens.
+Этот запрос возвращает расстояние в метрах между каждой парой городов. Обратите внимание как часть 'WHERE'
+предотвращает нас от получения расстояния от города до самого себя (расстояние всегда будет равно нулю) и расстояния в обратном порядке 
+(расстояние от Лондона, Англия до Лондона, Онтарио  будет таким же как от Лондона, Онтарио до Лондона, Англия).
+Попробуйте ещё раз без 'WHERE' и посмотрите, что произойдёт.
 
-We can also compute the distance using a spheroid by using a different function and specifying the
-spheroid name, semi-major axis and inverse flattening parameters:
+Мы также можем рассчитать расстояния на сфере, используя различные функции и указывая называния сфероида,
+параметры главных полуосей и коэффициента обратного сжатия:
 
 ::
 
@@ -277,104 +254,98 @@ spheroid name, semi-major axis and inverse flattening parameters:
    London, Ontario | London, England |     5892413.63776489
    East London,SA  | London, England |     9756842.65711931
    East London,SA  | London, Ontario |     13884149.4140698
-  (3 rows)
+  (3 строки)
 
 
 
-Mapping
+Картирование
 ================================================================================
 
-To produce a map from PostGIS data, you need a client that can get at the data. Most 
-of the open source desktop GIS programs can do this - Quantum GIS, gvSIG, uDig for example. Now we'll
-show you how to make a map from Quantum GIS.
+Для создания карты из данных PostGIS вам необходим клиент, с помощью которого вы сможете интерпретировать данные. 
+Многие из открытых ГИС могут делать это, например, Quantum GIS, gvSIG, uDig. 
+Далее будет показано, как сделать карту с помощью Quantum GIS.
 
-Start Quantum GIS from the Desktop GIS menu and choose ``Add PostGIS layers`` from the layer menu. The
-parameters for connecting to the Natural Earth data in PostGIS is already defined in the Connections
-drop-down menu. You can define new server connections here, and store the settings for easy
-recall. Hit ``Edit`` if you want to see what those parameters are for Natural Earth, or just
-hit ``Connect`` to continue:
+Запустите Quantum GIS и выберите ``Add PostGIS layers`` из меню *Слой*.  Параметры для подключения к данным
+ Natural Earth в PostGIS уже определены в выпадающем меню *Соединения*. Там же вы можете создать новое подключение к серверу и хранить настройки для быстрого доступа. Нажмите ``Edit``, если хотите увидеть, какие параметры указаны для данных Natural Earth,
+ или нажмите ``Connect``, чтобы продолжить:
 
 .. image:: ../../images/screenshots/1024x768/postgis_addlayers.png
   :scale: 50 %
   :alt: Connect to Natural Earth
   :align: center
 
-You will now get a list of the spatial tables in the database:
+Появится список пространственных таблиц базы данных:
 
 .. image:: ../../images/screenshots/1024x768/postgis_listtables.png
   :scale: 50 %
   :alt: Natural Earth Layers
   :align: center
 
-Choose the lakes and hit ``Add`` at the bottom (not ``Load`` at the
-top - that loads database connection parameters), and it should be
-loaded into QGIS:
+Выберите озёра ("Lakes") и нажмите ``Add`` внизу (не ``Load``вверху, которая подгрузит параметры подключения базы данных),
+после чего слой откроется в QGIS:
 
 .. image:: ../../images/screenshots/1024x768/postgis_lakesmap.png
   :scale: 50 %
   :alt: My First PostGIS layer
   :align: center
 
-You should now see a map of the lakes. QGIS doesn't know they are lakes, so might not colour
-them blue for you - use the QGIS documentation to work out how to change this. Zoom in to
-a famous group of lakes in Canada.
+Вы должны увидеть карту с озёрами. QGIS не знает, что это озера, поэтому, возможно, они будут не голубого цвета. Используйте документацию 
+QGIS, чтобы узнать, как изменить цвет.
 
 
-Creating A Spatial Table The Easy Way
+Простое создание пространственной таблицы
 ================================================================================
 
-Most of the OSGeo desktop tools have functions for importing spatial data in files, such as shapefiles,
-into PostGIS databases. Again we'll use QGIS to show this.
+Большинство приложений OSGeo поддерживают импорт пространственных данных из файлов 
+в базу данных PostGIS. Для демонстрации этого будет использован QGIS.
 
-Importing shapefiles to QGIS can be done via a handy PostGIS Manager plugin. To set it up, go to the 
-Plugins menu, select ``Fetch Plugins``. QGIS will then get the latest list of plugins from the 
-repository (you will need a working internet connection for this). Then find the ``PostGIS Manager`` and
-hit the ``Install plugin`` button.
+Импорт шейп-файлов в PostGIS через QGIS можно сделать в с помощью дополнения *PostGIS Manager*. 
+Чтобы установить его, перейдите в меню ``Модули``, далее ``Загрузить модули``. QGIS загрузит самую
+новую версию из репозитория (для этого вам потребуется работающее интернет-соединение). 
+Найдите ``PostGIS Manager`` и нажмите кнопку ``Install plugin``.
 
 .. image:: ../../images/screenshots/1024x768/postgis_getmanager.png
   :scale: 50 %
   :alt: Fetch PostGIS Manager Plugin
   :align: center
 
-Now on the Plugin menu you should have a PostGIS Manager entry which gives you an option
-to start the manager. You can also click the PostGIS logo button (the elephant with the globe) on the toolbar.
+В меню ``Модули`` должен появиться  пункт *PostGIS Manager*.
+Для запуска плагина также можно кликнуть по кнопке с логотипом PostGIS (слон с земным шаром), расположенной на панели.
 
-It will then  connect to the Natural Earth database. Leave
-the password blank if it asks. You'll see the main manager window. On the left you can select 
-tables from the database and use the tabs on the right find out about them. The Preview tab
-will show you a little map. Here I've selected the populated places layer
-and zoomed in on a little island I know:
+После этого будет уставновлено соединение с базой данных *Natural Earth*. Оставьте поле пароль пустым, если будет необходимо его ввести.
+Вы увидите основное окно управления: слева вы сможете выбрать таблицы из базы данных, в правой части — узнать информацию о них.
+Вкладка *Просмотр* покажет небольшую карту.
+Для примера был выбран слой "Населённые пункты", карта была приближена к произвольному месту.
+
 
 .. image:: ../../images/screenshots/1024x768/postgis_managerpreview.png
   :scale: 50 %
   :alt: PostGIS Manager Preview
   :align: center
 
-We will now use the PostGIS Manager to import a shapefile into the database. We'll use
-the North Carolina sudden infant death syndrome (SIDS) data that is included with one
-of the R statistics package add-ons.
+Далее *PostGIS Manager* будет использован для  импорта шейп-файла в базу данных.  Мы используем данным о синдроме внезапной смерти у детей
+ в Северной Каролине, которые входят в одно из дополнений статистического пакета R. 
 
-From the ``Data`` menu choose the ``Load data from shapefile`` option. 
-Hit the ``...`` button and browse to the ``sids.shp`` shapefile in the R ``maptools`` package:
+Из меню ``Data`` выберите опцию ``Load data from shapefile``. 
+Нажмите кнопку ``...`` и загрузите шейпф-айл ``sids.shp`` в пакет R ``maptools``:
 
 .. image:: ../../images/screenshots/1024x768/postgis_browsedata.png
   :scale: 50 %
   :alt: Find the shapefile
   :align: center
 
-Leave everything else as it is and hit ``Load``
+Не изменяя настроек в появившемся окне, нажмите  ``Load``:
 
 .. image:: ../../images/screenshots/1024x768/postgis_importsids.png
   :scale: 50 %
   :alt: Import a shapefile
   :align: center
 
-The shapefile should be imported into PostGIS with no errors. Close the PostGIS manager and
-get back to the main QGIS window.
+Шейп-файл должен быть импортирован в PostGIS без ошибок. Закройте менеджер PostGIS и вернитесь в основное окно QGIS.
 
-Now load the SIDS data into the map using the 'Add PostGIS Layer'
-option. With a bit of rearranging of the layers and some colouring, you should be able to produce
-a choropleth map of the sudden infant death syndrome counts in North Carolina:
+Подгрузите данные SIDS с помощью опции "Добавить слой PostGIS". 
+Изменив порядок слоёв и заливок, вы сможете создать фоновую картограмму (хороплет), 
+отображающую количество детей, умерших от синдрома внезапной смерти в Северной Каролине.
 
 .. image:: ../../images/screenshots/1024x768/postgis_sidsmap.png
   :scale: 50 %
@@ -382,13 +353,12 @@ a choropleth map of the sudden infant death syndrome counts in North Carolina:
   :align: center
 
 
-
-
-Get to know pgAdmin III
+Знакомство с pgAdmin III
 ================================================================================
 
-You can use the graphical database client ``pgAdmin III`` from the Databases menu to query and modify your database non-spatially. This
-is the official client for PostgreSQL, and lets you use SQL to manipulate your data tables.
+Вы можете использовать графический клиент базы данных ``pgAdmin III`` из системного меню "Базы данных", 
+чтобы сделать запрос или изменить атрибутивную информацию в базе данных. 
+Это официальный клиент для PostgreSQL, позволяющий использовать SQL для управления таблицами данных.
 
 .. image:: ../../images/screenshots/1024x768/postgis_adminscreen1.png
   :scale: 50 %
@@ -401,27 +371,23 @@ is the official client for PostgreSQL, and lets you use SQL to manipulate your d
   :alt: pgAdmin III
   :align: center
 
-Things to try
+Что стоит попробовать
 ================================================================================
 
-Here are some additional challenges for you to try:
+Несколько дополнительных задач, которые нужно выполнить:
 
-#. Try some more spatial functions like ``st_buffer(the_geom)``, ``st_transform(the_geom,25831)``, ``x(the_geom)`` - you will find full documentation at http://postgis.org/documentation/
+#. Попробуйте больше пространственных функций, например, ``st_buffer(the_geom)``, ``st_transform(the_geom,25831)``, ``x(the_geom)`` — вы найдёте полную документацию здесь: http://postgis.org/documentation/
 
-#. Export your tables to shapefiles with ``pgsql2shp`` on the command line.
+#. Экспортируйте ваши таблицы в шейп-файлы, используя  ``pgsql2shp`` в командной строке.
 
-#. Try ``ogr2ogr`` on the command line to import/export data to your database.
+#. Попробуйте утилиту ``ogr2ogr`` для экспорта/импорта данных.
 
 
-What Next?
+Что дальше?
 ================================================================================
 
-This is only the first step on the road to using PostGIS. There is a lot more functionality you can try.
+Это только первые шаги на пути использования PostGIS. Существует гораздо больше полезных функций, которые вы при желании можете попробовать.
 
-PostGIS Project home
+Веб-страница PostGIS — http://postgis.org
 
- http://postgis.org
-
-PostGIS Documentation
-
- http://postgis.org/documentation/
+Документация PostGIS — http://postgis.org/documentation/

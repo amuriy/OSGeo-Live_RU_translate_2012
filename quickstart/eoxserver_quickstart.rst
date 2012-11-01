@@ -11,155 +11,148 @@
   :target: http://eoxserver.org/
 
 ================================================================================
- EOxServer Quickstart
+Введение в EOxServer
 ================================================================================
 
-Overview
+Введение
 --------
 
-EOxServer is a server for Earth Observation (EO) data. More precisely it is 
-a Python application and framework for presenting EO data and metadata.
+EOxServer — это сервер для работы со снимками Earth Observation (EO). Точнее, это фреймворк написаный на Python для визуализации EO и метаданных.
 
-This Quick Start describes how to:
+Из данного документа вы узнаете, как:
 
-* Install EOxServer in OSGeo-Live
-* Access and use the demonstration instance
+* Установить EOxServer в OSGeo-Live
+* Загрузить и посмотреть пример данных
 
-See the :doc:`EOxServer Overview <../overview/eoxserver_overview>`, the 
-`EOxServer 0.2.1 Documentation 
-<../../eoxserver-docs/EOxServer_documentation.pdf>`_, or the `online 
-documentation <http://eoxserver.org/doc/>`_ for more information.
+Посмотрите также :doc:`Обзор EOxServer <../overview/eoxserver_overview>`, 
+`документацию EOxServer 0.2.1  <../../eoxserver-docs/EOxServer_documentation.pdf>`_, or the `онлайн-документацию <http://eoxserver.org/doc/>`_ для более полного ознакомления.
 
 .. contents:: Contents
 
-Installation
+Установка
 ------------
 
-Run the following commands to install EOxServer::
+Чтобы установить EOxServer, запустите следующую команду::
 
     cd /usr/local/share/gisvm/bin/
     sudo ./install_eoxserver.sh
 
-Note the password for the user `user` is `user`.
+Логин `user` , пароль `user`.
 
-The script not only installs EOxServer but also creates and deploys a 
-`demonstration instance <http://localhost/eoxserver/>`_, downloads the 
-documentation, adds launchers to the desktop, etc.
+Скрипт не только устанавливает EOxServer, но и создаёт 
+`демонстрационные примеры  <http://localhost/eoxserver/>`_, закачивает
+документацию, добавляет ярлыки на рабочий стол и т.д.
 
-Demonstration Instance
+
+Демонстрационные примеры
 ----------------------
 
-The new icon on the desktop labelled `EOxServer` launches a browser showing 
-the demonstration instance available at http://localhost/eoxserver/.
+На рабочем столе появилась иконка `EOxServer`. Щёлкните по ней, появится
+демонстрационный пример из http://localhost/eoxserver/.
 
 .. image:: ../../images/screenshots/1024x768/eoxserver_start.png
   :scale: 50 %
   :alt: EOxServer demonstration start
 
-The other new icon on the desktop labelled `EOxServer Documentation` 
-launches a pdf viewer showing the available documentation.
+Ещё одна иконка на рабочем столе называется `EOxServer Documentation`,
+открывается любым PDF-ридером. Внутри — документация.
 
 .. image:: ../../images/screenshots/1024x768/eoxserver_documentation.png
   :scale: 50 %
   :alt: EOxServer documentation
 
-Web Client
+Веб-клиент
 ~~~~~~~~~~
 
-The **Web Client** link allows you to see a list of available `Dataset 
-Series` and `Stitched Mosaics`. The demonstration has one `Dataset Series` 
-configured named "MER FRS 1P RGB reduced" holding three ENVISAT MERIS 
-scenes. Please refer to the `online demonstration documentation 
-<http://eoxserver.org/doc/en/users/demonstration.html>`_ for more 
-information on the available data.
+Ссылка **Web Client** позволит вам увидеть список доступных серий данных (`Dataset Series`) 
+и мозаик (`Stitched Mosaics`). В примере есть один `Dataset Series`, который называется
+"MER FRS 1P RGB reduced" и содержит три сцены ENVISAT MERIS. На сайте 
+`онлайн-документации <http://eoxserver.org/doc/en/users/demonstration.html>`_ есть информация  
+о всех доступных данных.
 
 .. image:: ../../images/screenshots/1024x768/eoxserver_webclient1.png
   :scale: 50 %
   :alt: EOxServer demonstration embedded client dataset series selection
 
-Selecting a list entry provides you with a map view showing the outlines of 
-the available `Datasets`.
+Выбор элемента списка предоставляет обзорную карту, показывающую границы
+доступных наборов данных (`Datasets`).
 
 .. image:: ../../images/screenshots/1024x768/eoxserver_webclient2.jpg
   :scale: 50 %
   :alt: EOxServer demonstration embedded client outlines
 
-Using the standard OpenLayers controls you can enable also previews of the 
-available data.
+Использование стандартных контролов OpenLayers позволяет включить также превью
+имеющихся данных.
 
 .. image:: ../../images/screenshots/1024x768/eoxserver_screenshot.jpg
   :scale: 50 %
   :alt: EOxServer demonstration embedded client outlines and previews
 
-With the **Date slider** the `Datasets` shown can be limited to the time 
-interval of interest.
+С **Date slider** наборы данных `Datasets` могут быть ограничены по времени 
+с помощью интересующих вас интервалов.
 
 .. image:: ../../images/screenshots/1024x768/eoxserver_webclient3.jpg
   :scale: 50 %
   :alt: EOxServer demonstration embedded client date change
 
-The **Download** button provides you a list of downloadable `Datasets`. 
-Downloadable means within the set Bounding Box or currently viewn map extent 
-if not set and the set time interval. You can select which `Datasets` to 
-download in which size, projection, format, and band subset.
+Кнопка загрузки (**Download**) показывает список доступных для загрузки наборов данных .
+"Доступные для загрузки" наборы означают обозначенные либо ограничивающим прямоугольником, либо
+текущим охватом карты (если первый не задан), а также соответствующие заданному временному интервалу.
+Вы можете выбрать наборы данных для загрузки, определив также размеры, проекции, формат данных
+и диапазон каналов.
 
 .. image:: ../../images/screenshots/1024x768/eoxserver_webclient4.jpg
   :scale: 50 %
   :alt: EOxServer demonstration embedded client download selection
 
-**Start Download** initiates the actual download which might result in 
-multiple files if multiple `Datasets` have been selected.
+Пункт **Start Download** вызывает начало реальной загрузки данных, в том числе, 
+нескольких файлов, если было выбрано несколько наборов данных.  
 
 .. image:: ../../images/screenshots/1024x768/eoxserver_webclient5.jpg
   :scale: 50 %
   :alt: EOxServer demonstration embedded client download
 
-Admin Client
+Служба управления (Admin Client)
 ~~~~~~~~~~~~
 
-The **Admin Client** link brings you to the login page for the `Admin 
-Client`. The password for the user `admin` is `admin`.
+Ссылка **Admin Client**  приводит на страницу входа в службу управления (`Admin Client`). 
+В нашем случае пароль для пользователя `admin` — `admin`.
 
 .. image:: ../../images/screenshots/1024x768/eoxserver_adminclient1.png
   :scale: 50 %
   :alt: EOxServer demonstration admin client login
 
-The `Admin Client` is Djangos standard admin and allows you to configure the 
-available data. Please feel free to explore the client. More information can 
-be found `online <http://eoxserver.org/doc/en/users/operators.html>`_.
+Служба управления (`Admin Client`), стандартная для Django функция администрирования,
+позволяет настраивать данные. Больше информации можно найти в
+`онлайн-документации <http://eoxserver.org/doc/en/users/operators.html>`_.
 
 .. image:: ../../images/screenshots/1024x768/eoxserver_adminclient2.png
   :scale: 50 %
   :alt: EOxServer demonstration admin client start
 
-It is for example possible to view and alter the `EO Metadata` of the 
-configured `Dataset Series`.
+Для примера можно просмотреть и дополнить метаданные `EO Metadata` в сконфигурированных
+наборах данных.
 
 .. image:: ../../images/screenshots/1024x768/eoxserver_adminclient3.jpg
   :scale: 50 %
   :alt: EOxServer demonstration admin client 
 
-Log Viewer
+Просмотр сообщений (Log Viewer)
 ~~~~~~~~~~
 
-The **Log Viewer** link provides an easy way to view the latest log entries.
+Ссылка **Log Viewer** предоставляет лёгкий способ для просмотра последних сообщений.
 
 .. image:: ../../images/screenshots/1024x768/eoxserver_logviewer.png
   :scale: 50 %
   :alt: EOxServer demonstration log viewer
 
-What Next?
+Что дальше?
 ----------
 
-This is a simple demonstration, but you can do much more with EOxServer. The 
-project website contains a lot of resources to help you get started. Here’s 
-a few resources to check out next:
+Всё написанное выше — очень простая демонстрация, вы можете сделать гораздо больше 
+с помощью EOxServer. Веб-сайт проекта содержит множество ресурсов для начала работы.
+Ниже перечислены некоторые из них:
 
-* Read the `EOxServer Operators' Guide 
-  <http://eoxserver.org/doc/en/users/operators.html>`_.
-* Read the complete `EOxServer Users' documentation 
-  <http://eoxserver.org/doc/en/users/index.html>`_ starting from the `EOxServer 
-  Basics <http://eoxserver.org/doc/en/users/basics.html>`_.
-* Ready to use EOxServer? Then join the community on the `mailing lists 
-  <http://eoxserver.org/doc/en/users/mailing_lists.html>`_ to exchange ideas, 
-  discuss potential software improvements, and ask questions.
+*  `EOxServer Operators' Guide <http://eoxserver.org/doc/en/users/operators.html>`_.
+* `Пользовательская документация EOxServer <http://eoxserver.org/doc/en/users/index.html>`_, в том числе `EOxServer Basics <http://eoxserver.org/doc/en/users/basics.html>`_.
+* Готовы использовать EOxServer? Тогда присоединяйтесь к сообществу с помощью `списка рассылки <http://eoxserver.org/doc/en/users/mailing_lists.html>`_, чтобы обмениваться идеями, обсуждать улучшения ПО и для того, чтобы задавать интересующие вас вопросы.

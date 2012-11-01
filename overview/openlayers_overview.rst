@@ -21,7 +21,7 @@
 OpenLayers
 ================================================================================
 
-Browser GIS Client
+Браузерный ГИС-клиент
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../../images/screenshots/800x600/openlayers-basic.png
@@ -29,47 +29,46 @@ Browser GIS Client
   :alt: screenshot
   :align: right
 
-OpenLayers makes it easy for web developers to embed dynamic maps, from a
-multitude of sources, in any web page. OpenLayers provides an extensive set of
-mapping tools and widgets, similar to the Google Maps API. All functionally
-runs inside the web browser, which makes OpenLayers easy to install, without
-any server side dependencies.
+OpenLayers облегчает для веб-разработчиков создание динамических веб-карт, получаемых
+из различных источников данных. OpenLayers предоставляет широкий набор картографических
+средств и "виджетов" наподобие Google Maps API. Вся функции работают в веб-браузере, что
+делает OpenLayers лёгким для установки, т.к. нет зависимости от серверной стороны.         
 
-Core Features
+Базовые функции
 --------------------------------------------------------------------------------
 
-* Simple to use Javascript API, designed to make development easy
-* Support for standard and customized protocols for interacting with servers
-* Tools to create custom user interfaces simply
-* Support for in-browser data rendering (using SVG, VML, or Canvas technologies), supporting the development of advanced in-browser maps
-* Support for mobile devices (with a focus on touch devices)
-* Ability to load map layers from many sources:
+* Лёгкий в использовании Javascript API, спроектированный для того, чтобы облегчить процесс разработки.
+* Поддержка стандартных и заданных протоколов для взаимодействия с серверами.
+* Инструменты для лёгкого создания произвольных пользовательских интерфейсов.
+* Поддержка внутрибраузерного ("in-browser") рендеринга данных (используя технологии SVG, VML или Canvas); поддержка разработки "продвинутых" карт в браузере.
+* Поддержка мобильных устройств (с акцентом на сенсорных устройствах).
+* Возможность использования данных из различных источников :
   
-  * Commercial Layers: Google, Bing
+  * Коммерческие данные: Google, Bing
   
-  * OGC Standards: WMS, WMTS, WFS, WFS-T, GeoRS, GML
+  * Стандарты OGC: WMS, WMTS, WFS, WFS-T, GeoRS, GML
   
-  * Others: OpenStreetMap (OSM), ArcGIS, Images, MapGuide, MapServer, TileCache
+  * Другие: OpenStreetMap (OSM), ArcGIS, Images, MapGuide, MapServer, TileCache
 
-* Ability to parse vector data and metadata in many formats:
+* Возможность обработки векторных данных и атрибутов многих форматов:
   
   * Atom, ArcXML, GeoJSON, GeoRSS, KML, OSM, SLD, WMTS
 
-Details
+Дополнительная информация
 --------------------------------------------------------------------------------
 
-**Website:** http://openlayers.org
+**Веб-сайт:** http://openlayers.org
 
-**License:** 2-clause BSD License (aka FreeBSD License) 
+**Лицензия:** `BSD <http://ru.wikipedia.org/wiki/BSD_License>`_
 
-**Software Version:** 2.12
+**Версия ПО:** 2.12
 
-**API Interface:** JavaScript
+**Интерфейсы API:** JavaScript
 
-**Support:** https://github.com/openlayers/openlayers 
+**Поддержка:** https://github.com/openlayers/openlayers 
 
 
-Quickstart
+Начало работы
 --------------------------------------------------------------------------------
 
-* :doc:`Quickstart documentation <../quickstart/openlayers_quickstart>`
+* :doc:`Введение <../quickstart/openlayers_quickstart>`
